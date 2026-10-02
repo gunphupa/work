@@ -40,6 +40,8 @@ Node 24.19.0; npm 11.9.0; TypeScript 6.0.3 (selected to match the supported type
 
 ## Container build limitation
 
-The Docker engine and base-image pull work. Image construction did not complete: package-registry requests from the isolated container timed out, including a small explicit proxy-aware Node fetch. Forwarding the existing proxy build arguments did not restore access. The stalled build was stopped; TLS verification was never disabled. The Dockerfile is supplied but the image is **not validated** in this environment. Native frozen installation, production build and all 18 production-server browser checks succeeded outside the container.
+The Docker engine and base-image pull work. Initial container requests timed out; a host-network request then identified the platform proxy certificate requirement. Mounting the environment's existing public CA as a trusted extra certificate restored a small registry request (HTTP 200) without disabling TLS verification. The Dockerfile supports that CA through an optional BuildKit secret mount, so it is never baked into image layers.
 
-The frozen install script was then executed successfully again (`npm ci`: 235 packages; production build passed), and the documented development startup was exercised: `/api/health` and application HTML both returned HTTP 200. The dev server is a current-instance process, not a published endpoint.
+However, BuildKit's package downloads still fail with `EAI_AGAIN` DNS errors in this environment, including with host networking, forwarded proxy settings and the approved CA. A bounded diagnostic build confirmed the failure; it was stopped. The Docker recipe is supplied but its image is **not validated** here. This is separate from the successful native frozen installation, production build and all 18 production-server browser checks.
+
+The frozen install script was executed successfully again (`npm ci`: 235 packages; production build passed), and documented development startup was exercised: `/api/health` and application HTML both returned HTTP 200. The dev server is a current-instance process, not a published endpoint.
