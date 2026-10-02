@@ -21,3 +21,5 @@ The recipe is deployment preparation; a Docker image build/run is not part of th
 Export guest data in the app before changing its storage schema. For server state, stop the process and take a consistent SQLite backup including WAL state (or use SQLite's online backup mechanism). Deploy an exact Git SHA with its lockfile, rerun checks, then restart. Keep the prior build/SHA and compatible quota database backup. Roll back by checking out that SHA, reinstalling from its lockfile, rebuilding and restarting. Do not roll back the quota database to evade consumed usage.
 
 The current guest schema is v1; future migrations must preserve unknown fields/data via explicit export and migration tests. Server container files are not durable user inventory storage.
+
+Current environment note: Docker can pull its base image, but registry access from build/run containers timed out even with the existing proxy forwarded. The prepared recipe has not completed an image build here. Native Node production startup and browser validation succeeded. Do not disable certificate verification to work around container connectivity.

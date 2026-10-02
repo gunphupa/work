@@ -37,3 +37,9 @@ Node 24.19.0; npm 11.9.0; TypeScript 6.0.3 (selected to match the supported type
 - Arduino AVR compilation and physical builds: no AVR toolchain or hardware attached. Original sketches include exact target assumptions; documentation review does not replace these checks.
 - Public hosting/TLS operation: no connected public hosting account. A deployment recipe is provided; the app has not been published.
 - Real human studies, labelled-image accuracy/latency measurements and school-specific template validation: no observations or school PDFs were supplied.
+
+## Container build limitation
+
+The Docker engine and base-image pull work. Image construction did not complete: package-registry requests from the isolated container timed out, including a small explicit proxy-aware Node fetch. Forwarding the existing proxy build arguments did not restore access. The stalled build was stopped; TLS verification was never disabled. The Dockerfile is supplied but the image is **not validated** in this environment. Native frozen installation, production build and all 18 production-server browser checks succeeded outside the container.
+
+The frozen install script was then executed successfully again (`npm ci`: 235 packages; production build passed), and the documented development startup was exercised: `/api/health` and application HTML both returned HTTP 200. The dev server is a current-instance process, not a published endpoint.
