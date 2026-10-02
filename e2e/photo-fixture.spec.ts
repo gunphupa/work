@@ -55,14 +55,16 @@ test("fixture-only photo proposal needs confirmation and failed requests preserv
   failed = false;
   await page.getByRole("button", { name: "วิเคราะห์ภาพ" }).click();
   await expect(
-    page.getByText("LED จาก fixture", { exact: true }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "เพิ่ม 1 รายการเพื่อยืนยัน" }).click();
+    page.getByRole("textbox", { name: "ชื่อรายการ", exact: true }),
+  ).toHaveValue("LED จาก fixture");
+  await page.getByRole("button", { name: "เพิ่ม 1 รายการ" }).click();
   await expect(
-    page.getByText("รอยืนยันชนิดและสเปก", { exact: true }),
+    page.getByText("ยังไม่ตรวจรายละเอียด · ไม่ขัดขวางการอ่านคู่มือ", {
+      exact: true,
+    }),
   ).toBeVisible();
   await page.getByRole("button", { name: "แก้ไข LED จาก fixture" }).click();
   await expect(
-    page.getByRole("checkbox", { name: "ฉันตรวจชนิด" }),
-  ).not.toBeChecked();
+    page.getByRole("combobox", { name: "สภาพ", exact: true }),
+  ).toHaveValue("unknown");
 });

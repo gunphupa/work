@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-10-02T16:18:18.304842+00:00",
+  "sourcePage": "https://www.jpl.nasa.gov/edu/resources/project/make-a-straw-rocket/",
+  "sourceHtmlSha256": "e89e71e9e228c2bf9da89e5d57b904a0cfc5f387c2c0675955af2d843e59513c",
+  "videoReferencesFound": [
+    "https://www.youtube.com/embed/aTd2f59TSVo?feature=oembed",
+    "https://youtu.be/aTd2f59TSVo"
+  ],
+  "linkedVideo": "https://www.youtube.com/watch?v=aTd2f59TSVo",
+  "evidenceType": "Video URL observed in the official written guide",
+  "videoContentViewed": false,
+  "directPlaybackVerified": false,
+  "otherTutorialLinks": "Project-specific YouTube search URLs. Results are not reviewed video recommendations.",
+  "householdGuides": "21 original bilingual ReBuild guides, inspired by the household materials list supplied by the user. Not attributed to external tutorials; no physical build validation."
+}

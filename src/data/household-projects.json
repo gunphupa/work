@@ -1,0 +1,2324 @@
+[
+  {
+    "id": "drawer-dividers",
+    "title": "ช่องแบ่งลิ้นชักจากกล่องเก่า",
+    "description": "จัดถุงเท้า เครื่องเขียน หรือของชิ้นเล็กให้หาเจอในทันที",
+    "category": "organization",
+    "level": 1,
+    "minutes": 25,
+    "interest": "organization",
+    "icon": "dividers",
+    "requirements": [
+      {
+        "id": "cardboard",
+        "label": "กระดาษลูกฟูกแผ่นใหญ่ 2 แผ่น",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "cardboard"
+          }
+        ],
+        "why": "แต่ละแผ่นต้องยาวพอกับด้านในลิ้นชัก"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      },
+      {
+        "id": "pencil",
+        "label": "ดินสอ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pencil"
+          }
+        ],
+        "why": "ทำเครื่องหมายก่อนตัด"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      },
+      {
+        "id": "drawer",
+        "label": "ลิ้นชักที่ต้องการจัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "drawer"
+          }
+        ],
+        "why": "ใช้วัดด้านในและลองขนาดจริง"
+      }
+    ],
+    "steps": [
+      {
+        "title": "วัดพื้นที่จริง",
+        "text": "นำของออก วัดความกว้าง ความลึก และความสูงด้านใน วางแผนแบ่งเป็น 4 ช่อง",
+        "check": "ลดความยาวแผ่นกั้นจากขนาดที่วัด 3–5 มม."
+      },
+      {
+        "title": "ตัดแผ่นกั้นสองแนว",
+        "text": "ตัดแผ่นหนึ่งตามความกว้าง อีกแผ่นตามความลึก ความสูงต่ำกว่าลิ้นชักประมาณ 1 ซม.",
+        "check": "ลองวางแต่ละแผ่น ต้องไม่ฝืนขอบลิ้นชัก",
+        "safety": "ให้ผู้ใหญ่ช่วยตัดวัสดุหนา ตัดออกจากมือ และเก็บเศษเล็กให้พ้นเด็กเล็ก"
+      },
+      {
+        "title": "บากร่องแล้วประกบ",
+        "text": "ทำร่องตรงกลางแต่ละแผ่น ลึกครึ่งความสูง กว้างเท่าความหนากระดาษ สอดร่องเข้าหากันเป็นรูป +",
+        "check": "สี่ช่องตั้งได้และรอยต่อไม่โยกมาก"
+      },
+      {
+        "title": "จัดของและลองเปิดปิด",
+        "text": "ปิดขอบด้วยเทป วางลงลิ้นชัก ใส่ของเบา แล้วเปิดปิดช้า ๆ 5 ครั้ง",
+        "check": "ไม่มีชิ้นส่วนขัดรางหรือทำให้ลิ้นชักปิดไม่ได้"
+      }
+    ],
+    "learning": ["วัดขนาดและเผื่อระยะ", "รอยต่อแบบสอดร่อง"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ใช้กับของแห้งและเบา ไม่ใช้พยุงของหนักหรือใกล้แหล่งความร้อน",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกขนาดลิ้นชักและจำนวนครั้งที่เปิดปิดโดยแผ่นกั้นไม่ล้ม"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "แผ่นแบ่งลิ้นชัก กระดาษลัง วิธีทำ",
+      "en": "DIY cardboard drawer dividers slotted tutorial"
+    }
+  },
+  {
+    "id": "desk-caddy",
+    "title": "ที่ใส่เครื่องเขียนจากแกนกระดาษ",
+    "description": "รวมดินสอ ปากกา และไม้บรรทัดในที่เดียวด้วยแกนกระดาษ",
+    "category": "organization",
+    "level": 1,
+    "minutes": 20,
+    "interest": "organization",
+    "icon": "caddy",
+    "requirements": [
+      {
+        "id": "tube",
+        "label": "แกนกระดาษสะอาด 3 แกน",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "tube"
+          }
+        ],
+        "why": "เลือกขนาดที่สอดเครื่องเขียนได้"
+      },
+      {
+        "id": "cardboard",
+        "label": "กระดาษแข็งประมาณ 20 × 15 ซม.",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "cardboard"
+          }
+        ],
+        "why": "ฐานกว้างกว่ากลุ่มแกนทุกด้าน"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      },
+      {
+        "id": "pencil",
+        "label": "ดินสอ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pencil"
+          }
+        ],
+        "why": "ทำเครื่องหมายก่อนตัด"
+      }
+    ],
+    "steps": [
+      {
+        "title": "จัดตำแหน่ง",
+        "text": "วางแกน 3 อันบนแผ่นฐาน เว้นขอบอย่างน้อย 2 ซม. ทำเครื่องหมายตำแหน่ง",
+        "check": "ทั้งกลุ่มวางห่างขอบโต๊ะได้"
+      },
+      {
+        "title": "ทำฐานแฉก",
+        "text": "บากปลายล่างแต่ละแกนเป็นแฉกยาว 1 ซม. แล้วพับออก",
+        "check": "แท็บวางราบกับฐาน",
+        "safety": "ให้ผู้ใหญ่ช่วยตัดวัสดุหนา ตัดออกจากมือ และเก็บเศษเล็กให้พ้นเด็กเล็ก"
+      },
+      {
+        "title": "ติดให้แน่น",
+        "text": "ติดเทปทับแท็บทุกด้าน แล้วพันเทปเชื่อมแกนข้างกัน",
+        "check": "ยกแกนเบา ๆ แล้วฐานไม่หลุด"
+      },
+      {
+        "title": "เริ่มใส่ทีละชิ้น",
+        "text": "ใส่ดินสอหรือปากกาทีละชิ้น ทดลองหยิบออกและวางคืน",
+        "check": "ไม่คว่ำเมื่อหยิบจากช่องริม"
+      }
+    ],
+    "learning": ["ฐานกว้างช่วยเพิ่มความมั่นคง", "นำบรรจุภัณฑ์กลับมาใช้"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "เหมาะกับเครื่องเขียนเบา ไม่เก็บกรรไกรปลายแหลมหรือของร้อน",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกจำนวนปากกาที่วางได้โดยฐานไม่เอียง"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "ที่ใส่ปากกา แกนทิชชู วิธีทำ",
+      "en": "cardboard tube desk organizer tutorial"
+    }
+  },
+  {
+    "id": "cable-rolls",
+    "title": "จัดสายที่ถอดปลั๊กด้วยแกนกระดาษ",
+    "description": "แยกสายชาร์จและสายข้อมูลที่ไม่ได้ใช้ ให้หยิบง่ายไม่พันกัน",
+    "category": "organization",
+    "level": 1,
+    "minutes": 10,
+    "interest": "organization",
+    "icon": "cables",
+    "requirements": [
+      {
+        "id": "tube",
+        "label": "แกนกระดาษ 3 แกน",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "tube"
+          }
+        ],
+        "why": "หนึ่งแกนต่อหนึ่งสาย"
+      },
+      {
+        "id": "box",
+        "label": "กล่องรองเท้าหรือกล่องพัสดุ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "box"
+          }
+        ],
+        "why": "เก็บแกนให้อยู่รวมกัน"
+      },
+      {
+        "id": "marker",
+        "label": "ปากกามาร์กเกอร์",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "marker"
+          }
+        ],
+        "why": "เขียนป้ายหรือทำเครื่องหมาย"
+      },
+      {
+        "id": "usb",
+        "label": "สาย USB ที่ถอดออกแล้ว 3 เส้น",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "usb"
+          }
+        ],
+        "why": "สายสมบูรณ์ ใช้เก็บเท่านั้น ไม่จ่ายไฟขณะม้วน"
+      }
+    ],
+    "steps": [
+      {
+        "title": "เลือกสายที่ปลอดภัย",
+        "text": "ถอดสายออกจากอุปกรณ์และแหล่งจ่ายทั้งหมด ตรวจว่าเปลือกไม่แตกหรือมีรอยไหม้",
+        "check": "ใช้เก็บสายที่ไม่ได้เสียบใช้งานเท่านั้น"
+      },
+      {
+        "title": "ม้วนหลวม ๆ",
+        "text": "ม้วนสายตามโค้งเดิม ไม่พับหักตรงหัวต่อ เลือกแกนที่สวมได้โดยไม่บีบสาย",
+        "check": "สายไม่ถูกหักมุมแคบ"
+      },
+      {
+        "title": "ติดชื่อแล้วจัดกล่อง",
+        "text": "เขียนชนิดสายไว้บนแกน สอดสายหนึ่งเส้นต่อแกน แล้วเรียงในกล่อง",
+        "check": "เห็นฉลากและหยิบได้ทีละสาย"
+      }
+    ],
+    "learning": ["การจัดหมวดหมู่", "ดูแลสายและหัวต่อ"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ห้ามใช้ครอบสายหรืออะแดปเตอร์ขณะจ่ายไฟ ห้ามซ่อมสายชำรุดด้วยเทป",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "ลองหยิบสายที่ต้องการ 5 ครั้ง บันทึกว่าหยิบถูกกี่ครั้ง"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "เก็บสายชาร์จ แกนกระดาษ",
+      "en": "cardboard tube cable storage organizer"
+    }
+  },
+  {
+    "id": "jar-storage",
+    "title": "โหลจัดของพร้อมป้าย",
+    "description": "ใช้โหลอาหารเก่าเก็บกระดุม คลิป และของจุกจิกให้มองเห็น",
+    "category": "organization",
+    "level": 1,
+    "minutes": 10,
+    "interest": "organization",
+    "icon": "jars",
+    "requirements": [
+      {
+        "id": "jar",
+        "label": "โหลแก้วสมบูรณ์ 2 ใบ",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "jar"
+          }
+        ],
+        "why": "ล้างแล้วผึ่งให้แห้งก่อนใช้"
+      },
+      {
+        "id": "paper",
+        "label": "กระดาษสำหรับป้าย",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "paper"
+          }
+        ],
+        "why": "ตัดป้ายตามขนาดโหล"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      },
+      {
+        "id": "marker",
+        "label": "ปากกามาร์กเกอร์",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "marker"
+          }
+        ],
+        "why": "เขียนป้ายหรือทำเครื่องหมาย"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจและทำให้แห้ง",
+        "text": "ใช้โหลอาหารที่ล้างสะอาดและแห้งสนิท ตรวจขอบและก้น",
+        "check": "ไม่มีรอยร้าวหรือบิ่น",
+        "safety": "ไม่ใช้แก้วชำรุดหรือภาชนะสารเคมี"
+      },
+      {
+        "title": "แบ่งตามการใช้งาน",
+        "text": "แยกของหนึ่งกลุ่มต่อโหล เช่น คลิปกับกระดุม ไม่ผสมของมีคม",
+        "check": "ของหยิบได้โดยไม่ต้องล้วงลึก"
+      },
+      {
+        "title": "ทำป้ายและจัดวาง",
+        "text": "ตัดกระดาษ เขียนชื่อ ติดด้านหน้าโหล วางบนชั้นต่ำและมั่นคง",
+        "check": "ไม่ซ้อนโหลและไม่ชิดขอบ"
+      }
+    ],
+    "learning": ["จัดระบบด้วยป้าย", "นำภาชนะกลับมาใช้"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "เก็บของทั่วไป ไม่ใช้เป็นภาชนะถนอมอาหารหรือให้เด็กเล็กเล่น",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "ให้คนอื่นลองหาของจากป้ายแล้วบันทึกว่าหาเจอหรือไม่"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "โหลแก้ว จัดระเบียบของ ป้าย",
+      "en": "reused glass jar organization labels DIY"
+    }
+  },
+  {
+    "id": "phone-stand",
+    "title": "ขาตั้งมือถือจากกระดาษลัง",
+    "description": "ตั้งมือถือเพื่ออ่านสูตรอาหารหรือดูบทเรียนโดยไม่ต้องถือ",
+    "category": "organization",
+    "level": 1,
+    "minutes": 25,
+    "interest": "organization",
+    "icon": "stand",
+    "requirements": [
+      {
+        "id": "cardboard",
+        "label": "กระดาษลูกฟูก 2 แผ่น ประมาณ A4",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "cardboard"
+          }
+        ],
+        "why": "ทำด้านข้างและแผ่นเชื่อม"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      },
+      {
+        "id": "pencil",
+        "label": "ดินสอ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pencil"
+          }
+        ],
+        "why": "ทำเครื่องหมายก่อนตัด"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      },
+      {
+        "id": "phone",
+        "label": "โทรศัพท์ที่จะวางบนขาตั้ง",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "phone"
+          }
+        ],
+        "why": "ตรวจขนาดและน้ำหนักกับขาตั้งโดยจับไว้ขณะทดสอบ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "วางแบบข้างสองชิ้น",
+        "text": "วาดสามเหลี่ยมมุมฉากฐาน 14 ซม. สูง 10 ซม. สองชิ้น เผื่อฐานด้านหน้าต่ออีก 2 ซม. เป็นขอบรองรับ",
+        "check": "ทั้งสองชิ้นมีขนาดเท่ากัน"
+      },
+      {
+        "title": "ตัดและทำขอบกันไหล",
+        "text": "ตัดตามแบบ พับกระดาษเล็กให้เป็นขอบสูงประมาณ 1 ซม. ติดบนปลายฐานด้านหน้าของทั้งสองชิ้น",
+        "check": "ขอบรองรับไม่ปิดหน้าจอมากเกินไป",
+        "safety": "ให้ผู้ใหญ่ช่วยตัดวัสดุหนา ตัดออกจากมือ และเก็บเศษเล็กให้พ้นเด็กเล็ก"
+      },
+      {
+        "title": "เชื่อมให้เป็นฐานเดียว",
+        "text": "วางชิ้นข้างขนานห่างกันประมาณ 7 ซม. ใช้แถบกระดาษเชื่อมด้านหลังและด้านล่าง ติดเทปทั้งสองด้าน",
+        "check": "ฐานไม่บิดและด้านเอียงทั้งสองอยู่ระดับเดียวกัน"
+      },
+      {
+        "title": "ลองรับน้ำหนักใกล้พื้น",
+        "text": "วางบนโต๊ะเตี้ย จับมือถือไว้ขณะค่อย ๆ ปล่อยน้ำหนัก ถ้าโก่งหรือไหล ให้เสริมฐานก่อนใช้",
+        "check": "ตั้งได้มั่นคงและแตะหน้าจอเบา ๆ แล้วไม่ล้ม"
+      }
+    ],
+    "learning": ["รูปสามเหลี่ยมกับความแข็งแรง", "จุดศูนย์ถ่วง"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "สำหรับโทรศัพท์เบาเท่านั้น ไม่รองรับแท็บเล็ต ตั้งห่างน้ำและความร้อน",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกขนาดฐานและทดสอบแตะหน้าจอเบา ๆ 5 ครั้ง"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "ขาตั้งมือถือ กระดาษลัง สามเหลี่ยม",
+      "en": "cardboard triangle phone stand tutorial"
+    }
+  },
+  {
+    "id": "cleaning-cloths",
+    "title": "ผ้าเช็ดทำความสะอาดใช้ซ้ำ",
+    "description": "เปลี่ยนเสื้อยืดเก่าเป็นผ้าเช็ดฝุ่นและคราบทั่วไป",
+    "category": "cleaning",
+    "level": 1,
+    "minutes": 15,
+    "interest": "cleaning",
+    "icon": "cloths",
+    "requirements": [
+      {
+        "id": "tshirt",
+        "label": "เสื้อยืดผ้าถักสะอาด 1 ตัว",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tshirt"
+          }
+        ],
+        "why": "ผ้าฝ้ายหรือผ้าถักนุ่ม ไม่มีของตกแต่งแข็ง"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      },
+      {
+        "id": "pencil",
+        "label": "ดินสอ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pencil"
+          }
+        ],
+        "why": "ทำเครื่องหมายก่อนตัด"
+      }
+    ],
+    "steps": [
+      {
+        "title": "เลือกผ้าสะอาด",
+        "text": "ซักและทำให้เสื้อแห้ง เลือกส่วนที่ไม่มีซิป กระดุม หรือพิมพ์สีแข็ง",
+        "check": "ผ้าไม่เป็นราและไม่เคยเปื้อนสารอันตราย"
+      },
+      {
+        "title": "วัดเป็นสี่เหลี่ยม",
+        "text": "ทำแนวขนาดประมาณ 20 × 20 ซม. บนส่วนตัวเสื้อ ตัดหลบตะเข็บหนา",
+        "check": "ขนาดพอดีกับมือเมื่อพับ"
+      },
+      {
+        "title": "ตัดและทดสอบจุดเล็ก",
+        "text": "ตัดตามแนว สะบัดเศษด้าย แล้วลองเช็ดพื้นที่เล็กที่มองไม่เห็นก่อน",
+        "check": "ไม่มีรอยขีดข่วนหรือสีตก",
+        "safety": "ให้ผู้ใหญ่ช่วยตัดวัสดุหนา ตัดออกจากมือ และเก็บเศษเล็กให้พ้นเด็กเล็ก"
+      },
+      {
+        "title": "แยกใช้และซัก",
+        "text": "แยกผ้าตามบริเวณใช้งาน ซักหลังใช้และผึ่งให้แห้งสนิทก่อนเก็บ",
+        "check": "ไม่ใช้ผ้าห้องน้ำร่วมกับพื้นผิวเตรียมอาหาร"
+      }
+    ],
+    "learning": ["การดูดซับของเส้นใย", "ใช้ซ้ำอย่างถูกสุขลักษณะ"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "เหมาะกับฝุ่นและคราบทั่วไป ไม่ใช่วิธีฆ่าเชื้อ ไม่ผสมน้ำยาทำความสะอาด",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "เปรียบเทียบผ้าแห้งและผ้าหมาดบนคราบชนิดเดียวกัน บันทึกผล"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "เสื้อยืดเก่า ทำผ้าเช็ดทำความสะอาด",
+      "en": "old t shirt reusable cleaning cloths DIY"
+    }
+  },
+  {
+    "id": "sock-duster",
+    "title": "ถุงมือปัดฝุ่นจากถุงเท้า",
+    "description": "ใช้ถุงเท้าคู่ที่ไม่ครบเช็ดฝุ่นตามชั้นและขอบเฟอร์นิเจอร์",
+    "category": "cleaning",
+    "level": 1,
+    "minutes": 5,
+    "interest": "cleaning",
+    "icon": "duster",
+    "requirements": [
+      {
+        "id": "sock",
+        "label": "ถุงเท้านุ่มสะอาด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "sock"
+          }
+        ],
+        "why": "ขนาดสวมมือได้หลวมสบาย"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจผ้า",
+        "text": "เลือกถุงเท้าที่ซักสะอาด แห้ง และไม่มีเม็ดทรายหรือชิ้นส่วนแข็ง",
+        "check": "ตะเข็บไม่ขูดพื้นผิว"
+      },
+      {
+        "title": "สวมและลองเช็ด",
+        "text": "สวมถุงเท้าคลุมมือ ลองเช็ดบริเวณซ่อนเล็ก ๆ ด้วยแรงเบา",
+        "check": "ผิวไม่เป็นรอยและสีไม่เปลี่ยน"
+      },
+      {
+        "title": "ปัดฝุ่นจากบนลงล่าง",
+        "text": "เช็ดชั้นที่เอื้อมถึงสบายจากบนลงล่าง กลับด้านสะอาดเมื่อฝุ่นเต็ม แล้วซักและผึ่ง",
+        "check": "ไม่เขย่าฝุ่นเข้าหน้า และล้างมือหลังใช้"
+      }
+    ],
+    "learning": ["แรงเสียดทานกับฝุ่น", "ใช้ผ้าเดิมซ้ำ"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ไม่ใช้เช็ดเครื่องใช้ที่กำลังทำงาน ของร้อน เชื้อรา หรือฝุ่นอันตราย ไม่ปีนเก้าอี้เพื่อเอื้อม",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกพื้นผิวที่ลองและว่ามีรอยหรือเส้นใยตกค้างหรือไม่"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "ถุงเท้าเก่า ถุงมือปัดฝุ่น",
+      "en": "DIY old sock dusting mitt"
+    }
+  },
+  {
+    "id": "lint-roller",
+    "title": "ลูกกลิ้งเก็บขุยแบบชั่วคราว",
+    "description": "เก็บเส้นผมหรือขุยจากเสื้อด้วยแกนกระดาษและเทป",
+    "category": "cleaning",
+    "level": 1,
+    "minutes": 10,
+    "interest": "cleaning",
+    "icon": "roller",
+    "requirements": [
+      {
+        "id": "tube",
+        "label": "แกนกระดาษแข็ง",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tube"
+          }
+        ],
+        "why": "แกนต้องไม่ยุบเมื่อกดเบา ๆ"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "เลือกเทป",
+        "text": "ใช้เทปกาวอ่อนที่ลอกออกง่าย หลีกเลี่ยงเทปกาวแรงสูง",
+        "check": "ทดสอบเทปกับมุมผ้าที่ซ่อนได้ก่อน"
+      },
+      {
+        "title": "พันด้านกาวออก",
+        "text": "พันเทปรอบกลางแกนโดยให้ด้านกาวออกด้านนอก ทับปลายให้ยึดกัน เว้นหัวท้ายไว้จับ",
+        "check": "เทปไม่หลุดคลายเมื่อหมุน"
+      },
+      {
+        "title": "กลิ้งเบา ๆ แล้วทิ้งเทป",
+        "text": "กลิ้งด้วยแรงเบาบนผ้าที่ผ่านการทดสอบ เปลี่ยนเทปเมื่อเต็ม แล้วทิ้งเทปใช้แล้วในขยะทั่วไป",
+        "check": "ไม่มีคราบกาวหรือเส้นใยถูกดึงออก"
+      }
+    ],
+    "learning": ["การยึดติดของกาว", "ประเมินข้อดีและขยะที่เกิด"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ไม่ใช้กับผ้าไหม หนัง ผ้าบอบบาง สัตว์เลี้ยง หรือผิวหนัง วิธีนี้ยังใช้เทปสิ้นเปลือง",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกว่าลูกกลิ้งเก็บขุยได้หรือทิ้งคราบบนผ้าทดสอบหรือไม่"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "ลูกกลิ้งเก็บขน เทป แกนกระดาษ",
+      "en": "DIY tape cardboard tube lint roller"
+    }
+  },
+  {
+    "id": "sew-button",
+    "title": "เย็บกระดุมให้เสื้อกลับมาใช้ได้",
+    "description": "ซ่อมกระดุมเสื้อแบบมีรู ด้วยเข็มและด้ายที่บ้าน",
+    "category": "repair",
+    "level": 1,
+    "minutes": 20,
+    "interest": "repair",
+    "icon": "button",
+    "requirements": [
+      {
+        "id": "sewing-button",
+        "label": "กระดุมแบน 2 หรือ 4 รู",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "sewing-button"
+          }
+        ],
+        "why": "ขนาดลอดรังดุมเดิมได้พอดี"
+      },
+      {
+        "id": "needle",
+        "label": "เข็มเย็บผ้า",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "needle"
+          }
+        ],
+        "why": "ลอดรูกระดุมได้"
+      },
+      {
+        "id": "thread",
+        "label": "ด้ายประมาณ 50 ซม.",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "thread"
+          }
+        ],
+        "why": "เลือกด้ายที่ไม่เปื่อย"
+      },
+      {
+        "id": "fabric",
+        "label": "ชิ้นผ้าหรือเสื้อที่จะซ่อม",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "fabric"
+          },
+          {
+            "materialId": "tshirt"
+          }
+        ],
+        "why": "บริเวณเย็บต้องไม่ขาดยุ่ย"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "หาตำแหน่งและร้อยด้าย",
+        "text": "เทียบกระดุมกับรังดุม ร้อยด้ายผ่านเข็มแล้วผูกปมที่ปลาย",
+        "check": "ตำแหน่งเดิมไม่เปื่อยหรือฉีก",
+        "safety": "เก็บเข็มและกระดุมให้พ้นเด็กเล็ก นับเข็มก่อนและหลังทำ"
+      },
+      {
+        "title": "เย็บผ่านรู",
+        "text": "ดันเข็มจากด้านหลังผ้าผ่านรูกระดุม แล้วกลับลงรูข้างกัน ทำซ้ำประมาณ 5–6 รอบ สำหรับ 4 รู ทำคู่ที่สองด้วย",
+        "check": "เว้นระยะเล็กน้อยใต้กระดุมให้ผ้ารังดุมสอดได้"
+      },
+      {
+        "title": "มัดด้ายด้านหลัง",
+        "text": "แทงเข็มไปด้านหลัง สอดใต้ฝีเข็มเดิมให้เกิดห่วง แล้วผ่านเข็มในห่วงเพื่อผูกปม ทำซ้ำก่อนตัดด้าย",
+        "check": "ปมไม่คลายเมื่อดึงเบา ๆ"
+      },
+      {
+        "title": "ลองติดและปลด",
+        "text": "ลองติดและปลดกระดุม 5 ครั้ง แล้วเก็บเข็มเข้าที่",
+        "check": "กระดุมไม่หลุดและผ้าไม่รั้ง"
+      }
+    ],
+    "learning": ["ทักษะซ่อมเสื้อผ้า", "แรงดึงและการยึด"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "สำหรับกระดุมทั่วไป ไม่ใช่อุปกรณ์นิรภัย ผ้าที่ขาดรอบจุดเย็บต้องซ่อมก่อน",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกผลการติดและปลดกระดุม 5 ครั้ง"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "เย็บกระดุม 4 รู มือใหม่",
+      "en": "how to sew a flat button beginner tutorial"
+    }
+  },
+  {
+    "id": "fabric-patch",
+    "title": "ปะรอยขาดเล็กบนผ้า",
+    "description": "ซ่อมถุงผ้าหรือเสื้อที่มีรอยขาดเล็กด้วยเศษผ้า",
+    "category": "repair",
+    "level": 1,
+    "minutes": 30,
+    "interest": "repair",
+    "icon": "patch",
+    "requirements": [
+      {
+        "id": "fabric",
+        "label": "ผ้าที่จะซ่อมและเศษผ้าปะ",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "fabric"
+          }
+        ],
+        "why": "ผ้าปะยื่นเลยรอยขาดอย่างน้อยด้านละ 2 ซม."
+      },
+      {
+        "id": "needle",
+        "label": "เข็มเย็บผ้า",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "needle"
+          }
+        ],
+        "why": "เลือกขนาดที่ผ่านผ้าได้โดยไม่ฝืน"
+      },
+      {
+        "id": "thread",
+        "label": "ด้ายเย็บผ้า",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "thread"
+          }
+        ],
+        "why": "เผื่อพอเย็บรอบแผ่นปะ"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      }
+    ],
+    "steps": [
+      {
+        "title": "วัดรอยขาด",
+        "text": "วางผ้าราบ วัดบริเวณขาดและตัดแผ่นปะให้ใหญ่กว่าด้านละอย่างน้อย 2 ซม.",
+        "check": "ผ้ารอบรอยขาดยังแข็งแรง"
+      },
+      {
+        "title": "พับขอบแผ่นปะ",
+        "text": "พับขอบแผ่นปะเข้าด้านในประมาณ 5 มม. วางทับรอยขาดให้เรียบ",
+        "check": "ขอบที่ตัดถูกพับเก็บ"
+      },
+      {
+        "title": "เย็บรอบด้วยฝีเข็มสั้น",
+        "text": "ร้อยด้ายผูกปม เย็บขึ้นลงผ่านทั้งสองชั้น ห่างขอบประมาณ 3 มม. ใช้ฝีเข็มสั้นสม่ำเสมอ แล้วผูกปมด้านหลัง",
+        "check": "ทุกด้านติดแน่น ไม่มีเข็มค้างในผ้า",
+        "safety": "เด็กควรมีผู้ใหญ่ดูแลการใช้เข็ม ไม่ใช้เข็มที่เป็นสนิม"
+      },
+      {
+        "title": "ลองดึงเบา ๆ",
+        "text": "ดึงผ้าเบา ๆ รอบแผ่นปะ ถ้าขอบเปิดให้เย็บซ้ำบริเวณนั้น",
+        "check": "ไม่มีช่องเปิดหรือฝีเข็มดึงจนผ้าย่น"
+      }
+    ],
+    "learning": ["ยืดอายุของใช้", "กระจายแรงรอบรอยขาด"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ไม่ใช้ซ่อมสายรับน้ำหนัก อุปกรณ์ป้องกัน หรือรอยขาดใหญ่",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกขนาดรอยขาดและตรวจรอยเย็บหลังใช้งานเบา ๆ"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "ปะผ้าด้วยมือ มือใหม่",
+      "en": "hand sew simple fabric patch repair tutorial"
+    }
+  },
+  {
+    "id": "zipper-pull",
+    "title": "ห่วงดึงซิปจากเชือกรองเท้า",
+    "description": "จับซิปได้สะดวกขึ้นเมื่อห่วงดึงหาย แต่ตัวซิปยังทำงาน",
+    "category": "repair",
+    "level": 1,
+    "minutes": 10,
+    "interest": "repair",
+    "icon": "zipper",
+    "requirements": [
+      {
+        "id": "shoelace",
+        "label": "เชือกเส้นเล็กยาวประมาณ 15 ซม.",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "shoelace"
+          },
+          {
+            "materialId": "string"
+          }
+        ],
+        "why": "ต้องลอดรูตัวเลื่อนซิปได้โดยไม่ฝืน"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "zippered-item",
+        "label": "กระเป๋าหรือเสื้อที่ห่วงดึงซิปหาย",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "zippered-item"
+          }
+        ],
+        "why": "ตัวเลื่อนและฟันซิปต้องสมบูรณ์"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจตัวเลื่อน",
+        "text": "เลือกซิปที่ฟันครบ ตัวเลื่อนยังทำงาน และมีรูห่วงดึงเดิมอยู่",
+        "check": "ปัญหามีเพียงห่วงดึงที่หาย"
+      },
+      {
+        "title": "สอดห่วงเชือก",
+        "text": "พับเชือกครึ่งหนึ่ง สอดส่วนพับผ่านรูตัวเลื่อน แล้วลอดปลายทั้งสองผ่านห่วง",
+        "check": "เชือกไม่เข้าไปในแนวฟันซิป"
+      },
+      {
+        "title": "ผูกและตัดปลาย",
+        "text": "ดึงให้กระชับ ผูกปลายทั้งสองรวมกันเป็นปม ลองเปิดปิดช้า ๆ 5 ครั้ง แล้วตัดปลายให้สั้นพอดี",
+        "check": "ปมไม่คลายและซิปไม่ติด"
+      }
+    ],
+    "learning": ["ปมเชือกและการยึด", "วินิจฉัยส่วนที่เสีย"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ใช้กับกระเป๋าทั่วไป ไม่ซ่อมฟันซิปหรือตัวเลื่อนที่พัง และไม่ใช้กับอุปกรณ์นิรภัย",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "นับจำนวนครั้งที่เปิดปิดได้โดยเชือกไม่หลุด"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "ห่วงดึงซิป เชือก วิธีทำ",
+      "en": "replace zipper pull with cord tutorial"
+    }
+  },
+  {
+    "id": "tshirt-tote",
+    "title": "ถุงผ้าจากเสื้อยืด ไม่ต้องเย็บ",
+    "description": "เปลี่ยนเสื้อยืดที่ไม่ได้ใส่เป็นถุงสำหรับของเบา",
+    "category": "craft",
+    "level": 1,
+    "minutes": 30,
+    "interest": "craft",
+    "icon": "tote",
+    "requirements": [
+      {
+        "id": "tshirt",
+        "label": "เสื้อยืดผ้าถักที่ไม่เปื่อย",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tshirt"
+          }
+        ],
+        "why": "ซักสะอาด ไม่มีรอยขาดในส่วนตัวเสื้อ"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      },
+      {
+        "id": "pencil",
+        "label": "ดินสอ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pencil"
+          }
+        ],
+        "why": "ทำเครื่องหมายก่อนตัด"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ทำหูหิ้ว",
+        "text": "วางเสื้อราบ ตัดแขนออกตามตะเข็บแขน ขยายคอเสื้อเป็นรูป U โดยเหลือส่วนไหล่กว้างอย่างน้อย 5 ซม.",
+        "check": "หูหิ้วทั้งสองด้านกว้างและไม่ขาด",
+        "safety": "ให้ผู้ใหญ่ช่วยตัดวัสดุหนา ตัดออกจากมือ และเก็บเศษเล็กให้พ้นเด็กเล็ก"
+      },
+      {
+        "title": "ทำชายเป็นเส้น",
+        "text": "กลับเสื้อด้านในออก ตัดชายล่างออก ทำแถบกว้างประมาณ 2 ซม. ลึก 8 ซม. ตลอดขอบล่างทั้งสองชั้น",
+        "check": "แถบด้านหน้าและหลังตรงกัน"
+      },
+      {
+        "title": "ผูกก้นถุง",
+        "text": "ผูกแถบคู่หน้า–หลังเป็นปมสองชั้นทุกคู่ แล้วผูกปลายจากคู่ข้างกันเพื่อปิดช่องว่าง",
+        "check": "ไม่มีช่องให้ของเล็กหลุด"
+      },
+      {
+        "title": "กลับด้านและลองของเบา",
+        "text": "กลับด้านให้ปมอยู่ข้างใน ใส่ของเบาแล้วลองยกเหนือพื้นต่ำ ๆ",
+        "check": "ปมไม่คลายและหูหิ้วไม่ยืดมาก"
+      }
+    ],
+    "learning": ["การใช้ปมแทนตะเข็บ", "ทดสอบก่อนใช้งาน"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ใช้ใส่ของเบา ไม่ใช้กับของแหลม ของหนัก หรือเด็กเล็ก ไม่มีการรับรองน้ำหนัก",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกชนิดของเบาที่ใส่และตรวจปมหลังยก 5 ครั้ง"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "ถุงผ้าเสื้อยืด ไม่ต้องเย็บ",
+      "en": "no sew t shirt tote bag knotted bottom tutorial"
+    }
+  },
+  {
+    "id": "cereal-gift-bag",
+    "title": "กล่องของขวัญจากกล่องซีเรียล",
+    "description": "ห่อของขวัญชิ้นเบาด้วยกล่องที่มีอยู่แล้ว",
+    "category": "craft",
+    "level": 1,
+    "minutes": 20,
+    "interest": "craft",
+    "icon": "gift",
+    "requirements": [
+      {
+        "id": "cereal-box",
+        "label": "กล่องซีเรียลสะอาด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "cereal-box"
+          }
+        ],
+        "why": "ไม่มีคราบมันหรือกลิ่นอาหาร"
+      },
+      {
+        "id": "paper",
+        "label": "กระดาษใช้แล้วหรือหน้านิตยสาร 2 แผ่น",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "paper"
+          },
+          {
+            "materialId": "magazine"
+          }
+        ],
+        "why": "พอปิดด้านนอกกล่อง"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      },
+      {
+        "id": "marker",
+        "label": "ปากกามาร์กเกอร์",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "marker"
+          }
+        ],
+        "why": "เขียนป้ายหรือทำเครื่องหมาย"
+      }
+    ],
+    "steps": [
+      {
+        "title": "เลือกขนาดพอดี",
+        "text": "ลองใส่ของขวัญในกล่องก่อนห่อ เลือกกล่องไม่ยุบและปิดฝาได้",
+        "check": "ของไม่ดันข้างกล่อง"
+      },
+      {
+        "title": "หุ้มผิวกล่อง",
+        "text": "ตัดกระดาษให้หุ้มแต่ละด้าน พับขอบส่วนเกินเข้าด้านใน ติดเทปตามมุม",
+        "check": "ไม่ปิดรอยพับของฝา",
+        "safety": "ให้ผู้ใหญ่ช่วยตัดวัสดุหนา ตัดออกจากมือ และเก็บเศษเล็กให้พ้นเด็กเล็ก"
+      },
+      {
+        "title": "เขียนข้อความและปิด",
+        "text": "เขียนข้อความบนกระดาษส่วนที่ว่าง ใส่ของแล้วพับปิดฝา ติดเทปเพียงพอให้แกะง่าย",
+        "check": "เปิดได้โดยไม่ต้องใช้ของมีคม"
+      }
+    ],
+    "learning": ["ออกแบบบรรจุภัณฑ์", "ใช้กระดาษซ้ำ"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "สำหรับของแห้งเบา ไม่บรรจุอาหารสัมผัสกล่องโดยตรง",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "ลองถือจากก้นกล่องและวางลง 5 ครั้ง ดูว่ารอยต่อเปิดหรือไม่"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "กล่องซีเรียล กล่องของขวัญ DIY",
+      "en": "cereal box gift packaging reuse tutorial"
+    }
+  },
+  {
+    "id": "woven-coaster",
+    "title": "ที่รองแก้วจากกระดาษสาน",
+    "description": "ฝึกสานกระดาษเก่าเป็นที่รองแก้วสำหรับแก้วแห้ง",
+    "category": "craft",
+    "level": 1,
+    "minutes": 25,
+    "interest": "craft",
+    "icon": "coaster",
+    "requirements": [
+      {
+        "id": "paper",
+        "label": "กระดาษหรือหน้านิตยสาร 2 แผ่น",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "paper"
+          },
+          {
+            "materialId": "magazine"
+          }
+        ],
+        "why": "กระดาษไม่เปื่อยหรือชื้น"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      },
+      {
+        "id": "pencil",
+        "label": "ดินสอ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pencil"
+          }
+        ],
+        "why": "ทำเครื่องหมายก่อนตัด"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ทำแถบกระดาษ",
+        "text": "ตัดแถบกว้าง 4 ซม. ยาวประมาณ 18 ซม. อย่างน้อย 10 แถบ พับตามยาวเป็นแถบกว้าง 1 ซม.",
+        "check": "แถบมีความกว้างใกล้กัน"
+      },
+      {
+        "title": "ตั้งแนวแรก",
+        "text": "เรียง 5 แถบชิดกัน ติดเทปยึดปลายด้านหนึ่งบนโต๊ะที่เทปไม่ทำลายผิว",
+        "check": "แถบขนานกัน"
+      },
+      {
+        "title": "สานสลับขึ้นลง",
+        "text": "สอดอีก 5 แถบสลับบน–ล่าง เปลี่ยนลำดับในแถวถัดไป ดันให้แน่นเป็นสี่เหลี่ยม",
+        "check": "ลายสานขัดกันทุกแถว"
+      },
+      {
+        "title": "พับเก็บและทดสอบ",
+        "text": "พับปลายส่วนเกินไปด้านหลังแล้วติดเทป วางแก้วเปล่าแห้งบนแผ่นสาน",
+        "check": "ฐานแก้ววางราบ ไม่โยก"
+      }
+    ],
+    "learning": ["รูปแบบซ้ำในการสาน", "ความแข็งแรงของวัสดุพับ"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ไม่กันน้ำ ไม่ใช้รองหม้อหรือแก้วร้อน หากเปียกให้ผึ่งหรือนำไปกำจัดอย่างเหมาะสม",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "ลองแก้วเปล่า 2 ขนาด บันทึกว่าขนาดใดวางได้มั่นคง"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "สานกระดาษ ที่รองแก้ว",
+      "en": "woven paper coaster beginner tutorial"
+    }
+  },
+  {
+    "id": "bottle-planter",
+    "title": "กระถางให้น้ำด้วยเชือกจากขวด",
+    "description": "ทดลองให้เชือกพาน้ำขึ้นสู่ดินในกระถางขนาดเล็ก",
+    "category": "gardening",
+    "level": 1,
+    "minutes": 35,
+    "interest": "gardening",
+    "icon": "planter",
+    "requirements": [
+      {
+        "id": "bottle",
+        "label": "ขวดพลาสติก 1–1.5 ลิตรพร้อมฝา",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "bottle",
+            "specs": {
+              "cap": ["yes"],
+              "capacity": ["1–1.5 L"]
+            }
+          }
+        ],
+        "why": "ขวดอาหารหรือเครื่องดื่มที่ล้างสะอาด"
+      },
+      {
+        "id": "cotton-string",
+        "label": "เชือกฝ้ายประมาณ 30 ซม.",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "cotton-string"
+          }
+        ],
+        "why": "เชือกต้องดูดน้ำได้"
+      },
+      {
+        "id": "soil",
+        "label": "ดินปลูกประมาณ 300–500 มล.",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "soil"
+          }
+        ],
+        "why": "พอใส่ส่วนบนของขวดโดยไม่อัดแน่น"
+      },
+      {
+        "id": "plant",
+        "label": "ต้นกล้าขนาดเล็ก",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "plant"
+          }
+        ],
+        "why": "เลือกพืชที่ชอบดินชื้นแต่ไม่แฉะ"
+      },
+      {
+        "id": "water",
+        "label": "น้ำสะอาดสำหรับถังล่าง",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "water"
+          }
+        ],
+        "why": "ระดับน้ำต้องต่ำกว่าคอขวดที่คว่ำ"
+      },
+      {
+        "id": "awl",
+        "label": "เหล็กแหลมเจาะรู ใช้โดยผู้ใหญ่",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "awl"
+          }
+        ],
+        "why": "เจาะฝาบนฐานมั่นคง ไม่ใช้ความร้อน"
+      },
+      {
+        "id": "wood",
+        "label": "ไม้รองเจาะที่มั่นคง",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "wood"
+          }
+        ],
+        "why": "รองฝาขณะเจาะให้ห่างจากมือ"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "marker",
+        "label": "ปากกามาร์กเกอร์",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "marker"
+          }
+        ],
+        "why": "เขียนป้ายหรือทำเครื่องหมาย"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      },
+      {
+        "id": "fine-mesh",
+        "label": "ตาข่ายกันแมลงละเอียด ช่องไม่เกิน 1 มม.",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "fine-mesh",
+            "specs": {
+              "opening": ["1 mm or less"]
+            }
+          }
+        ],
+        "why": "พอปิดช่องเปิดถังน้ำทั้งหมดโดยไม่เว้นช่องให้ยุงเข้า"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ให้ผู้ใหญ่เตรียมขวด",
+        "text": "ทำแนวตัดประมาณกึ่งกลางขวด ให้ผู้ใหญ่เจาะจุดเริ่มและตัดแยกสองส่วน ปิดขอบตัดด้วยเทป",
+        "check": "ส่วนบนคว่ำลงในส่วนล่างแล้วตั้งได้",
+        "safety": "ขวดลื่นและขอบอาจคม ให้ผู้ใหญ่ตัดและเจาะ ห้ามใช้ไฟลน"
+      },
+      {
+        "title": "ใส่ไส้เชือก",
+        "text": "ให้ผู้ใหญ่เจาะรูฝาพอดีเชือก ร้อยเชือกให้ยาวอยู่ทั้งสองด้าน หมุนฝาคืน แล้วคว่ำส่วนบน",
+        "check": "ปลายล่างแตะก้นถัง ส่วนบนยาวถึงบริเวณราก"
+      },
+      {
+        "title": "เติมดินและต้นกล้า",
+        "text": "ชุบเชือกให้เปียก เติมดินชื้นรอบเชือก วางต้นกล้าแล้วเติมดินเบา ๆ",
+        "check": "ไม่อัดดินแน่นและรากไม่ช้ำ"
+      },
+      {
+        "title": "เติมน้ำและเฝ้าดู",
+        "text": "เติมน้ำถังล่างให้เชือกจุ่มแต่ระดับต่ำกว่าคอขวด ปิดช่องเปิดรอบถังด้วยตาข่ายละเอียดและเทปให้แน่น ตรวจดินและรอยปิดทุกวัน เติมน้ำเมื่อจำเป็น เทน้ำและล้างถังทุก 2–3 วันแล้วปิดกลับ",
+        "check": "ดินชื้นไม่แฉะ ตาข่ายไม่ขาดและปิดช่องน้ำทั้งหมด หากปิดไม่สนิทให้เทน้ำและหยุดใช้"
+      }
+    ],
+    "learning": ["การเคลื่อนน้ำด้วยแรงแคปิลลารี", "สังเกตความต้องการน้ำของพืช"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "เป็นแบบทดลอง ไม่รับประกันให้น้ำเองได้หลายวัน อย่าทิ้งโดยไม่ดูแล หากดินแฉะให้ปรับหรือหยุดใช้",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกระดับน้ำและความชื้นดินเวลาเดิมทุกวัน โดยไม่เดาปริมาณน้ำที่พืชใช้"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "กระถางขวด เชือกฝ้าย ให้น้ำ",
+      "en": "plastic bottle cotton wick self watering planter tutorial"
+    }
+  },
+  {
+    "id": "seed-pots",
+    "title": "กระถางเพาะจากแกนกระดาษ",
+    "description": "เพาะเมล็ดในภาชนะเล็กจากแกนกระดาษและถาดเก่า",
+    "category": "gardening",
+    "level": 1,
+    "minutes": 20,
+    "interest": "gardening",
+    "icon": "seedpots",
+    "requirements": [
+      {
+        "id": "tube",
+        "label": "แกนกระดาษ 3 แกน",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "tube"
+          }
+        ],
+        "why": "สะอาด ไม่มีชั้นพลาสติก"
+      },
+      {
+        "id": "tray",
+        "label": "ถาดหรือกล่องรอง",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tray"
+          },
+          {
+            "materialId": "tub"
+          }
+        ],
+        "why": "รองกระถางตั้งตรงและรับน้ำส่วนเกิน"
+      },
+      {
+        "id": "soil",
+        "label": "ดินเพาะประมาณ 300 มล.",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "soil"
+          }
+        ],
+        "why": "พอสำหรับสามแกนเล็ก"
+      },
+      {
+        "id": "seed",
+        "label": "เมล็ดพันธุ์ 1 ชุด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "seed"
+          }
+        ],
+        "why": "อ่านความลึกและสภาพปลูกบนซอง"
+      },
+      {
+        "id": "water",
+        "label": "น้ำสำหรับทำดินให้ชื้น",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "water"
+          }
+        ],
+        "why": "เติมทีละน้อย"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "marker",
+        "label": "ปากกามาร์กเกอร์",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "marker"
+          }
+        ],
+        "why": "เขียนป้ายหรือทำเครื่องหมาย"
+      }
+    ],
+    "steps": [
+      {
+        "title": "พับก้นกระถาง",
+        "text": "บากปลายแกน 4 แนวลึกประมาณ 2 ซม. พับแฉกซ้อนกันเป็นก้น วางบนถาด",
+        "check": "แกนตั้งได้เมื่ออยู่ชิดกัน"
+      },
+      {
+        "title": "เติมดินชื้น",
+        "text": "เติมดินเพาะที่ชื้นแต่ไม่แฉะ เหลือขอบด้านบน 1 ซม. เขียนชื่อเมล็ดบนแกน",
+        "check": "ดินไม่อัดแน่น"
+      },
+      {
+        "title": "หยอดเมล็ด",
+        "text": "หยอดเมล็ดตามความลึกและจำนวนที่ซองระบุ กลบบาง ๆ ตามคำแนะนำ",
+        "check": "เมล็ดแต่ละชนิดมีป้ายถูกต้อง"
+      },
+      {
+        "title": "ดูแลและย้ายปลูก",
+        "text": "วางตามแสงที่เมล็ดต้องการ เติมน้ำทีละน้อย เทน้ำขังในถาด และย้ายกล้าเมื่อรากเต็มแกน",
+        "check": "ตรวจทุกวัน หากมีราหรือกล้าเน่าให้แยกทิ้ง"
+      }
+    ],
+    "learning": ["การงอกและตัวแปรแวดล้อม", "บันทึกต่อเนื่อง"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "กระดาษเปื่อยเมื่อชื้น ต้องมีถาดรองและดูแล ไม่ใช้วัสดุมีรา",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกวันที่เพาะ วันงอก และจำนวนเมล็ดที่งอกจริง"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "แกนทิชชู กระถางเพาะเมล็ด",
+      "en": "cardboard tube seed starting pots tutorial"
+    }
+  },
+  {
+    "id": "propagation-jar",
+    "title": "โหลสังเกตรากพืช",
+    "description": "ดูรากค่อย ๆ เติบโตในโหลใส พร้อมบันทึกการเปลี่ยนแปลง",
+    "category": "gardening",
+    "level": 1,
+    "minutes": 15,
+    "interest": "gardening",
+    "icon": "propagation",
+    "requirements": [
+      {
+        "id": "jar",
+        "label": "โหลแก้วสมบูรณ์",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "jar"
+          }
+        ],
+        "why": "ล้างสะอาดและตั้งได้มั่นคง"
+      },
+      {
+        "id": "cutting",
+        "label": "กิ่งพืชที่ปักชำในน้ำได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "cutting"
+          }
+        ],
+        "why": "เช่น พลูด่างที่มีข้อ รับจากผู้ดูแลต้นไม้"
+      },
+      {
+        "id": "water",
+        "label": "น้ำสะอาด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "water"
+          }
+        ],
+        "why": "พอท่วมข้อโดยไม่จุ่มใบ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      }
+    ],
+    "steps": [
+      {
+        "title": "เลือกกิ่งที่เหมาะ",
+        "text": "เลือกกิ่งที่เจ้าของพืชเตรียมให้และมีข้ออย่างน้อยหนึ่งข้อ ศึกษาว่าพืชนั้นปักชำในน้ำได้",
+        "check": "รู้ชื่อพืชและข้อควรระวังของพืชนั้น",
+        "safety": "พลูด่างเป็นพิษเมื่อกิน เก็บพ้นเด็กและสัตว์เลี้ยง ล้างมือหลังจับ"
+      },
+      {
+        "title": "วางข้อในน้ำ",
+        "text": "เติมน้ำแล้ววางกิ่งให้ข้ออยู่ใต้น้ำ ใบทั้งหมดอยู่เหนือน้ำ",
+        "check": "ไม่มีใบจมน้ำ"
+      },
+      {
+        "title": "ตั้งในแสงทางอ้อม",
+        "text": "ตั้งโหลบนพื้นมั่นคงที่รับแสงทางอ้อม ห่างขอบ หน้าต่างแดดจัด และอุปกรณ์ไฟฟ้า",
+        "check": "โหลไม่ร้อนและไม่เสี่ยงหกใส่อุปกรณ์"
+      },
+      {
+        "title": "เปลี่ยนน้ำและบันทึก",
+        "text": "ตรวจทุกวัน เปลี่ยนน้ำเมื่อขุ่นและอย่างสม่ำเสมอ ล้างโหลเมื่อมีคราบ วัดรากเบา ๆ สัปดาห์ละครั้ง",
+        "check": "ไม่สรุปว่าทุกกิ่งต้องออกราก กิ่งเน่าควรนำออก"
+      }
+    ],
+    "learning": ["โครงสร้างข้อและราก", "การสังเกตตามเวลา"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ไม่ใช่พืชทุกชนิดที่เหมาะกับการปักชำในน้ำ น้ำในโหลห้ามดื่ม",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "วัดความยาวรากเป็นซม. ทุกสัปดาห์ พร้อมวันที่และชนิดพืช"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "ปักชำพลูด่างในน้ำ ดูราก",
+      "en": "pothos water propagation node beginner tutorial"
+    }
+  },
+  {
+    "id": "plant-labels",
+    "title": "ป้ายชื่อกระถางจากไม้ไอศกรีม",
+    "description": "จำชื่อพืชและวันเพาะได้ง่ายด้วยไม้ที่เก็บไว้",
+    "category": "gardening",
+    "level": 1,
+    "minutes": 10,
+    "interest": "gardening",
+    "icon": "labels",
+    "requirements": [
+      {
+        "id": "stick",
+        "label": "ไม้ไอศกรีมสะอาด 5 อัน",
+        "quantity": 5,
+        "choices": [
+          {
+            "materialId": "stick"
+          }
+        ],
+        "why": "แห้งและไม่มีเสี้ยน"
+      },
+      {
+        "id": "marker",
+        "label": "ปากกามาร์กเกอร์",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "marker"
+          }
+        ],
+        "why": "เขียนป้ายหรือทำเครื่องหมาย"
+      }
+    ],
+    "steps": [
+      {
+        "title": "เลือกไม้เรียบ",
+        "text": "ล้างและทำให้ไม้แห้ง ทิ้งชิ้นที่มีเสี้ยน แตก หรือขึ้นรา",
+        "check": "จับขอบแล้วไม่บาดมือ"
+      },
+      {
+        "title": "เขียนข้อมูลสั้น ๆ",
+        "text": "เขียนชื่อพืชและวันเพาะที่ครึ่งบนของไม้ เว้นครึ่งล่างสำหรับปัก",
+        "check": "อ่านข้อความได้เมื่อปักลงดิน"
+      },
+      {
+        "title": "ปักห่างจากราก",
+        "text": "ปักใกล้ขอบกระถางอย่างเบามือ ถ้าติดรากให้เปลี่ยนตำแหน่ง",
+        "check": "ป้ายไม่บังต้นและไม่เจาะราก"
+      }
+    ],
+    "learning": ["การระบุและติดตามตัวอย่าง", "ออกแบบข้อความให้อ่านง่าย"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "ไม้และหมึกอาจเสื่อมเมื่อเปียก ตรวจและเปลี่ยนป้ายเมื่อจำเป็น",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "ตรวจว่าป้ายยังอ่านได้หลังดูแลต้นไม้หนึ่งสัปดาห์"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "ป้ายต้นไม้ ไม้ไอศกรีม",
+      "en": "popsicle stick plant labels DIY"
+    }
+  },
+  {
+    "id": "marble-maze",
+    "title": "เขาวงกตลูกแก้วในกล่อง",
+    "description": "ออกแบบเส้นทางแล้วใช้การเอียงกล่องพาลูกแก้วถึงเป้าหมาย",
+    "category": "science",
+    "level": 1,
+    "minutes": 35,
+    "interest": "science",
+    "icon": "maze",
+    "requirements": [
+      {
+        "id": "box",
+        "label": "กล่องรองเท้าหรือฝากล่องลึก",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "box"
+          }
+        ],
+        "why": "มีขอบรอบด้านกันลูกแก้วหลุด"
+      },
+      {
+        "id": "cardboard",
+        "label": "กระดาษแข็งสำหรับกำแพง",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "cardboard"
+          }
+        ],
+        "why": "ตัดเป็นแถบสูงประมาณ 2 ซม."
+      },
+      {
+        "id": "marble",
+        "label": "ลูกแก้ว 1 ลูก",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "marble"
+          }
+        ],
+        "why": "ขนาดใหญ่พอเห็นง่าย ไม่มีรอยแตก"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "pencil",
+        "label": "ดินสอ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pencil"
+          }
+        ],
+        "why": "ทำเครื่องหมายก่อนตัด"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ร่างเส้นทาง",
+        "text": "วัดเส้นผ่านศูนย์กลางลูกแก้ว วาดเส้นทางในกล่องให้กว้างกว่าลูกแก้วอย่างน้อย 5 มม.",
+        "check": "มีเส้นทางจากเริ่มถึงจบจริง"
+      },
+      {
+        "title": "ทำกำแพง",
+        "text": "ตัดแถบกระดาษสูงประมาณ 2 ซม. พับตีนเล็ก ๆ ด้านล่างเพื่อติดเทป",
+        "check": "กำแพงสูงกว่ารัศมีลูกแก้ว",
+        "safety": "ให้ผู้ใหญ่ช่วยตัดวัสดุหนา ตัดออกจากมือ และเก็บเศษเล็กให้พ้นเด็กเล็ก"
+      },
+      {
+        "title": "ติดและทดลองเส้นทาง",
+        "text": "ติดกำแพงตามแบบ ใส่ลูกแก้วแล้วใช้มือเอียงกล่องช้า ๆ",
+        "check": "ไม่มีช่องติดตายที่ไม่ได้ตั้งใจ",
+        "safety": "ลูกแก้วเป็นอันตรายต่อเด็กเล็ก เก็บให้พ้นปากและนับคืนหลังเล่น"
+      },
+      {
+        "title": "ปรับความยาก",
+        "text": "ปรับกำแพงหนึ่งตำแหน่งแล้วลอง 5 รอบ นับว่าถึงเป้าหมายกี่ครั้ง",
+        "check": "ใช้เส้นทางและกติกาเดียวกันในการเปรียบเทียบ"
+      }
+    ],
+    "learning": ["แรงโน้มถ่วงและความลาดเอียง", "ออกแบบและปรับปรุง"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "สำหรับเด็กที่พ้นวัยหยิบของเข้าปากและมีผู้ดูแล ไม่โยนลูกแก้ว",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกจำนวนครั้งสำเร็จจาก 5 รอบก่อนและหลังปรับกำแพง"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "เขาวงกตลูกแก้ว กล่องรองเท้า",
+      "en": "shoebox cardboard marble maze tutorial"
+    }
+  },
+  {
+    "id": "moving-hand",
+    "title": "มือกระดาษที่ขยับด้วยเชือก",
+    "description": "สำรวจการทำงานคล้ายเอ็นด้วยกระดาษ หลอด และเชือก",
+    "category": "science",
+    "level": 1,
+    "minutes": 40,
+    "interest": "science",
+    "icon": "hand",
+    "requirements": [
+      {
+        "id": "cardboard",
+        "label": "กระดาษแข็งประมาณ A4",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "cardboard"
+          }
+        ],
+        "why": "ต้องพับได้โดยไม่แตก"
+      },
+      {
+        "id": "straw",
+        "label": "หลอดสะอาด 5 อัน",
+        "quantity": 5,
+        "choices": [
+          {
+            "materialId": "straw"
+          }
+        ],
+        "why": "ทำช่องนำเชือกบนนิ้ว"
+      },
+      {
+        "id": "string",
+        "label": "เชือก 5 เส้น ยาวเส้นละ 40 ซม.",
+        "quantity": 5,
+        "choices": [
+          {
+            "materialId": "string"
+          }
+        ],
+        "why": "หนึ่งเส้นต่อนิ้ว"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "เลือกให้เหมาะกับความหนาวัสดุ"
+      },
+      {
+        "id": "pencil",
+        "label": "ดินสอ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pencil"
+          }
+        ],
+        "why": "ทำเครื่องหมายก่อนตัด"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว 1 ม้วน",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "ยึดชิ้นส่วนและปิดขอบ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      }
+    ],
+    "steps": [
+      {
+        "title": "วาดและตัดรูปมือ",
+        "text": "วางมือบนกระดาษ วาดรอบโดยเว้นช่องนิ้วกว้างพอตัด แล้วตัดรูปมือพร้อมข้อมือ",
+        "check": "นิ้วไม่ขาดจากฝ่ามือ",
+        "safety": "ให้ผู้ใหญ่ช่วยตัดวัสดุหนา ตัดออกจากมือ และเก็บเศษเล็กให้พ้นเด็กเล็ก"
+      },
+      {
+        "title": "ทำรอยพับข้อนิ้ว",
+        "text": "ทำรอยพับ 2–3 ตำแหน่งต่อนิ้ว พับเบา ๆ ไปด้านฝ่ามือ",
+        "check": "แต่ละข้อพับกลับไปมาได้"
+      },
+      {
+        "title": "ติดหลอดเว้นข้อ",
+        "text": "ตัดหลอดเป็นท่อนสั้น ติดเทปตามแต่ละปล้องนิ้ว โดยเว้นช่องตรงรอยพับ",
+        "check": "หลอดไม่ขวางรอยพับ"
+      },
+      {
+        "title": "ร้อยเชือกและดึงทีละนิ้ว",
+        "text": "ติดปลายเชือกที่ปลายนิ้วด้านฝ่ามือ ร้อยผ่านหลอดลงมาที่ข้อมือ ทำครบทุกนิ้ว แล้วดึงเชือกทีละเส้น",
+        "check": "ดึงแล้วนิ้วงอได้ ปล่อยแล้วใช้มือช่วยเหยียดกลับ"
+      }
+    ],
+    "learning": ["แรงดึงและการส่งแรง", "แบบจำลองการทำงานของเอ็น"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "เป็นแบบจำลอง ไม่ใช่อวัยวะเทียมหรือหุ่นยนต์อัตโนมัติ ไม่พันเชือกรอบตัว",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "ลอง 5 ครั้งต่อนิ้ว บันทึกจุดที่เชือกติดและสิ่งที่ปรับ"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "มือหุ่นยนต์ กระดาษ หลอด เชือก",
+      "en": "cardboard robotic hand straws string tutorial"
+    }
+  },
+  {
+    "id": "paper-bridge",
+    "title": "สะพานกระดาษพับรับเหรียญ",
+    "description": "เทียบกระดาษแผ่นเรียบกับกระดาษพับ โดยใช้วัสดุเท่ากัน",
+    "category": "science",
+    "level": 1,
+    "minutes": 20,
+    "interest": "science",
+    "icon": "bridge",
+    "requirements": [
+      {
+        "id": "paper",
+        "label": "กระดาษขนาดเดียวกัน 2 แผ่น",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "paper"
+          }
+        ],
+        "why": "กระดาษชนิดและความหนาเดียวกัน"
+      },
+      {
+        "id": "tub",
+        "label": "กล่องอาหารสูงเท่ากัน 2 กล่อง",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "tub"
+          }
+        ],
+        "why": "เป็นฐานรองรับที่มั่นคง"
+      },
+      {
+        "id": "coin",
+        "label": "เหรียญชนิดเดียวกัน 10 เหรียญ",
+        "quantity": 10,
+        "choices": [
+          {
+            "materialId": "coin"
+          }
+        ],
+        "why": "ใช้เปรียบเทียบน้ำหนักทีละเหรียญ"
+      },
+      {
+        "id": "measuring-ruler",
+        "label": "ไม้บรรทัด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "measuring-ruler"
+          }
+        ],
+        "why": "วัดและทำแนวตัด"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตั้งระยะช่วงสะพาน",
+        "text": "วางฐานบนโต๊ะเตี้ยให้ช่องว่างประมาณ 10 ซม. ใช้ไม้บรรทัดตรวจให้คงเดิม",
+        "check": "ฐานสูงเท่ากันและไม่เลื่อนง่าย"
+      },
+      {
+        "title": "ทดสอบแผ่นเรียบ",
+        "text": "วางกระดาษพาดฐาน ให้ปลายซ้อนบนฐานเท่ากัน เติมเหรียญตรงกลางทีละเหรียญ หยุดเมื่อแผ่นยุบ",
+        "check": "จดจำนวนก่อนยุบ ไม่ใช้มือช่วยรับ"
+      },
+      {
+        "title": "พับแบบหีบเพลง",
+        "text": "พับแผ่นที่สองกลับไปกลับมาเป็นแถบกว้างประมาณ 2 ซม. วางให้แนวร่องพาดข้ามช่องว่าง",
+        "check": "ช่วงสะพานและตำแหน่งลงน้ำหนักเท่าครั้งแรก"
+      },
+      {
+        "title": "เทียบและอธิบาย",
+        "text": "เติมเหรียญแบบเดิม ถ้ารับครบ 10 เหรียญให้บันทึกว่าอย่างน้อย 10 ไม่เดาน้ำหนักสูงสุด",
+        "check": "เปรียบเทียบผลที่วัดจริงและระบุจำนวนเหรียญที่มี",
+        "safety": "เก็บเหรียญพ้นเด็กเล็ก ทดลองใกล้พื้น ไม่ใช้รับน้ำหนักคน"
+      }
+    ],
+    "learning": ["รูปทรงมีผลต่อความแข็ง", "การทดลองที่ควบคุมตัวแปร"],
+    "source": {
+      "title": "ReBuild Household Workshop",
+      "url": "https://github.com/gunphupa/work/blob/main/src/data/household-projects.json",
+      "author": "ReBuild",
+      "language": "TH / EN",
+      "checkedAt": "2026-10-02",
+      "inspection": "คู่มือต้นฉบับของ ReBuild จากแนวคิดวัสดุในบ้าน ยังไม่ได้ทดสอบชิ้นงานจริง",
+      "commit": "",
+      "path": "src/data/household-projects.json"
+    },
+    "limitations": "แบบจำลองเพื่อการเรียนรู้ ผลขึ้นกับชนิดกระดาษและระยะ ไม่ใช่แบบก่อสร้างจริง",
+    "test": {
+      "name": "ผลที่สังเกต",
+      "unit": "ครั้ง",
+      "instruction": "บันทึกช่วงสะพาน จำนวนเหรียญก่อนยุบ และรูปแบบการพับสำหรับแต่ละแบบ"
+    },
+    "original": true,
+    "videoQuery": {
+      "th": "สะพานกระดาษพับ ทดลอง เหรียญ",
+      "en": "accordion folded paper bridge coins experiment"
+    }
+  }
+]

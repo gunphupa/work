@@ -95,8 +95,12 @@
     "workers": 1,
     "webServer": {
       "command": "npm start",
-      "url": "http://localhost:3000/api/health",
-      "reuseExistingServer": true,
+      "url": "http://localhost:3001/api/health",
+      "env": {
+        "PORT": "3001",
+        "APP_ORIGIN": "http://localhost:3001"
+      },
+      "reuseExistingServer": false,
       "timeout": 45000
     }
   },
@@ -108,12 +112,12 @@
       "line": 0,
       "specs": [
         {
-          "title": "main screens meet automated WCAG 2 AA checks",
+          "title": "th main screens and guide sections meet automated WCAG 2 AA checks",
           "ok": true,
           "tags": [],
           "tests": [
             {
-              "timeout": 30000,
+              "timeout": 60000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "desktop",
@@ -123,12 +127,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6773,
+                  "duration": 12842,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:07.572Z",
+                  "startTime": "2026-10-02T16:17:51.339Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -136,18 +140,52 @@
               "status": "expected"
             }
           ],
-          "id": "ddd864604af8a6a0198f-7f322511ec5824a14620",
+          "id": "ddd864604af8a6a0198f-2f13d11e30bfafd753c9",
           "file": "accessibility.spec.ts",
-          "line": 3,
-          "column": 1
+          "line": 4,
+          "column": 3
         },
         {
-          "title": "main screens meet automated WCAG 2 AA checks",
+          "title": "en main screens and guide sections meet automated WCAG 2 AA checks",
           "ok": true,
           "tags": [],
           "tests": [
             {
-              "timeout": 30000,
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11283,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:18:05.030Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddd864604af8a6a0198f-6e58af1ec5e5d54841cb",
+          "file": "accessibility.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "th main screens and guide sections meet automated WCAG 2 AA checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "tablet",
@@ -157,12 +195,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6333,
+                  "duration": 12133,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:25.654Z",
+                  "startTime": "2026-10-02T16:18:36.451Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -170,18 +208,52 @@
               "status": "expected"
             }
           ],
-          "id": "ddd864604af8a6a0198f-12777679a63c52d7612f",
+          "id": "ddd864604af8a6a0198f-e7809c92e02823470cf7",
           "file": "accessibility.spec.ts",
-          "line": 3,
-          "column": 1
+          "line": 4,
+          "column": 3
         },
         {
-          "title": "main screens meet automated WCAG 2 AA checks",
+          "title": "en main screens and guide sections meet automated WCAG 2 AA checks",
           "ok": true,
           "tags": [],
           "tests": [
             {
-              "timeout": 30000,
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12082,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:18:49.428Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddd864604af8a6a0198f-54c20085b7cdb97f9f4a",
+          "file": "accessibility.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "th main screens and guide sections meet automated WCAG 2 AA checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "mobile",
@@ -191,12 +263,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5927,
+                  "duration": 11453,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:41.349Z",
+                  "startTime": "2026-10-02T16:19:27.819Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -204,10 +276,44 @@
               "status": "expected"
             }
           ],
-          "id": "ddd864604af8a6a0198f-c109488746d78b905677",
+          "id": "ddd864604af8a6a0198f-552e0b93695cd91542f2",
           "file": "accessibility.spec.ts",
-          "line": 3,
-          "column": 1
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "en main screens and guide sections meet automated WCAG 2 AA checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10952,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:19:40.185Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddd864604af8a6a0198f-083204f103ad311c5315",
+          "file": "accessibility.spec.ts",
+          "line": 4,
+          "column": 3
         }
       ]
     },
@@ -218,7 +324,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "guest inventory, readiness, build notes and export survive refresh",
+          "title": "browse first and read every step with no inventory; save progress without a readiness gate",
           "ok": true,
           "tags": [],
           "tests": [
@@ -233,12 +339,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3394,
+                  "duration": 2704,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:15.235Z",
+                  "startTime": "2026-10-02T16:18:16.367Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -246,13 +352,13 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-3ff09cd9cec6e1de7020",
+          "id": "aa09586c1d16412a1f00-2c310382b3bc99acec50",
           "file": "journeys.spec.ts",
-          "line": 2,
+          "line": 4,
           "column": 1
         },
         {
-          "title": "filters, unavailable photo AI, shopping, data recovery and safe rendering",
+          "title": "search household materials, edit quantities, export and restore a backup",
           "ok": true,
           "tags": [],
           "tests": [
@@ -267,12 +373,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2320,
+                  "duration": 1781,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:18.646Z",
+                  "startTime": "2026-10-02T16:18:19.088Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -280,13 +386,13 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-bf48aaaca736492e43d7",
+          "id": "aa09586c1d16412a1f00-18fa75a6c122f7f991ec",
           "file": "journeys.spec.ts",
-          "line": 74,
+          "line": 60,
           "column": 1
         },
         {
-          "title": "responsive navigation and no horizontal overflow",
+          "title": "bulk household suggestions stay unchecked and custom items remain possible",
           "ok": true,
           "tags": [],
           "tests": [
@@ -301,12 +407,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1351,
+                  "duration": 1428,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:20.984Z",
+                  "startTime": "2026-10-02T16:18:20.881Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -314,13 +420,13 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-5d31620ca532cf0e416a",
+          "id": "aa09586c1d16412a1f00-63fe8323b9977e932c0d",
           "file": "journeys.spec.ts",
-          "line": 134,
+          "line": 102,
           "column": 1
         },
         {
-          "title": "paper project shows craft instructions and no Arduino setup",
+          "title": "Thai and English navigation, search and complete guides persist across refresh",
           "ok": true,
           "tags": [],
           "tests": [
@@ -335,12 +441,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 898,
+                  "duration": 1687,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:22.379Z",
+                  "startTime": "2026-10-02T16:18:22.320Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -348,13 +454,183 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-6bc9cd0f6b0334321193",
+          "id": "aa09586c1d16412a1f00-a64c96f56dc8e94a668f",
           "file": "journeys.spec.ts",
-          "line": 156,
+          "line": 140,
           "column": 1
         },
         {
-          "title": "guest inventory, readiness, build notes and export survive refresh",
+          "title": "optional inventory filters do not block guide access and material alternatives are visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1888,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:18:24.021Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-1a07007b8beb344f3cae",
+          "file": "journeys.spec.ts",
+          "line": 173,
+          "column": 1
+        },
+        {
+          "title": "tutorials distinguish a NASA video from searches, and Arduino wiring remains available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1041,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:18:25.929Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-9d179a7e60cea33808d5",
+          "file": "journeys.spec.ts",
+          "line": 212,
+          "column": 1
+        },
+        {
+          "title": "unavailable AI, recovery of corrupt data and literal rendering of user input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2198,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:18:26.985Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-c26cf37d0158fc0dc3fe",
+          "file": "journeys.spec.ts",
+          "line": 243,
+          "column": 1
+        },
+        {
+          "title": "responsive navigation, keyboard access and no horizontal overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2836,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:18:29.202Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-f099a25162963883bd81",
+          "file": "journeys.spec.ts",
+          "line": 286,
+          "column": 1
+        },
+        {
+          "title": "legacy v1 build imports preserve records and allow later steps with unverified items",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1376,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:18:32.068Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-04f16af42375a49ae03e",
+          "file": "journeys.spec.ts",
+          "line": 327,
+          "column": 1
+        },
+        {
+          "title": "browse first and read every step with no inventory; save progress without a readiness gate",
           "ok": true,
           "tags": [],
           "tests": [
@@ -369,12 +645,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2549,
+                  "duration": 3759,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:32.757Z",
+                  "startTime": "2026-10-02T16:19:01.577Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -382,13 +658,13 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-601decb6e2b98112f752",
+          "id": "aa09586c1d16412a1f00-624fb59e37c1a2346a0a",
           "file": "journeys.spec.ts",
-          "line": 2,
+          "line": 4,
           "column": 1
         },
         {
-          "title": "filters, unavailable photo AI, shopping, data recovery and safe rendering",
+          "title": "search household materials, edit quantities, export and restore a backup",
           "ok": true,
           "tags": [],
           "tests": [
@@ -403,12 +679,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2017,
+                  "duration": 3466,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:35.323Z",
+                  "startTime": "2026-10-02T16:19:05.355Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -416,13 +692,13 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-14c37a00e65b1cc86d73",
+          "id": "aa09586c1d16412a1f00-fa38596a8d021ba4d1ce",
           "file": "journeys.spec.ts",
-          "line": 74,
+          "line": 60,
           "column": 1
         },
         {
-          "title": "responsive navigation and no horizontal overflow",
+          "title": "bulk household suggestions stay unchecked and custom items remain possible",
           "ok": true,
           "tags": [],
           "tests": [
@@ -437,12 +713,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1177,
+                  "duration": 2433,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:37.358Z",
+                  "startTime": "2026-10-02T16:19:08.841Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -450,13 +726,13 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-70dca050f4678ad00676",
+          "id": "aa09586c1d16412a1f00-67310b0c79934eddf2aa",
           "file": "journeys.spec.ts",
-          "line": 134,
+          "line": 102,
           "column": 1
         },
         {
-          "title": "paper project shows craft instructions and no Arduino setup",
+          "title": "Thai and English navigation, search and complete guides persist across refresh",
           "ok": true,
           "tags": [],
           "tests": [
@@ -471,12 +747,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 697,
+                  "duration": 2204,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:38.549Z",
+                  "startTime": "2026-10-02T16:19:11.292Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -484,13 +760,183 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-e25d7b98fd1f7054cd42",
+          "id": "aa09586c1d16412a1f00-261842973147844470e9",
           "file": "journeys.spec.ts",
-          "line": 156,
+          "line": 140,
           "column": 1
         },
         {
-          "title": "guest inventory, readiness, build notes and export survive refresh",
+          "title": "optional inventory filters do not block guide access and material alternatives are visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3048,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:19:13.516Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-3f80c75543a2b125c22a",
+          "file": "journeys.spec.ts",
+          "line": 173,
+          "column": 1
+        },
+        {
+          "title": "tutorials distinguish a NASA video from searches, and Arduino wiring remains available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1632,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:19:16.596Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-ad5ab5727be2ad699d98",
+          "file": "journeys.spec.ts",
+          "line": 212,
+          "column": 1
+        },
+        {
+          "title": "unavailable AI, recovery of corrupt data and literal rendering of user input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2588,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:19:18.279Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-276e9780c9b35cb7e6ae",
+          "file": "journeys.spec.ts",
+          "line": 243,
+          "column": 1
+        },
+        {
+          "title": "responsive navigation, keyboard access and no horizontal overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3131,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:19:20.882Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-c874d72ba28e9b8fbf32",
+          "file": "journeys.spec.ts",
+          "line": 286,
+          "column": 1
+        },
+        {
+          "title": "legacy v1 build imports preserve records and allow later steps with unverified items",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1220,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:19:24.034Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-6c584302823506e93638",
+          "file": "journeys.spec.ts",
+          "line": 327,
+          "column": 1
+        },
+        {
+          "title": "browse first and read every step with no inventory; save progress without a readiness gate",
           "ok": true,
           "tags": [],
           "tests": [
@@ -505,12 +951,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2248,
+                  "duration": 2008,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:47.997Z",
+                  "startTime": "2026-10-02T16:19:51.169Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -518,13 +964,13 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-4637d802c8f96f168cab",
+          "id": "aa09586c1d16412a1f00-e2e7d4624e97f3fa522b",
           "file": "journeys.spec.ts",
-          "line": 2,
+          "line": 4,
           "column": 1
         },
         {
-          "title": "filters, unavailable photo AI, shopping, data recovery and safe rendering",
+          "title": "search household materials, edit quantities, export and restore a backup",
           "ok": true,
           "tags": [],
           "tests": [
@@ -539,12 +985,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2044,
+                  "duration": 1666,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:50.262Z",
+                  "startTime": "2026-10-02T16:19:53.197Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -552,13 +998,13 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-6f7d8a6d2309e1725524",
+          "id": "aa09586c1d16412a1f00-24caf5806a9b9c383319",
           "file": "journeys.spec.ts",
-          "line": 74,
+          "line": 60,
           "column": 1
         },
         {
-          "title": "responsive navigation and no horizontal overflow",
+          "title": "bulk household suggestions stay unchecked and custom items remain possible",
           "ok": true,
           "tags": [],
           "tests": [
@@ -573,12 +1019,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2141,
+                  "duration": 1062,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:52.331Z",
+                  "startTime": "2026-10-02T16:19:54.886Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -586,13 +1032,13 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-1ffb0d9a6fdac1e115fd",
+          "id": "aa09586c1d16412a1f00-81593268e1e5cb65a610",
           "file": "journeys.spec.ts",
-          "line": 134,
+          "line": 102,
           "column": 1
         },
         {
-          "title": "paper project shows craft instructions and no Arduino setup",
+          "title": "Thai and English navigation, search and complete guides persist across refresh",
           "ok": true,
           "tags": [],
           "tests": [
@@ -607,12 +1053,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 838,
+                  "duration": 1392,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:54.491Z",
+                  "startTime": "2026-10-02T16:19:55.977Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -620,9 +1066,179 @@
               "status": "expected"
             }
           ],
-          "id": "aa09586c1d16412a1f00-a83c34853f5a0b32c329",
+          "id": "aa09586c1d16412a1f00-c4b2d35b5e5d5bf3ee63",
           "file": "journeys.spec.ts",
-          "line": 156,
+          "line": 140,
+          "column": 1
+        },
+        {
+          "title": "optional inventory filters do not block guide access and material alternatives are visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1835,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:19:57.389Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-ba43cd324502483cb43f",
+          "file": "journeys.spec.ts",
+          "line": 173,
+          "column": 1
+        },
+        {
+          "title": "tutorials distinguish a NASA video from searches, and Arduino wiring remains available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 912,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:19:59.247Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-ae2d8d7a4cbc7937bc97",
+          "file": "journeys.spec.ts",
+          "line": 212,
+          "column": 1
+        },
+        {
+          "title": "unavailable AI, recovery of corrupt data and literal rendering of user input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1286,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:20:00.178Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-27cf17f9d771cef5364b",
+          "file": "journeys.spec.ts",
+          "line": 243,
+          "column": 1
+        },
+        {
+          "title": "responsive navigation, keyboard access and no horizontal overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2092,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:20:01.478Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-bb9b5206d76fd61c227c",
+          "file": "journeys.spec.ts",
+          "line": 286,
+          "column": 1
+        },
+        {
+          "title": "legacy v1 build imports preserve records and allow later steps with unverified items",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 812,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-02T16:20:03.591Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa09586c1d16412a1f00-f7b343f282ed54a29249",
+          "file": "journeys.spec.ts",
+          "line": 327,
           "column": 1
         }
       ]
@@ -649,12 +1265,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1535,
+                  "duration": 2129,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:23.353Z",
+                  "startTime": "2026-10-02T16:18:33.564Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -683,12 +1299,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1371,
+                  "duration": 1617,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:39.317Z",
+                  "startTime": "2026-10-02T16:19:25.340Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -717,12 +1333,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1351,
+                  "duration": 1258,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-02T13:16:55.412Z",
+                  "startTime": "2026-10-02T16:20:04.479Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -740,9 +1356,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-02T13:16:05.890Z",
-    "duration": 51028.004,
-    "expected": 18,
+    "startTime": "2026-10-02T16:17:49.381Z",
+    "duration": 136533.525,
+    "expected": 36,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

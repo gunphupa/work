@@ -1,5 +1,7 @@
 import { existsSync } from "node:fs";
 import { defineConfig, devices } from "@playwright/test";
+const port = process.env.REBUILD_E2E_PORT ?? "3000";
+const baseURL = `http://localhost:${port}`;
 export default defineConfig({
   testDir: "./e2e",
   fullyParallel: false,
@@ -9,7 +11,7 @@ export default defineConfig({
     ["json", { outputFile: "docs/evidence/browser-results.json" }],
   ],
   use: {
-    baseURL: "http://localhost:3000",
+    baseURL,
     launchOptions: {
       executablePath:
         process.env.CHROMIUM_PATH ??
@@ -46,8 +48,10 @@ export default defineConfig({
   webServer: {
     command:
       process.env.REBUILD_E2E_PRODUCTION === "1" ? "npm start" : "npm run dev",
-    url: "http://localhost:3000/api/health",
-    reuseExistingServer: !process.env.CI,
+    url: `${baseURL}/api/health`,
+    env: { PORT: port, APP_ORIGIN: baseURL },
+    reuseExistingServer:
+      !process.env.CI && process.env.REBUILD_E2E_PRODUCTION !== "1",
     timeout: 45000,
   },
 });

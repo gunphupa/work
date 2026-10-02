@@ -2,7 +2,7 @@
 
 ## Software checks actually executable now
 
-Lock dependency versions and record Git revision/Node/browser. Run `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:e2e`. The domain suite includes all 16 complete BOMs and deliberately incomplete/unknown/incompatible cases. API tests use separate synthetic providers and pixels. Browser runs are automated software sessions, not human participants. Failed/skipped outcomes must remain distinguishable in stored reports. See the current technical report for actual counts.
+Lock dependency versions and record Git revision/Node/browser. Run `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:e2e`. The domain suite includes all 37 complete BOMs, translations, and supported alternatives and deliberately incomplete/unknown/incompatible cases. API tests use separate synthetic providers and pixels. Browser runs are automated software sessions, not human participants. Failed/skipped outcomes must remain distinguishable in stored reports. See the current technical report for actual counts.
 
 ## Future image evaluation — preregister before collecting results
 

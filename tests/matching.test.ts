@@ -1,6 +1,12 @@
 import { describe, it, expect } from "vitest";
 import { matchProject, recommend } from "../src/domain/matching";
-import { projects, projectById } from "../src/data/projects";
+import {
+  projects,
+  projectById,
+  localizeProject,
+  categories,
+} from "../src/data/projects";
+import { searchProjects, searchMaterials } from "../src/domain/catalogue";
 import { materials, materialById } from "../src/data/materials";
 import {
   parseInventory,
@@ -140,8 +146,9 @@ describe("catalogue readiness", () => {
       }).map((m) => m.project.id),
     ).toEqual(["blink"]);
   });
-  it("has a traceable official source and board assumptions for every project", () => {
-    expect(projects).toHaveLength(16);
+  it("distinguishes original household guides from reviewed external references", () => {
+    expect(projects).toHaveLength(37);
+    expect(projects.filter((p) => p.original)).toHaveLength(21);
     for (const p of projects) {
       if (p.category === "electronics")
         expect(p.source.url).toMatch(
@@ -149,10 +156,11 @@ describe("catalogue readiness", () => {
         );
       if (p.category === "electronics")
         expect(p.code).toContain("void setup()");
-      else
+      else if (!p.original)
         expect(p.source.url).toBe(
           "https://www.jpl.nasa.gov/edu/resources/project/make-a-straw-rocket/",
         );
+      else expect(p.source.author).toBe("ReBuild");
       expect(p.steps.length).toBeGreaterThan(2);
       expect(
         p.requirements.every((r) =>
@@ -161,8 +169,117 @@ describe("catalogue readiness", () => {
       ).toBe(true);
     }
   });
+  it("keeps every category populated and translations aligned with the same requirements and step IDs", () => {
+    for (const category of categories.filter((c) => c.id !== "all"))
+      expect(projects.some((p) => p.category === category.id)).toBe(true);
+    for (const p of projects) {
+      const en = localizeProject(p, "en");
+      expect(en.title).not.toMatch(/[\u0e00-\u0e7f]/);
+      expect(en.steps).toHaveLength(p.steps.length);
+      expect(en.requirements.map((r) => r.id)).toEqual(
+        p.requirements.map((r) => r.id),
+      );
+      expect(en.requirements.map((r) => [r.quantity, r.choices])).toEqual(
+        p.requirements.map((r) => [r.quantity, r.choices]),
+      );
+      expect(
+        JSON.stringify([
+          en.title,
+          en.description,
+          en.steps,
+          en.learning,
+          en.requirements.map((r) => [r.label, r.why]),
+          en.test,
+          en.wiring,
+          en.limitations,
+        ]),
+      ).not.toMatch(/[\u0e00-\u0e7f]/);
+      expect(matchProject(en, complete(p)).state).toBe("ready");
+      expect(new Set(p.requirements.map((r) => r.id)).size).toBe(
+        p.requirements.length,
+      );
+    }
+  });
+  it("finds practical projects by English, Thai and material aliases", () => {
+    expect(
+      searchProjects("drawer").some((p) => p.id === "drawer-dividers"),
+    ).toBe(true);
+    expect(searchProjects("กล่อง").some((p) => p.id === "marble-maze")).toBe(
+      true,
+    );
+    expect(searchProjects("t-shirt").some((p) => p.id === "tshirt-tote")).toBe(
+      true,
+    );
+    expect(searchProjects("ไมโครเวฟ")).toEqual([]);
+    expect(searchMaterials("cotton cord").map((m) => m.id)).toContain(
+      "cotton-string",
+    );
+  });
+  it("uses only declared material specification options and keeps alternatives interchangeable", () => {
+    for (const p of projects)
+      for (const r of p.requirements)
+        for (const c of r.choices) {
+          for (const [key, values] of Object.entries(c.specs ?? {}))
+            for (const value of values)
+              expect(materialById[c.materialId].specs[key].options).toContain(
+                value,
+              );
+          const all = complete(p);
+          const index = p.requirements.indexOf(r);
+          all[index] = {
+            ...all[index],
+            materialId: c.materialId,
+            unit: materialById[c.materialId].unit,
+            specs: Object.fromEntries(
+              Object.entries(c.specs ?? {}).map(([k, v]) => [k, v[0]]),
+            ),
+          };
+          expect(matchProject(p, all).state).toBe("ready");
+        }
+  });
 });
 describe("inventory and backups", () => {
+  it("distinguishes measuring tape from adhesive tape", () => {
+    expect(
+      parseInventory("measuring tape 1\ntape measure 1\nเทปกาว 1").map(
+        (item) => item.materialId,
+      ),
+    ).toEqual(["ruler", "ruler", "tape"]);
+  });
+  it("recognizes household aliases and does not match English aliases inside unrelated words", () => {
+    const list = parseInventory(
+      "Plastic bottles qty 2\nเสื้อยืด จำนวน 1\ncardboard tubes 3\nsewing button 4\nclothing button 1\nmarble 1\nmarbled fabric 1\ncapacitance meter 1\nsoil 1",
+    );
+    expect(list.map((i) => i.materialId)).toEqual([
+      "bottle",
+      "tshirt",
+      "tube",
+      "sewing-button",
+      "sewing-button",
+      "marble",
+      "unknown",
+      "unknown",
+      "soil",
+    ]);
+    expect(list.slice(0, 4).map((i) => i.quantity)).toEqual([2, 1, 3, 4]);
+  });
+  it("imports existing v1 builds without losing notes, materials or checked steps", () => {
+    const state = {
+      version: 1,
+      inventory: complete(projectById.fade),
+      builds: [
+        {
+          projectId: "fade",
+          completed: [0, 2],
+          notes: "Existing notes",
+          measurements: [{ name: "Trial", value: "2", unit: "s" }],
+          substitutions: { "resistor-220": "330 ohm" },
+          updatedAt: "2026-10-01T00:00:00Z",
+        },
+      ],
+    };
+    expect(importState(JSON.stringify(state))).toEqual(state);
+  });
   it("normalizes Thai and English aliases without merging unconfirmed objects", () => {
     const result = parseInventory(
       "LED จำนวน 2\nหลอดแอลอีดี จำนวน 3\nตัวต้านทาน 220 ohm จำนวน 4",

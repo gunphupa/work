@@ -16,7 +16,13 @@ export function parseInventory(text: string): InventoryItem[] {
         )
         .sort((a, b) => b.a.length - a.a.length);
       const m =
-        aliases.find(({ a }) => lower.includes(a))?.m ?? materialById.unknown;
+        aliases.find(({ a }) => {
+          if (!/[a-z]/i.test(a)) return lower.includes(a);
+          const escaped = a.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          return new RegExp(`(?<![a-z])${escaped}(?:s)?(?![a-z])`, "i").test(
+            lower,
+          );
+        })?.m ?? materialById.unknown;
       const qty =
         line.match(/(?:จำนวน|qty)\s*[:=]?\s*(\d+)/i)?.[1] ??
         line.match(/^(\d+)\s*(?:x|×|ชิ้น|เส้น|แผ่น)\s*/i)?.[1] ??

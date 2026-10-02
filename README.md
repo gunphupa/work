@@ -1,17 +1,20 @@
-# ReBuild — ของเดิม ไอเดียใหม่
+# ReBuild — ของเดิม ประโยชน์ใหม่
 
-Thai-first guest application for turning confirmed inventory into small engineering projects. Built in `gunphupa/work`. This is a working first release, **not a claim that every integration or physical build has been validated**.
+A Thai/English, project-first app for useful household making and everyday learning. Browse a guide before adding materials; every instruction and progress checkbox stays open even when an inventory is incomplete.
 
 ## What you can use
 
-- Thai/English inventory entry, bulk parsing, editing, relevant specification questions, tools, explicit duplicate merging, JSON backup/import and local persistence.
-- Sixteen source-backed projects (15 Arduino UNO R3 and one NASA paper rocket), deterministic quantity/specification checks, filters, complete requirements, original sketches and wiring references.
-- Missing-parts search links to Thai marketplaces, clearly distinguished from inspected listings. No invented prices.
-- Saved build steps, notes, substitution records and measurements entered by the user.
-- Accessible responsive interface, Thai fonts served locally, supported-materials catalogue and Thai privacy/usage guide.
-- Server-side OpenAI adapter for text, photos and project questions, with validated outputs, upload validation, session/CSRF checks and persistent quotas. **Live AI has not been tested: a service key is not present.** The application never asks ordinary users for API keys.
+- **37 complete guides** across home organization, cleaning, repairs, packaging crafts, gardening, school science and electronics: 21 original household guides, 15 Arduino UNO R3 examples and one NASA paper rocket.
+- **94 material types**, Thai/English search and aliases, a custom-item option, editable bulk suggestions, relevant specifications and browser-local inventory.
+- Large original project illustrations, three main navigation choices, a persistent language switch, category filters, search by project or material, and 12 cards at a time.
+- A step-at-a-time reader with Next/Previous, an all-steps view, practical checkpoints, a separate material list, explicit alternatives and optional build notes/measurements.
+- Project-specific YouTube searches and the video linked from NASA’s written rocket guide. Search results are clearly labelled; they are not reviewed video recommendations.
+- Existing version 1 inventory/build backups remain compatible. Export before clearing browser storage or changing devices.
+- Optional server-side OpenAI text/photo/help integration, with user review, upload validation, same-origin/CSRF checks and persistent quotas. Live AI is not verified in this development environment because no service key is present.
 
-No public deployment has been created. Screenshots and test evidence are in [`docs/evidence`](docs/evidence). See [`docs/STATUS.md`](docs/STATUS.md) for exact coverage and unfinished scope.
+The original household guides and illustrations are authored for ReBuild; they are not externally certified or physically build-tested. Arduino/NASA documentation review is also not physical testing. See [implementation status](docs/STATUS.md), [content provenance](docs/CONTENT.md) and [test results](docs/TEST_REPORT.md).
+
+Screenshots are in [docs/evidence](docs/evidence). A public Render deployment must be checked at its actual service URL; local software checks do not establish that a hosted deployment has completed.
 
 ## Run it
 
@@ -62,7 +65,7 @@ npm run lint
 npm run typecheck
 npm test
 npm run build
-npm run test:e2e
+REBUILD_E2E_PRODUCTION=1 REBUILD_E2E_PORT=3001 npm run test:e2e
 ```
 
 Browser tests use system Chromium when present, or Playwright's installed Chromium otherwise. On a developer machine: `npx playwright install chromium`. Set `CHROMIUM_PATH` only to override the browser executable. Tests run at 360px, 768px and 1440px. They use separate synthetic fixtures, never real measurements or human participants.
@@ -73,7 +76,7 @@ See [test report](docs/TEST_REPORT.md) for actual outcomes and unrun checks. Tes
 
 - `src/data/`: versioned materials, reviewed catalogue, source metadata.
 - `src/domain/`: schemas, import/export, parsing, maximum-flow matching, image preparation.
-- `src/components/`, `src/App.tsx`: Thai interface and guest workflows.
+- `src/components/`, `src/App.tsx`, `src/i18n.tsx`: bilingual interface and guest workflows.
 - `server/`: Express API, OpenAI adapter, decoded upload validation, SQLite quota accounting.
 - `tests/`, `e2e/`: domain, API, persistence, security, browser and accessibility checks.
 - `docs/research/`: proposed school study, Thai task sheets and empty raw-data forms.
@@ -84,4 +87,4 @@ See [test report](docs/TEST_REPORT.md) for actual outcomes and unrun checks. Tes
 
 Guest inventory and builds stay in this browser's localStorage. Export JSON before clearing browser data or moving devices. A corrupt saved record is preserved rather than overwritten. Photos are transient and not saved server-side. AI requests send the chosen text/photos, inventory and project context to OpenAI; provider retention terms must be checked separately.
 
-The reviewed project collection is currently **Arduino-focused**. A source-reviewed NASA paper-rocket guide is included. Containers and unknown objects can be recorded, but additional crafts, motors and salvaged-component guides are pending. Source review is not physical testing. No school PDFs, human study observations or hardware test evidence were provided.
+The catalogue includes original practical household guides as well as source-reviewed Arduino/NASA examples. Motor-driving, mains repairs and arbitrary salvaged-electronics projects are not included. A saved material type does not imply a matching guide exists; the materials page shows actual coverage. No school PDFs, human study observations or physical build evidence were provided.

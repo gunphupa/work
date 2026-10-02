@@ -1,5 +1,6 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { X } from "lucide-react";
+import { useLanguage } from "../i18n";
 export function Modal({
   title,
   close,
@@ -9,6 +10,7 @@ export function Modal({
   close: () => void;
   children: ReactNode;
 }) {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     ref.current?.showModal();
@@ -27,7 +29,11 @@ export function Modal({
     >
       <div className="modal-heading">
         <h2>{title}</h2>
-        <button className="icon-button" aria-label="ปิด" onClick={close}>
+        <button
+          className="icon-button"
+          aria-label={t("ปิด", "Close")}
+          onClick={close}
+        >
           <X />
         </button>
       </div>

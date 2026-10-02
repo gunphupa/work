@@ -1,0 +1,1139 @@
+{
+  "drawer-dividers": {
+    "title": "Cardboard drawer dividers",
+    "description": "Give socks, stationery and little essentials a place of their own.",
+    "requirements": [
+      {
+        "label": "Two large corrugated cardboard sheets",
+        "why": "Each sheet must span the inside of your drawer."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      },
+      {
+        "label": "Pencil",
+        "why": "Mark before cutting."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      },
+      {
+        "label": "The drawer to organize",
+        "why": "Measure and test the dividers in the actual drawer."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Measure the drawer",
+        "text": "Empty the drawer. Measure its inside width, depth and height. Plan four compartments.",
+        "check": "Allow 3–5 mm of clearance at the ends."
+      },
+      {
+        "title": "Cut two dividers",
+        "text": "Cut one strip for the width and one for the depth. Make both about 1 cm lower than the drawer.",
+        "check": "Dry-fit each strip without forcing it.",
+        "safety": "Ask an adult to help with thick material. Cut away from your hands and keep small scraps away from young children."
+      },
+      {
+        "title": "Slot the pieces together",
+        "text": "At each midpoint cut a slot halfway through the height, as wide as the cardboard thickness. Slide the two slots together into a cross.",
+        "check": "The four compartments stand upright with a snug joint."
+      },
+      {
+        "title": "Fill and test",
+        "text": "Tape exposed edges, fit the dividers and add light items. Open and close the drawer slowly five times.",
+        "check": "Nothing catches on the runners or prevents closing."
+      }
+    ],
+    "learning": ["Measuring and fit allowance", "Interlocking joints"],
+    "limitations": "Use for dry, light items. Keep away from heat; this is not a load-bearing structure.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record the drawer dimensions and successful opening/closing trials."
+    }
+  },
+  "desk-caddy": {
+    "title": "Cardboard desk caddy",
+    "description": "Turn saved cardboard tubes into a tidy home for pens and pencils.",
+    "requirements": [
+      {
+        "label": "Three clean cardboard tubes",
+        "why": "Choose tubes wide enough for stationery."
+      },
+      {
+        "label": "Cardboard base, about 20 × 15 cm",
+        "why": "The base should extend beyond the tubes."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      },
+      {
+        "label": "Pencil",
+        "why": "Mark before cutting."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Arrange the tubes",
+        "text": "Arrange three tubes on the base with at least 2 cm around the outside. Mark their positions.",
+        "check": "The caddy fits well away from the desk edge."
+      },
+      {
+        "title": "Make fixing tabs",
+        "text": "Cut 1 cm tabs around the bottom of each tube and fold them outward.",
+        "check": "The tabs lie flat on the base.",
+        "safety": "Ask an adult to help with thick material. Cut away from your hands and keep small scraps away from young children."
+      },
+      {
+        "title": "Tape to the base",
+        "text": "Tape every tab to the base, then tape adjacent tubes together.",
+        "check": "The base stays attached when gently lifted."
+      },
+      {
+        "title": "Load gradually",
+        "text": "Add pens and pencils one at a time. Practise taking them out and replacing them.",
+        "check": "It stays upright when using an outside tube."
+      }
+    ],
+    "learning": ["A wide base improves stability", "Reusing packaging"],
+    "limitations": "For light stationery. Do not store sharp scissors or hot objects.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record how many pens fit while the base remains level."
+    }
+  },
+  "cable-rolls": {
+    "title": "Cable storage sleeves",
+    "description": "Keep unplugged charging and data cables neatly separated.",
+    "requirements": [
+      {
+        "label": "Three cardboard tubes",
+        "why": "One tube per stored cable."
+      },
+      {
+        "label": "Shoe or shipping box",
+        "why": "Holds the sleeves together."
+      },
+      {
+        "label": "Marker",
+        "why": "Write labels or mark positions."
+      },
+      {
+        "label": "Three disconnected USB cables",
+        "why": "Intact cables for storage only. Never power them while coiled inside a sleeve."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Choose intact cables",
+        "text": "Disconnect every cable from power and devices. Reject cracked, frayed or scorched cables.",
+        "check": "Only store cables that are fully disconnected."
+      },
+      {
+        "title": "Coil loosely",
+        "text": "Coil along the cable’s natural curve. Keep bends gentle near connectors. Choose a tube that does not squeeze the cable.",
+        "check": "There are no sharp bends."
+      },
+      {
+        "title": "Label and sort",
+        "text": "Write the cable type on its sleeve. Put one cable in each sleeve and arrange them in the box.",
+        "check": "Each label is visible and each cable can be removed separately."
+      }
+    ],
+    "learning": ["Classification", "Cable and connector care"],
+    "limitations": "Never enclose operating cables or power adapters. Tape does not make damaged electrical insulation safe.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Try finding a requested cable five times and record successful selections."
+    }
+  },
+  "jar-storage": {
+    "title": "Labelled storage jars",
+    "description": "Make small household essentials easy to find in reused food jars.",
+    "requirements": [
+      {
+        "label": "Two intact glass jars",
+        "why": "Wash and fully dry before use."
+      },
+      {
+        "label": "Paper for labels",
+        "why": "Cut labels to fit."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      },
+      {
+        "label": "Marker",
+        "why": "Write labels or mark positions."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Inspect and dry",
+        "text": "Use clean, completely dry food jars. Inspect their rims and bases.",
+        "check": "No cracks or chips.",
+        "safety": "Reject damaged glass and chemical containers."
+      },
+      {
+        "title": "Sort by use",
+        "text": "Put one type of item in each jar, such as clips or buttons. Keep sharp objects out.",
+        "check": "Contents are easy to reach."
+      },
+      {
+        "title": "Label and place",
+        "text": "Cut and write labels, tape them to the front, and place the jars on a low, stable shelf.",
+        "check": "Do not stack jars or place them at an edge."
+      }
+    ],
+    "learning": ["Organizing with labels", "Container reuse"],
+    "limitations": "For household storage, not food preservation or young children’s play.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Ask someone to find an item using the labels and record the result."
+    }
+  },
+  "phone-stand": {
+    "title": "Cardboard phone stand",
+    "description": "Keep a phone upright for recipes, lessons or a video call.",
+    "requirements": [
+      {
+        "label": "Two A4-size corrugated cardboard sheets",
+        "why": "Makes two side supports and joining strips."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      },
+      {
+        "label": "Pencil",
+        "why": "Mark before cutting."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      },
+      {
+        "label": "The phone you want to support",
+        "why": "Check its size and weight while holding it during the stability test."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Mark matching side supports",
+        "text": "Draw two right triangles with 14 cm bases and 10 cm heights. Extend each base 2 cm at the front to form a support ledge.",
+        "check": "The supports match."
+      },
+      {
+        "title": "Cut and add stops",
+        "text": "Cut the supports. Fold small card strips into 1 cm-high stops and tape them to the front ledges.",
+        "check": "The stops support the phone without covering much of the screen.",
+        "safety": "Ask an adult to help with thick material. Cut away from your hands and keep small scraps away from young children."
+      },
+      {
+        "title": "Join the supports",
+        "text": "Space the supports about 7 cm apart. Tape cardboard crosspieces across the back and bottom, securing both sides.",
+        "check": "The base stays square and both slopes align."
+      },
+      {
+        "title": "Test close to the floor",
+        "text": "Use a low surface. Hold the phone while gradually transferring its weight. Reinforce the base if it bends or slips.",
+        "check": "It stays stable with gentle screen taps."
+      }
+    ],
+    "learning": ["Triangular bracing", "Centre of gravity"],
+    "limitations": "For light phones, not tablets. Keep away from water and heat.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record base dimensions and five gentle screen-tap trials."
+    }
+  },
+  "cleaning-cloths": {
+    "title": "Reusable cleaning cloths",
+    "description": "Give a worn T-shirt a second life as washable cleaning cloths.",
+    "requirements": [
+      {
+        "label": "One clean knitted T-shirt",
+        "why": "Soft cotton or knit fabric without hard decorations."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      },
+      {
+        "label": "Pencil",
+        "why": "Mark before cutting."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Choose clean fabric",
+        "text": "Wash and dry the shirt. Choose areas without zips, buttons or stiff prints.",
+        "check": "No mould or hazardous contamination."
+      },
+      {
+        "title": "Mark squares",
+        "text": "Mark approximately 20 × 20 cm squares on the body of the shirt, avoiding thick seams.",
+        "check": "A folded square fits comfortably in your hand."
+      },
+      {
+        "title": "Cut and spot-test",
+        "text": "Cut the squares, remove loose threads, and test on a small hidden area first.",
+        "check": "No scratching or colour transfer.",
+        "safety": "Ask an adult to help with thick material. Cut away from your hands and keep small scraps away from young children."
+      },
+      {
+        "title": "Separate and wash",
+        "text": "Keep separate cloths for different areas. Wash after use and dry completely before storing.",
+        "check": "Bathroom cloths stay separate from food-preparation surfaces."
+      }
+    ],
+    "learning": ["Fibre absorbency", "Hygienic reuse"],
+    "limitations": "For ordinary dust and spills, not disinfection. Never mix cleaning products.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Compare dry and damp cloths on similar marks and record observations."
+    }
+  },
+  "sock-duster": {
+    "title": "Sock dusting mitt",
+    "description": "Put an odd sock to work on shelves and furniture edges.",
+    "requirements": [
+      {
+        "label": "One soft clean sock",
+        "why": "Must fit comfortably over your hand."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Inspect the sock",
+        "text": "Choose a clean, dry sock without grit or hard decorations.",
+        "check": "Seams will not scratch the surface."
+      },
+      {
+        "title": "Wear and spot-test",
+        "text": "Pull the sock over your hand. Lightly wipe a small hidden area first.",
+        "check": "The surface stays unscratched and unchanged."
+      },
+      {
+        "title": "Dust from top to bottom",
+        "text": "Wipe reachable shelves from top to bottom. Turn to a clean area as dust builds up, then wash and dry the sock.",
+        "check": "Keep dust away from your face and wash your hands afterwards."
+      }
+    ],
+    "learning": ["Friction and dust", "Reusing fabric"],
+    "limitations": "Avoid operating appliances, heat, mould and hazardous dust. Do not climb a chair to reach higher.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record tested surfaces and any marks or shed fibres."
+    }
+  },
+  "lint-roller": {
+    "title": "Quick tape lint roller",
+    "description": "Lift loose hair and lint with a cardboard tube and tape.",
+    "requirements": [
+      {
+        "label": "One firm cardboard tube",
+        "why": "Should resist gentle pressure."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Choose suitable tape",
+        "text": "Use low-tack removable tape. Avoid strong adhesive tape.",
+        "check": "Spot-test the tape on hidden fabric first."
+      },
+      {
+        "title": "Wrap sticky side out",
+        "text": "Wrap tape around the middle of the tube with adhesive facing outward. Overlap the ends and leave the tube ends free to hold.",
+        "check": "The tape stays wrapped as the tube turns."
+      },
+      {
+        "title": "Roll gently and discard tape",
+        "text": "Roll lightly on the tested fabric. Replace loaded tape and put used tape in general waste.",
+        "check": "No adhesive residue or pulled fabric fibres."
+      }
+    ],
+    "learning": ["Adhesion", "Evaluating usefulness and waste"],
+    "limitations": "Not for silk, leather, delicate fabrics, pets or skin. This method still consumes disposable tape.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record lint pickup and any residue on the test fabric."
+    }
+  },
+  "sew-button": {
+    "title": "Sew a loose button back on",
+    "description": "Repair a loose flat button with a needle and thread.",
+    "requirements": [
+      {
+        "label": "One flat two- or four-hole button",
+        "why": "Must fit the existing buttonhole."
+      },
+      {
+        "label": "Sewing needle",
+        "why": "Must fit through the button holes."
+      },
+      {
+        "label": "About 50 cm of sewing thread",
+        "why": "Use sound thread."
+      },
+      {
+        "label": "Fabric or garment to repair",
+        "why": "The attachment area must be intact."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Position and thread",
+        "text": "Align the button with its buttonhole. Thread the needle and knot the thread end.",
+        "check": "The original spot is not torn or weakened.",
+        "safety": "Keep needles and buttons away from young children. Account for the needle before and after sewing."
+      },
+      {
+        "title": "Sew through the holes",
+        "text": "Pass the needle from the back of the fabric through one hole, then down through its neighbour. Repeat about 5–6 times; sew the second pair for a four-hole button.",
+        "check": "Leave a small gap under the button for the buttonhole fabric."
+      },
+      {
+        "title": "Secure the back",
+        "text": "Bring the needle to the back. Slip under an existing stitch to form a loop, pass through the loop and tighten. Repeat before trimming.",
+        "check": "The knot holds under a gentle pull."
+      },
+      {
+        "title": "Test fastening",
+        "text": "Fasten and unfasten five times, then store the needle safely.",
+        "check": "The button stays attached without pulling the fabric."
+      }
+    ],
+    "learning": ["Basic clothing repair", "Tension and fastening"],
+    "limitations": "For ordinary clothing, not safety equipment. Repair torn attachment fabric first.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record five fastening/unfastening trials."
+    }
+  },
+  "fabric-patch": {
+    "title": "Patch a small fabric tear",
+    "description": "Mend a small tear in a fabric bag or garment with a simple sewn patch.",
+    "requirements": [
+      {
+        "label": "Damaged fabric and a patch scrap",
+        "why": "The patch must extend at least 2 cm beyond every side of the tear."
+      },
+      {
+        "label": "Sewing needle",
+        "why": "Use a needle that passes through the fabric without force."
+      },
+      {
+        "label": "Sewing thread",
+        "why": "Enough to stitch around the patch."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Measure the tear",
+        "text": "Lay the fabric flat. Measure the tear and cut a patch extending at least 2 cm on every side.",
+        "check": "The fabric around the tear is sound."
+      },
+      {
+        "title": "Turn under the edges",
+        "text": "Turn the patch edges under by about 5 mm and lay it smoothly over the tear.",
+        "check": "Raw edges are tucked under."
+      },
+      {
+        "title": "Stitch all the way around",
+        "text": "Thread and knot the needle. Sew small, even running stitches through both layers about 3 mm from the folded edge. Knot securely at the back.",
+        "check": "All sides are attached and the needle is accounted for.",
+        "safety": "Children need supervision with needles. Do not use rusty needles."
+      },
+      {
+        "title": "Check the repair",
+        "text": "Gently pull around the patch. Restitch any edge that opens.",
+        "check": "No open edge or puckering."
+      }
+    ],
+    "learning": ["Extending an item’s life", "Spreading force around a tear"],
+    "limitations": "Not for load-bearing straps, protective equipment or large tears.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record tear size and inspect the stitches after light use."
+    }
+  },
+  "zipper-pull": {
+    "title": "Replace a missing zipper pull",
+    "description": "Add an easy-grip pull when the zipper slider still works.",
+    "requirements": [
+      {
+        "label": "Thin cord about 15 cm long",
+        "why": "Must fit through the slider’s pull hole."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "A bag or garment missing only its zipper pull",
+        "why": "The slider and teeth must be intact."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the slider",
+        "text": "Use a zipper with intact teeth, a working slider and an intact pull attachment hole.",
+        "check": "Only the pull is missing."
+      },
+      {
+        "title": "Thread a loop",
+        "text": "Fold the cord in half. Pass the fold through the slider hole, then pass both loose ends through the loop.",
+        "check": "The cord stays clear of the zipper teeth."
+      },
+      {
+        "title": "Tie and trim",
+        "text": "Snug the loop, tie the loose ends together, and slowly open and close five times. Trim excess ends.",
+        "check": "The knot holds and the zipper runs freely."
+      }
+    ],
+    "learning": ["Knots and fastening", "Identifying the failed part"],
+    "limitations": "For ordinary bags. This does not repair damaged teeth or sliders and is not for safety equipment.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Count successful opening/closing trials without the cord loosening."
+    }
+  },
+  "tshirt-tote": {
+    "title": "No-sew T-shirt tote",
+    "description": "Make a light-duty reusable bag from an unworn T-shirt.",
+    "requirements": [
+      {
+        "label": "One sound knitted T-shirt",
+        "why": "Clean, with an intact body."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      },
+      {
+        "label": "Pencil",
+        "why": "Mark before cutting."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Shape the handles",
+        "text": "Lay the shirt flat. Remove the sleeves along their seams. Widen the neck into a U, leaving shoulder handles at least 5 cm wide.",
+        "check": "Both handles remain wide and intact.",
+        "safety": "Ask an adult to help with thick material. Cut away from your hands and keep small scraps away from young children."
+      },
+      {
+        "title": "Cut the fringe",
+        "text": "Turn inside out and remove the bottom hem. Cut matching 2 cm-wide, 8 cm-long fringes through both layers along the bottom.",
+        "check": "Front and back fringes line up."
+      },
+      {
+        "title": "Tie the bottom closed",
+        "text": "Double-knot every matching front/back pair, then tie neighbouring ends together to close gaps.",
+        "check": "No gaps remain for small items to fall through."
+      },
+      {
+        "title": "Turn and test",
+        "text": "Turn right side out. Add light objects and lift just above the floor.",
+        "check": "Knots hold and handles do not stretch excessively."
+      }
+    ],
+    "learning": ["Using knots instead of seams", "Testing before use"],
+    "limitations": "Light-duty use only. Avoid sharp or heavy items and keep away from young children. No rated load.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record the light items used and inspect knots after five lifts."
+    }
+  },
+  "cereal-gift-bag": {
+    "title": "Reused cereal gift box",
+    "description": "Give a small, light gift a new home in reused packaging.",
+    "requirements": [
+      {
+        "label": "One clean cereal box",
+        "why": "Free of grease and food odour."
+      },
+      {
+        "label": "Two sheets of used paper or magazine pages",
+        "why": "Enough to cover the outside."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      },
+      {
+        "label": "Marker",
+        "why": "Write labels or mark positions."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the fit",
+        "text": "Try the gift in the box first. Choose a sound box whose top can close.",
+        "check": "The gift does not bulge the sides."
+      },
+      {
+        "title": "Cover the outside",
+        "text": "Cut paper to cover each side, fold spare edges inward and tape at the corners.",
+        "check": "The lid folds remain usable.",
+        "safety": "Ask an adult to help with thick material. Cut away from your hands and keep small scraps away from young children."
+      },
+      {
+        "title": "Add a message and close",
+        "text": "Write a message on a clear area. Insert the gift, fold the top closed and use only enough tape to keep it shut.",
+        "check": "The recipient can open it without a blade."
+      }
+    ],
+    "learning": ["Packaging design", "Paper reuse"],
+    "limitations": "For dry, light gifts, not direct food contact.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Support the base and lift/set down five times, checking the seams."
+    }
+  },
+  "woven-coaster": {
+    "title": "Woven paper coaster",
+    "description": "Practise weaving with saved paper and make a coaster for dry cups.",
+    "requirements": [
+      {
+        "label": "Two paper sheets or magazine pages",
+        "why": "Use sound, dry paper."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      },
+      {
+        "label": "Pencil",
+        "why": "Mark before cutting."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Make paper strips",
+        "text": "Cut at least ten strips about 4 × 18 cm. Fold each lengthwise into a 1 cm-wide band.",
+        "check": "The bands have similar widths."
+      },
+      {
+        "title": "Lay the first direction",
+        "text": "Place five bands side by side. Temporarily tape one end to a surface that the tape will not damage.",
+        "check": "The bands are parallel."
+      },
+      {
+        "title": "Weave over and under",
+        "text": "Weave five more bands alternately over and under. Reverse the pattern in the next row and snug them into a square.",
+        "check": "Each row interlocks with its neighbours."
+      },
+      {
+        "title": "Finish and test",
+        "text": "Fold spare ends underneath and tape them. Place an empty, dry cup on the coaster.",
+        "check": "The cup sits flat without rocking."
+      }
+    ],
+    "learning": ["Repeating weaving patterns", "Stiffness from folding"],
+    "limitations": "Not waterproof or heat-resistant. Do not use under hot cookware or hot cups; dry or discard if wet.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Try two sizes of empty cup and record stability."
+    }
+  },
+  "bottle-planter": {
+    "title": "Bottle wick planter",
+    "description": "Explore how a cotton wick carries water into a small planter.",
+    "requirements": [
+      {
+        "label": "One 1–1.5 litre plastic bottle with cap",
+        "why": "Use a clean food or drink bottle."
+      },
+      {
+        "label": "About 30 cm of absorbent cotton cord",
+        "why": "The cord must absorb water."
+      },
+      {
+        "label": "About 300–500 ml of potting mix",
+        "why": "Enough for the bottle top without compacting."
+      },
+      {
+        "label": "One small seedling",
+        "why": "Choose a plant suited to moist, not saturated, mix."
+      },
+      {
+        "label": "Clean water for the reservoir",
+        "why": "Keep the level below the inverted neck."
+      },
+      {
+        "label": "Hand awl used by an adult",
+        "why": "Make a hole in the cap on a stable support; no heating."
+      },
+      {
+        "label": "Stable scrap-wood backing",
+        "why": "Back the cap while keeping hands clear."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Marker",
+        "why": "Write labels or mark positions."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      },
+      {
+        "label": "Fine insect mesh with openings no larger than 1 mm",
+        "why": "Enough to cover every reservoir opening without gaps for mosquitoes."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Have an adult prepare the bottle",
+        "text": "Mark the bottle around its middle. Have an adult make a starter opening and cut it into two parts. Tape the cut edges.",
+        "check": "The inverted top sits securely in the bottom.",
+        "safety": "Bottles can slip and cut edges can be sharp. An adult must cut and pierce; never melt holes."
+      },
+      {
+        "title": "Fit the wick",
+        "text": "Have an adult make a snug cord hole in the cap. Thread cord through with length on both sides, refit the cap and invert the top.",
+        "check": "The bottom end reaches the reservoir base and the top reaches the root zone."
+      },
+      {
+        "title": "Add mix and a seedling",
+        "text": "Wet the wick. Add damp mix around it, position the seedling and gently fill around the roots.",
+        "check": "The mix is not compacted and roots are undamaged."
+      },
+      {
+        "title": "Fill and monitor",
+        "text": "Fill the reservoir so the wick is immersed but the neck stays above water. Seal every opening with fine insect mesh and tape. Check moisture and the cover daily; refill as needed. Empty and clean the reservoir every 2–3 days and replace the cover.",
+        "check": "The mix is moist, not saturated, and the mesh is intact with no open gaps. Empty and stop using the reservoir if it cannot be fully covered."
+      }
+    ],
+    "learning": ["Capillary action", "Observing plant water needs"],
+    "limitations": "Experimental, not a guaranteed unattended watering system. Monitor it; adjust or stop if waterlogged.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record reservoir level and soil moisture at the same time daily; do not infer plant consumption from evaporation alone."
+    }
+  },
+  "seed-pots": {
+    "title": "Cardboard seed-starting pots",
+    "description": "Start seeds in cardboard tubes supported by a reused tray.",
+    "requirements": [
+      {
+        "label": "Three cardboard tubes",
+        "why": "Clean, without plastic lining."
+      },
+      {
+        "label": "One tray or food container",
+        "why": "Supports pots and catches excess water."
+      },
+      {
+        "label": "About 300 ml of seed-starting mix",
+        "why": "Enough for three small tubes."
+      },
+      {
+        "label": "One packet or set of seeds",
+        "why": "Follow seed-specific depth and growing conditions."
+      },
+      {
+        "label": "Water to moisten the mix",
+        "why": "Add a little at a time."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Marker",
+        "why": "Write labels or mark positions."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Fold the bases",
+        "text": "Cut four roughly 2 cm slits at one end of each tube. Fold the flaps over one another to form a base and stand in the tray.",
+        "check": "The tubes stand when grouped together."
+      },
+      {
+        "title": "Fill with damp mix",
+        "text": "Fill with damp, not wet, mix, leaving 1 cm at the top. Label each tube.",
+        "check": "The mix remains loose."
+      },
+      {
+        "title": "Sow to the packet depth",
+        "text": "Sow the number and depth specified on the seed packet. Cover as directed.",
+        "check": "Labels match the seeds."
+      },
+      {
+        "title": "Monitor and transplant",
+        "text": "Use the light conditions required by the seed. Water gently, empty standing water, and transplant when roots fill the tube.",
+        "check": "Check daily; isolate and discard mouldy or rotting material."
+      }
+    ],
+    "learning": [
+      "Germination and growing conditions",
+      "Keeping a daily record"
+    ],
+    "limitations": "Cardboard softens when wet and needs tray support. Do not use mouldy materials.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record sowing date, emergence date and actual germination counts."
+    }
+  },
+  "propagation-jar": {
+    "title": "Plant propagation observation jar",
+    "description": "Watch roots develop in a clear jar and keep a simple observation log.",
+    "requirements": [
+      {
+        "label": "One intact glass jar",
+        "why": "Clean and stable."
+      },
+      {
+        "label": "One water-propagating plant cutting",
+        "why": "For example, a pothos cutting with a node supplied by its owner."
+      },
+      {
+        "label": "Clean water",
+        "why": "Enough to cover the node, not the leaves."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Select a suitable cutting",
+        "text": "Use an owner-supplied cutting with at least one node. Check that the species can root in water.",
+        "check": "You know the species and its handling precautions.",
+        "safety": "Pothos is toxic if eaten. Keep away from children and pets and wash hands after handling."
+      },
+      {
+        "title": "Submerge a node",
+        "text": "Fill the jar and position the cutting so a node is under water and all leaves stay above it.",
+        "check": "No submerged leaves."
+      },
+      {
+        "title": "Use indirect light",
+        "text": "Place on a stable surface in indirect light, away from edges, harsh sun and electrical equipment.",
+        "check": "The jar stays cool and cannot spill on equipment."
+      },
+      {
+        "title": "Refresh and record",
+        "text": "Check daily. Replace cloudy water and refresh regularly; clean any film from the jar. Gently measure roots weekly.",
+        "check": "Remove rotting cuttings; not every cutting will root."
+      }
+    ],
+    "learning": ["Nodes and roots", "Observation over time"],
+    "limitations": "Not all species root in water. Jar water is not drinking water.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record root length in cm weekly, with dates and the plant species."
+    }
+  },
+  "plant-labels": {
+    "title": "Craft-stick plant labels",
+    "description": "Keep plant names and sowing dates close to each pot.",
+    "requirements": [
+      {
+        "label": "Five clean craft sticks",
+        "why": "Dry and splinter-free."
+      },
+      {
+        "label": "Marker",
+        "why": "Write labels or mark positions."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Choose smooth sticks",
+        "text": "Wash and dry the sticks. Reject splintered, split or mouldy pieces.",
+        "check": "Edges are smooth to handle."
+      },
+      {
+        "title": "Write a short label",
+        "text": "Write the plant name and sowing date on the top half, leaving the lower half blank.",
+        "check": "Text stays visible above the soil."
+      },
+      {
+        "title": "Place clear of roots",
+        "text": "Insert gently near the pot edge. If you meet roots, choose another spot.",
+        "check": "The label neither shades the plant nor damages roots."
+      }
+    ],
+    "learning": [
+      "Labelling and tracking samples",
+      "Readable information design"
+    ],
+    "limitations": "Wood and ink weather when wet. Check and replace labels as needed.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Check legibility after a week of normal plant care."
+    }
+  },
+  "marble-maze": {
+    "title": "Shoebox marble maze",
+    "description": "Design a route and tilt the box to guide a marble to the finish.",
+    "requirements": [
+      {
+        "label": "One shoebox or deep box lid",
+        "why": "Sides keep the marble contained."
+      },
+      {
+        "label": "Cardboard for walls",
+        "why": "Cut into roughly 2 cm-high strips."
+      },
+      {
+        "label": "One marble",
+        "why": "Easy to see, without chips."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Pencil",
+        "why": "Mark before cutting."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Sketch a route",
+        "text": "Measure the marble diameter. Sketch a route at least 5 mm wider than it.",
+        "check": "There is a connected route from start to finish."
+      },
+      {
+        "title": "Make the walls",
+        "text": "Cut about 2 cm-high wall strips and fold small feet along their bottoms for taping.",
+        "check": "The walls are higher than the marble’s radius.",
+        "safety": "Ask an adult to help with thick material. Cut away from your hands and keep small scraps away from young children."
+      },
+      {
+        "title": "Attach and check the route",
+        "text": "Tape walls along the sketch, add the marble and slowly tilt the box by hand.",
+        "check": "There are no unintended traps.",
+        "safety": "Marbles are a choking hazard. Keep away from young children and account for the marble afterwards."
+      },
+      {
+        "title": "Adjust difficulty",
+        "text": "Change one wall position and try five runs. Count successful finishes.",
+        "check": "Compare under the same route rules."
+      }
+    ],
+    "learning": ["Gravity and slope", "Iterative design"],
+    "limitations": "For children beyond mouthing age with supervision. Do not throw marbles.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record successful runs out of five before and after a wall change."
+    }
+  },
+  "moving-hand": {
+    "title": "String-powered cardboard hand",
+    "description": "Explore a tendon-like mechanism with cardboard, straws and string.",
+    "requirements": [
+      {
+        "label": "One A4-size cardboard sheet",
+        "why": "Must bend without cracking."
+      },
+      {
+        "label": "Five clean drinking straws",
+        "why": "Guides the cords along fingers."
+      },
+      {
+        "label": "Five 40 cm lengths of cord",
+        "why": "One cord per finger."
+      },
+      {
+        "label": "Scissors",
+        "why": "Choose scissors that can safely cut this material."
+      },
+      {
+        "label": "Pencil",
+        "why": "Mark before cutting."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Join parts and cover edges."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Trace and cut a hand",
+        "text": "Trace a hand with enough space between fingers to cut, then cut out the hand and a short wrist.",
+        "check": "Every finger stays attached to the palm.",
+        "safety": "Ask an adult to help with thick material. Cut away from your hands and keep small scraps away from young children."
+      },
+      {
+        "title": "Mark the joints",
+        "text": "Mark two or three joints per finger and gently fold toward the palm.",
+        "check": "Each joint bends freely."
+      },
+      {
+        "title": "Add straw guides",
+        "text": "Cut straws into short pieces. Tape a guide on each finger segment, leaving every joint clear.",
+        "check": "No straw bridges a folding joint."
+      },
+      {
+        "title": "Thread and pull",
+        "text": "Tape a cord end at each fingertip on the palm side. Thread it through the guides toward the wrist. Gently pull one cord at a time.",
+        "check": "A pull bends the finger; straighten it manually when released."
+      }
+    ],
+    "learning": ["Tension and force transmission", "A simplified tendon model"],
+    "limitations": "A model, not a prosthesis or automatic robot. Do not wrap cords around the body.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Try five pulls per finger and record sticking points and adjustments."
+    }
+  },
+  "paper-bridge": {
+    "title": "Folded paper bridge experiment",
+    "description": "Compare flat and folded paper using the same material and span.",
+    "requirements": [
+      {
+        "label": "Two equal-size paper sheets",
+        "why": "Use the same paper type and thickness."
+      },
+      {
+        "label": "Two food containers of equal height",
+        "why": "Stable bridge supports."
+      },
+      {
+        "label": "Ten identical coins",
+        "why": "Add equal increments of load."
+      },
+      {
+        "label": "Ruler",
+        "why": "Measure and mark cut lines."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Set the span",
+        "text": "Place supports on a low table with about a 10 cm gap. Measure it and keep it unchanged.",
+        "check": "Supports are level and stable."
+      },
+      {
+        "title": "Test a flat sheet",
+        "text": "Lay a sheet across with equal overlap at both ends. Add coins one at a time at the centre; stop at collapse.",
+        "check": "Record the number before collapse without supporting by hand."
+      },
+      {
+        "title": "Fold an accordion",
+        "text": "Accordion-fold the second sheet into roughly 2 cm panels. Place the ridges along the span, crossing the gap.",
+        "check": "Keep the same span and loading position."
+      },
+      {
+        "title": "Compare and explain",
+        "text": "Repeat the loading. If it holds all ten coins, record at least ten; do not guess the maximum.",
+        "check": "Compare observed results and state the available coin limit.",
+        "safety": "Keep coins away from young children. Test low down; never support a person."
+      }
+    ],
+    "learning": ["Shape affects stiffness", "Controlled comparison"],
+    "limitations": "An educational model. Results depend on paper and span; not a construction design.",
+    "test": {
+      "name": "Observation",
+      "unit": "trials",
+      "instruction": "Record span, coin count before collapse, and fold pattern for each design."
+    }
+  }
+}

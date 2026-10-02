@@ -1,0 +1,1157 @@
+{
+  "blink": {
+    "title": "My first blinking light",
+    "description": "Start with the onboard LED and learn your first Arduino instructions.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Use the onboard LED or USB communication for this example; no external wiring is needed.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Watch the onboard LED turn on for one second and off for one second. Time five complete cycles.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Digital output", "Timing and instruction order"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. This version uses the onboard LED.",
+    "test": {
+      "name": "My first blinking light",
+      "unit": "seconds",
+      "instruction": "Watch the onboard LED turn on for one second and off for one second. Time five complete cycles."
+    },
+    "wiring": []
+  },
+  "fade": {
+    "title": "A gently breathing light",
+    "description": "Explore PWM with an LED that gradually brightens and dims.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Discrete two-lead visible LED",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "220 Ω resistor (330 Ω alternative)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Watch the brightness rise and fall. Time a cycle, then change the delay and compare.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["PWM", "Current-limiting resistors"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. A 330 Ω resistor reduces current and may reduce brightness. Never omit the resistor.",
+    "test": {
+      "name": "A gently breathing light",
+      "unit": "seconds",
+      "instruction": "Watch the brightness rise and fall. Time a cycle, then change the delay and compare."
+    },
+    "wiring": [
+      {
+        "from": "D9",
+        "to": "220 Ω or 330 Ω → LED anode (+)"
+      },
+      {
+        "from": "LED cathode (−)",
+        "to": "GND"
+      }
+    ]
+  },
+  "button-light": {
+    "title": "Press a button, light an LED",
+    "description": "Control the onboard LED with a physical button.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Normally-open momentary pushbutton",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "10 kΩ resistor",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Press to turn the LED on and release to turn it off. Try ten times and record successes.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Digital input", "Pull-down resistors"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. ",
+    "test": {
+      "name": "Press a button, light an LED",
+      "unit": "trials",
+      "instruction": "Press to turn the LED on and release to turn it off. Try ten times and record successes."
+    },
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "Button contact A"
+      },
+      {
+        "from": "D2",
+        "to": "Button contact B"
+      },
+      {
+        "from": "Button contact B",
+        "to": "10 kΩ → GND"
+      }
+    ]
+  },
+  "digital-read": {
+    "title": "Read a button on screen",
+    "description": "See a button’s zero and one states in Serial Monitor.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Normally-open momentary pushbutton",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "10 kΩ resistor",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Open Serial Monitor at 9600 baud. Released should read 0 and pressed should read 1. Record unexpected readings.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Serial communication", "Digital states"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. ",
+    "test": {
+      "name": "Read a button on screen",
+      "unit": "trials",
+      "instruction": "Open Serial Monitor at 9600 baud. Released should read 0 and pressed should read 1. Record unexpected readings."
+    },
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "Button contact A"
+      },
+      {
+        "from": "D2",
+        "to": "Button contact B"
+      },
+      {
+        "from": "Button contact B",
+        "to": "10 kΩ → GND"
+      }
+    ]
+  },
+  "analog-read": {
+    "title": "Turn a dial, read a number",
+    "description": "Turn hand movement into a reading from 0 to 1023.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "10 kΩ potentiometer",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Open Serial Monitor at 9600 baud. Turn the dial between its ends and record minimum and maximum readings.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["10-bit ADC", "Voltage dividers"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. ",
+    "test": {
+      "name": "Turn a dial, read a number",
+      "unit": "ADC count",
+      "instruction": "Open Serial Monitor at 9600 baud. Turn the dial between its ends and record minimum and maximum readings."
+    },
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "Potentiometer outer terminal"
+      },
+      {
+        "from": "GND",
+        "to": "Other outer terminal"
+      },
+      {
+        "from": "A0",
+        "to": "Centre terminal (wiper)"
+      }
+    ]
+  },
+  "voltage": {
+    "title": "Estimate voltage with a dial",
+    "description": "Convert a digital reading into an estimated voltage in a 5 V circuit.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "10 kΩ potentiometer",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Read both ends and the midpoint. Values are approximately 0–5 V under the assumption Vref = 5 V.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Unit conversion", "ADC reference"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. This is not a calibrated voltmeter. Never connect external sources to measure them.",
+    "test": {
+      "name": "Estimate voltage with a dial",
+      "unit": "V",
+      "instruction": "Read both ends and the midpoint. Values are approximately 0–5 V under the assumption Vref = 5 V."
+    },
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "Potentiometer outer terminal"
+      },
+      {
+        "from": "GND",
+        "to": "Other outer terminal"
+      },
+      {
+        "from": "A0",
+        "to": "Centre terminal (wiper)"
+      }
+    ]
+  },
+  "blink-timer": {
+    "title": "Blink without waiting",
+    "description": "Use millis() to blink while leaving room for other tasks.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Use the onboard LED or USB communication for this example; no external wiring is needed.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Time five complete cycles, expected to take about ten seconds. Change the interval and record the result.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Non-blocking timing", "millis()"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. Uses the onboard LED option in the original guide.",
+    "test": {
+      "name": "Blink without waiting",
+      "unit": "seconds",
+      "instruction": "Time five complete cycles, expected to take about ten seconds. Change the interval and record the result."
+    },
+    "wiring": []
+  },
+  "debounce": {
+    "title": "One press, one response",
+    "description": "Filter a button’s bouncing contacts in code.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Normally-open momentary pushbutton",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "10 kΩ resistor",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Press and release ten times. Check that the LED toggles once per press and record any errors.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Debouncing", "Settling time"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. ",
+    "test": {
+      "name": "One press, one response",
+      "unit": "trials",
+      "instruction": "Press and release ten times. Check that the LED toggles once per press and record any errors."
+    },
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "Button contact A"
+      },
+      {
+        "from": "D2",
+        "to": "Button contact B"
+      },
+      {
+        "from": "Button contact B",
+        "to": "10 kΩ → GND"
+      }
+    ]
+  },
+  "counter": {
+    "title": "Count button presses",
+    "description": "Detect changes and count real button presses.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Normally-open momentary pushbutton",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "10 kΩ resistor",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Open Serial Monitor at 9600 baud. Press ten times and compare the displayed count with your actual presses.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Edge detection", "Counting events"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. Mechanical buttons can bounce; observe and record any extra counts.",
+    "test": {
+      "name": "Count button presses",
+      "unit": "presses",
+      "instruction": "Open Serial Monitor at 9600 baud. Press ten times and compare the displayed count with your actual presses."
+    },
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "Button contact A"
+      },
+      {
+        "from": "D2",
+        "to": "Button contact B"
+      },
+      {
+        "from": "Button contact B",
+        "to": "10 kΩ → GND"
+      }
+    ]
+  },
+  "pullup": {
+    "title": "A button with fewer parts",
+    "description": "Use the Arduino’s internal pull-up resistor.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Normally-open momentary pushbutton",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Open Serial Monitor at 9600 baud. Release should read 1 and pressing should read 0. Check the onboard LED response.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["INPUT_PULLUP", "Active-low input"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. Check the normally-open contact pair against the button manufacturer’s information.",
+    "test": {
+      "name": "A button with fewer parts",
+      "unit": "trials",
+      "instruction": "Open Serial Monitor at 9600 baud. Release should read 1 and pressing should read 0. Check the onboard LED response."
+    },
+    "wiring": [
+      {
+        "from": "D2",
+        "to": "Button contact A"
+      },
+      {
+        "from": "GND",
+        "to": "Button contact B"
+      }
+    ]
+  },
+  "melody": {
+    "title": "A little circuit melody",
+    "description": "Explore pitch with a passive piezo and four simple notes.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Passive piezo",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Reset to hear four rising notes once. Record the notes heard and keep the piezo away from your ear.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Frequency and pitch", "tone()"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. Passive piezo only. Never directly substitute an 8 Ω speaker. The original ReBuild melody needs no pitches.h.",
+    "test": {
+      "name": "A little circuit melody",
+      "unit": "notes",
+      "instruction": "Reset to hear four rising notes once. Record the notes heard and keep the piezo away from your ear."
+    },
+    "wiring": [
+      {
+        "from": "D8",
+        "to": "Piezo + terminal"
+      },
+      {
+        "from": "GND",
+        "to": "Piezo − terminal"
+      }
+    ]
+  },
+  "dial-led": {
+    "title": "A dial-controlled light",
+    "description": "Adjust LED brightness by turning a potentiometer.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "10 kΩ potentiometer",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Discrete two-lead visible LED",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "220 Ω resistor (330 Ω alternative)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Turn the dial and watch the LED brighten. Record endpoint and midpoint PWM readings in Serial Monitor at 9600 baud.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Mapping values", "PWM and ADC"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. ",
+    "test": {
+      "name": "A dial-controlled light",
+      "unit": "PWM",
+      "instruction": "Turn the dial and watch the LED brighten. Record endpoint and midpoint PWM readings in Serial Monitor at 9600 baud."
+    },
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "Potentiometer outer terminal"
+      },
+      {
+        "from": "GND",
+        "to": "Other outer terminal"
+      },
+      {
+        "from": "A0",
+        "to": "Centre terminal (wiper)"
+      },
+      {
+        "from": "D9",
+        "to": "220 Ω or 330 Ω → LED anode (+)"
+      },
+      {
+        "from": "LED cathode (−)",
+        "to": "GND"
+      }
+    ]
+  },
+  "smooth": {
+    "title": "Steadier sensor readings",
+    "description": "Explore moving averages and their response to changes.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "10 kΩ potentiometer",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Open Serial Monitor at 9600 baud. Turn the dial quickly and slowly, observing lag and reading variation.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Moving average", "Arrays"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. Averaging can reduce variation but adds lag; it does not guarantee greater accuracy.",
+    "test": {
+      "name": "Steadier sensor readings",
+      "unit": "ADC count",
+      "instruction": "Open Serial Monitor at 9600 baud. Turn the dial quickly and slowly, observing lag and reading variation."
+    },
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "Potentiometer outer terminal"
+      },
+      {
+        "from": "GND",
+        "to": "Other outer terminal"
+      },
+      {
+        "from": "A0",
+        "to": "Centre terminal (wiper)"
+      }
+    ]
+  },
+  "calibrate": {
+    "title": "A light that adapts to a room",
+    "description": "Calibrate a light sensor’s range before controlling an LED.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Breadboard",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Male–male jumper wires",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Discrete two-lead visible LED",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "220 Ω resistor (330 Ω alternative)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Bare two-lead LDR",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "10 kΩ resistor",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Disconnect USB and connect the listed points. Check component pinouts against manufacturer information before applying power.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "During the first five seconds, cover and uncover the sensor. Then cover it again and observe the LED. Reset and vary the light if the range did not change.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["Calibration", "Constraining a range"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. The source mentions A2 and A0 in different places. ReBuild consistently uses A0 in its wiring and code.",
+    "test": {
+      "name": "A light that adapts to a room",
+      "unit": "PWM",
+      "instruction": "During the first five seconds, cover and uncover the sensor. Then cover it again and observe the LED. Reset and vary the light if the range did not change."
+    },
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "LDR first lead"
+      },
+      {
+        "from": "LDR second lead",
+        "to": "A0 and 10 kΩ → GND"
+      },
+      {
+        "from": "D9",
+        "to": "220 Ω or 330 Ω → LED anode (+)"
+      },
+      {
+        "from": "LED cathode (−)",
+        "to": "GND"
+      }
+    ]
+  },
+  "ascii": {
+    "title": "Decode a character",
+    "description": "Explore how characters are represented in different number bases.",
+    "requirements": [
+      {
+        "label": "Arduino UNO R3 (ATmega328P, 5 V)",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "USB-B data cable",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      },
+      {
+        "label": "Computer with Arduino IDE and Arduino AVR Boards",
+        "why": "Required for this guide’s circuit and programming steps. Match the specifications shown below."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Check the parts and workspace",
+        "text": "Check the UNO R3 model, data cable and all listed parts. Open Arduino IDE and install Arduino AVR Boards using Boards Manager.",
+        "check": "Check actual parts against the guide; the inventory form is optional.",
+        "safety": "Use computer USB power only. Disconnect power before wiring changes. Beginners should have an experienced person check the circuit."
+      },
+      {
+        "title": "Connect the circuit",
+        "text": "Use the onboard LED or USB communication for this example; no external wiring is needed.",
+        "check": "Check for shorts between 5 V and GND. Check resistor values and LED polarity where applicable.",
+        "safety": "Do not connect mains power or external batteries. Never use damaged parts."
+      },
+      {
+        "title": "Upload the sketch",
+        "text": "Paste the code into a new sketch. Select Arduino Uno and the board’s port. Click Verify, then Upload. No additional libraries are required.",
+        "check": "The IDE reports a successful upload. If the port is missing, check the data cable and connection."
+      },
+      {
+        "title": "Test and record",
+        "text": "Open Serial Monitor at 9600 baud and reset. Check that A has decimal 65 and hex 41, then record other characters.",
+        "check": "Record your own measurements with units. Compare with the expected behaviour; do not copy example numbers as results."
+      }
+    ],
+    "learning": ["ASCII", "Binary and hexadecimal"],
+    "limitations": "Documentation reviewed; not AVR-compiled or physically tested. ",
+    "test": {
+      "name": "Decode a character",
+      "unit": "decimal",
+      "instruction": "Open Serial Monitor at 9600 baud and reset. Check that A has decimal 65 and hex 41, then record other characters."
+    },
+    "wiring": []
+  },
+  "straw-rocket": {
+    "title": "A paper rocket from a straw",
+    "description": "Explore fins, stability and design with a paper rocket powered by your breath.",
+    "requirements": [
+      {
+        "label": "Printed NASA Straw Rocket template",
+        "why": "Required to build and measure the rocket described by NASA."
+      },
+      {
+        "label": "Clean personal drinking straw",
+        "why": "Required to build and measure the rocket described by NASA."
+      },
+      {
+        "label": "Pencil for rolling paper",
+        "why": "Required to build and measure the rocket described by NASA."
+      },
+      {
+        "label": "Scissors",
+        "why": "Required to build and measure the rocket described by NASA."
+      },
+      {
+        "label": "One roll of tape",
+        "why": "Required to build and measure the rocket described by NASA."
+      },
+      {
+        "label": "Metric ruler or measuring tape",
+        "why": "Required to build and measure the rocket described by NASA."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Prepare the template and roll the body",
+        "text": "Get the printed Straw Rocket template from the NASA source. Cut out the rectangle, roll it lengthwise around a pencil and tape it into a tube.",
+        "check": "The tube slides over your straw without a large gap.",
+        "safety": "Use scissors carefully, with adult supervision for children. Use your own clean straw."
+      },
+      {
+        "title": "Attach fins and close the nose",
+        "text": "Cut out both fin units and tape them to opposite sides with lower edges aligned. Fold the triangles out 90 degrees to make a + from behind. Twist the paper above the pencil tip into a nose and tape it closed.",
+        "check": "Fins are secure and the nose is airtight. Do not add hard or pointed parts."
+      },
+      {
+        "title": "Measure and launch",
+        "text": "Measure the nose length and record it. Replace the pencil with the straw. Mark a starting point in a clear area, then blow the paper rocket off the straw.",
+        "check": "Measure the actual landing distance in cm or m.",
+        "safety": "Never aim at people, animals or faces. Use breath only; no pumps, pressure tanks or hard payloads."
+      },
+      {
+        "title": "Change one thing at a time",
+        "text": "Change body length or fin shape, size or angle one at a time. Repeat from the same point and record every attempt, including failures.",
+        "check": "Keep designs and measurements separate. One attempt is not enough to establish which design is better."
+      }
+    ],
+    "learning": [
+      "Air propulsion",
+      "Fins and stability",
+      "Changing one variable at a time"
+    ],
+    "limitations": "Reviewed from NASA documentation, not physically tested. Requires a printed template from the source. No fuel or compressed-air system.",
+    "test": {
+      "name": "Rocket distance",
+      "unit": "cm",
+      "instruction": "Mark the start, clear the launch area and record each actual distance. Change only one design variable at a time."
+    }
+  }
+}

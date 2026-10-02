@@ -1,23 +1,21 @@
 # Implementation status
 
-Updated 2 October 2026. This release supports a complete manual Arduino planning/build-record workflow. The broader master brief is not fully complete.
+Updated 2 October 2026 for the household-first redesign.
 
-| Capability | Status | Limits / next dependency |
+| Capability | Current behavior | Limits |
 | --- | --- | --- |
-| Thai responsive UI, guest start, local inventory | Implemented and browser-verified | Browser-specific, no cloud sync |
-| Manual/bulk entry, aliases, relevant specs, edits, deletion | Implemented and tested | Parser is deterministic; unknown text stays unknown |
-| Quantity-aware compatibility, explicit alternatives, no double allocation | Implemented and domain-tested | Whole piece/unit counts; no fractional length/material optimisation |
-| Filters and target-project search | Implemented and tested | Searches reviewed catalogue; no open-ended sourced discovery |
-| Sixteen source-backed projects | Documentation-reviewed | 15 Arduino UNO R3 guides plus a NASA paper-rocket guide; no physical tests or AVR compilation |
-| Further craft, motor, salvaged-part projects | Deferred content expansion | Sources and complete requirements need review; objects can be saved now |
-| Text/photo AI adapter and confirmation UI | Implemented; real service blocked | Missing server credential; image recognition accuracy unmeasured |
-| AI troubleshooting using project/current step | Implemented; real service blocked | No live credentials; never auto-approves substitutions |
-| Live web/video/product retrieval | Deferred | Catalogue source fallback implemented; no search provider wired |
-| Tutorial metadata, Thai summaries, wiring, original Arduino sketches | Implemented | Reference revision inspected through Git; no videos claimed |
-| Thai missing-parts assistance | Implemented as labelled marketplace searches | No inspected products, prices, shipping or stock claims |
-| Steps, notes, substitution records, measurements, export/import | Implemented and browser-tested | Result photos and automatic cross-project stock reservations deferred |
-| Upload/server security, sessions and persistent quotas | Implemented and fixture-tested | Needs real deployment verification, provider billing limits and durable volume |
-| Research plan, Thai worksheets, raw templates, evidence register | Prepared | School PDFs not supplied; human/physical/image studies pending |
-| Production build and serving | Locally validated; see test report | No public host is connected; deployment not published |
+| Project-first browsing | Home → useful categories → illustrated guides; 12 results at a time | Editorial catalogue, not open-ended generated instructions |
+| Thai and English | Navigation, inventory forms, all 37 guides, material lists, notes UI, provider language preference | User-entered text is preserved as written; external sources/videos keep their original language |
+| Household inventory | 94 types, searchable names/aliases, custom items, editing, bulk parsing, relevant specs | Some collected objects have no guide; shown explicitly |
+| Practical projects | 21 new original guides: organization 5, cleaning 3, repair 3, crafts 3, gardening 4, science 3 | Not physically build-tested; use written fit/safety checks |
+| Existing projects | 15 Arduino and 1 NASA guide retained with English versions | No AVR compilation or physical test |
+| Reading and progress | Every step and checkbox is available with an empty, incomplete, uncertain or incompatible inventory | Checked steps are notes, not test certification |
+| Matching | Quantities, condition, critical specs, explicit alternatives and allocation without double counting | No structural analysis, automatic dimension fitting or fractional-material optimization |
+| Tutorials | NASA video observed in its official page; project-specific Thai/English YouTube searches | No reviewed YouTube library, transcript analysis, playback verification or live search provider |
+| Shopping | Optional, labelled Shopee/Lazada searches under individual materials | No inspected listings, prices, stock or seller recommendation |
+| Guest data | Browser-local inventory, progress, notes, substitutions, measurements, export/import; old v1 backups preserved | No cloud sync, accounts or stock reservation across builds |
+| AI | Server-side adapter and fixture-verified text/photo/help flows | Real credential absent here; live inference and accuracy unmeasured |
+| Software verification | See TEST_REPORT.md and current machine-readable reports | Automated software results, not human or physical studies |
+| Public hosting | Existing Node/Render deployment instructions still apply | No production URL, hosted rollout or live provider call verified in this task |
 
-Next work after secure AI configuration: perform controlled live text/photo/help tests; evaluate labelled photos with a preregistered dataset; inspect any real source-retrieval service before implementing it. Add craft/motor projects through the documented review process. Compile sketches for `arduino:avr:uno` and physically test with recorded parts before making stronger claims.
+Readiness and environment configuration are separate from publication. The development workflow runs without an AI key. Live public AI still needs a valid host secret, exact APP_ORIGIN, durable QUOTA_DB and one Node instance.

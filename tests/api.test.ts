@@ -48,6 +48,34 @@ afterEach(async () => {
   server = undefined;
 });
 describe("AI API boundaries (test providers; no live AI claims)", () => {
+  it("forwards the selected language and rejects unsupported language values", async () => {
+    const languages: string[] = [];
+    await setup(async (input) => {
+      languages.push(input.language);
+      return fixture;
+    });
+    const headers = await session();
+    expect(
+      (
+        await post(
+          { mode: "help", text: "Explain this step", language: "en" },
+          headers,
+        )
+      ).status,
+    ).toBe(200);
+    expect(
+      (await post({ mode: "help", text: "ช่วยอธิบาย" }, headers)).status,
+    ).toBe(200);
+    expect(
+      (
+        await post(
+          { mode: "help", text: "Explain", language: "unsupported" },
+          headers,
+        )
+      ).status,
+    ).toBe(400);
+    expect(languages).toEqual(["en", "th"]);
+  });
   it("returns honest unavailable status without a key", async () => {
     await setup();
     const res = await post({ mode: "inventory", text: "LED" }, await session());

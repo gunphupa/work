@@ -45,6 +45,8 @@ export type Material = {
   unit: InventoryItem["unit"];
   specs: Record<string, { label: string; options: string[] }>;
   hint: string;
+  hintEn?: string;
+  group?: string;
 };
 export type Requirement = {
   id: string;
@@ -74,7 +76,14 @@ export type Project = {
   id: string;
   title: string;
   description: string;
-  category: "electronics" | "craft";
+  category:
+    | "electronics"
+    | "craft"
+    | "organization"
+    | "cleaning"
+    | "repair"
+    | "gardening"
+    | "science";
   level: 1 | 2 | 3;
   minutes: number;
   interest: string;
@@ -87,4 +96,7 @@ export type Project = {
   wiring?: { from: string; to: string }[];
   limitations: string;
   test: { name: string; unit: string; instruction: string };
+  original?: boolean;
+  video?: { url: string; title: string; publisher: string; foundOn: string };
+  videoQuery?: { th: string; en: string };
 };

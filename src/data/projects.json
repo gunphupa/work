@@ -2237,7 +2237,7 @@
     "id": "straw-rocket",
     "title": "จรวดกระดาษจากหลอดเดิม",
     "description": "ให้กระดาษและหลอดที่มีพาไอเดียบินไกล ทดลองครีบและเรียนรู้การออกแบบ",
-    "category": "craft",
+    "category": "science",
     "level": 1,
     "minutes": 30,
     "interest": "การเคลื่อนที่",
@@ -2360,6 +2360,12 @@
       "name": "ระยะทางจรวด",
       "unit": "cm",
       "instruction": "ทำเครื่องหมายจุดเริ่ม ทดลองในบริเวณที่ไม่มีคนหรือสัตว์อยู่ด้านหน้า วัดระยะทางจริงทุกครั้ง แล้วเปลี่ยนแบบครั้งละหนึ่งอย่าง"
+    },
+    "video": {
+      "url": "https://www.youtube.com/watch?v=aTd2f59TSVo",
+      "title": "Make a Straw Rocket",
+      "publisher": "NASA JPL Education",
+      "foundOn": "https://www.jpl.nasa.gov/edu/resources/project/make-a-straw-rocket/"
     }
   }
 ]

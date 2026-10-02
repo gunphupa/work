@@ -22,3 +22,15 @@ Time/difficulty values are editorial estimates, not measured human completion ti
 The 16th project, Make a Straw Rocket, was reviewed directly on the NASA JPL Education page on 2 October 2026 after the network update took effect. The source record stores the retrieved HTML SHA-256. Read the materials and written steps; no claim is made about viewing its video. This build assumes an already printed NASA template sheet (the user gets it from the source), a clean personal straw, pencil, tape, scissors, and a metric measuring tool. No pressure device or fuel is used. The guide includes a clear launch area and never aiming toward people.
 
 Direct HTTP checks of the 15 Arduino documentation routes also succeeded after the network update. These supplement the pinned Git content review; they do not replace it. See `evidence/source-http-checks.json`.
+
+## Household-first expansion (2 October 2026)
+
+The 21 entries in `src/data/household-projects.json` and their English counterparts are original ReBuild instructions, inspired by the user-supplied household-materials list. They are **not attributed to uninspected outside tutorials**. Their source card identifies ReBuild authorship and links to the maintained data. The collection spans organization (5), cleaning (3), simple repairs (3), packaging crafts (3), gardening (4), and school science (3). Together with the 16 retained guides there are 37 projects and 94 canonical material types.
+
+Each household guide includes tools, consumables, target objects where needed, quantities/size guidance, checkpoints, a learning task and practical limits. Bottles for the wick planter require a matching cap and stated capacity; reservoir openings require fine insect mesh and regular inspection/cleaning. Reusable cloths are not disinfectants; storage sleeves are for disconnected cables; phone stands and fabric bags have no rated loads. Source review and editorial checks do not establish safe physical operation.
+
+English copies preserve requirement IDs, choices, quantities and step ordering. Add or edit both languages together. Tests cover every full inventory and declared alternative, translation coverage and legacy backup compatibility. Never reorder existing steps casually: completed-step indexes live in existing backups.
+
+The NASA page contains `https://youtu.be/aTd2f59TSVo` and an embed of the same video. The app offers that direct link with a note that its full content was not viewed. `evidence/tutorial-links.json` records the observed page references and HTML hash. Other guides offer tailored Thai/English YouTube **searches**, not invented video URLs or purportedly reviewed recommendations. External video pages/playback could not be checked through this environment’s network access. No external video iframe loads automatically.
+
+The material catalogue deliberately distinguishes the ability to save an item from having a matching guide. Unused motors, unknown salvaged parts and other objects can be recorded, but this does not approve a substitution or generate a new build guide.
