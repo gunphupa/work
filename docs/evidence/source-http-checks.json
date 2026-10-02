@@ -1,0 +1,146 @@
+[
+  {
+    "project": "blink",
+    "url": "https://docs.arduino.cc/built-in-examples/basics/Blink/",
+    "status": 200,
+    "bytes": 370428,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:23.191Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "fade",
+    "url": "https://docs.arduino.cc/built-in-examples/basics/Fade/",
+    "status": 200,
+    "bytes": 370427,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:23.560Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "button-light",
+    "url": "https://docs.arduino.cc/built-in-examples/digital/Button/",
+    "status": 200,
+    "bytes": 370430,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:23.961Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "digital-read",
+    "url": "https://docs.arduino.cc/built-in-examples/basics/DigitalReadSerial/",
+    "status": 200,
+    "bytes": 370440,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:24.306Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "analog-read",
+    "url": "https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/",
+    "status": 200,
+    "bytes": 370439,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:24.650Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "voltage",
+    "url": "https://docs.arduino.cc/built-in-examples/basics/ReadAnalogVoltage/",
+    "status": 200,
+    "bytes": 370440,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:25.095Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "blink-timer",
+    "url": "https://docs.arduino.cc/built-in-examples/digital/BlinkWithoutDelay/",
+    "status": 200,
+    "bytes": 370441,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:25.397Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "debounce",
+    "url": "https://docs.arduino.cc/built-in-examples/digital/Debounce/",
+    "status": 200,
+    "bytes": 370432,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:25.730Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "counter",
+    "url": "https://docs.arduino.cc/built-in-examples/digital/StateChangeDetection/",
+    "status": 200,
+    "bytes": 370444,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:26.044Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "pullup",
+    "url": "https://docs.arduino.cc/built-in-examples/digital/InputPullupSerial/",
+    "status": 200,
+    "bytes": 370441,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:26.373Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "melody",
+    "url": "https://docs.arduino.cc/built-in-examples/digital/toneMelody/",
+    "status": 200,
+    "bytes": 370434,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:26.703Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "dial-led",
+    "url": "https://docs.arduino.cc/built-in-examples/analog/AnalogInOutSerial/",
+    "status": 200,
+    "bytes": 370440,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:26.993Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "smooth",
+    "url": "https://docs.arduino.cc/built-in-examples/analog/Smoothing/",
+    "status": 200,
+    "bytes": 370432,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:27.293Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "calibrate",
+    "url": "https://docs.arduino.cc/built-in-examples/analog/Calibration/",
+    "status": 200,
+    "bytes": 370434,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:27.586Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "ascii",
+    "url": "https://docs.arduino.cc/built-in-examples/communication/ASCIITable/",
+    "status": 200,
+    "bytes": 370440,
+    "title": null,
+    "checkedAt": "2026-10-02T13:16:27.910Z",
+    "kind": "live_http_metadata_not_content_review"
+  },
+  {
+    "project": "straw-rocket",
+    "url": "https://www.jpl.nasa.gov/edu/resources/project/make-a-straw-rocket/",
+    "status": 200,
+    "bytes": 248518,
+    "title": "Make a Straw Rocket – Engineering Project | NASA JPL Education",
+    "checkedAt": "2026-10-02T13:16:28.249Z",
+    "kind": "live_http_metadata_not_content_review"
+  }
+]

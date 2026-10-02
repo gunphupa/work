@@ -1,0 +1,1 @@
+case_id,image_id,object_instance_id,ground_truth_material,ground_truth_specs,ground_truth_evidence,reviewer_code,model_version,request_time,output_material,output_specs,unknown_fields,invalid_output,timeout,identity_correct,critical_spec_assertions,critical_spec_correct,elapsed_ms,notes

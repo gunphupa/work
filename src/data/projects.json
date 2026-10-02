@@ -1,0 +1,2365 @@
+[
+  {
+    "id": "blink",
+    "title": "ไฟดวงแรกของฉัน",
+    "description": "เปลี่ยนบอร์ดที่มีให้เป็นไฟกะพริบ เริ่มเข้าใจวงจรและคำสั่งแรกของคุณ",
+    "category": "electronics",
+    "level": 1,
+    "minutes": 15,
+    "interest": "แสงและเสียง",
+    "icon": "light",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ใช้ LED บนบอร์ดหรือการสื่อสาร USB ตามตัวอย่างนี้ ไม่ต้องต่อวงจรภายนอก",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "สังเกต LED บนบอร์ด: ติด 1 วินาที ดับ 1 วินาที วัดระยะเวลาครบ 5 รอบ",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["Digital output", "เวลาและลำดับคำสั่ง"],
+    "source": {
+      "title": "Blink",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/01.basics/Blink/Blink.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/01.basics/Blink/Blink.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino Blink.\nvoid setup(){ pinMode(LED_BUILTIN, OUTPUT); }\nvoid loop(){ digitalWrite(LED_BUILTIN,HIGH); delay(1000); digitalWrite(LED_BUILTIN,LOW); delay(1000); }",
+    "wiring": [],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง เลือกใช้ LED บนบอร์ดตามทางเลือกในคู่มือ",
+    "test": {
+      "name": "ไฟดวงแรกของฉัน",
+      "unit": "วินาที",
+      "instruction": "สังเกต LED บนบอร์ด: ติด 1 วินาที ดับ 1 วินาที วัดระยะเวลาครบ 5 รอบ"
+    }
+  },
+  {
+    "id": "fade",
+    "title": "ไฟหรี่ที่ค่อย ๆ หายใจ",
+    "description": "เรียนรู้ PWM ผ่านไฟ LED ที่สว่างและหรี่ลงอย่างนุ่มนวล",
+    "category": "electronics",
+    "level": 1,
+    "minutes": 30,
+    "interest": "แสงและเสียง",
+    "icon": "light",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "led-discrete visible LED",
+        "label": "LED เดี่ยว 2 ขา",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "led",
+            "specs": {
+              "type": ["discrete visible LED"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "resistor-220",
+        "label": "ตัวต้านทาน 220 Ω (ใช้ 330 Ω ได้)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "resistor",
+            "specs": {
+              "ohms": ["220", "330"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "สังเกตความสว่างเพิ่มและลดเป็นรอบ วัดเวลาหนึ่งรอบ แล้วทดลองเปลี่ยน delay",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["PWM", "ตัวต้านทานจำกัดกระแส"],
+    "source": {
+      "title": "Fade",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/01.basics/Fade/Fade.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/01.basics/Fade/Fade.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino Fade.\nint value=0, step=5;\nvoid setup(){ pinMode(9,OUTPUT); }\nvoid loop(){ analogWrite(9,value); value+=step; if(value<=0 || value>=255)step=-step; delay(30); }",
+    "wiring": [
+      {
+        "from": "D9",
+        "to": "220 Ω หรือ 330 Ω → LED anode (+)"
+      },
+      {
+        "from": "LED cathode (−)",
+        "to": "GND"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง 330 Ω เป็นทางเลือกที่ลดกระแสและความสว่าง ห้ามข้ามตัวต้านทาน",
+    "test": {
+      "name": "ไฟหรี่ที่ค่อย ๆ หายใจ",
+      "unit": "วินาที",
+      "instruction": "สังเกตความสว่างเพิ่มและลดเป็นรอบ วัดเวลาหนึ่งรอบ แล้วทดลองเปลี่ยน delay"
+    }
+  },
+  {
+    "id": "button-light",
+    "title": "กดปุ่ม เปิดไฟ",
+    "description": "สร้างวงจรควบคุม LED บนบอร์ดด้วยปุ่มกด",
+    "category": "electronics",
+    "level": 1,
+    "minutes": 25,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "button-normally-open momentary",
+        "label": "ปุ่มกด NO ชั่วขณะ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "button",
+            "specs": {
+              "type": ["normally-open momentary"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "resistor-10000",
+        "label": "ตัวต้านทาน pull-down 10 kΩ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "resistor",
+            "specs": {
+              "ohms": ["10000"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "กดปุ่ม LED ต้องติด ปล่อยแล้วดับ ทดสอบ 10 ครั้ง บันทึกจำนวนครั้งที่ทำงาน",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["Digital input", "Pull-down"],
+    "source": {
+      "title": "Button",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/02.digital/Button/Button.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/02.digital/Button/Button.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino Button.\nvoid setup(){ pinMode(2,INPUT); pinMode(LED_BUILTIN,OUTPUT); }\nvoid loop(){ digitalWrite(LED_BUILTIN,digitalRead(2)); }",
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "ปุ่มกด ขา A"
+      },
+      {
+        "from": "D2",
+        "to": "ปุ่มกด ขา B"
+      },
+      {
+        "from": "ปุ่มกด ขา B",
+        "to": "10 kΩ → GND"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ",
+    "test": {
+      "name": "กดปุ่ม เปิดไฟ",
+      "unit": "ครั้ง",
+      "instruction": "กดปุ่ม LED ต้องติด ปล่อยแล้วดับ ทดสอบ 10 ครั้ง บันทึกจำนวนครั้งที่ทำงาน"
+    }
+  },
+  {
+    "id": "digital-read",
+    "title": "อ่านปุ่มผ่านหน้าจอ",
+    "description": "มองเห็นสถานะ 0 และ 1 จากปุ่มกดใน Serial Monitor",
+    "category": "electronics",
+    "level": 1,
+    "minutes": 25,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "button-normally-open momentary",
+        "label": "ปุ่มกด NO ชั่วขณะ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "button",
+            "specs": {
+              "type": ["normally-open momentary"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "resistor-10000",
+        "label": "ตัวต้านทาน pull-down 10 kΩ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "resistor",
+            "specs": {
+              "ohms": ["10000"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "เปิด Serial Monitor 9600 baud ปล่อยปุ่มได้ 0 กดได้ 1 บันทึกความผิดปกติ",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["Serial communication", "สถานะดิจิทัล"],
+    "source": {
+      "title": "DigitalReadSerial",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/01.basics/DigitalReadSerial/DigitalReadSerial.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/01.basics/DigitalReadSerial/DigitalReadSerial.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino DigitalReadSerial.\nvoid setup(){ Serial.begin(9600); pinMode(2,INPUT); }\nvoid loop(){ Serial.println(digitalRead(2)); delay(20); }",
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "ปุ่มกด ขา A"
+      },
+      {
+        "from": "D2",
+        "to": "ปุ่มกด ขา B"
+      },
+      {
+        "from": "ปุ่มกด ขา B",
+        "to": "10 kΩ → GND"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ",
+    "test": {
+      "name": "อ่านปุ่มผ่านหน้าจอ",
+      "unit": "ครั้ง",
+      "instruction": "เปิด Serial Monitor 9600 baud ปล่อยปุ่มได้ 0 กดได้ 1 บันทึกความผิดปกติ"
+    }
+  },
+  {
+    "id": "analog-read",
+    "title": "หมุนลูกบิด อ่านค่า",
+    "description": "เปลี่ยนการหมุนของมือเป็นตัวเลข 0–1023",
+    "category": "electronics",
+    "level": 1,
+    "minutes": 25,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "pot-10000",
+        "label": "โพเทนชิโอมิเตอร์ 10 kΩ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pot",
+            "specs": {
+              "ohms": ["10000"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "เปิด Serial Monitor 9600 baud หมุนจากปลายหนึ่งไปอีกปลาย บันทึกค่าต่ำสุดและสูงสุด",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["ADC 10-bit", "แรงดันแบ่ง"],
+    "source": {
+      "title": "AnalogReadSerial",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/01.basics/AnalogReadSerial/AnalogReadSerial.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/01.basics/AnalogReadSerial/AnalogReadSerial.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino AnalogReadSerial.\nvoid setup(){ Serial.begin(9600); }\nvoid loop(){ Serial.println(analogRead(A0)); delay(30); }",
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "ขานอกโพเทนชิโอมิเตอร์"
+      },
+      {
+        "from": "GND",
+        "to": "ขานอกอีกด้าน"
+      },
+      {
+        "from": "A0",
+        "to": "ขากลาง (wiper)"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ",
+    "test": {
+      "name": "หมุนลูกบิด อ่านค่า",
+      "unit": "ADC count",
+      "instruction": "เปิด Serial Monitor 9600 baud หมุนจากปลายหนึ่งไปอีกปลาย บันทึกค่าต่ำสุดและสูงสุด"
+    }
+  },
+  {
+    "id": "voltage",
+    "title": "อ่านแรงดันจากลูกบิด",
+    "description": "แปลงค่าดิจิทัลเป็นแรงดันประมาณของวงจร 5V",
+    "category": "electronics",
+    "level": 1,
+    "minutes": 25,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "pot-10000",
+        "label": "โพเทนชิโอมิเตอร์ 10 kΩ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pot",
+            "specs": {
+              "ohms": ["10000"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "อ่านค่าที่ปลายทั้งสองและจุดกลาง ค่าที่แสดงประมาณ 0–5V ตามสมมติฐาน Vref=5V",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["การแปลงหน่วย", "ADC reference"],
+    "source": {
+      "title": "ReadAnalogVoltage",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/01.basics/ReadAnalogVoltage/ReadAnalogVoltage.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/01.basics/ReadAnalogVoltage/ReadAnalogVoltage.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino ReadAnalogVoltage.\nvoid setup(){ Serial.begin(9600); }\nvoid loop(){ float volts=analogRead(A0)*(5.0/1023.0); Serial.println(volts,3); delay(50); }",
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "ขานอกโพเทนชิโอมิเตอร์"
+      },
+      {
+        "from": "GND",
+        "to": "ขานอกอีกด้าน"
+      },
+      {
+        "from": "A0",
+        "to": "ขากลาง (wiper)"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ไม่ใช่เครื่องวัดแรงดันที่สอบเทียบ ห้ามนำไปวัดแหล่งจ่ายภายนอก",
+    "test": {
+      "name": "อ่านแรงดันจากลูกบิด",
+      "unit": "V",
+      "instruction": "อ่านค่าที่ปลายทั้งสองและจุดกลาง ค่าที่แสดงประมาณ 0–5V ตามสมมติฐาน Vref=5V"
+    }
+  },
+  {
+    "id": "blink-timer",
+    "title": "ไฟกะพริบแบบไม่หยุดรอ",
+    "description": "ใช้ millis() ให้บอร์ดจับเวลาและทำงานต่อได้",
+    "category": "electronics",
+    "level": 2,
+    "minutes": 25,
+    "interest": "แสงและเสียง",
+    "icon": "light",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ใช้ LED บนบอร์ดหรือการสื่อสาร USB ตามตัวอย่างนี้ ไม่ต้องต่อวงจรภายนอก",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "จับเวลาไฟ 5 รอบ ควรใกล้ 10 วินาที ทดลองปรับช่วงเวลาแล้วบันทึกผล",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["Non-blocking timing", "millis()"],
+    "source": {
+      "title": "BlinkWithoutDelay",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/02.digital/BlinkWithoutDelay/BlinkWithoutDelay.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/02.digital/BlinkWithoutDelay/BlinkWithoutDelay.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino BlinkWithoutDelay.\nunsigned long previous=0;\nbool lit=false;\nvoid setup(){ pinMode(LED_BUILTIN,OUTPUT); }\nvoid loop(){ unsigned long now=millis(); if(now-previous>=1000){ previous=now; lit=!lit; digitalWrite(LED_BUILTIN,lit); } }",
+    "wiring": [],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ใช้ทางเลือก LED บนบอร์ดที่คู่มือระบุ",
+    "test": {
+      "name": "ไฟกะพริบแบบไม่หยุดรอ",
+      "unit": "วินาที",
+      "instruction": "จับเวลาไฟ 5 รอบ ควรใกล้ 10 วินาที ทดลองปรับช่วงเวลาแล้วบันทึกผล"
+    }
+  },
+  {
+    "id": "debounce",
+    "title": "ปุ่มกดที่ไม่สั่น",
+    "description": "กรองสัญญาณเด้งของหน้าสัมผัสเพื่อสลับไฟหนึ่งครั้งต่อการกด",
+    "category": "electronics",
+    "level": 2,
+    "minutes": 35,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "button-normally-open momentary",
+        "label": "ปุ่มกด NO ชั่วขณะ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "button",
+            "specs": {
+              "type": ["normally-open momentary"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "resistor-10000",
+        "label": "ตัวต้านทาน pull-down 10 kΩ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "resistor",
+            "specs": {
+              "ohms": ["10000"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "กดและปล่อย 10 ครั้ง ตรวจว่าไฟสลับครั้งเดียวต่อการกด บันทึกครั้งที่ผิดพลาด",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["Debounce", "เวลาคงตัว"],
+    "source": {
+      "title": "Debounce",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/02.digital/Debounce/Debounce.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/02.digital/Debounce/Debounce.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino Debounce.\nbool lastRaw=LOW, stable=LOW, lit=false;\nunsigned long changed=0;\nvoid setup(){ pinMode(2,INPUT); pinMode(LED_BUILTIN,OUTPUT); }\nvoid loop(){ bool raw=digitalRead(2); if(raw!=lastRaw)changed=millis();\n if(millis()-changed>=50 && raw!=stable){ stable=raw; if(stable){ lit=!lit; digitalWrite(LED_BUILTIN,lit); } } lastRaw=raw; }",
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "ปุ่มกด ขา A"
+      },
+      {
+        "from": "D2",
+        "to": "ปุ่มกด ขา B"
+      },
+      {
+        "from": "ปุ่มกด ขา B",
+        "to": "10 kΩ → GND"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ",
+    "test": {
+      "name": "ปุ่มกดที่ไม่สั่น",
+      "unit": "ครั้ง",
+      "instruction": "กดและปล่อย 10 ครั้ง ตรวจว่าไฟสลับครั้งเดียวต่อการกด บันทึกครั้งที่ผิดพลาด"
+    }
+  },
+  {
+    "id": "counter",
+    "title": "ตัวนับการกดปุ่ม",
+    "description": "ฝึกตรวจจับขอบสัญญาณและเก็บจำนวนครั้ง",
+    "category": "electronics",
+    "level": 2,
+    "minutes": 25,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "button-normally-open momentary",
+        "label": "ปุ่มกด NO ชั่วขณะ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "button",
+            "specs": {
+              "type": ["normally-open momentary"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "resistor-10000",
+        "label": "ตัวต้านทาน pull-down 10 kΩ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "resistor",
+            "specs": {
+              "ohms": ["10000"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "เปิด Serial Monitor 9600 baud กดช้า ๆ 10 ครั้ง เปรียบเทียบค่าที่นับกับจำนวนจริง",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["Edge detection", "ตัวแปรสะสม"],
+    "source": {
+      "title": "StateChangeDetection",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/02.digital/StateChangeDetection/StateChangeDetection.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/02.digital/StateChangeDetection/StateChangeDetection.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino StateChangeDetection.\nbool previous=LOW;\nunsigned long count=0;\nvoid setup(){ pinMode(2,INPUT); Serial.begin(9600); }\nvoid loop(){ bool current=digitalRead(2); if(current && !previous){ count++; Serial.println(count); } previous=current; delay(50); }",
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "ปุ่มกด ขา A"
+      },
+      {
+        "from": "D2",
+        "to": "ปุ่มกด ขา B"
+      },
+      {
+        "from": "ปุ่มกด ขา B",
+        "to": "10 kΩ → GND"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ตัวอย่างนี้เป็นตัวนับการกดแบบง่าย ใช้ delay(50) ลดการอ่านซ้ำ ไม่รับประกันการกรองเด้งทุกกรณี",
+    "test": {
+      "name": "ตัวนับการกดปุ่ม",
+      "unit": "ครั้ง",
+      "instruction": "เปิด Serial Monitor 9600 baud กดช้า ๆ 10 ครั้ง เปรียบเทียบค่าที่นับกับจำนวนจริง"
+    }
+  },
+  {
+    "id": "pullup",
+    "title": "ปุ่มกด ใช้อุปกรณ์น้อยลง",
+    "description": "ทดลองตัวต้านทาน pull-up ภายในบอร์ด",
+    "category": "electronics",
+    "level": 1,
+    "minutes": 25,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "button-normally-open momentary",
+        "label": "ปุ่มกด NO ชั่วขณะ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "button",
+            "specs": {
+              "type": ["normally-open momentary"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "เปิด Serial Monitor 9600 baud ปล่อยปุ่มเป็น 1 กดเป็น 0 และ LED ดับเมื่อกด",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["INPUT_PULLUP", "Active low"],
+    "source": {
+      "title": "InputPullupSerial",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/02.digital/InputPullupSerial/InputPullupSerial.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/02.digital/InputPullupSerial/InputPullupSerial.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino InputPullupSerial.\nvoid setup(){ pinMode(2,INPUT_PULLUP); pinMode(LED_BUILTIN,OUTPUT); Serial.begin(9600); }\nvoid loop(){ int state=digitalRead(2); Serial.println(state); digitalWrite(LED_BUILTIN,state); delay(20); }",
+    "wiring": [
+      {
+        "from": "D2",
+        "to": "ปุ่มกด ขา A"
+      },
+      {
+        "from": "GND",
+        "to": "ปุ่มกด ขา B"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ยึดพฤติกรรม LED ตามคำอธิบาย: HIGH ติด LOW ดับ",
+    "test": {
+      "name": "ปุ่มกด ใช้อุปกรณ์น้อยลง",
+      "unit": "ค่า",
+      "instruction": "เปิด Serial Monitor 9600 baud ปล่อยปุ่มเป็น 1 กดเป็น 0 และ LED ดับเมื่อกด"
+    }
+  },
+  {
+    "id": "melody",
+    "title": "เสียงทักทายจากวงจร",
+    "description": "สร้างทำนองสั้นจากความถี่ของเพียโซ",
+    "category": "electronics",
+    "level": 1,
+    "minutes": 25,
+    "interest": "แสงและเสียง",
+    "icon": "music",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 2,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "piezo-passive piezo",
+        "label": "เพียโซพาสซีฟ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "piezo",
+            "specs": {
+              "type": ["passive piezo"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "หลังรีเซ็ตได้ยิน 4 โน้ตไล่สูงขึ้นหนึ่งครั้ง บันทึกจำนวนโน้ตที่ได้ยิน อย่าแนบเพียโซกับหู",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["ความถี่และระดับเสียง", "tone()"],
+    "source": {
+      "title": "toneMelody",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/02.digital/toneMelody/toneMelody.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/02.digital/toneMelody/toneMelody.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino toneMelody.\nconst int notes[]={262,330,392,523};\nvoid setup(){ for(int i=0;i<4;i++){ tone(8,notes[i],200); delay(280); noTone(8); } }\nvoid loop(){}",
+    "wiring": [
+      {
+        "from": "D8",
+        "to": "เพียโซ ขา +"
+      },
+      {
+        "from": "GND",
+        "to": "เพียโซ ขา −"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง จำกัดเฉพาะเพียโซพาสซีฟ ห้ามแทนด้วยลำโพง 8 Ω โดยตรง ทำนองและโค้ดเขียนใหม่ ไม่ต้องใช้ pitches.h",
+    "test": {
+      "name": "เสียงทักทายจากวงจร",
+      "unit": "โน้ต",
+      "instruction": "หลังรีเซ็ตได้ยิน 4 โน้ตไล่สูงขึ้นหนึ่งครั้ง บันทึกจำนวนโน้ตที่ได้ยิน อย่าแนบเพียโซกับหู"
+    }
+  },
+  {
+    "id": "dial-led",
+    "title": "ลูกบิดปรับแสง",
+    "description": "สร้างไฟหรี่ที่ควบคุมได้ด้วยมือ",
+    "category": "electronics",
+    "level": 1,
+    "minutes": 35,
+    "interest": "แสงและเสียง",
+    "icon": "light",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 5,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "pot-10000",
+        "label": "โพเทนชิโอมิเตอร์ 10 kΩ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pot",
+            "specs": {
+              "ohms": ["10000"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "led-discrete visible LED",
+        "label": "LED เดี่ยว 2 ขา",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "led",
+            "specs": {
+              "type": ["discrete visible LED"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "resistor-220",
+        "label": "ตัวต้านทาน 220 Ω (ใช้ 330 Ω ได้)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "resistor",
+            "specs": {
+              "ohms": ["220", "330"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "หมุนลูกบิดแล้ว LED ต้องค่อย ๆ สว่างขึ้น บันทึกค่า PWM ที่ปลายและกลางจาก Serial Monitor 9600",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["การ map ค่า", "PWM และ ADC"],
+    "source": {
+      "title": "AnalogInOutSerial",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/03.analog/AnalogInOutSerial/AnalogInOutSerial.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/03.analog/AnalogInOutSerial/AnalogInOutSerial.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino AnalogInOutSerial.\nvoid setup(){ Serial.begin(9600); pinMode(9,OUTPUT); }\nvoid loop(){ int raw=analogRead(A0); int duty=map(raw,0,1023,0,255); analogWrite(9,duty); Serial.println(duty); delay(20); }",
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "ขานอกโพเทนชิโอมิเตอร์"
+      },
+      {
+        "from": "GND",
+        "to": "ขานอกอีกด้าน"
+      },
+      {
+        "from": "A0",
+        "to": "ขากลาง (wiper)"
+      },
+      {
+        "from": "D9",
+        "to": "220 Ω หรือ 330 Ω → LED anode (+)"
+      },
+      {
+        "from": "LED cathode (−)",
+        "to": "GND"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ",
+    "test": {
+      "name": "ลูกบิดปรับแสง",
+      "unit": "PWM",
+      "instruction": "หมุนลูกบิดแล้ว LED ต้องค่อย ๆ สว่างขึ้น บันทึกค่า PWM ที่ปลายและกลางจาก Serial Monitor 9600"
+    }
+  },
+  {
+    "id": "smooth",
+    "title": "อ่านเซนเซอร์ให้นิ่งขึ้น",
+    "description": "ทดลองค่าเฉลี่ยเคลื่อนที่เพื่อลดการแกว่งของข้อมูล",
+    "category": "electronics",
+    "level": 2,
+    "minutes": 35,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 3,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "pot-10000",
+        "label": "โพเทนชิโอมิเตอร์ 10 kΩ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pot",
+            "specs": {
+              "ohms": ["10000"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "เปิด Serial Monitor 9600 baud หมุนเร็วและช้า สังเกตการตอบสนองของค่าเฉลี่ย บันทึกช่วงที่แกว่ง",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["Moving average", "Arrays"],
+    "source": {
+      "title": "Smoothing",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/03.analog/Smoothing/Smoothing.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/03.analog/Smoothing/Smoothing.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino Smoothing.\nint values[10]={0}; int index=0; long sum=0; int count=0;\nvoid setup(){ Serial.begin(9600); }\nvoid loop(){ sum-=values[index]; values[index]=analogRead(A0); sum+=values[index]; index=(index+1)%10; if(count<10)count++; Serial.println(sum/count); delay(20); }",
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "ขานอกโพเทนชิโอมิเตอร์"
+      },
+      {
+        "from": "GND",
+        "to": "ขานอกอีกด้าน"
+      },
+      {
+        "from": "A0",
+        "to": "ขากลาง (wiper)"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ค่าเฉลี่ยอาจลดความแกว่งแต่ทำให้การตอบสนองช้าลง ไม่รับประกันความแม่นยำเพิ่ม",
+    "test": {
+      "name": "อ่านเซนเซอร์ให้นิ่งขึ้น",
+      "unit": "ADC count",
+      "instruction": "เปิด Serial Monitor 9600 baud หมุนเร็วและช้า สังเกตการตอบสนองของค่าเฉลี่ย บันทึกช่วงที่แกว่ง"
+    }
+  },
+  {
+    "id": "calibrate",
+    "title": "แสงที่ปรับตัวตามห้อง",
+    "description": "เรียนรู้การปรับช่วงค่าเซนเซอร์แสงก่อนควบคุม LED",
+    "category": "electronics",
+    "level": 2,
+    "minutes": 40,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "breadboard",
+        "label": "เบรดบอร์ด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "breadboard"
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "jumper-male-male",
+        "label": "สายจัมเปอร์ male–male",
+        "quantity": 5,
+        "choices": [
+          {
+            "materialId": "jumper",
+            "specs": {
+              "type": ["male-male"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "led-discrete visible LED",
+        "label": "LED เดี่ยว 2 ขา",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "led",
+            "specs": {
+              "type": ["discrete visible LED"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "resistor-220",
+        "label": "ตัวต้านทาน 220 Ω (ใช้ 330 Ω ได้)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "resistor",
+            "specs": {
+              "ohms": ["220", "330"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "ldr-bare LDR",
+        "label": "LDR แบบตัวต้านทาน 2 ขา",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "ldr",
+            "specs": {
+              "type": ["bare LDR"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "resistor-10000",
+        "label": "ตัวต้านทาน 10 kΩ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "resistor",
+            "specs": {
+              "ohms": ["10000"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ถอด USB แล้วต่อสายตามผังจุดเชื่อมต่อ ตรวจขาอุปกรณ์กับข้อมูลผู้ผลิตก่อนจ่ายไฟ",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "5 วินาทีแรกให้ลองบังและเปิดแสง จากนั้นบังแสงอีกครั้งและดู LED ถ้าช่วงค่าไม่เปลี่ยนให้รีเซ็ตและปรับแสง",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["Calibration", "การจำกัดช่วง"],
+    "source": {
+      "title": "Calibration",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/03.analog/Calibration/Calibration.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/03.analog/Calibration/Calibration.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino Calibration.\nint lowValue=1023,highValue=0;\nvoid setup(){ pinMode(9,OUTPUT); Serial.begin(9600); unsigned long start=millis();\n while(millis()-start<5000){int v=analogRead(A0); lowValue=min(lowValue,v); highValue=max(highValue,v);} }\nvoid loop(){ if(highValue<=lowValue){analogWrite(9,0); Serial.println(\"Reset and vary light during calibration\"); delay(500); return;}\n int v=constrain(analogRead(A0),lowValue,highValue); int duty=map(v,lowValue,highValue,0,255); analogWrite(9,duty); Serial.println(duty); delay(20); }",
+    "wiring": [
+      {
+        "from": "5V",
+        "to": "LDR ขาแรก"
+      },
+      {
+        "from": "LDR ขาที่สอง",
+        "to": "A0 และ 10 kΩ → GND"
+      },
+      {
+        "from": "D9",
+        "to": "220 Ω หรือ 330 Ω → LED anode (+)"
+      },
+      {
+        "from": "LED cathode (−)",
+        "to": "GND"
+      }
+    ],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ต้นฉบับกล่าวถึงทั้ง A2 และ A0 ต่างจุดกัน รุ่น ReBuild กำหนด A0 ให้ตรงกันในผังและโค้ด",
+    "test": {
+      "name": "แสงที่ปรับตัวตามห้อง",
+      "unit": "PWM",
+      "instruction": "5 วินาทีแรกให้ลองบังและเปิดแสง จากนั้นบังแสงอีกครั้งและดู LED ถ้าช่วงค่าไม่เปลี่ยนให้รีเซ็ตและปรับแสง"
+    }
+  },
+  {
+    "id": "ascii",
+    "title": "ถอดรหัสตัวอักษร",
+    "description": "สำรวจการแทนข้อความด้วยเลขฐานต่าง ๆ",
+    "category": "electronics",
+    "level": 2,
+    "minutes": 20,
+    "interest": "เซนเซอร์และโค้ด",
+    "icon": "sensor",
+    "requirements": [
+      {
+        "id": "uno-UNO R3 ATmega328P",
+        "label": "Arduino UNO R3 (ATmega328P, 5V)",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "uno",
+            "specs": {
+              "model": ["UNO R3 ATmega328P"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "usb-USB-B",
+        "label": "สาย USB-B ที่ส่งข้อมูลได้",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "usb",
+            "specs": {
+              "connector": ["USB-B"],
+              "data": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      },
+      {
+        "id": "computer-yes",
+        "label": "คอมพิวเตอร์ + Arduino IDE + AVR Boards",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "computer",
+            "specs": {
+              "ide": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นสำหรับวงจรและขั้นตอนในคู่มือ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "ตรวจของและเตรียมพื้นที่",
+        "text": "ตรวจรุ่น UNO R3, สายข้อมูล และรายการทั้งหมดด้านล่าง เปิด Arduino IDE ติดตั้ง Arduino AVR Boards จาก Boards Manager",
+        "check": "ยืนยันรุ่นบอร์ดและสเปกที่ต้องใช้ครบ",
+        "safety": "ใช้ไฟจาก USB คอมพิวเตอร์เท่านั้น ถอดไฟก่อนต่อหรือเปลี่ยนวงจร ผู้เริ่มต้นควรมีผู้รู้ช่วยตรวจ"
+      },
+      {
+        "title": "ต่อวงจรตามจุดเชื่อมต่อ",
+        "text": "ใช้ LED บนบอร์ดหรือการสื่อสาร USB ตามตัวอย่างนี้ ไม่ต้องต่อวงจรภายนอก",
+        "check": "ตรวจจุด 5V และ GND ว่าไม่ลัดวงจร ตรวจค่าตัวต้านทานและขั้ว LED ถ้ามี",
+        "safety": "อย่าจ่ายไฟบ้านหรือแบตเตอรี่เข้าวงจรนี้ ห้ามใช้ชิ้นส่วนที่เสียหาย"
+      },
+      {
+        "title": "อัปโหลดโปรแกรม",
+        "text": "คัดลอกโค้ดลงสเก็ตช์ใหม่ เลือก Arduino Uno และพอร์ตของบอร์ด กด Verify แล้ว Upload โค้ดนี้ใช้ Arduino core โดยไม่ต้องติดตั้งไลบรารีเพิ่ม",
+        "check": "IDE แสดงอัปโหลดสำเร็จ ถ้าไม่พบพอร์ต ให้ตรวจสายข้อมูลและการเชื่อมต่อ"
+      },
+      {
+        "title": "ทดสอบและบันทึกสิ่งที่เห็น",
+        "text": "เปิด Serial Monitor 9600 baud แล้วรีเซ็ต ตรวจว่า A มี decimal=65 และ hex=41 บันทึกตัวอักษรที่สนใจ",
+        "check": "บันทึกค่าที่วัดจริงพร้อมหน่วย เปรียบเทียบกับพฤติกรรมที่คาดไว้ ไม่ใช้ค่าตัวอย่างแทนการวัด"
+      }
+    ],
+    "learning": ["ASCII", "เลขฐานสองและฐานสิบหก"],
+    "source": {
+      "title": "ASCIITable",
+      "author": "Arduino Documentation",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "url": "https://github.com/arduino/docs-content/blob/9d1bc1aa4ca4d56c716242acaaee290b9ed513bb/content/built-in-examples/04.communication/ASCIITable/ASCIITable.md",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านเนื้อหา Markdown จากคลังทางการ: อุปกรณ์ วงจร และคำอธิบายโค้ด ไม่ได้ทดสอบประกอบจริง",
+      "commit": "9d1bc1aa4ca4d56c716242acaaee290b9ed513bb",
+      "path": "content/built-in-examples/04.communication/ASCIITable/ASCIITable.md"
+    },
+    "code": "// ReBuild: original educational sketch for Arduino UNO R3.\n// Concept and wiring reference: Arduino ASCIITable.\nvoid setup(){ Serial.begin(9600); }\nvoid loop(){ static int value=33; if(value<=126){ Serial.write(value); Serial.print(\" decimal=\"); Serial.print(value); Serial.print(\" hex=\"); Serial.print(value,HEX); Serial.print(\" binary=\"); Serial.println(value,BIN); value++; delay(100); } }",
+    "wiring": [],
+    "limitations": "ตรวจจากเอกสารเท่านั้น ยังไม่ได้คอมไพล์ด้วย AVR toolchain หรือทดสอบวงจรจริง ",
+    "test": {
+      "name": "ถอดรหัสตัวอักษร",
+      "unit": "decimal",
+      "instruction": "เปิด Serial Monitor 9600 baud แล้วรีเซ็ต ตรวจว่า A มี decimal=65 และ hex=41 บันทึกตัวอักษรที่สนใจ"
+    }
+  },
+  {
+    "id": "straw-rocket",
+    "title": "จรวดกระดาษจากหลอดเดิม",
+    "description": "ให้กระดาษและหลอดที่มีพาไอเดียบินไกล ทดลองครีบและเรียนรู้การออกแบบ",
+    "category": "craft",
+    "level": 1,
+    "minutes": 30,
+    "interest": "การเคลื่อนที่",
+    "icon": "craft",
+    "requirements": [
+      {
+        "id": "paper",
+        "label": "กระดาษพิมพ์แบบ NASA Straw Rocket",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "paper",
+            "specs": {
+              "template": ["NASA Straw Rocket"]
+            }
+          }
+        ],
+        "why": "จำเป็นตามคู่มือ NASA สำหรับสร้างและทดสอบ"
+      },
+      {
+        "id": "straw",
+        "label": "หลอดดื่มสะอาด",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "straw"
+          }
+        ],
+        "why": "จำเป็นตามคู่มือ NASA สำหรับสร้างและทดสอบ"
+      },
+      {
+        "id": "pencil",
+        "label": "ดินสอสำหรับม้วนกระดาษ",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "pencil"
+          }
+        ],
+        "why": "จำเป็นตามคู่มือ NASA สำหรับสร้างและทดสอบ"
+      },
+      {
+        "id": "scissors",
+        "label": "กรรไกร",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "scissors"
+          }
+        ],
+        "why": "จำเป็นตามคู่มือ NASA สำหรับสร้างและทดสอบ"
+      },
+      {
+        "id": "tape",
+        "label": "เทปกาว",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "tape"
+          }
+        ],
+        "why": "สำหรับยึดลำตัว ครีบ และปิดหัวจรวด เตรียมหนึ่งม้วนที่มีเทปเหลือพอ"
+      },
+      {
+        "id": "ruler",
+        "label": "ไม้เมตรหรือตลับเมตรหน่วยเมตริก",
+        "quantity": 1,
+        "choices": [
+          {
+            "materialId": "ruler",
+            "specs": {
+              "metric": ["yes"]
+            }
+          }
+        ],
+        "why": "จำเป็นตามคู่มือ NASA สำหรับสร้างและทดสอบ"
+      }
+    ],
+    "steps": [
+      {
+        "title": "เตรียมแบบพิมพ์และม้วนลำตัว",
+        "text": "ใช้กระดาษพิมพ์แบบ Straw Rocket จากลิงก์ในคู่มือ NASA ตัดส่วนสี่เหลี่ยม ม้วนตามยาวรอบดินสอและติดเทปให้เป็นท่อ",
+        "check": "ท่อสวมหลอดได้หลวมพอเลื่อนออก แต่ไม่หลวมจนมีช่องใหญ่",
+        "safety": "ใช้กรรไกรอย่างระมัดระวัง เด็กควรมีผู้ใหญ่ดูแล ใช้หลอดส่วนตัวที่สะอาด"
+      },
+      {
+        "title": "ติดครีบและปิดหัว",
+        "text": "ตัดชุดครีบสองชิ้น ติดคนละด้านของลำตัว ให้ขอบล่างเสมอกัน พับครีบสามเหลี่ยม 90 องศาให้มองจากท้ายเป็นรูป + บิดกระดาษเหนือปลายดินสอให้เป็นหัวแหลมแล้วติดเทปปิด",
+        "check": "ครีบติดแน่น หัวปิดไม่ให้ลมรั่ว ไม่มีชิ้นส่วนแข็งหรือแหลมเพิ่มเติม"
+      },
+      {
+        "title": "วัดและทดลองเป่า",
+        "text": "วัดความยาวหัวจรวด บันทึกไว้ ถอดดินสอ ใส่หลอดแทน ทำเครื่องหมายจุดเริ่มในบริเวณโล่ง แล้วเป่าให้จรวดกระดาษออกจากหลอด",
+        "check": "วัดระยะจากจุดเริ่มถึงจุดตก บันทึกเป็น cm หรือ m",
+        "safety": "ห้ามเล็งไปที่คน สัตว์ หรือใบหน้า ใช้ลมหายใจเท่านั้น ห้ามต่อปั๊ม ถังแรงดัน หรือใส่ของแข็งในจรวด"
+      },
+      {
+        "title": "ปรับครั้งละหนึ่งอย่าง",
+        "text": "ลองปรับความยาวลำตัว รูปทรง ขนาด หรือมุมครีบทีละตัวแปร ทำซ้ำจากจุดเดิมและบันทึกทุกครั้ง รวมครั้งที่ล้มเหลว",
+        "check": "แยกแบบจรวดและระยะที่วัดจริง ไม่สรุปว่าแบบใดดีกว่าจากการลองเพียงครั้งเดียว"
+      }
+    ],
+    "learning": [
+      "แรงผลักจากอากาศ",
+      "ครีบและการทรงตัว",
+      "เปลี่ยนตัวแปรทีละอย่าง"
+    ],
+    "source": {
+      "title": "Make a Straw Rocket",
+      "author": "NASA Jet Propulsion Laboratory",
+      "url": "https://www.jpl.nasa.gov/edu/resources/project/make-a-straw-rocket/",
+      "language": "English · สรุปไทยโดย ReBuild",
+      "checkedAt": "2026-10-02",
+      "inspection": "อ่านหน้าเว็บจริง: รายการวัสดุและขั้นตอน 1–10 รวมการทดสอบ ยังไม่ได้ดูวิดีโอหรือทดสอบชิ้นงาน แบบพิมพ์ดาวน์โหลดจากลิงก์ในต้นฉบับ",
+      "commit": "",
+      "path": "edu/resources/project/make-a-straw-rocket/"
+    },
+    "limitations": "ตรวจจากคู่มือ NASA เท่านั้น ยังไม่ได้ทดสอบจริง ต้องมีแผ่นแบบพิมพ์อยู่แล้ว หากยังไม่มี ให้เตรียมแผ่นจากลิงก์ในคู่มือต้นทางก่อน ไม่ใช่จรวดเชื้อเพลิงหรือระบบอัดแรงดัน",
+    "test": {
+      "name": "ระยะทางจรวด",
+      "unit": "cm",
+      "instruction": "ทำเครื่องหมายจุดเริ่ม ทดลองในบริเวณที่ไม่มีคนหรือสัตว์อยู่ด้านหน้า วัดระยะทางจริงทุกครั้ง แล้วเปลี่ยนแบบครั้งละหนึ่งอย่าง"
+    }
+  }
+]

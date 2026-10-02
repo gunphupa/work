@@ -1,0 +1,39 @@
+# Technical validation — 2 October 2026
+
+The recorded results concern software and documented sources. They do not establish live AI quality, human usability outcomes, learning gains, actual material reuse or safe physical hardware operation.
+
+| Check | Actual outcome |
+| --- | --- |
+| `npm run lint` | Passed after fixing unused imports and script globals |
+| `npm run typecheck` | Passed |
+| `npm test -- --reporter=default --reporter=json --outputFile=docs/evidence/unit-api-results.json` | **43 passed, 0 failed, 0 skipped**: 34 domain/catalogue/data tests and 9 API/quota tests |
+| `npm run build` | Passed; production browser payload approximately 129 KB gzip. Vite emits a non-failing warning for the approximately 505 KB uncompressed chunk |
+| `REBUILD_E2E_PRODUCTION=1 npm run test:e2e` | **18 passed, 0 failed, 0 skipped**, against the production Node server at 1440×1000, 768×1024 and 360×800 |
+| Automated WCAG 2 A/AA checks | No violations on six selected screens at all three widths. This does not replace human assistive-technology testing |
+| `NODE_USE_ENV_PROXY=1 node scripts/check-sources.mjs` | **16/16 HTTP 200** on official reference routes at the recorded timestamp; content review is separately recorded |
+| `npm audit --audit-level=high` | 0 known vulnerabilities reported for the resolved dependency tree at run time |
+| Client asset scan | No `REBUILD_AI_KEY`, `OPENAI_API_KEY` or `sk-proj-` strings found in production client assets. No real key was supplied |
+| Reusable installation | `bash /workspace/rebuild-install.sh` re-runs frozen `npm ci` and production build; completion recorded with setup handover |
+
+The browser run covers entry/correction/refresh, readiness with missing vs complete sample inventory, build steps/notes across refresh, JSON export/import, no-additional-items filtering, marketplace search labelling, original sketch rendering, absent-AI recovery, literal rendering of an XSS string, corruption preservation, keyboard skip link, horizontal overflow, and craft-specific instructions. One photo test uses an explicitly synthetic API fixture to verify consent, failure preservation and unconfirmed candidates; it is not a real AI recognition result. API tests validate actual decoded pixels using a synthetic PNG, reject spoofed content and check atomic quota persistence across database reopen.
+
+Initial failures were investigated and fixed: test teardown closed the previous SQLite connection twice; an accessible-name expectation and select locator were too exact; small-text contrast failed at selected viewports. The saved reports describe the final successful run. No assertions were removed to conceal these failures.
+
+## Tools
+
+Node 24.19.0; npm 11.9.0; TypeScript 6.0.3 (selected to match the supported typescript-eslint peer range); React 19.3.0; Vite 8.3.2; Express 5.2.1; Vitest 5.0.3; Playwright 1.63.0; axe-core integration 4.13.0. Exact dependencies remain in the lockfile.
+
+## Evidence
+
+- `evidence/unit-api-results.json`: runner output for the current domain and API cases.
+- `evidence/browser-results.json`: production-browser run, selected targets, counts and durations.
+- `evidence/home-{desktop,tablet,mobile}.png`, `workspace-*`, `guide-*`, `ai-unavailable-*`: current screenshots, visually inspected representative desktop/mobile views.
+- `evidence/sources.json`: pinned Arduino source paths/hashes and NASA webpage inspection record.
+- `evidence/source-http-checks.json`: timestamped endpoint availability; HTTP 200 does not by itself verify guide relevance.
+
+## Not run / externally blocked
+
+- Live text, photo and troubleshooting calls: `REBUILD_AI_KEY` absent. An unauthenticated `/v1/models` request returns HTTP 401, confirming connectivity but not access. The secret requirement is saved securely in environment settings.
+- Arduino AVR compilation and physical builds: no AVR toolchain or hardware attached. Original sketches include exact target assumptions; documentation review does not replace these checks.
+- Public hosting/TLS operation: no connected public hosting account. A deployment recipe is provided; the app has not been published.
+- Real human studies, labelled-image accuracy/latency measurements and school-specific template validation: no observations or school PDFs were supplied.

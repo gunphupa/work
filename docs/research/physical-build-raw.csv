@@ -1,0 +1,1 @@
+case_id,project_id,catalogue_revision,board_model,component_record_ref,toolchain_version,sketch_sha256,compile_result,wiring_evidence_ref,procedure_ref,measure_name,value,unit,observed_result,date,observer_code,limitations

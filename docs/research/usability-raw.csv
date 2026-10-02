@@ -1,0 +1,1 @@
+participant_code,consent_record_ref,condition,order,task_id,task_set_version,model_version,prompt_version,start_time,end_time,elapsed_seconds,completed,critical_errors,assistance_count,q1,q2,q3,q4,q5,anonymous_notes,excluded_reason
