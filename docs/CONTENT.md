@@ -34,3 +34,10 @@ English copies preserve requirement IDs, choices, quantities and step ordering. 
 The NASA page contains `https://youtu.be/aTd2f59TSVo` and an embed of the same video. The app offers that direct link with a note that its full content was not viewed. `evidence/tutorial-links.json` records the observed page references and HTML hash. Other guides offer tailored Thai/English YouTube **searches**, not invented video URLs or purportedly reviewed recommendations. External video pages/playback could not be checked through this environment’s network access. No external video iframe loads automatically.
 
 The material catalogue deliberately distinguishes the ability to save an item from having a matching guide. Unused motors, unknown salvaged parts and other objects can be recorded, but this does not approve a substitution or generate a new build guide.
+
+
+## Detailed guide reference and step visuals
+
+The user supplied screenshots and pasted text of “Build Your Own Automatic Watch Winder With Arduino Nano” by Mohammed Nihal on Instructables. They were inspected as a reference for presentation: introductory explanation, supplies, numbered illustrated actions, final tests, downloads and discussion. The watch-winder article's photographs, author profile, counts, code and files were not imported into ReBuild, and that watch-winder project was not added to the catalogue.
+
+`guide-details.ts` supplies original bilingual explanatory copy for the 21 household projects and the NASA rocket. Electronics introductions connect each project's existing description and test to its UNO R3 workflow. `StepVisual.tsx` renders 81 step-specific household/science concept diagrams and 60 electronics visual summaries based on the existing material, wiring and test data. They are labelled diagrams, not photographs, scale drawings or evidence of physical validation. Existing step ordering and backups are preserved. Per-step video playback is not claimed; existing tutorial links retain their original source/search labels.

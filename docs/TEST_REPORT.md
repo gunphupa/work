@@ -1,52 +1,42 @@
 # Technical validation — 2 October 2026
 
-The recorded results concern software and documented sources. They do not establish live AI quality, human usability outcomes, learning gains, actual material reuse or safe physical hardware operation.
+These results cover software and documented sources. They do not establish physical build safety, human learning outcomes, live OAuth/email delivery or AI accuracy.
 
 | Check | Actual outcome |
 | --- | --- |
-| `npm run lint` | Passed after fixing unused imports and script globals |
-| `npm run typecheck` | Passed |
-| `npm test -- --reporter=default --reporter=json --outputFile=docs/evidence/unit-api-results.json` | **71 passed, 0 failed, 0 skipped**: 61 domain/catalogue/data tests and 10 API/quota tests |
-| `npm run build` | Passed; production browser payload approximately 171 KB gzip. Vite emits a non-failing warning for the approximately 711 KB uncompressed chunk |
-| `REBUILD_E2E_PORT=3001 REBUILD_E2E_PRODUCTION=1 npm run test:e2e` | **36 passed, 0 failed, 0 skipped**, against the production Node server at 1440×1000, 768×1024 and 360×800 |
-| Automated WCAG 2 A/AA checks | No violations in 11 selected screens/states × 2 languages × 3 widths (66 scans). This does not replace human assistive-technology testing |
-| `NODE_USE_ENV_PROXY=1 node scripts/check-sources.mjs` | **16/16 HTTP 200** on official reference routes at the recorded timestamp; content review is separately recorded |
-| Dependency audit from initial setup | Previously reported 0 known vulnerabilities; package manifests and lockfile are unchanged in this redesign. Audit was not rerun for this UI/content change |
-| Client asset scan | No `REBUILD_AI_KEY`, `OPENAI_API_KEY` or `sk-proj-` strings found in production client assets. No real key was supplied |
-| Reusable installation | Frozen `npm ci` was verified during initial setup; no dependency changes. The saved build/start commands were exercised again for this release |
+| `npm run lint` | Passed |
+| `npm run typecheck` / TypeScript in build | Passed |
+| `npm test -- --reporter=default --reporter=json --outputFile=docs/evidence/unit-api-results.json` | **92 passed, 0 failed, 0 skipped**: 61 domain/catalogue tests, 10 existing API/quota tests, 16 community API/configuration tests and 5 local PostgreSQL migration/permission tests |
+| Frozen `npm ci --no-fund` followed by `npm run build` | Passed with the updated lockfile; final client approximately 249 KB gzip / 1,001 KB uncompressed. Vite's large-chunk warning is non-fatal |
+| `REBUILD_E2E_PORT=3001 REBUILD_E2E_PRODUCTION=1 npm run test:e2e` | **51 passed, 0 failed, 0 skipped**, against a fresh production Node server at desktop, tablet and mobile widths |
+| Automated WCAG 2 A/AA | 66 existing Thai/English screen scans, plus 9 new English community/review/moderation scans: no violations. Automated checks do not replace assistive-technology testing |
+| `npm audit --json` | 0 known vulnerabilities reported for the updated dependency tree |
+| Production asset secret-name scan | No AI/service key variable names or real key material provided to the frontend |
+| Development startup | Restarted the task-owned development server with the updated API; health and account-unavailable behavior checked |
 
-The final browser run covers project-first navigation, category/material search, progressive catalogue display, every step with no inventory, ungated later-step tracking, refresh persistence, existing v1 backups, JSON export/import, custom materials, bulk parsing, bilingual forms/guides, correct tutorial destinations, Arduino code/wiring, unavailable AI, literal XSS text, corruption preservation, keyboard navigation and horizontal overflow. The provider-language API test verifies English, default Thai and rejection of unsupported values.
+## Scope and evidence
 
-One photo test uses an explicitly synthetic provider fixture and generated pixels to verify consent, failed-request input preservation and unchecked suggestions. It is not evidence of real image recognition. API tests validate decoded pixels, reject spoofed content, and verify atomic quota persistence.
+`docs/evidence/unit-api-results.json` and `browser-results.json` contain the runner results. The original browse, household search, missing-material reader, all-step progress, bilingual persistence, import/export, corrupt-data recovery, XSS text and AI-unavailable journeys remain covered.
 
-Intermediate checks identified small-text contrast failures, a quantity input accessible-name mismatch, and test expectations for the old confirmation interface. These were corrected. A legacy-backup browser test also navigated before its asynchronous import completed; it now waits for the imported item to appear before navigating, preserving all data assertions. Final reports contain the fully passing production run.
+New community API checks cover verified identity, same-origin mutations, forced pending status, forbidden role/status injection, private author and moderator feeds, one review per account/target, low ratings, approval/unpublishing, private photos, real Sharp image decoding and metadata removal, deletion ownership, quotas, malformed IDs and safe public configuration. The identity/storage adapters are test doubles: these checks do not claim a real Supabase connection.
 
-The production browser run uses a separate port and refuses to reuse an existing server, so it tests a newly started `npm start` process. A later development-log inspection found a duplicate React key in the decorative button illustration. Its key was corrected and the affected catalogue was checked again for browser console errors; a missing favicon was supplied, and the production build was refreshed. A measuring-tape alias was also corrected, with a regression test; the final domain/API count is 71.
+The PostgreSQL checks run the actual migration twice in PGlite 0.5.8, with minimal simulated Supabase-managed auth/storage tables. They verify SQL syntax/repeatability, private storage configuration, browser-role permission denial, protection even with an unrelated permissive storage policy, the moderator RPC and atomic audit write, review uniqueness and photo ownership constraints. Actual Supabase deployment remains unrun.
 
-## Tools
+Browser fixtures cover member submission and its private status, literal rendering of submitted HTML, separate project/site review scopes, moderator approval then unpublishing with an author note, ordinary-member denial, and honest unavailable behavior. They use synthetic identities and API responses; Google and SMTP are not live-tested.
 
-Node 24.19.0; npm 11.9.0; TypeScript 6.0.3 (selected to match the supported typescript-eslint peer range); React 19.3.0; Vite 8.3.2; Express 5.2.1; Vitest 5.0.3; Playwright 1.63.0; axe-core integration 4.13.0. Exact dependencies remain in the lockfile.
+The initial browser run found insufficient contrast on the new introduction's small-print note. The color was corrected and the complete 51-case production run passed. Visual review then clarified the drawer-width label and paper-bridge ridge direction; the final build and targeted visual/development smoke checks cover those diagram-only corrections. Current detailed-guide screenshots were refreshed after the correction. No behavioural test was disabled or relaxed.
 
-## Evidence
+## Guide/source limits
 
-- `evidence/unit-api-results.json`: runner output for the current domain and API cases.
-- `evidence/browser-results.json`: production-browser run, selected targets, counts and durations.
-- `evidence/home-{desktop,tablet,mobile}.png`, `workspace-*`, `guide-*`, `ai-unavailable-*`: current screenshots, visually inspected representative desktop/mobile views.
-- `evidence/tutorial-links.json`: observed NASA video references; explicit distinction between direct source link, search results and unviewed video content.
-- `evidence/sources.json`: pinned Arduino source paths/hashes and NASA webpage inspection record.
-- `evidence/source-http-checks.json`: timestamped endpoint availability; HTTP 200 does not by itself verify guide relevance.
+The user's Instructables screenshots and text informed page structure. New explanatory copy and diagrams are original ReBuild content. There are 81 household/science concept diagrams and 60 electronics visual summaries across 141 steps. They are not build photos, scale templates or physical test evidence. No new independently reviewed per-step videos were added. Existing YouTube destinations remain labelled search results; NASA's direct video URL was observed on its official written page but full playback was not reviewed.
 
-## Not run / externally blocked
+Earlier pinned Arduino source review, NASA source observations and the 16/16 official-source HTTP checks remain recorded in `docs/evidence`. They were not all fetched again for the account/community work.
 
-- Live text, photo and troubleshooting calls: `REBUILD_AI_KEY` absent. An unauthenticated `/v1/models` request returns HTTP 401, confirming connectivity but not access. The secret requirement is saved securely in environment settings.
-- Arduino AVR compilation and physical builds (including all new household guides): no AVR toolchain or hardware attached. Original sketches include exact target assumptions; documentation review does not replace these checks.
-- Public hosting/TLS operation: the user’s production URL and Render deployment status were not available here. GitHub publication and local production checks do not verify a hosted rollout.
-- Real human studies, labelled-image accuracy/latency measurements and school-specific template validation: no observations or school PDFs were supplied.
+## Still unverified externally
 
-## Container build limitation
+- Real Supabase credentials and project migration, Google OAuth, external-user email/SMTP delivery, cloud photo storage and the production moderator account: no project or keys supplied. Follow `docs/ACCOUNTS_SETUP.md` and run its live checklist.
+- Public Render deployment and its exact site URL: no production URL supplied. GitHub push and local production tests do not establish a live rollout.
+- Live AI calls: no `REBUILD_AI_KEY` supplied; existing synthetic fixtures remain clearly distinguished.
+- Arduino AVR compilation, household/electronics physical builds, human usability studies and school-specific research outcomes: not performed.
 
-The Docker engine and base-image pull work. Initial container requests timed out; a host-network request then identified the platform proxy certificate requirement. Mounting the environment's existing public CA as a trusted extra certificate restored a small registry request (HTTP 200) without disabling TLS verification. The Dockerfile supports that CA through an optional BuildKit secret mount, so it is never baked into image layers.
-
-However, BuildKit's package downloads still fail with `EAI_AGAIN` DNS errors in this environment, including with host networking, forwarded proxy settings and the approved CA. A bounded diagnostic build confirmed the failure; it was stopped. The Docker recipe is supplied but its image is **not validated** here. This is separate from the successful native frozen installation, production build and all 36 production-server browser checks.
-
-The frozen install script was executed successfully again (`npm ci`: 235 packages; production build passed), and documented development startup was exercised: `/api/health` and application HTML both returned HTTP 200. The dev server is a current-instance process, not a published endpoint.
+Exact runtime and development dependencies are pinned in the lockfile. PGlite is a development-only dependency for permission/migration checks. Supabase's client SDK is used for supported auth flows and the server adapter; elevated secrets are never returned by the public config endpoint.

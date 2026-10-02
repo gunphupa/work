@@ -7,7 +7,8 @@ A Thai/English, project-first app for useful household making and everyday learn
 - **37 complete guides** across home organization, cleaning, repairs, packaging crafts, gardening, school science and electronics: 21 original household guides, 15 Arduino UNO R3 examples and one NASA paper rocket.
 - **94 material types**, Thai/English search and aliases, a custom-item option, editable bulk suggestions, relevant specifications and browser-local inventory.
 - Large original project illustrations, three main navigation choices, a persistent language switch, category filters, search by project or material, and 12 cards at a time.
-- A step-at-a-time reader with Next/Previous, an all-steps view, practical checkpoints, a separate material list, explicit alternatives and optional build notes/measurements.
+- Fuller project introductions, grouped supplies, 81 original household/science step diagrams and 60 electronics preparation/connection/upload/measurement panels. The reader keeps Next/Previous, all-steps viewing, checks, and optional build notes. Diagrams are not build photographs or to-scale templates.
+- Optional Google and passwordless email accounts via Supabase, build photos/comments, separate project and website reviews, an author status page, and an admin approval queue. Every submission starts private and pending. **Live account activation is still required:** follow [Accounts setup](docs/ACCOUNTS_SETUP.md).
 - Project-specific YouTube searches and the video linked from NASA’s written rocket guide. Search results are clearly labelled; they are not reviewed video recommendations.
 - Existing version 1 inventory/build backups remain compatible. Export before clearing browser storage or changing devices.
 - Optional server-side OpenAI text/photo/help integration, with user review, upload validation, same-origin/CSRF checks and persistent quotas. Live AI is not verified in this development environment because no service key is present.
@@ -34,7 +35,7 @@ npm run build
 npm start
 ```
 
-The Node server serves the UI and API together. React hash routing supports refresh/back navigation without additional route rules. Do not deploy only `dist/client` if you need AI; the API requires the Node server.
+The Node server serves the UI and API together. React hash routing supports refresh/back navigation without additional route rules. Do not deploy only `dist/client` if you need AI or community accounts; the API requires the Node server.
 
 ## AI configuration — optional for manual use
 

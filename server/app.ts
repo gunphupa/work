@@ -1,6 +1,8 @@
 import express from "express";
 import type { ErrorRequestHandler } from "express";
 import { Quotas } from "./quota";
+import { communityRouter } from "./community";
+import type { CommunityStore } from "./community-store";
 import {
   requestSchema,
   answerSchema,
@@ -16,6 +18,7 @@ export function createApp(options: {
   guestLimit?: number;
   ipLimit?: number;
   timeoutMs?: number;
+  community?: CommunityStore;
 }) {
   const app = express();
   app.disable("x-powered-by");
@@ -30,6 +33,7 @@ export function createApp(options: {
         "default-src 'self'; script-src 'self'" +
         (options.production ? "" : " 'unsafe-inline'") +
         "; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'" +
+        (options.community ? ` ${options.community.config.url}` : "") +
         (options.production ? "" : " ws:") +
         "; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
     });
@@ -44,7 +48,12 @@ export function createApp(options: {
       ok: true,
       aiConfigured: !!options.provider,
       catalogueVersion: 1,
+      communityConfigured: !!options.community,
     }),
+  );
+  app.use(
+    "/api/community",
+    communityRouter(options.community, options.quota, options.origin),
   );
   const cookie = (header?: string) =>
     header

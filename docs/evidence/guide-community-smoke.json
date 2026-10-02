@@ -1,0 +1,166 @@
+{
+  "checkedAt": "2026-10-02T20:28:22.237Z",
+  "health": {
+    "ok": true,
+    "aiConfigured": false,
+    "catalogueVersion": 1,
+    "communityConfigured": false
+  },
+  "accounts": {
+    "enabled": false
+  },
+  "projects": 37,
+  "stepVisuals": 141,
+  "observations": [
+    {
+      "project": "drawer-dividers",
+      "steps": 4
+    },
+    {
+      "project": "desk-caddy",
+      "steps": 4
+    },
+    {
+      "project": "cable-rolls",
+      "steps": 3
+    },
+    {
+      "project": "jar-storage",
+      "steps": 3
+    },
+    {
+      "project": "phone-stand",
+      "steps": 4
+    },
+    {
+      "project": "cleaning-cloths",
+      "steps": 4
+    },
+    {
+      "project": "sock-duster",
+      "steps": 3
+    },
+    {
+      "project": "lint-roller",
+      "steps": 3
+    },
+    {
+      "project": "sew-button",
+      "steps": 4
+    },
+    {
+      "project": "fabric-patch",
+      "steps": 4
+    },
+    {
+      "project": "zipper-pull",
+      "steps": 3
+    },
+    {
+      "project": "tshirt-tote",
+      "steps": 4
+    },
+    {
+      "project": "cereal-gift-bag",
+      "steps": 3
+    },
+    {
+      "project": "woven-coaster",
+      "steps": 4
+    },
+    {
+      "project": "bottle-planter",
+      "steps": 4
+    },
+    {
+      "project": "seed-pots",
+      "steps": 4
+    },
+    {
+      "project": "propagation-jar",
+      "steps": 4
+    },
+    {
+      "project": "plant-labels",
+      "steps": 3
+    },
+    {
+      "project": "marble-maze",
+      "steps": 4
+    },
+    {
+      "project": "moving-hand",
+      "steps": 4
+    },
+    {
+      "project": "paper-bridge",
+      "steps": 4
+    },
+    {
+      "project": "blink",
+      "steps": 4
+    },
+    {
+      "project": "fade",
+      "steps": 4
+    },
+    {
+      "project": "button-light",
+      "steps": 4
+    },
+    {
+      "project": "digital-read",
+      "steps": 4
+    },
+    {
+      "project": "analog-read",
+      "steps": 4
+    },
+    {
+      "project": "voltage",
+      "steps": 4
+    },
+    {
+      "project": "blink-timer",
+      "steps": 4
+    },
+    {
+      "project": "debounce",
+      "steps": 4
+    },
+    {
+      "project": "counter",
+      "steps": 4
+    },
+    {
+      "project": "pullup",
+      "steps": 4
+    },
+    {
+      "project": "melody",
+      "steps": 4
+    },
+    {
+      "project": "dial-led",
+      "steps": 4
+    },
+    {
+      "project": "smooth",
+      "steps": 4
+    },
+    {
+      "project": "calibrate",
+      "steps": 4
+    },
+    {
+      "project": "ascii",
+      "steps": 4
+    },
+    {
+      "project": "straw-rocket",
+      "steps": 4
+    }
+  ],
+  "errors": [],
+  "mobileOverflow": false
+}

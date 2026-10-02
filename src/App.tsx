@@ -49,6 +49,8 @@ import type {
 import { ProjectArt } from "./components/Art";
 import { ItemEditor, AddModal, type EditorSeed } from "./components/Inventory";
 import { ProjectGuide } from "./components/Guide";
+import { AccountPage, AccountLink } from "./components/Account";
+import { ProjectCommunity, SubmissionList } from "./components/Community";
 import { useLanguage, unitText } from "./i18n";
 const STORE = "rebuild.guest.v1";
 function readLocal() {
@@ -298,6 +300,7 @@ export default function App() {
             </a>
           ))}
         </nav>
+        <AccountLink />
         <button
           className="language-button"
           onClick={() => setLanguage(language === "th" ? "en" : "th")}
@@ -310,6 +313,25 @@ export default function App() {
         </button>
       </header>
       <main id="main" tabIndex={-1}>
+        {route === "/account" && <AccountPage />}
+        {route === "/reviews" && (
+          <>
+            <h1>{t("รีวิว ReBuild", "Review ReBuild")}</h1>
+            <p>
+              {t(
+                "ช่วยให้เว็บไซต์ใช้ง่ายและมีประโยชน์ขึ้น",
+                "Help make the website easier and more useful.",
+              )}
+            </p>
+            <ProjectCommunity target="website" />
+          </>
+        )}
+        {route === "/moderation" && (
+          <>
+            <h1>{t("ดูแลชุมชน", "Community moderation")}</h1>
+            <SubmissionList mode="queue" />
+          </>
+        )}
         {storageError && (
           <div className="notice error" role="alert">
             <div>
@@ -1157,8 +1179,21 @@ export default function App() {
               <h2>{t("ข้อมูลของคุณ", "Your data")}</h2>
               <p>
                 {t(
-                  "คลัง งาน และบันทึกอยู่ใน localStorage ของเบราว์เซอร์นี้ ไม่มีบัญชีหรือซิงก์ข้ามเครื่อง ส่งออกหรือลบได้จากของที่มี → สำรองข้อมูลและจัดการคลัง",
-                  "Inventory, builds and notes live in this browser’s localStorage. There is no account or cross-device sync. Export or delete them under My materials → Backups & inventory settings.",
+                  "คลัง งาน และบันทึกอยู่ใน localStorage ของเบราว์เซอร์นี้และยังไม่ซิงก์ข้ามเครื่อง แม้เข้าสู่ระบบแล้ว ส่งออกหรือลบได้จากของที่มี → สำรองข้อมูลและจัดการคลัง",
+                  "Inventory, builds and notes live in this browser’s localStorage and do not sync across devices, even when signed in. Export or delete them under My materials → Backups & inventory settings.",
+                )}
+              </p>
+              <h2>{t("บัญชีและชุมชน", "Accounts and community")}</h2>
+              <p>
+                {t(
+                  "เมื่อเปิดใช้ระบบบัญชี Google หรืออีเมลจะใช้กับ Supabase เพื่อเข้าสู่ระบบ ชื่อสาธารณะ ข้อความ คะแนน และรูปที่ส่งจะเก็บบนเซิร์ฟเวอร์ โพสต์ที่รออนุมัติเห็นได้เฉพาะผู้เขียนและผู้ดูแล เมื่ออนุมัติแล้วผู้เยี่ยมชมทั่วไปจะอ่านและคัดลอกได้",
+                  "When accounts are connected, Google or email sign-in is handled by Supabase. Submitted display names, text, ratings and photos are stored on the server. Pending submissions are visible only to their author and moderators. Approved submissions can be read and copied by visitors.",
+                )}
+              </p>
+              <p>
+                {t(
+                  "ลบโพสต์และรูปของคุณได้ในบัญชี → โพสต์และรีวิวของฉัน เราจำกัดขนาดและลบข้อมูลเมทาดาทาจากภาพก่อนจัดเก็บ แต่สิ่งที่มองเห็นในภาพยังคงอยู่ บันทึกการตัดสินใจของผู้ดูแลอาจเก็บไว้เพื่อดูแลชุมชน การลบไม่สามารถเรียกคืนสำเนาที่ผู้อื่นดาวน์โหลดไปแล้วได้",
+                  "Delete your posts and photos under Account → My submissions. Images are resized and embedded metadata is removed before storage, but visible details remain. Moderation decisions may be retained for community administration. Deletion cannot recall copies that visitors have already downloaded.",
                 )}
               </p>
               <h2>{t("รูปและผู้ช่วย AI", "Photos and the AI helper")}</h2>
@@ -1191,6 +1226,9 @@ export default function App() {
           "/builds",
           "/materials",
           "/about",
+          "/account",
+          "/reviews",
+          "/moderation",
         ].includes(route) &&
           !p && (
             <Empty
@@ -1220,6 +1258,7 @@ export default function App() {
           </p>
         </div>
         <nav aria-label={t("ข้อมูลเพิ่มเติม", "More information")}>
+          <a href="#/reviews">{t("รีวิวเว็บไซต์", "Website reviews")}</a>
           <a href="#/materials">{t("วัสดุในบ้าน", "Household materials")}</a>
           <a href="#/about">
             {t("วิธีใช้และความเป็นส่วนตัว", "How it works & privacy")}

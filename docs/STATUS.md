@@ -1,6 +1,6 @@
 # Implementation status
 
-Updated 2 October 2026 for the household-first redesign.
+Updated 2 October 2026 for detailed guides and moderated community implementation.
 
 | Capability | Current behavior | Limits |
 | --- | --- | --- |
@@ -13,7 +13,10 @@ Updated 2 October 2026 for the household-first redesign.
 | Matching | Quantities, condition, critical specs, explicit alternatives and allocation without double counting | No structural analysis, automatic dimension fitting or fractional-material optimization |
 | Tutorials | NASA video observed in its official page; project-specific Thai/English YouTube searches | No reviewed YouTube library, transcript analysis, playback verification or live search provider |
 | Shopping | Optional, labelled Shopee/Lazada searches under individual materials | No inspected listings, prices, stock or seller recommendation |
-| Guest data | Browser-local inventory, progress, notes, substitutions, measurements, export/import; old v1 backups preserved | No cloud sync, accounts or stock reservation across builds |
+| Guest data | Browser-local inventory, progress, notes, substitutions, measurements, export/import; old v1 backups preserved | No cloud sync or stock reservation across builds; optional account identity does not migrate local data |
+| Community and reviews | Account-bound comments/photos; separate project and website ratings; all submissions pending until moderator approval; author status/deletion and admin approve/reject/unpublish | Supabase project, migration, provider credentials and live deployment still need activation. UI stays explicitly unavailable without configuration |
+| Accounts | Google and passwordless email link sign-in via Supabase PKCE; verified user checks on the server; moderator table independent of profile metadata | Live Google OAuth and email delivery not tested; production email needs an appropriate SMTP provider. Inventory remains browser-local |
+| Guide detail | Fuller bilingual introductions, grouped supplies, final tests/reflection; 81 household/science step diagrams and 60 electronics visual summaries | Original concept diagrams rather than photos; no new step video library or physical testing |
 | AI | Server-side adapter and fixture-verified text/photo/help flows | Real credential absent here; live inference and accuracy unmeasured |
 | Software verification | See TEST_REPORT.md and current machine-readable reports | Automated software results, not human or physical studies |
 | Public hosting | Existing Node/Render deployment instructions still apply | No production URL, hosted rollout or live provider call verified in this task |

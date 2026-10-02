@@ -2652,3 +2652,257 @@ footer .service-status {
   scroll-margin-top: 24px;
   scroll-margin-bottom: 100px;
 }
+
+.project-community {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid #ccd6bf;
+}
+.community-heading {
+  margin-bottom: 22px;
+}
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.community-grid h3 {
+  margin-top: 12px;
+}
+.community-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.community-guidelines {
+  margin-top: 24px;
+}
+.community-guidelines li {
+  margin-bottom: 12px;
+}
+@media (max-width: 640px) {
+  .community-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Guide reading and account/community surfaces. */
+.account-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--green);
+  white-space: nowrap;
+  font-size: 13px;
+  padding: 10px 4px;
+}
+.account-panel {
+  max-width: 600px;
+}
+.account-panel > button {
+  margin-bottom: 18px;
+}
+.guide-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+  gap: 32px;
+  margin-bottom: 28px;
+}
+.guide-overview p {
+  line-height: 1.9;
+}
+.overview-outcome {
+  background: #eaf0e3;
+  padding: 24px;
+  border-radius: 12px;
+  align-self: start;
+}
+.step-visual {
+  margin: 20px 0 24px;
+  background: #f1f3e9;
+  border: 1px solid #d6dfcb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.step-visual svg {
+  display: block;
+  max-height: 310px;
+  width: 100%;
+}
+.step-visual figcaption {
+  font-size: 12px;
+  color: #42543d;
+  padding: 12px 18px;
+  border-top: 1px solid #d6dfcb;
+  line-height: 1.7;
+}
+.electronics-visual > strong,
+.electronics-visual > p {
+  display: block;
+  margin: 18px;
+}
+.visual-parts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px;
+}
+.visual-parts span,
+.visual-wires span {
+  background: #fffef7;
+  border: 1px solid #c3cfb9;
+  padding: 10px 14px;
+  border-radius: 7px;
+}
+.visual-wires {
+  display: grid;
+  gap: 12px;
+  margin: 18px;
+}
+.visual-wires > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.upload-sequence {
+  margin: 20px 35px;
+  padding-left: 18px;
+}
+.upload-sequence li {
+  padding: 10px;
+}
+.measurement-example {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 18px;
+}
+.measurement-example span {
+  border-bottom: 1px solid #c3cfb9;
+  padding: 10px;
+}
+.step-actions h4 {
+  margin: 0 0 12px;
+  font-size: 17px;
+}
+.step-actions ol,
+.final-check ul {
+  padding-left: 24px;
+}
+.step-actions li,
+.final-check li {
+  margin-bottom: 14px;
+  line-height: 1.9;
+}
+.final-check {
+  margin: 28px 0;
+}
+.supply-group {
+  display: grid;
+  gap: 14px;
+}
+.supply-group > h3 {
+  margin: 8px 0 0;
+}
+.community-feed {
+  min-width: 0;
+}
+.community-form {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #ccd6bf;
+}
+.agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+}
+.agreement input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.community-entry {
+  border-top: 1px solid #ccd6bf;
+  margin-top: 24px;
+  padding-top: 18px;
+}
+.entry-byline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+}
+.entry-body {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.review-rating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  font-weight: 600;
+}
+.community-photo {
+  display: block;
+  width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #edf1e8;
+}
+.community-empty {
+  padding: 24px 0;
+  color: #516347;
+}
+.submission-list {
+  margin-top: 30px;
+}
+.submission-list > .panel {
+  margin-top: 20px;
+}
+.submission-list .button-row {
+  margin: 16px 0;
+}
+.submission-list label {
+  display: block;
+  max-width: 600px;
+}
+@media (max-width: 760px) {
+  .guide-overview {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .account-link span {
+    display: none;
+  }
+  .account-link {
+    padding: 10px;
+  }
+  .site-header {
+    gap: 8px;
+  }
+}
+@media (max-width: 420px) {
+  .community-grid .form-columns {
+    grid-template-columns: 1fr;
+  }
+  .visual-wires {
+    margin: 12px;
+    gap: 8px;
+  }
+  .visual-wires span {
+    padding: 8px;
+  }
+}
+.overview-outcome .form-hint {
+  color: #42543d;
+}

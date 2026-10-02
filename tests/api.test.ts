@@ -206,6 +206,7 @@ describe("AI API boundaries (test providers; no live AI claims)", () => {
       ok: true,
       aiConfigured: false,
       catalogueVersion: 1,
+      communityConfigured: false,
     });
     expect(
       (

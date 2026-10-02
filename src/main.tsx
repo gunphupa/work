@@ -7,10 +7,13 @@ import "@fontsource/noto-sans-thai/700.css";
 import "./styles.css";
 import App from "./App";
 import { LanguageProvider } from "./i18n";
+import { AccountProvider } from "./auth";
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <LanguageProvider>
-      <App />
+      <AccountProvider>
+        <App />
+      </AccountProvider>
     </LanguageProvider>
   </React.StrictMode>,
 );

@@ -24,6 +24,9 @@ import type { Project, InventoryItem, Progress, Step } from "../domain/schema";
 import { useLanguage, unitText } from "../i18n";
 import { ProjectArt } from "./Art";
 import { AIHelp } from "./Inventory";
+import { ProjectCommunity } from "./Community";
+import { StepVisual } from "./StepVisual";
+import { guideDetails } from "../data/guide-details";
 export function ProjectGuide({
   project,
   inventory,
@@ -145,6 +148,50 @@ export function ProjectGuide({
           </p>
         </div>
       </section>
+      <section className="guide-overview panel">
+        <div>
+          <span className="eyebrow">
+            {t("รู้จักโปรเจกต์นี้", "ABOUT THIS PROJECT")}
+          </span>
+          <h2>
+            {t("ทำอะไร และทำงานอย่างไร", "What you’ll make and how it works")}
+          </h2>
+          {guideDetails[p.id] ? (
+            guideDetails[p.id][language].map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))
+          ) : (
+            <>
+              <p>
+                {p.description}{" "}
+                {t(
+                  "บทเรียนนี้ใช้ Arduino UNO R3 และแสดงลำดับตั้งแต่เตรียมอุปกรณ์ ต่อวงจร อัปโหลดโค้ด ไปจนถึงสังเกตผลจริง",
+                  "This lesson uses an Arduino UNO R3 and walks through preparation, circuit connections, uploading the sketch and observing the result.",
+                )}
+              </p>
+              <p>{p.test.instruction}</p>
+              <p>
+                {t(
+                  "ใช้รายการวัสดุและจุดเชื่อมต่อของโปรเจกต์นี้ ถอด USB ก่อนต่อสาย แล้วตรวจอีกครั้งก่อนอัปโหลด โค้ดดาวน์โหลดได้ในส่วนการต่อวงจรและโค้ด Arduino",
+                  "Use this project’s material list and connection map. Disconnect USB while wiring and check connections before uploading. Download the sketch from Wiring & Arduino code below.",
+                )}
+              </p>
+            </>
+          )}
+        </div>
+        <div className="overview-outcome">
+          <h3>
+            {t("เมื่อทำเสร็จ ลองสิ่งนี้", "When it’s finished, try this")}
+          </h3>
+          <p>{p.test.instruction}</p>
+          <p className="form-hint">
+            {t(
+              "คู่มือต้นฉบับ ReBuild หรือดัดแปลงจากแหล่งอ้างอิงด้านล่าง ยังไม่ได้ทดสอบชิ้นงานจริง",
+              "An original or source-adapted ReBuild guide. Physical build testing has not been performed.",
+            )}
+          </p>
+        </div>
+      </section>
       <div
         className="guide-tabs"
         aria-label={t("ส่วนของคู่มือ", "Guide sections")}
@@ -246,7 +293,11 @@ export function ProjectGuide({
                     <h3 ref={stepRef} tabIndex={-1}>
                       {p.steps[active].title}
                     </h3>
-                    <StepContent step={p.steps[active]} />
+                    <StepContent
+                      step={p.steps[active]}
+                      project={p}
+                      index={active}
+                    />
                     {progress && (
                       <label className="completion-check">
                         <input
@@ -295,7 +346,7 @@ export function ProjectGuide({
                         {t(`ขั้นตอน ${i + 1}`, `STEP ${i + 1}`)}
                       </div>
                       <h3>{s.title}</h3>
-                      <StepContent step={s} />
+                      <StepContent step={s} project={p} index={i} />
                       {progress && (
                         <label className="completion-check">
                           <input
@@ -372,6 +423,30 @@ export function ProjectGuide({
                   </p>
                 </details>
               )}
+              <section className="panel final-check">
+                <h2>
+                  {t(
+                    "ทดสอบผลงานและสรุปสิ่งที่เรียนรู้",
+                    "Test your build & reflect",
+                  )}
+                </h2>
+                <p>{p.test.instruction}</p>
+                <ul>
+                  <li>{p.steps[p.steps.length - 1].check}</li>
+                  <li>
+                    {t(
+                      "ถ้าผลไม่ตรงที่คาด ให้ย้อนดูจุดตรวจแต่ละขั้น เปลี่ยนทีละอย่างแล้วลองใหม่",
+                      "If the result is unexpected, revisit each step’s check. Change one thing at a time and try again.",
+                    )}
+                  </li>
+                  <li>
+                    {t(
+                      "จดสิ่งที่ใช้ได้ สิ่งที่ต้องปรับ และวัสดุทดแทนที่ได้ลอง จากนั้นแบ่งปันในส่วนชุมชนด้านล่างได้",
+                      "Note what worked, what needs changing and any substitutions you tried. Share your experience in the community section below.",
+                    )}
+                  </li>
+                </ul>
+              </section>
               {progress && (
                 <>
                   <div className="panel notes-panel">
@@ -567,119 +642,149 @@ export function ProjectGuide({
                 </div>
               </div>
               <div className="requirements">
-                {match.requirements.map((r) => (
-                  <article
-                    className={`requirement ${r.status === "satisfied" ? "satisfied" : ""}`}
-                    key={r.requirement.id}
-                  >
-                    <span className="requirement-symbol">
-                      {r.status === "satisfied" ? (
-                        <CheckCircle2 size={21} />
-                      ) : (
-                        <Package size={21} />
-                      )}
-                    </span>
-                    <div className="requirement-body">
-                      <div className="requirement-title">
-                        <h3>{r.requirement.label}</h3>
-                        <span className="quantity-badge">
-                          {r.requirement.quantity}{" "}
-                          {unitText(
-                            materialById[r.requirement.choices[0].materialId]
-                              .unit,
-                            language,
-                          )}
-                        </span>
-                      </div>
-                      <p>{r.requirement.why}</p>
-                      {r.requirement.choices.some(
-                        (c) => Object.keys(c.specs ?? {}).length > 0,
-                      ) && (
-                        <p className="spec-line">
-                          {r.requirement.choices
-                            .map((c) =>
-                              Object.values(c.specs ?? {})
-                                .map((v) => v.join(t(" หรือ ", " or ")))
-                                .join(" · "),
-                            )
-                            .join(" / ")}
-                        </p>
-                      )}
-                      {inventory.length > 0 && (
-                        <small className="inventory-match">
-                          {statusText(r.status)} · {r.available}/
-                          {r.requirement.quantity}
-                        </small>
-                      )}
-                      {r.requirement.choices.length > 1 && (
-                        <div className="alternative-note">
-                          <Lightbulb size={16} />
-                          {t(
-                            "ใช้แทนกันได้ในคู่มือนี้: ",
-                            "Alternatives in this guide: ",
-                          )}
-                          {r.requirement.choices
-                            .map((c) =>
-                              t(
-                                materialById[c.materialId].name,
-                                materialById[c.materialId].en,
-                              ),
-                            )
-                            .join(t(" หรือ ", " or "))}
-                        </div>
-                      )}
-                      <details className="item-options">
-                        <summary>
-                          {t(
-                            "บันทึกว่ามี / หาของชิ้นนี้",
-                            "Record an item / find this material",
-                          )}
-                        </summary>
-                        <div className="button-row">
-                          {r.requirement.choices.map((c) => (
-                            <button
-                              className="secondary"
-                              key={c.materialId}
-                              onClick={() => addMaterial(c.materialId)}
-                            >
-                              <Plus size={15} />
-                              {t(
-                                materialById[c.materialId].name,
-                                materialById[c.materialId].en,
+                {(
+                  [
+                    [
+                      "material",
+                      t(
+                        "วัสดุและของที่จะนำมาใช้",
+                        "Materials & items to reuse",
+                      ),
+                    ],
+                    [
+                      "component",
+                      t("ชิ้นส่วนอิเล็กทรอนิกส์", "Electronic components"),
+                    ],
+                    ["tool", t("เครื่องมือ", "Tools")],
+                  ] as const
+                ).map(([kind, label]) => {
+                  const rows = match.requirements.filter(
+                    (r) =>
+                      materialById[r.requirement.choices[0].materialId].kind ===
+                      kind,
+                  );
+                  return (
+                    rows.length > 0 && (
+                      <section className="supply-group" key={kind}>
+                        <h3>{label}</h3>
+                        {rows.map((r) => (
+                          <article
+                            className={`requirement ${r.status === "satisfied" ? "satisfied" : ""}`}
+                            key={r.requirement.id}
+                          >
+                            <span className="requirement-symbol">
+                              {r.status === "satisfied" ? (
+                                <CheckCircle2 size={21} />
+                              ) : (
+                                <Package size={21} />
                               )}
-                            </button>
-                          ))}
-                        </div>
-                        <p className="form-hint">
-                          {t(
-                            "ลองหาของสะอาดที่บ้านหรือยืมก่อน ลิงก์ด้านล่างเป็นผลค้นหา ไม่ใช่สินค้าที่ตรวจแล้ว",
-                            "Look for clean items at home or borrow first. The links below are searches, not reviewed products.",
-                          )}
-                        </p>
-                        <div className="button-row">
-                          <a
-                            className="text-link"
-                            href={`https://shopee.co.th/search?keyword=${encodeURIComponent(r.requirement.label)}`}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            Shopee
-                            <ExternalLink size={14} />
-                          </a>
-                          <a
-                            className="text-link"
-                            href={`https://www.lazada.co.th/catalog/?q=${encodeURIComponent(r.requirement.label)}`}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            Lazada
-                            <ExternalLink size={14} />
-                          </a>
-                        </div>
-                      </details>
-                    </div>
-                  </article>
-                ))}
+                            </span>
+                            <div className="requirement-body">
+                              <div className="requirement-title">
+                                <h3>{r.requirement.label}</h3>
+                                <span className="quantity-badge">
+                                  {r.requirement.quantity}{" "}
+                                  {unitText(
+                                    materialById[
+                                      r.requirement.choices[0].materialId
+                                    ].unit,
+                                    language,
+                                  )}
+                                </span>
+                              </div>
+                              <p>{r.requirement.why}</p>
+                              {r.requirement.choices.some(
+                                (c) => Object.keys(c.specs ?? {}).length > 0,
+                              ) && (
+                                <p className="spec-line">
+                                  {r.requirement.choices
+                                    .map((c) =>
+                                      Object.values(c.specs ?? {})
+                                        .map((v) => v.join(t(" หรือ ", " or ")))
+                                        .join(" · "),
+                                    )
+                                    .join(" / ")}
+                                </p>
+                              )}
+                              {inventory.length > 0 && (
+                                <small className="inventory-match">
+                                  {statusText(r.status)} · {r.available}/
+                                  {r.requirement.quantity}
+                                </small>
+                              )}
+                              {r.requirement.choices.length > 1 && (
+                                <div className="alternative-note">
+                                  <Lightbulb size={16} />
+                                  {t(
+                                    "ใช้แทนกันได้ในคู่มือนี้: ",
+                                    "Alternatives in this guide: ",
+                                  )}
+                                  {r.requirement.choices
+                                    .map((c) =>
+                                      t(
+                                        materialById[c.materialId].name,
+                                        materialById[c.materialId].en,
+                                      ),
+                                    )
+                                    .join(t(" หรือ ", " or "))}
+                                </div>
+                              )}
+                              <details className="item-options">
+                                <summary>
+                                  {t(
+                                    "บันทึกว่ามี / หาของชิ้นนี้",
+                                    "Record an item / find this material",
+                                  )}
+                                </summary>
+                                <div className="button-row">
+                                  {r.requirement.choices.map((c) => (
+                                    <button
+                                      className="secondary"
+                                      key={c.materialId}
+                                      onClick={() => addMaterial(c.materialId)}
+                                    >
+                                      <Plus size={15} />
+                                      {t(
+                                        materialById[c.materialId].name,
+                                        materialById[c.materialId].en,
+                                      )}
+                                    </button>
+                                  ))}
+                                </div>
+                                <p className="form-hint">
+                                  {t(
+                                    "ลองหาของสะอาดที่บ้านหรือยืมก่อน ลิงก์ด้านล่างเป็นผลค้นหา ไม่ใช่สินค้าที่ตรวจแล้ว",
+                                    "Look for clean items at home or borrow first. The links below are searches, not reviewed products.",
+                                  )}
+                                </p>
+                                <div className="button-row">
+                                  <a
+                                    className="text-link"
+                                    href={`https://shopee.co.th/search?keyword=${encodeURIComponent(r.requirement.label)}`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                  >
+                                    Shopee
+                                    <ExternalLink size={14} />
+                                  </a>
+                                  <a
+                                    className="text-link"
+                                    href={`https://www.lazada.co.th/catalog/?q=${encodeURIComponent(r.requirement.label)}`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                  >
+                                    Lazada
+                                    <ExternalLink size={14} />
+                                  </a>
+                                </div>
+                              </details>
+                            </div>
+                          </article>
+                        ))}
+                      </section>
+                    )
+                  );
+                })}
               </div>
               <button className="primary" onClick={() => setTab("steps")}>
                 {t("อ่านขั้นตอนต่อ", "Read the steps")}
@@ -842,14 +947,35 @@ export function ProjectGuide({
           />
         </aside>
       </div>
+      <ProjectCommunity key={p.id} target={p.id} />
     </>
   );
 }
-function StepContent({ step }: { step: Step }) {
+function StepContent({
+  step,
+  project,
+  index,
+}: {
+  step: Step;
+  project: Project;
+  index: number;
+}) {
   const { t } = useLanguage();
   return (
     <>
-      <p className="step-instruction">{step.text}</p>
+      <StepVisual project={project} index={index} />
+      <div className="step-actions">
+        <h4>{t("ลงมือทำ", "What to do")}</h4>
+        {/[.!?]\s+(?=[A-Z])/.test(step.text) ? (
+          <ol>
+            {step.text.split(/(?<=[.!?])\s+(?=[A-Z])/).map((action, i) => (
+              <li key={i}>{action}</li>
+            ))}
+          </ol>
+        ) : (
+          <p className="step-instruction">{step.text}</p>
+        )}
+      </div>
       {step.safety && (
         <div className="safety-note">
           <ShieldCheck size={18} />

@@ -1,6 +1,6 @@
 # Architecture and data model
 
-React 19 + TypeScript + Vite on an Express 5 / Node 24 server. Zod validates import and API boundaries. Sharp validates and re-encodes actual image bytes. No user account or server inventory database is needed. The separate SQLite database stores only expiring guest sessions, quota counters and a random IP-hashing salt.
+React 19 + TypeScript + Vite on an Express 5 / Node 24 server. Zod validates import and API boundaries. Sharp validates and re-encodes actual image bytes. No user account or server inventory database is needed for browsing and local builds. Optional community accounts use Supabase. The separate SQLite database stores only expiring guest sessions, quota counters and a random IP-hashing salt.
 
 `SavedState` version 1 contains inventory and saved builds. Each inventory record has a stable ID, canonical material ID, user label, integer quantity, unit, condition, critical specifications, confirmation flag and notes (model/dimensions can also be recorded there). Each build records completed steps, notes, substitutions, measurements with units, and update time. Photos and keys never appear in backups. The catalogue and saved-state schema are separately versioned; there are no migrations yet. Unsupported backup versions are rejected without overwriting current data.
 
@@ -30,3 +30,16 @@ The client never imports server code at runtime (only TypeScript types). One pro
 Session setup precedes expensive calls. Same-origin and CSRF checks run before JSON parsing. Bounded request schemas, decoded image validation, persistent atomic quotas, burst limits and two in-flight requests protect the only expensive route. Reservations include failed calls to keep retries bounded. AI proposals are always added unconfirmed and need user review before satisfying material checks. The validated language field selects Thai or English provider responses.
 
 SQLite uses WAL, a busy timeout and `BEGIN IMMEDIATE` to reserve all quota scopes together. Daily counters roll over at 00:00 UTC (07:00 Asia/Bangkok). Default scope is one server instance with durable storage, not distributed/serverless infrastructure. A new machine with a fresh database resets counters, so persistence and provider billing limits remain deployment obligations.
+
+
+## Optional moderated community
+
+`AccountProvider` retrieves only a validated Supabase project URL and publishable/anon key from `/api/community/config`. The elevated secret is server-only. Google OAuth and email magic links use the SDK PKCE flow. Browser routes remain readable without signing in, and browser inventory/backups stay version 1.
+
+The Node `/api/community` router validates each bearer token with Supabase Auth, requiring a verified email. Same-origin mutation checks, bounded Zod schemas and persistent quotas precede writes. The server binds the verified user ID and forces `pending`; submitted role/status/owner fields are rejected. Public feeds select only approved entries. Private author feeds and moderator queues require verified identity. Reviews are unique per user and target, with separate `website` and project scopes; respectful negative ratings are allowed.
+
+Supabase tables have RLS enabled and no anon/authenticated grants. A separate, server-managed moderator table controls approval; editable auth metadata never grants a role. The approval RPC verifies the moderator again and writes the status and audit decision in one PostgreSQL transaction. Service access is restricted to the Node server. The SQL is in `supabase/community.sql`.
+
+Community images are limited to 2 MB and 20 megapixels, decoded by Sharp, rotated, resized to at most 1200 px and re-encoded to JPEG without metadata. Only a private bucket is used. Public image reads check the entry's current approval status; pending/rejected image reads require its author or a moderator. The API returns no storage path or public signed URL and marks responses no-store. Deleting an entry revokes visibility before deleting its storage object; failed storage cleanup is logged for administrative cleanup. Existing downloaded copies cannot be revoked.
+
+The local PostgreSQL migration tests simulate Supabase's auth/storage schemas; they do not verify a real project, external OAuth, SMTP delivery or hosted configuration. See `docs/ACCOUNTS_SETUP.md` for activation, moderator appointment and live checks.

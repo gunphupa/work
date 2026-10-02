@@ -4,10 +4,18 @@ import { resolve } from "node:path";
 import { Quotas } from "./quota";
 import { openAIProvider } from "./ai";
 import { createApp } from "./app";
+import { communityConfig, supabaseStore } from "./community-store";
 if (existsSync(".env")) process.loadEnvFile(".env");
 const port = Number(process.env.PORT ?? 3000),
   production = process.env.NODE_ENV === "production";
 const origin = process.env.APP_ORIGIN ?? `http://localhost:${port}`;
+const community = communityConfig();
+if (
+  production &&
+  community &&
+  (!process.env.APP_ORIGIN || !process.env.QUOTA_DB)
+)
+  throw Error("Public accounts require APP_ORIGIN and a persistent QUOTA_DB.");
 if (
   production &&
   process.env.REBUILD_AI_KEY &&
@@ -26,6 +34,7 @@ const app = createApp({
   quota,
   origin,
   production,
+  community: community ? supabaseStore(community) : undefined,
   provider: process.env.REBUILD_AI_KEY
     ? openAIProvider(
         process.env.REBUILD_AI_KEY,
