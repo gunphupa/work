@@ -45,6 +45,7 @@ export interface CommunityStore {
   config: { url: string; publishableKey: string };
   user(token: string): Promise<string | null>;
   moderator(userId: string): Promise<boolean>;
+  takeSubmission(userId: string): Promise<boolean>;
   list(filter: {
     target?: string;
     kind?: string;
@@ -86,6 +87,15 @@ export function supabaseStore(config: CommunityConfig): CommunityStore {
     async user(token) {
       const { data, error } = await db.auth.getUser(token);
       return !error && data.user?.email_confirmed_at ? data.user.id : null;
+    },
+    async takeSubmission(userId) {
+      const { data, error } = await db.rpc("take_community_submission", {
+        actor_id: userId,
+      });
+      check(error);
+      if (typeof data !== "boolean")
+        throw Error("Invalid submission quota response");
+      return data;
     },
     async moderator(userId) {
       const { data, error } = await db

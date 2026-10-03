@@ -14,8 +14,9 @@ The account and community implementation is included, but it is **not connected 
 
 1. Open the Supabase project's SQL Editor.
 2. Open [`supabase/community.sql`](../supabase/community.sql) in this repository, copy its contents into a new query and run it.
-3. Confirm the tables `community_entries`, `community_moderators`, `community_decisions` exist and Storage shows `community-photos` as **private**.
-4. Do not make that bucket public or grant anonymous/authenticated browser users table writes. ReBuild's server verifies the author, processes the photo and submits the post as pending. Browser roles cannot approve their own posts.
+3. Run [`supabase/posting-limits.sql`](../supabase/posting-limits.sql) as a second query. It creates durable daily posting counters and a server-only atomic quota function.
+4. Confirm the tables `community_entries`, `community_moderators`, `community_decisions` exist and Storage shows `community-photos` as **private**.
+5. Do not make that bucket public or grant anonymous/authenticated browser users table writes. ReBuild's server verifies the author, processes the photo and submits the post as pending. Browser roles cannot approve their own posts.
 
 The migration was run twice against local PostgreSQL via PGlite, using simulated Supabase-managed auth/storage tables. Those checks are not a live Supabase deployment test.
 
@@ -29,11 +30,22 @@ In Render → your ReBuild service → Environment, add:
 | `SUPABASE_PUBLISHABLE_KEY` | The project's publishable key, or legacy `anon` key | Public, intentionally sent to the browser |
 | `SUPABASE_SERVICE_ROLE_KEY` | The project's secret key, or legacy `service_role` key | **Server secret only** |
 | `APP_ORIGIN` | Your exact website origin, e.g. `https://your-service.onrender.com`, with no trailing slash or path | Public |
-| `QUOTA_DB` | A writable persistent SQLite path, as in the existing deployment instructions | Server configuration |
+| `QUOTA_DB` | For accounts without AI, `/tmp/rebuild-quota.sqlite` is sufficient for the local short-term request throttle. Public AI still requires a persistent volume. | Server configuration |
 
 Never put an elevated secret key in `SUPABASE_PUBLISHABLE_KEY`, a `VITE_*` variable, source code, a screenshot or chat. Never commit `.env`. The browser receives only the URL and publishable key. The server will refuse to expose a recognisable secret/service key as the public key.
 
-The SQLite quota file is separate from Supabase: it keeps the app's request limits stable. Use the existing single-server durable-volume setup. The community defaults are 10 submission attempts per verified user/day, 100 across the app/day and 120 API requests per IP/minute; limits include failed submission attempts. No hosting plan has been purchased or changed by this work.
+Daily community submission counters live in Supabase and survive Render restarts. The database atomically allows 10 submission attempts per verified user and 100 globally per UTC day; failed validation/uploads also consume an attempt. Deleting or unpublishing a post does not refund attempts. A missing migration or database outage rejects submissions (502), with no SQLite fallback. Browser roles cannot access the counters or call the quota function. Old-day counters are removed on the next submission attempt.
+
+The 120 requests/IP/minute community throttle remains local SQLite and may reset on restart; it is distinct from the durable daily posting cap. AI quotas and guest sessions also remain SQLite, so public AI still needs a persistent volume and a single Node instance. No paid plan is needed for this community posting change.
+
+### Upgrade an existing deployment
+
+1. Run `supabase/posting-limits.sql` in Supabase SQL Editor **before** deploying this version. It is repeatable and does not change existing posts, photos or accounts.
+2. Deploy the updated server. Existing Supabase environment variables stay the same; on free Render with AI disabled, keep `QUOTA_DB=/tmp/rebuild-quota.sqlite`.
+3. Submit a comment. In Supabase Table Editor, check `community_submission_limits`: the current UTC day should have one `global` row and one row for your user UUID.
+4. Restart Render, submit another comment, and confirm both counts increase instead of starting over. Test an 11th same-day attempt returns the posting-limit message. Do not clear the live counters to bypass the cap.
+
+Existing temporary SQLite counts are not imported; the first deployment starts fresh Supabase counters for the current day. This is a one-time transition.
 
 For a cloud development environment, enter the same values in its secure environment settings. Allow the exact `PROJECT-REF.supabase.co` hostname for API access. Bind the service secret only to that hostname. A saved configuration draft does not apply itself to a running server; restart after configuration changes. Do not disable TLS verification.
 

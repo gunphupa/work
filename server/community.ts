@@ -123,21 +123,8 @@ export function communityRouter(
     async (req, res, next) => {
       try {
         res.locals.userId = await user(req);
-        const day = Math.floor(Date.now() / 86400000);
-        if (
-          !quota.take([
-            {
-              key: `community-submit:${res.locals.userId}:${day}`,
-              max: 10,
-              expires: (day + 1) * 86400000,
-            },
-            {
-              key: `community-submit-global:${day}`,
-              max: 100,
-              expires: (day + 1) * 86400000,
-            },
-          ])
-        )
+        // No local fallback: a database outage must not bypass posting limits.
+        if (!(await store!.takeSubmission(res.locals.userId)))
           throw new RequestError(429, "limit");
         next();
       } catch (e) {

@@ -20,6 +20,7 @@ let server: Server | undefined,
 let entries: Entry[] = [];
 let photoBytes: Buffer | undefined;
 let uploads = 0;
+const takeSubmission = vi.fn<(id: string) => Promise<boolean>>();
 const fixture = (extra: Partial<Entry> = {}): Entry => ({
   id,
   user_id: owner,
@@ -40,7 +41,15 @@ async function setup(enabled = true) {
   entries = [];
   photoBytes = undefined;
   uploads = 0;
+  const attempts = new Map<string, number>();
+  takeSubmission.mockReset().mockImplementation(async (id) => {
+    const count = attempts.get(id) ?? 0;
+    if (count >= 10) return false;
+    attempts.set(id, count + 1);
+    return true;
+  });
   const store: CommunityStore = {
+    takeSubmission,
     config: {
       url: "https://fixture.supabase.co",
       publishableKey: "test-public-key",
@@ -369,6 +378,16 @@ describe("Community API (verified-identity and storage test adapters)", () => {
       429,
     );
     expect(entries).toHaveLength(10);
+  });
+  it("fails closed when durable quota storage is unavailable", async () => {
+    await setup();
+    takeSubmission.mockRejectedValueOnce(Error("database unavailable"));
+    expect((await call("/entries", "POST", "owner", submission)).status).toBe(
+      502,
+    );
+    expect(entries).toHaveLength(0);
+    expect(uploads).toBe(0);
+    expect(takeSubmission).toHaveBeenCalledWith(owner);
   });
   it("rejects malformed IDs and invalid page offsets", async () => {
     await setup();

@@ -48,7 +48,7 @@ For local development only, copy `.env.example` to `.env`, then enter values loc
 | `REBUILD_AI_KEY` | OpenAI service credential; empty means AI is unavailable |
 | `REBUILD_AI_MODEL` | Default `gpt-4.1-mini`, a multimodal model listed by the official SDK; actual account availability needs verification |
 | `APP_ORIGIN` | Exact public origin, including scheme, with no trailing slash |
-| `QUOTA_DB` | SQLite path on a durable writable volume, e.g. `/app/.data/quota.sqlite` |
+| `QUOTA_DB` | SQLite path; `/tmp/rebuild-quota.sqlite` for community-only hosting, durable volume required for public AI |
 | `AI_GLOBAL_DAILY` | Global request reservations per UTC day, default 50 |
 | `AI_GUEST_DAILY` | Guest session daily reservations, default 10 |
 | `AI_IP_DAILY` | Hashed client-IP daily reservations, default 15 |
@@ -57,7 +57,7 @@ For local development only, copy `.env.example` to `.env`, then enter values loc
 
 Production with AI requires explicit `APP_ORIGIN` and `QUOTA_DB`. A configured key is **not** proof of a successful provider call. Recheck `/api/health`, then run a small controlled text and photo request with consent after securely supplying a real credential. Validate candidate output, edit it, and confirm it in the inventory.
 
-Provider settings can incur charges. The application creates no paid resources. A persistent volume is necessary for public quotas; do not enable live AI on ephemeral/serverless storage. Keep one Node process per database. See [deployment](docs/DEPLOYMENT.md) and [security](docs/SECURITY.md).
+Provider settings can incur charges. The application creates no paid resources. A persistent volume is necessary for public AI quotas; do not enable live AI on ephemeral/serverless storage. Keep one Node process per database. See [deployment](docs/DEPLOYMENT.md) and [security](docs/SECURITY.md).
 
 ## Validation
 

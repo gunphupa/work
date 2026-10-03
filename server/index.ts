@@ -10,12 +10,8 @@ const port = Number(process.env.PORT ?? 3000),
   production = process.env.NODE_ENV === "production";
 const origin = process.env.APP_ORIGIN ?? `http://localhost:${port}`;
 const community = communityConfig();
-if (
-  production &&
-  community &&
-  (!process.env.APP_ORIGIN || !process.env.QUOTA_DB)
-)
-  throw Error("Public accounts require APP_ORIGIN and a persistent QUOTA_DB.");
+if (production && community && !process.env.APP_ORIGIN)
+  throw Error("Public accounts require APP_ORIGIN.");
 if (
   production &&
   process.env.REBUILD_AI_KEY &&
