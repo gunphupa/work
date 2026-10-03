@@ -1,0 +1,25 @@
+{
+  "review_snapshot_utc": "2026-10-03T16:04:30.438329+00:00",
+  "source_snapshot_sha256": "45dd9a857bbbd433fa35af3eb43f8842474002bbdefafe87e830c4f23f7651b2",
+  "reviews": 21,
+  "website_reviews": 19,
+  "project_reviews": 2,
+  "rating_sum": 82,
+  "mean": 3.9047619047619047,
+  "sample_sd": 0.7684244858645451,
+  "rating_counts": {
+    "4": 9,
+    "3": 7,
+    "5": 5
+  },
+  "reported_participants": 20,
+  "unique_people_verified": false,
+  "independent_feedback_verified": false,
+  "software_revision": "5125774",
+  "unit_api_sql_passed": 99,
+  "browser_passed": 51,
+  "axe_scans": 75,
+  "known_dependency_vulnerabilities_at_check": 0,
+  "date": "2026-10-03",
+  "timezone": "Asia/Bangkok"
+}
