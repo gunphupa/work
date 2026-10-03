@@ -1,6 +1,6 @@
 # Turn on accounts and moderated community posts
 
-The account and community implementation is included, but it is **not connected to a live Supabase project yet**. Guides and local saved builds work without it. Google sign-in, email delivery, real cloud storage and production moderation still need the live checks below. Do not buy another database or a plugin just to start.
+The user has connected a live Supabase project and reported Google/email sign-in, approval and deletion working. The checklist below remains the reproducible setup procedure, including photo privacy, delivery limits and durable quota verification. Do not buy another database or a plugin just to start.
 
 ## 1. Create a Supabase project
 

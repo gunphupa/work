@@ -13,4 +13,6 @@
 | Hardware projects operate physically | Pending recorded AVR compilation and builds | Unmeasured |
 | Users plan faster / learn more | Pending adviser-reviewed human protocol and real observations | Unmeasured; no findings stated |
 | ReBuild reduces real waste | Pending physical reuse records and appropriate comparison | Unmeasured |
-| School report meets exact supplied templates | School PDFs not supplied | General outline only |
+| School report draft | User-supplied five-chapter DOCX and earlier draft output | Draft prepared; no school approval or human results claimed |
+| Durable daily community quotas | `../../tests/posting-limits.test.ts`, current unit report; user screenshot of migration success | Local disk reopen and limits tested; live Render restart test remains pending |
+| Google/email and moderation on hosted app | User reports and screenshots, 3 October 2026 | Selected manual observations; not automated delivery/performance verification |

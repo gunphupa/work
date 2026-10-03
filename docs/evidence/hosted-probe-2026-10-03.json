@@ -1,0 +1,9 @@
+{
+  "observed_at_utc": "2026-10-03T10:48:09.853806+00:00",
+  "url": "https://work-c3to.onrender.com/api/health",
+  "result": "environment_proxy_denied_connect",
+  "curl_exit": 56,
+  "http_proxy_status": 403,
+  "website_response_received": false,
+  "limits": "New Render rollout and live restart counters not independently verified. User supplied migration Success screenshot."
+}

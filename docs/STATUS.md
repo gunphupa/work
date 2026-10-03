@@ -1,6 +1,6 @@
 # Implementation status
 
-Updated 2 October 2026 for detailed guides and moderated community implementation.
+Updated 3 October 2026 for durable community posting limits and research preparation.
 
 | Capability | Current behavior | Limits |
 | --- | --- | --- |
@@ -14,11 +14,11 @@ Updated 2 October 2026 for detailed guides and moderated community implementatio
 | Tutorials | NASA video observed in its official page; project-specific Thai/English YouTube searches | No reviewed YouTube library, transcript analysis, playback verification or live search provider |
 | Shopping | Optional, labelled Shopee/Lazada searches under individual materials | No inspected listings, prices, stock or seller recommendation |
 | Guest data | Browser-local inventory, progress, notes, substitutions, measurements, export/import; old v1 backups preserved | No cloud sync or stock reservation across builds; optional account identity does not migrate local data |
-| Community and reviews | Account-bound comments/photos; separate project and website ratings; all submissions pending until moderator approval; author status/deletion and admin approve/reject/unpublish | Supabase project, migration, provider credentials and live deployment still need activation. UI stays explicitly unavailable without configuration |
-| Accounts | Google and passwordless email link sign-in via Supabase PKCE; verified user checks on the server; moderator table independent of profile metadata | Live Google OAuth and email delivery not tested; production email needs an appropriate SMTP provider. Inventory remains browser-local |
+| Community and reviews | Account-bound comments/photos; separate project and website ratings; all submissions pending until moderator approval; author status/deletion and admin approve/reject/unpublish | User reported approval and deletion working. Photo privacy and restart persistence still require the live checklist; posting caps now use Supabase. |
+| Accounts | Google and passwordless email link sign-in via Supabase PKCE; verified user checks on the server; moderator table independent of profile metadata | User reported Google and two email addresses working; larger email delivery limits remain unverified. Inventory remains browser-local. |
 | Guide detail | Fuller bilingual introductions, grouped supplies, final tests/reflection; 81 household/science step diagrams and 60 electronics visual summaries | Original concept diagrams rather than photos; no new step video library or physical testing |
 | AI | Server-side adapter and fixture-verified text/photo/help flows | Real credential absent here; live inference and accuracy unmeasured |
 | Software verification | See TEST_REPORT.md and current machine-readable reports | Automated software results, not human or physical studies |
-| Public hosting | Existing Node/Render deployment instructions still apply | No production URL, hosted rollout or live provider call verified in this task |
+| Public hosting | Existing Node/Render deployment instructions still apply | User screenshots show work-c3to.onrender.com Live on the previous release. Quota fix pushed to main; hosted probe blocked by environment proxy. |
 
 Readiness and environment configuration are separate from publication. The development workflow runs without an AI key. Live public AI still needs a valid host secret, exact APP_ORIGIN, durable QUOTA_DB and one Node instance.
