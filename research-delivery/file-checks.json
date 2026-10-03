@@ -1,0 +1,22 @@
+{
+  "ReBuild_5_Chapters_Research_Draft": {
+    "pdf_pages": 22,
+    "out_of_page_text": [],
+    "required_headings": true,
+    "tables": 3,
+    "figures": 3
+  },
+  "Annotated_References_TH": {
+    "pdf_pages": 4,
+    "out_of_page_text": []
+  },
+  "ReBuild_Research_Canva_Supplement": {
+    "pdf_pages": 8,
+    "out_of_page_text": []
+  },
+  "reference_status": {
+    "candidates": 8,
+    "online_full_text_verified_this_turn": 0,
+    "blocker": "HTTPS proxy returned 403 for Crossref; network draft saved, not confirmed applied"
+  }
+}
