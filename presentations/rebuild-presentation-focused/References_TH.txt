@@ -1,0 +1,25 @@
+เอกสารอ้างอิงสำหรับสไลด์ ReBuild
+
+รายการบทความวิชาการเป็นรายการตั้งต้นพร้อม DOI ยังไม่มีบันทึกตรวจฉบับเต็มในชุดหลักฐานปัจจุบัน ต้องตรวจต้นฉบับและหน้าที่รองรับก่อนส่งรายงาน
+
+คณะผู้จัดทำ ReBuild. (2569ก). ข้อมูลรีวิวที่เผยแพร่บนเว็บแอปพลิเคชัน ReBuild ณ วันที่ 3 ตุลาคม 2569 เวลา 23:04 น. [ชุดข้อมูลที่บันทึก ณ จุดตัด]. https://work-c3to.onrender.com
+
+คณะผู้จัดทำ ReBuild. (2569ข). Technical validation — 3 October 2026 [รายงานผลทดสอบซอฟต์แวร์รุ่น 5125774]. https://github.com/gunphupa/work/blob/5fca215c966f493a478dec53eb458896c754d4e0/docs/TEST_REPORT.md
+
+Arduino. (n.d.). Blink. Arduino Documentation. https://docs.arduino.cc/built-in-examples/basics/Blink/
+
+Hevner, A. R., March, S. T., Park, J., & Ram, S. (2004). Design science in information systems research. MIS Quarterly, 28(1), 75–105. https://doi.org/10.2307/25148625
+
+Kirchherr, J., Reike, D., & Hekkert, M. (2017). Conceptualizing the circular economy: An analysis of 114 definitions. Resources, Conservation and Recycling, 127, 221–232. https://doi.org/10.1016/j.resconrec.2017.09.005
+
+Kokotsaki, D., Menzies, V., & Wiggins, A. (2016). Project-based learning: A review of the literature. Improving Schools, 19(3), 267–277. https://doi.org/10.1177/1365480216659733
+
+Mayer, R. E., & Moreno, R. (2003). Nine ways to reduce cognitive load in multimedia learning. Educational Psychologist, 38(1), 43–52. https://doi.org/10.1207/S15326985EP3801_6
+
+National Aeronautics and Space Administration, Jet Propulsion Laboratory. (n.d.). Make a straw rocket. https://www.jpl.nasa.gov/edu/resources/project/make-a-straw-rocket/
+
+National Institute of Standards and Technology. (n.d.). NIST/SEMATECH e-Handbook of statistical methods (Sections 1.3.5.1, Measures of location, and 1.3.5.6, Measures of scale). https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm ; https://www.itl.nist.gov/div898/handbook/eda/section3/eda356.htm
+
+Nihal, M. (n.d.). Build your own automatic watch winder with Arduino Nano. Instructables. [สำเนาข้อความและภาพหน้าจอที่ผู้จัดทำได้รับ; ไม่ระบุ URL บทความเนื่องจากยังไม่ได้ยืนยันลิงก์ต้นฉบับ].
+
+Peffers, K., Tuunanen, T., Rothenberger, M. A., & Chatterjee, S. (2007). A design science research methodology for information systems research. Journal of Management Information Systems, 24(3), 45–77. https://doi.org/10.2753/MIS0742-1222240302

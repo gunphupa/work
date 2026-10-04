@@ -1,0 +1,20 @@
+{
+  "slides": 26,
+  "main_slides": 19,
+  "appendix_slides": 7,
+  "speaker_notes": 26,
+  "native_editable_charts": 1,
+  "review_records": 21,
+  "mean": 3.9047619047619047,
+  "sample_sd": 0.7684244858645451,
+  "stars_1_to_5": [
+    0,
+    0,
+    7,
+    9,
+    5
+  ],
+  "main_timing_seconds": 900,
+  "demo_source": "Local app with synthetic inventory/progress; not participant data",
+  "research_evidence_date": "2026-10-03"
+}

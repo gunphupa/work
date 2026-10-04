@@ -1,0 +1,132 @@
+[
+  {
+    "slide": 1,
+    "title": "ReBuild: การพัฒนาเว็บแอปพลิเคชันและการประเมินต้นแบบ",
+    "layout": "cover"
+  },
+  {
+    "slide": 2,
+    "title": "จากกล่องที่มีอยู่ → สู่แผนทำของใช้",
+    "layout": "problem-to-purpose"
+  },
+  {
+    "slide": 3,
+    "title": "วัตถุประสงค์ 3 ข้อ และขอบเขตต้นแบบ",
+    "layout": "objectives-with-scope"
+  },
+  {
+    "slide": 4,
+    "title": "แนวคิดและงานวิจัยที่ใช้ตัดสินใจออกแบบ",
+    "layout": "one-page-literature"
+  },
+  {
+    "slide": 5,
+    "title": "กรอบการศึกษา: พัฒนา → ตรวจระบบ → วิเคราะห์ข้อมูล",
+    "layout": "framework-with-expectations"
+  },
+  {
+    "slide": 6,
+    "title": "วิธีพัฒนาและเครื่องมือที่ใช้",
+    "layout": "browser-and-architecture"
+  },
+  {
+    "slide": 7,
+    "title": "สาธิต 1 | เลือกงานและเปิดคู่มือได้ทันที",
+    "layout": "demo-project-hero"
+  },
+  {
+    "slide": 8,
+    "title": "สาธิต 2 | รู้ว่ามีอะไร และต้องเตรียมอะไรเพิ่ม",
+    "layout": "demo-material-inspection"
+  },
+  {
+    "slide": 9,
+    "title": "สาธิต 3 | อ่านขั้นตอน บันทึก และเปิดทำต่อ",
+    "layout": "demo-step-to-save"
+  },
+  {
+    "slide": 10,
+    "title": "ประเมินอย่างไร: แยกคน ข้อมูล และเครื่องมือ",
+    "layout": "evaluation-three-tracks"
+  },
+  {
+    "slide": 11,
+    "title": "เก็บข้อมูลและวิเคราะห์ให้ตรงกับหลักฐาน",
+    "layout": "collection-analysis-spread"
+  },
+  {
+    "slide": 12,
+    "title": "ผลทดสอบการทำงานของซอฟต์แวร์",
+    "layout": "technical-dashboard"
+  },
+  {
+    "slide": 13,
+    "title": "การกระจายคะแนนดาวของรีวิว",
+    "layout": "editable-rating-chart"
+  },
+  {
+    "slide": 14,
+    "title": "รีวิวชี้ว่า “รายละเอียดตอนลงมือทำ” ยังต้องชัดขึ้น",
+    "layout": "feedback-to-action"
+  },
+  {
+    "slide": 15,
+    "title": "อภิปรายผลเชื่อมกับแนวคิดในบทที่ 2",
+    "layout": "discussion-links"
+  },
+  {
+    "slide": 16,
+    "title": "สรุปผลตามวัตถุประสงค์และข้อคาดหมาย",
+    "layout": "objective-evidence-matrix"
+  },
+  {
+    "slide": 17,
+    "title": "ขอบเขตข้อสรุป: หลักฐานนี้บอกได้แค่ไหน",
+    "layout": "limits-three-levels"
+  },
+  {
+    "slide": 18,
+    "title": "ข้อเสนอแนะเชิงปฏิบัติและการวิจัยต่อไป",
+    "layout": "recommendation-roadmap"
+  },
+  {
+    "slide": 19,
+    "title": "ขอบคุณและเปิดรับคำถาม",
+    "layout": "closing"
+  },
+  {
+    "slide": 20,
+    "title": "เอกสารอ้างอิง (1/2)",
+    "layout": "reference-page"
+  },
+  {
+    "slide": 21,
+    "title": "เอกสารอ้างอิง (2/2)",
+    "layout": "reference-page"
+  },
+  {
+    "slide": 22,
+    "title": "ข้อมูลประกอบ: ขอบเขต นิยาม และประโยชน์",
+    "layout": "scope-definitions-four-fields"
+  },
+  {
+    "slide": 23,
+    "title": "เครื่องมือวิจัยและการตรวจคุณภาพข้อมูล",
+    "layout": "instrument-quality-matrix"
+  },
+  {
+    "slide": 24,
+    "title": "ผลตรวจคุณภาพและขอบเขตหลักฐาน",
+    "layout": "quality-checklist"
+  },
+  {
+    "slide": 25,
+    "title": "สไลด์สำรอง: ภารกิจเก็บข้อมูลรอบถัดไป",
+    "layout": "task-protocol"
+  },
+  {
+    "slide": 26,
+    "title": "สไลด์สำรอง: หลักฐานและข้อมูลที่ต้องยืนยัน",
+    "layout": "evidence-register"
+  }
+]
