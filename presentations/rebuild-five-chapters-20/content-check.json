@@ -1,0 +1,40 @@
+{
+  "slides": 20,
+  "chapter_1_pages": [
+    2,
+    3,
+    4
+  ],
+  "chapter_2_pages": [
+    5,
+    6,
+    7
+  ],
+  "chapter_3_pages": [
+    8,
+    9,
+    10
+  ],
+  "chapter_4_pages": [
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "chapter_5_pages": [
+    16,
+    17,
+    18
+  ],
+  "reference_page": 19,
+  "closing_page": 20,
+  "speaker_notes": 20,
+  "editable_chart_count": 1,
+  "review_count": 21,
+  "mean": 3.9,
+  "sample_sd": 0.77,
+  "authors_and_advisor_verified_against_user_confirmation": true,
+  "no_advice_slides": true,
+  "reference_template_order_verified": true
+}

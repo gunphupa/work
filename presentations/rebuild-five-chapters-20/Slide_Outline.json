@@ -1,0 +1,142 @@
+[
+  {
+    "slide": 1,
+    "title": "ReBuild — การพัฒนาเว็บแอปพลิเคชันและการประเมินต้นแบบเบื้องต้น",
+    "layout": "named-cover",
+    "chapter": "โครงงานวิจัย 5 บท / ปีการศึกษา 2569",
+    "reference_pdf_page": 1
+  },
+  {
+    "slide": 2,
+    "title": "มีวัสดุอยู่แล้ว แต่จะเริ่มสร้างอะไร?",
+    "layout": "problem-opportunity",
+    "chapter": "บทที่ 1 / บทนำ",
+    "reference_pdf_page": 2
+  },
+  {
+    "slide": 3,
+    "title": "วัตถุประสงค์ สมมติฐาน และขอบเขตโครงงาน",
+    "layout": "objectives-scope",
+    "chapter": "บทที่ 1 / บทนำ",
+    "reference_pdf_page": 3
+  },
+  {
+    "slide": 4,
+    "title": "ผู้ใช้ประโยชน์และคุณค่าที่คาดหวัง",
+    "layout": "benefit-quadrants",
+    "chapter": "บทที่ 1 / บทนำ",
+    "reference_pdf_page": 4
+  },
+  {
+    "slide": 5,
+    "title": "แนวคิดหลักและนิยามที่ใช้",
+    "layout": "concept-radial",
+    "chapter": "บทที่ 2 / แนวคิดและเอกสารที่เกี่ยวข้อง",
+    "reference_pdf_page": 5
+  },
+  {
+    "slide": 6,
+    "title": "งานวิจัยที่เกี่ยวข้องและการนำมาใช้",
+    "layout": "literature-five-links",
+    "chapter": "บทที่ 2 / แนวคิดและเอกสารที่เกี่ยวข้อง",
+    "reference_pdf_page": 6
+  },
+  {
+    "slide": 7,
+    "title": "กรอบแนวคิดและตัวแปรที่ศึกษา",
+    "layout": "framework-and-variables",
+    "chapter": "บทที่ 2 / แนวคิดและเอกสารที่เกี่ยวข้อง",
+    "reference_pdf_page": 7
+  },
+  {
+    "slide": 8,
+    "title": "ประชากรเป้าหมายและกลุ่มผู้ทดลอง",
+    "layout": "sample-and-recruitment",
+    "chapter": "บทที่ 3 / วิธีดำเนินการวิจัย",
+    "reference_pdf_page": 8
+  },
+  {
+    "slide": 9,
+    "title": "เครื่องมือและขั้นตอนการเก็บรวบรวมข้อมูล",
+    "layout": "tools-and-collection",
+    "chapter": "บทที่ 3 / วิธีดำเนินการวิจัย",
+    "reference_pdf_page": 9
+  },
+  {
+    "slide": 10,
+    "title": "วิธีวิเคราะห์ข้อมูลและสถิติที่ใช้",
+    "layout": "analysis-notebook",
+    "chapter": "บทที่ 3 / วิธีดำเนินการวิจัย",
+    "reference_pdf_page": 10
+  },
+  {
+    "slide": 11,
+    "title": "ข้อมูลทั่วไปของผู้ทดลองและชุดข้อมูลที่วิเคราะห์",
+    "layout": "people-versus-reviews",
+    "chapter": "บทที่ 4 / ผลการวิจัย",
+    "reference_pdf_page": 11
+  },
+  {
+    "slide": 12,
+    "title": "ผลตามวัตถุประสงค์ที่ 1–2: คู่มือและการวางแผน",
+    "layout": "product-result-three-screens",
+    "chapter": "บทที่ 4 / ผลการวิจัย",
+    "reference_pdf_page": 12
+  },
+  {
+    "slide": 13,
+    "title": "ผลตามวัตถุประสงค์ที่ 3: การทดสอบซอฟต์แวร์",
+    "layout": "technical-evidence",
+    "chapter": "บทที่ 4 / ผลการวิจัย",
+    "reference_pdf_page": 12
+  },
+  {
+    "slide": 14,
+    "title": "การกระจายคะแนนดาวของรีวิว",
+    "layout": "editable-rating-chart",
+    "chapter": "บทที่ 4 / ผลการวิจัย",
+    "reference_pdf_page": 12
+  },
+  {
+    "slide": 15,
+    "title": "ข้อค้นพบสำคัญจากการประเมินต้นแบบ",
+    "layout": "findings-editorial",
+    "chapter": "บทที่ 4 / ผลการวิจัย",
+    "reference_pdf_page": 13
+  },
+  {
+    "slide": 16,
+    "title": "สรุปผลตามวัตถุประสงค์และข้อคาดหมาย",
+    "layout": "objective-evidence-matrix",
+    "chapter": "บทที่ 5 / สรุป อภิปรายผล และข้อเสนอแนะ",
+    "reference_pdf_page": 14
+  },
+  {
+    "slide": 17,
+    "title": "อภิปรายผลและข้อจำกัดของการศึกษา",
+    "layout": "discussion-and-limits",
+    "chapter": "บทที่ 5 / สรุป อภิปรายผล และข้อเสนอแนะ",
+    "reference_pdf_page": 15
+  },
+  {
+    "slide": 18,
+    "title": "ข้อเสนอแนะเชิงปฏิบัติและการวิจัยต่อไป",
+    "layout": "recommendation-roadmap",
+    "chapter": "บทที่ 5 / สรุป อภิปรายผล และข้อเสนอแนะ",
+    "reference_pdf_page": 16
+  },
+  {
+    "slide": 19,
+    "title": "เอกสารอ้างอิงหลัก",
+    "layout": "references-compact",
+    "chapter": "เอกสารอ้างอิง / รายการเต็มอยู่ในไฟล์ประกอบ",
+    "reference_pdf_page": null
+  },
+  {
+    "slide": 20,
+    "title": "ขอบคุณและเปิดรับคำถาม",
+    "layout": "closing",
+    "chapter": "ขอบคุณ / คำถามและข้อเสนอแนะ",
+    "reference_pdf_page": 19
+  }
+]
