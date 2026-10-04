@@ -1,0 +1,16 @@
+{
+  "date_bangkok": "2026-10-04",
+  "pages": 61,
+  "main_sections": 24,
+  "slide_explanations": 20,
+  "examiner_questions": 30,
+  "numeric_values_recomputed": {
+    "review_count": 21,
+    "rating_sum": 82,
+    "mean": 3.9047619047619047,
+    "sample_sd": 0.7684244858645451
+  },
+  "word_and_pdf_checked": true,
+  "text_overflow_detected": false,
+  "historical_tests_rerun": false
+}
