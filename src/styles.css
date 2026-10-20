@@ -833,6 +833,160 @@ main {
   grid-template-columns: minmax(0, 1fr) 330px;
   gap: 36px;
 }
+.inventory-search {
+  width: 100%;
+}
+.inventory-count {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 8px 0 14px;
+}
+.item-project-button {
+  margin-top: 8px;
+  text-align: left;
+  font-size: 12px;
+}
+.inventory-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.item-photo-preview {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.item-photo-preview img {
+  width: 96px;
+  height: 96px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.material-projects {
+  margin-top: 24px;
+}
+.discovery-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.discovery-heading > svg {
+  flex-shrink: 0;
+}
+.discovery-heading p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+.material-project-list {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.material-project-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f8f9f2;
+  overflow-wrap: anywhere;
+}
+.material-project-card h4 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+.material-project-card p,
+.material-project-card li {
+  font-size: 13px;
+}
+.material-project-card ul {
+  padding-left: 20px;
+  margin: 7px 0 12px;
+}
+.material-project-card li {
+  margin-bottom: 5px;
+}
+.project-readiness {
+  font-weight: 600;
+  color: var(--green);
+}
+.project-missing,
+.project-checks {
+  margin: 14px 0;
+  font-size: 13px;
+}
+.project-checks {
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff5e7;
+}
+.candidate-evidence {
+  display: block;
+  margin-top: 8px;
+}
+.substitution-options {
+  margin: 12px 0 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f3f6ec;
+  font-size: 13px;
+}
+.substitution-options summary,
+.paper-substitutions summary {
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.substitution-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: grid;
+  gap: 12px;
+}
+.substitution-card {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffef9;
+  overflow-wrap: anywhere;
+}
+.substitution-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.substitution-owned,
+.substitution-unowned {
+  display: inline-block;
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 3px 9px;
+}
+.substitution-owned {
+  background: #e4efdc;
+  color: #274e34;
+}
+.substitution-unowned {
+  background: #eeeee8;
+  color: #50584b;
+}
+.substitution-card p {
+  margin: 9px 0 0;
+  font-size: 13px;
+}
+.substitution-limit {
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.paper-substitutions {
+  margin-bottom: 20px;
+}
+.paper-substitutions > p {
+  font-size: 13px;
+  margin: 12px 0;
+}
 .quick-actions {
   display: flex;
   gap: 10px;

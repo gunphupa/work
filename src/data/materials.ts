@@ -1124,6 +1124,38 @@ bottleMaterial.specs = {
   capacity: { label: "ความจุขวด", options: ["1–1.5 L", "other"] },
 };
 
+materials.push(
+  m(
+    "nail",
+    "ตะปู",
+    "Nail",
+    ["ตะปูเหล็ก", "ตะปูตอกไม้", "nails", "steel nail"],
+    "material",
+    {},
+    "ชิ้น",
+    "ตรวจขนาดและสภาพ ไม่ใช้ตะปูแทนอุปกรณ์ไฟฟ้าหรือชิ้นส่วนรับน้ำหนักโดยเดา",
+  ),
+  m(
+    "glue-stick",
+    "กาวแท่ง",
+    "Glue stick",
+    ["กาวติดกระดาษ", "gluestick", "paper glue"],
+    "material",
+  ),
+  m(
+    "double-sided-tape",
+    "เทปกาวสองหน้า",
+    "Double-sided tape",
+    [
+      "กาวสองหน้า",
+      "เทปสองหน้า",
+      "double sided tape",
+      "double-sided adhesive tape",
+    ],
+    "material",
+  ),
+);
+
 export const materialById = Object.assign(
   Object.create(null),
   Object.fromEntries(materials.map((m) => [m.id, m])),

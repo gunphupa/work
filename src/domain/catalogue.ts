@@ -1,6 +1,8 @@
 import { englishCopies, projects } from "../data/projects";
 import { materialById, materials } from "../data/materials";
-import type { Project } from "./schema";
+import type { InventoryItem, Project } from "./schema";
+const normalize = (text: string) => text.normalize("NFKC").toLowerCase().trim();
+const words = (text: string) => normalize(text).split(/\s+/).filter(Boolean);
 export const featuredIds = [
   "drawer-dividers",
   "bottle-planter",
@@ -33,10 +35,40 @@ export function searchProjects(query: string, catalogue: Project[] = projects) {
   });
 }
 export function searchMaterials(query: string) {
-  const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  return materials.filter((m) =>
-    terms.every((term) =>
-      [m.name, m.en, ...m.aliases].join(" ").toLowerCase().includes(term),
-    ),
-  );
+  const terms = words(query);
+  const exact = normalize(query);
+  return materials
+    .filter((m) =>
+      terms.every((term) =>
+        normalize([m.name, m.en, ...m.aliases].join(" ")).includes(term),
+      ),
+    )
+    .sort(
+      (a, b) =>
+        Number(
+          [b.name, b.en, ...b.aliases].some(
+            (name) => normalize(name) === exact,
+          ),
+        ) -
+        Number(
+          [a.name, a.en, ...a.aliases].some(
+            (name) => normalize(name) === exact,
+          ),
+        ),
+    );
+}
+export function searchInventory(query: string, inventory: InventoryItem[]) {
+  const terms = words(query);
+  return inventory.filter((item) => {
+    const material = materialById[item.materialId];
+    const text = normalize(
+      [
+        item.label,
+        item.notes,
+        ...Object.values(item.specs),
+        ...(material ? [material.name, material.en, ...material.aliases] : []),
+      ].join(" "),
+    );
+    return terms.every((term) => text.includes(term));
+  });
 }

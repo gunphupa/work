@@ -15,7 +15,8 @@ import { materialById } from "../data/materials";
 import { searchMaterials } from "../domain/catalogue";
 import { parseInventory } from "../domain/inventory";
 import { itemSchema, type InventoryItem } from "../domain/schema";
-import { preparePhotos } from "../domain/images";
+import { preparePhotos, prepareItemPhoto } from "../domain/images";
+import { MaterialProjects } from "./MaterialProjects";
 import type { AIAnswer, AIRequest } from "../../server/ai";
 export type EditorSeed = {
   item?: InventoryItem;
@@ -43,7 +44,7 @@ export function ItemEditor({
 }: {
   seed: EditorSeed;
   close: () => void;
-  save: (i: InventoryItem) => void;
+  save: (i: InventoryItem) => string | void;
 }) {
   const { t, language } = useLanguage();
   const material =
@@ -53,30 +54,40 @@ export function ItemEditor({
     [query, setQuery] = useState(""),
     [showAll, setShowAll] = useState(false),
     [error, setError] = useState("");
+  const [photoBusy, setPhotoBusy] = useState(false);
+  const photoSequence = useRef(0);
+  useEffect(
+    () => () => {
+      photoSequence.current++;
+    },
+    [],
+  );
   const [draft, setDraft] = useState<InventoryItem>(
     seed.item ?? {
       id: crypto.randomUUID(),
       materialId: material.id,
-      label: seed.label ?? t(material.name, material.en),
+      label:
+        seed.label ??
+        (material.id === "unknown" ? "" : t(material.name, material.en)),
       quantity: 1,
       unit: material.unit,
-      condition: "usable",
+      condition: material.id === "unknown" ? "unknown" : "usable",
       verified: false,
       specs: {},
       notes: "",
     },
   );
   const mat = materialById[draft.materialId] ?? materialById.unknown;
-  const results = searchMaterials(query).sort(
-    (a, b) => Number(a.kind === "component") - Number(b.kind === "component"),
-  );
+  const results = searchMaterials(query).filter((m) => m.id !== "unknown");
   function choose(id: string) {
     const m = materialById[id];
     setDraft({
       ...draft,
       materialId: id,
-      label: id === "unknown" && query.trim() ? query.trim() : t(m.name, m.en),
+      label: id === "unknown" ? query.trim() : t(m.name, m.en),
       unit: m.unit,
+      condition:
+        id === "unknown" ? "unknown" : seed.item ? draft.condition : "usable",
       specs: {},
       verified: false,
     });
@@ -84,7 +95,10 @@ export function ItemEditor({
   }
   function submit(e: FormEvent) {
     e.preventDefault();
-    const parsed = itemSchema.safeParse({ ...draft, verified: true });
+    const parsed = itemSchema.safeParse({
+      ...draft,
+      verified: draft.condition !== "unknown",
+    });
     if (!parsed.success) {
       setError(
         t(
@@ -94,7 +108,8 @@ export function ItemEditor({
       );
       return;
     }
-    save(parsed.data);
+    const saveError = save(parsed.data);
+    if (saveError) setError(saveError);
   }
   return (
     <Modal
@@ -137,6 +152,14 @@ export function ItemEditor({
               </button>
             ))}
           </div>
+          {!results.length && (
+            <p role="status">
+              {t(
+                "ไม่พบในรายการ เพิ่มชื่อของคุณเองได้ด้านล่าง",
+                "No matching type. Add your own item below.",
+              )}
+            </p>
+          )}
           {results.length > 18 && !showAll && (
             <button className="text-link" onClick={() => setShowAll(true)}>
               {t(
@@ -276,6 +299,63 @@ export function ItemEditor({
               onChange={(e) => setDraft({ ...draft, notes: e.target.value })}
             />
           </label>
+          <label>
+            {t("รูปสิ่งของ (ไม่บังคับ)", "Item photo (optional)")}
+            <input
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              onChange={async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                const sequence = ++photoSequence.current;
+                setPhotoBusy(true);
+                setError("");
+                try {
+                  const photo = await prepareItemPhoto(file, language);
+                  if (sequence === photoSequence.current)
+                    setDraft((d) => ({ ...d, photo }));
+                } catch {
+                  if (sequence === photoSequence.current)
+                    setError(
+                      t(
+                        "อ่านรูปไม่ได้ ใช้ JPEG, PNG หรือ WebP ไม่เกิน 10 MB และ 40 ล้านพิกเซล",
+                        "Could not read photo. Use JPEG, PNG or WebP up to 10 MB and 40 megapixels.",
+                      ),
+                    );
+                } finally {
+                  if (sequence === photoSequence.current) setPhotoBusy(false);
+                }
+              }}
+            />
+          </label>
+          {draft.photo && (
+            <div className="item-photo-preview">
+              <img
+                src={draft.photo}
+                alt={t("รูปสิ่งของที่เลือก", "Selected item photo")}
+              />
+              <button
+                type="button"
+                className="text-link"
+                onClick={() => {
+                  photoSequence.current++;
+                  setPhotoBusy(false);
+                  setDraft((d) => ({ ...d, photo: undefined }));
+                }}
+              >
+                {t("ลบรูป", "Remove photo")}
+              </button>
+            </div>
+          )}
+          <p className="form-hint">
+            {t(
+              "รูปนี้เก็บในเบราว์เซอร์และไฟล์สำรองเท่านั้น ไม่ส่งให้ AI",
+              "This photo stays in this browser and your backup. It is not sent to AI.",
+            )}
+          </p>
+          {photoBusy && (
+            <p role="status">{t("กำลังย่อรูป…", "Preparing photo…")}</p>
+          )}
           <p className="form-hint">
             {t(
               "การบันทึกใช้รายละเอียดที่คุณกรอกเช็กรายการวัสดุ ค่าไหนไม่แน่ใจให้เว้นไว้ ยังอ่านและบันทึกขั้นตอนได้ทุกโปรเจกต์",
@@ -291,7 +371,7 @@ export function ItemEditor({
             <button type="button" className="secondary" onClick={close}>
               {t("ยกเลิก", "Cancel")}
             </button>
-            <button className="primary" type="submit">
+            <button className="primary" type="submit" disabled={photoBusy}>
               {t("บันทึกรายการ", "Save item")}
               <Check size={17} />
             </button>
@@ -317,7 +397,14 @@ export async function askAI(
   const response = await fetch("/api/ai", {
     method: "POST",
     headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
-    body: JSON.stringify({ ...input, language }),
+    body: JSON.stringify({
+      ...input,
+      inventory: input.inventory?.map((item) => ({
+        ...item,
+        photo: undefined,
+      })),
+      language,
+    }),
     signal,
   });
   const data = await response.json();
@@ -349,7 +436,7 @@ export function AddModal({
   health: string;
   inventory: InventoryItem[];
   close: () => void;
-  add: (items: InventoryItem[]) => void;
+  add: (items: InventoryItem[]) => string | void;
 }) {
   const { t, language } = useLanguage();
   const [text, setText] = useState(""),
@@ -360,10 +447,13 @@ export function AddModal({
     [answer, setAnswer] = useState<AIAnswer | null>(null),
     [parsed, setParsed] = useState<InventoryItem[]>([]);
   const controller = useRef<AbortController | null>(null);
+  const cameraRef = useRef<HTMLInputElement>(null);
   useEffect(() => () => controller.current?.abort(), []);
   async function run(ai: boolean) {
     setError("");
     setBusy(true);
+    setParsed([]);
+    setAnswer(null);
     controller.current = new AbortController();
     try {
       if (ai) {
@@ -431,6 +521,7 @@ export function AddModal({
             )}
             <textarea
               rows={5}
+              disabled={busy}
               value={text}
               maxLength={4000}
               onChange={(e) => setText(e.target.value)}
@@ -448,6 +539,29 @@ export function AddModal({
                 "Choose photos of materials without faces or personal details. Photos go to OpenAI when you analyse them. The app does not store them on its server.",
               )}
             </p>
+            <button
+              className="secondary"
+              type="button"
+              disabled={busy}
+              onClick={() => cameraRef.current?.click()}
+            >
+              <Camera size={18} />
+              {t("ถ่ายรูปสิ่งของ", "Take a photo")}
+            </button>
+            <input
+              ref={cameraRef}
+              hidden
+              type="file"
+              disabled={busy}
+              accept="image/jpeg,image/png,image/webp"
+              capture="environment"
+              aria-label={t("กล้องถ่ายรูปสิ่งของ", "Material camera")}
+              onChange={(e) => {
+                setFiles(Array.from(e.target.files ?? []));
+                setParsed([]);
+                setAnswer(null);
+              }}
+            />
             <label className="upload-zone">
               <Camera size={34} />
               <strong>{t("เลือกรูปสิ่งของ", "Choose material photos")}</strong>
@@ -460,6 +574,8 @@ export function AddModal({
               <input
                 type="file"
                 multiple
+                disabled={busy}
+                aria-label={t("เลือกรูปสิ่งของ", "Choose material photos")}
                 accept="image/jpeg,image/png,image/webp"
                 onChange={(e) => {
                   setFiles(Array.from(e.target.files ?? []));
@@ -468,6 +584,12 @@ export function AddModal({
                 }}
               />
             </label>
+            {!!files.length && (
+              <p role="status">
+                {t(`เลือก ${files.length} รูป: `, `${files.length} selected: `)}
+                {files.map((file) => file.name).join(", ")}
+              </p>
+            )}
             <label>
               {t(
                 "ข้อมูลเพิ่ม เช่น ชื่อบนฉลาก",
@@ -475,6 +597,7 @@ export function AddModal({
               )}
               <textarea
                 rows={2}
+                disabled={busy}
                 maxLength={4000}
                 value={text}
                 onChange={(e) => setText(e.target.value)}
@@ -483,6 +606,7 @@ export function AddModal({
             <label className="check-label">
               <input
                 type="checkbox"
+                disabled={busy}
                 checked={consent}
                 onChange={(e) => setConsent(e.target.checked)}
               />
@@ -575,12 +699,35 @@ export function AddModal({
                       }
                     />
                   </label>
-                  <span>
-                    {t(
-                      materialById[item.materialId].name,
-                      materialById[item.materialId].en,
-                    )}
-                  </span>
+                  <label>
+                    {t("ประเภทสำหรับหาโปรเจกต์", "Type for project matching")}
+                    <select
+                      value={item.materialId}
+                      onChange={(e) => {
+                        const id = e.target.value;
+                        setParsed((items) =>
+                          items.map((x) =>
+                            x.id === item.id
+                              ? {
+                                  ...x,
+                                  materialId: id,
+                                  unit: materialById[id].unit,
+                                  specs: {},
+                                  verified: false,
+                                  condition: "unknown",
+                                }
+                              : x,
+                          ),
+                        );
+                      }}
+                    >
+                      {searchMaterials("").map((material) => (
+                        <option value={material.id} key={material.id}>
+                          {t(material.name, material.en)}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
                   <label>
                     {t("จำนวน", "Quantity")}
                     <input
@@ -601,7 +748,17 @@ export function AddModal({
                     />
                   </label>
                   {answer?.candidates[i] && (
-                    <small>
+                    <small className="candidate-evidence">
+                      <strong>
+                        {t("ความมั่นใจ: ", "Confidence: ")}
+                        {language === "th"
+                          ? answer.candidates[i].confidence
+                          : {
+                              ชัดเจน: "Clear",
+                              ไม่แน่ใจ: "Uncertain",
+                              ระบุไม่ได้: "Unidentified",
+                            }[answer.candidates[i].confidence]}
+                      </strong>{" "}
                       {answer.candidates[i].evidence}{" "}
                       {answer.candidates[i].questions.join(" ")}
                     </small>
@@ -627,8 +784,13 @@ export function AddModal({
             ))}
             <button
               className="primary"
-              disabled={parsed.some((i) => !itemSchema.safeParse(i).success)}
-              onClick={() => add(parsed)}
+              disabled={
+                busy || parsed.some((i) => !itemSchema.safeParse(i).success)
+              }
+              onClick={() => {
+                const addError = add(parsed);
+                if (addError) setError(addError);
+              }}
             >
               {t(
                 `เพิ่ม ${parsed.length} รายการ`,
@@ -642,6 +804,11 @@ export function AddModal({
                 "These suggestions remain unchecked. They never restrict access to guides.",
               )}
             </p>
+            <MaterialProjects
+              items={parsed}
+              inventory={inventory}
+              openInNewTab
+            />
           </>
         )}
       </div>

@@ -27,6 +27,10 @@ import { AIHelp } from "./Inventory";
 import { ProjectCommunity } from "./Community";
 import { StepVisual } from "./StepVisual";
 import { guideDetails } from "../data/guide-details";
+import {
+  PaperBondingSubstitutions,
+  RequirementSubstitutions,
+} from "./Substitutions";
 export function ProjectGuide({
   project,
   inventory,
@@ -729,6 +733,11 @@ export function ProjectGuide({
                                     .join(t(" หรือ ", " or "))}
                                 </div>
                               )}
+                              <RequirementSubstitutions
+                                project={p}
+                                requirement={r.requirement}
+                                inventory={inventory}
+                              />
                               <details className="item-options">
                                 <summary>
                                   {t(
@@ -786,6 +795,9 @@ export function ProjectGuide({
                   );
                 })}
               </div>
+              {p.category !== "electronics" && (
+                <PaperBondingSubstitutions inventory={inventory} />
+              )}
               <button className="primary" onClick={() => setTab("steps")}>
                 {t("อ่านขั้นตอนต่อ", "Read the steps")}
                 <ArrowRight size={17} />

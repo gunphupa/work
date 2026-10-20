@@ -5,7 +5,7 @@ import { communityRouter } from "./community";
 import type { CommunityStore } from "./community-store";
 import {
   requestSchema,
-  answerSchema,
+  sanitizeAIAnswer,
   normalizeImages,
   type Provider,
 } from "./ai";
@@ -168,7 +168,7 @@ export function createApp(options: {
         const input = await normalizeImages(parsed.data);
         phase = "provider";
         const result = await options.provider(input, abort.signal);
-        const answer = answerSchema.parse(result);
+        const answer = sanitizeAIAnswer(result);
         res.json(answer);
         console.info(
           JSON.stringify({

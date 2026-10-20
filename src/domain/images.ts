@@ -67,3 +67,49 @@ export async function preparePhotos(
   }
   return result;
 }
+
+// A small, metadata-free image for this browser's inventory, never an AI upload.
+export async function prepareItemPhoto(file: File, language: "th" | "en") {
+  const t = (th: string, en: string) => (language === "th" ? th : en);
+  if (
+    !["image/jpeg", "image/png", "image/webp"].includes(file.type) ||
+    file.size > 10_000_000
+  )
+    throw Error(
+      t(
+        "ใช้ JPEG, PNG หรือ WebP ไม่เกิน 10 MB",
+        "Use JPEG, PNG or WebP up to 10 MB.",
+      ),
+    );
+  const bitmap = await createImageBitmap(file);
+  try {
+    if (bitmap.width * bitmap.height > 40_000_000)
+      throw Error(
+        t("รูปต้องไม่เกิน 40 ล้านพิกเซล", "Use an image up to 40 megapixels."),
+      );
+    const canvas = document.createElement("canvas");
+    const scale = Math.min(1, 320 / Math.max(bitmap.width, bitmap.height));
+    canvas.width = Math.max(1, Math.round(bitmap.width * scale));
+    canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+    const ctx = canvas.getContext("2d");
+    if (!ctx)
+      throw Error(
+        t(
+          "อ่านรูปไม่ได้ ลองเลือกรูปใหม่",
+          "Could not read the image. Try another photo.",
+        ),
+      );
+    ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    const photo = canvas.toDataURL("image/webp", 0.65);
+    if (!photo.startsWith("data:image/webp;base64,") || photo.length > 60000)
+      throw Error(
+        t(
+          "รูปยังใหญ่เกินไป โปรดครอปใกล้สิ่งของ",
+          "The photo is too large. Crop closer to the item.",
+        ),
+      );
+    return photo;
+  } finally {
+    bitmap.close();
+  }
+}

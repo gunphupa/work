@@ -5,7 +5,9 @@ A Thai/English, project-first app for useful household making and everyday learn
 ## What you can use
 
 - **37 complete guides** across home organization, cleaning, repairs, packaging crafts, gardening, school science and electronics: 21 original household guides, 15 Arduino UNO R3 examples and one NASA paper rocket.
-- **94 material types**, Thai/English search and aliases, a custom-item option, editable bulk suggestions, relevant specifications and browser-local inventory.
+- **97 material types**, Thai/English name and alias search in both the picker and owned inventory, plus custom items requiring only name and quantity. Optional small item photos stay in the browser and backups.
+- Photo identification and saved items connect to existing catalogue guides, including incomplete projects with missing supplies and named specification checks. Camera capture and file uploads remain optional; identification never confirms readiness.
+- Contextual, owned-first substitution suggestions explain limits, including paper bonding with double-sided tape instead of glue stick. Suggestions do not silently change readiness or invent electronic compatibility.
 - Large original project illustrations, three main navigation choices, a persistent language switch, category filters, search by project or material, and 12 cards at a time.
 - Fuller project introductions, grouped supplies, 81 original household/science step diagrams and 60 electronics preparation/connection/upload/measurement panels. The reader keeps Next/Previous, all-steps viewing, checks, and optional build notes. Diagrams are not build photographs or to-scale templates.
 - Optional Google and passwordless email accounts via Supabase, build photos/comments, separate project and website reviews, an author status page, and an admin approval queue. Every submission starts private and pending. **Live account activation is still required:** follow [Accounts setup](docs/ACCOUNTS_SETUP.md).
@@ -86,6 +88,8 @@ See [test report](docs/TEST_REPORT.md) for actual outcomes and unrun checks. Tes
 
 ## Data and limitations
 
-Guest inventory and builds stay in this browser's localStorage. Export JSON before clearing browser data or moving devices. A corrupt saved record is preserved rather than overwritten. Photos are transient and not saved server-side. AI requests send the chosen text/photos, inventory and project context to OpenAI; provider retention terms must be checked separately.
+Guest inventory and builds stay in this browser's localStorage; open tabs receive saved changes. Export JSON before clearing browser data or moving devices. A corrupt saved record is preserved rather than overwritten. Optional item photos stay in local inventory and backups and are excluded from AI requests. AI analysis photos are transient and not saved server-side. AI requests send chosen text, consented analysis photos, inventory details and project context to OpenAI; provider retention terms must be checked separately.
+
+The four material-discovery improvements, their checks and deployment notes are described in [Material discovery](docs/MATERIAL_DISCOVERY.md). This update searches existing catalogue projects; live internet project search is not included.
 
 The catalogue includes original practical household guides as well as source-reviewed Arduino/NASA examples. Motor-driving, mains repairs and arbitrary salvaged-electronics projects are not included. A saved material type does not imply a matching guide exists; the materials page shows actual coverage. No school PDFs, human study observations or physical build evidence were provided.

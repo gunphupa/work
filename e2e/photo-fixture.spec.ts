@@ -41,7 +41,7 @@ test("fixture-only photo proposal needs confirmation and failed requests preserv
     .png()
     .toBuffer();
   await page
-    .locator("dialog input[type=file]")
+    .getByLabel("เลือกรูปสิ่งของ")
     .setInputFiles({ name: "fixture.png", mimeType: "image/png", buffer: png });
   await page
     .getByRole("textbox", { name: "ข้อมูลเพิ่ม เช่น ชื่อบนฉลาก" })

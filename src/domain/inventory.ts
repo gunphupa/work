@@ -2,6 +2,9 @@ import { projectById } from "../data/projects";
 import { materials, materialById } from "../data/materials";
 import { stateSchema, type InventoryItem, type SavedState } from "./schema";
 export const emptyState: SavedState = { version: 1, inventory: [], builds: [] };
+export const MAX_BACKUP_BYTES = 2_000_000;
+export const stateBytes = (state: SavedState) =>
+  new TextEncoder().encode(JSON.stringify(state)).byteLength;
 export function parseInventory(text: string): InventoryItem[] {
   return text
     .split(/[\n,;]+/)
@@ -61,6 +64,7 @@ export function mergeConfirmed(items: InventoryItem[]): InventoryItem[] {
         JSON.stringify(Object.entries(x.specs).sort()) ===
           JSON.stringify(Object.entries(item.specs).sort()) &&
         x.label === item.label &&
+        x.photo === item.photo &&
         x.notes === item.notes,
     );
     if (match && match.quantity + item.quantity <= 10000)
@@ -70,7 +74,8 @@ export function mergeConfirmed(items: InventoryItem[]): InventoryItem[] {
   return result;
 }
 export function importState(raw: string): SavedState {
-  if (raw.length > 2_000_000) throw new Error("ไฟล์ใหญ่เกิน 2 MB");
+  if (new TextEncoder().encode(raw).byteLength > MAX_BACKUP_BYTES)
+    throw new Error("ไฟล์ใหญ่เกิน 2 MB");
   const state = stateSchema.parse(JSON.parse(raw));
   if (new Set(state.inventory.map((i) => i.id)).size !== state.inventory.length)
     throw new Error("รหัสรายการซ้ำ");
@@ -90,7 +95,7 @@ export function importState(raw: string): SavedState {
   return state;
 }
 export function downloadState(state: SavedState) {
-  const blob = new Blob([JSON.stringify(state, null, 2)], {
+  const blob = new Blob([JSON.stringify(state)], {
     type: "application/json",
   });
   const url = URL.createObjectURL(blob);

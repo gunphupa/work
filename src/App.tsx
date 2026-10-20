@@ -33,12 +33,15 @@ import {
   importState,
   downloadState,
   mergeConfirmed,
+  stateBytes,
+  MAX_BACKUP_BYTES,
 } from "./domain/inventory";
 import { matchProject } from "./domain/matching";
 import {
   featuredIds,
   searchProjects,
   searchMaterials,
+  searchInventory,
 } from "./domain/catalogue";
 import type {
   InventoryItem,
@@ -49,6 +52,9 @@ import type {
 import { ProjectArt } from "./components/Art";
 import { ItemEditor, AddModal, type EditorSeed } from "./components/Inventory";
 import { ProjectGuide } from "./components/Guide";
+import { MaterialProjects } from "./components/MaterialProjects";
+import { Modal } from "./components/Modal";
+import { PaperBondingSubstitutions } from "./components/Substitutions";
 import { AccountPage, AccountLink } from "./components/Account";
 import { ProjectCommunity, SubmissionList } from "./components/Community";
 import { useLanguage, unitText } from "./i18n";
@@ -94,6 +100,8 @@ export default function App() {
     [quick, setQuick] = useState(false),
     [readyOnly, setReadyOnly] = useState(false);
   const [catalogueQuery, setCatalogueQuery] = useState("");
+  const [inventoryQuery, setInventoryQuery] = useState("");
+  const [discoveryItemId, setDiscoveryItemId] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(12);
   useEffect(() => {
     setVisibleCount(12);
@@ -105,6 +113,8 @@ export default function App() {
       ? projectById[route.split("/")[2]]
       : undefined;
   const inventory = state.inventory;
+  const visibleInventory = searchInventory(inventoryQuery, inventory);
+  const discoveryItem = inventory.find((item) => item.id === discoveryItemId);
   useEffect(() => {
     if (paused) return;
     try {
@@ -114,6 +124,29 @@ export default function App() {
       setStorageError(true);
     }
   }, [state, paused]);
+  useEffect(() => {
+    const receive = (event: StorageEvent) => {
+      if (
+        event.storageArea !== localStorage ||
+        (event.key !== STORE && event.key !== null)
+      )
+        return;
+      try {
+        setState(
+          event.newValue
+            ? importState(event.newValue)
+            : structuredClone(emptyState),
+        );
+        setPaused(false);
+        setStorageError(false);
+      } catch {
+        setPaused(true);
+        setStorageError(true);
+      }
+    };
+    window.addEventListener("storage", receive);
+    return () => window.removeEventListener("storage", receive);
+  }, []);
   useEffect(() => {
     const controller = new AbortController();
     fetch("/api/health", { signal: controller.signal })
@@ -134,13 +167,19 @@ export default function App() {
   }, [notice]);
   const saveItem = (item: InventoryItem) => {
     if (inventory.length >= 500 && !inventory.some((i) => i.id === item.id)) {
-      setNotice(
-        t(
-          "คลังเต็ม 500 รายการ ส่งออกแล้วลบบางรายการก่อน",
-          "Your 500-item inventory is full. Export a backup and remove some items first.",
-        ),
+      return t(
+        "คลังเต็ม 500 รายการ ส่งออกแล้วลบบางรายการก่อน",
+        "Your 500-item inventory is full. Export a backup and remove some items first.",
       );
-      return;
+    }
+    const nextInventory = inventory.some((i) => i.id === item.id)
+      ? inventory.map((i) => (i.id === item.id ? item : i))
+      : [...inventory, item];
+    if (stateBytes({ ...state, inventory: nextInventory }) > MAX_BACKUP_BYTES) {
+      return t(
+        "ข้อมูลใกล้เต็ม ลบรูปบางรูปหรือส่งออกแล้วลบรายการเก่าก่อนบันทึก",
+        "Storage is nearly full. Remove some photos or export and remove older items before saving.",
+      );
     }
     setState((s) => ({
       ...s,
@@ -149,20 +188,28 @@ export default function App() {
         : [...s.inventory, item],
     }));
     setEditor(null);
+    setInventoryQuery("");
     setNotice(t("บันทึกของแล้ว", "Item saved."));
   };
   const addCandidates = (items: InventoryItem[]) => {
     if (inventory.length + items.length > 500) {
-      setNotice(
-        t(
-          "รายการรวมเกิน 500 กรุณาลดจำนวนก่อนเพิ่ม",
-          "This would exceed 500 items. Add fewer items.",
-        ),
+      return t(
+        "รายการรวมเกิน 500 กรุณาลดจำนวนก่อนเพิ่ม",
+        "This would exceed 500 items. Add fewer items.",
       );
-      return;
+    }
+    if (
+      stateBytes({ ...state, inventory: [...inventory, ...items] }) >
+      MAX_BACKUP_BYTES
+    ) {
+      return t(
+        "ข้อมูลใกล้เต็ม ส่งออกแล้วลบรายการเก่าหรือรูปบางรูปก่อน",
+        "Storage is nearly full. Export and remove older items or photos first.",
+      );
     }
     setState((s) => ({ ...s, inventory: [...s.inventory, ...items] }));
     setAddMode(null);
+    setInventoryQuery("");
     go("/inventory");
     setNotice(
       t(
@@ -184,39 +231,58 @@ export default function App() {
       );
       return;
     }
-    setState((s) =>
-      s.builds.some((b) => b.projectId === id)
-        ? s
-        : {
-            ...s,
-            builds: [
-              ...s.builds,
-              {
-                projectId: id,
-                completed: [],
-                notes: "",
-                measurements: [],
-                substitutions: {},
-                updatedAt: new Date().toISOString(),
-              },
-            ],
-          },
-    );
+    const nextState = state.builds.some((b) => b.projectId === id)
+      ? state
+      : {
+          ...state,
+          builds: [
+            ...state.builds,
+            {
+              projectId: id,
+              completed: [],
+              notes: "",
+              measurements: [],
+              substitutions: {},
+              updatedAt: new Date().toISOString(),
+            },
+          ],
+        };
+    if (stateBytes(nextState) > MAX_BACKUP_BYTES) {
+      setNotice(
+        t(
+          "ข้อมูลเต็ม ส่งออกแล้วลบรูปหรือรายการเก่าก่อนบันทึกงาน",
+          "Storage is full. Export and remove some photos or old items before saving a build.",
+        ),
+      );
+      return;
+    }
+    setState(nextState);
     go(`/build/${id}`);
   };
-  const updateBuild = (next: Progress) =>
-    setState((s) => ({
-      ...s,
-      builds: s.builds.map((b) =>
+  const updateBuild = (next: Progress) => {
+    const nextState = {
+      ...state,
+      builds: state.builds.map((b) =>
         b.projectId === next.projectId
           ? { ...next, updatedAt: new Date().toISOString() }
           : b,
       ),
-    }));
+    };
+    if (stateBytes(nextState) > MAX_BACKUP_BYTES) {
+      setNotice(
+        t(
+          "ข้อมูลเต็ม ลบรูปหรือรายการเก่าก่อนเพิ่มบันทึก",
+          "Storage is full. Remove photos or old items before adding notes.",
+        ),
+      );
+      return;
+    }
+    setState(nextState);
+  };
   async function onImport(file?: File) {
     if (!file) return;
     try {
-      if (file.size > 2_000_000) throw Error();
+      if (file.size > MAX_BACKUP_BYTES) throw Error();
       const next = importState(await file.text());
       if (
         !confirm(
@@ -738,11 +804,54 @@ export default function App() {
                     <Camera size={18} />
                     {t("เพิ่มจากรูปภาพ", "Use a photo")}
                   </button>
+                  <button
+                    className="secondary"
+                    onClick={() =>
+                      setEditor({ materialId: "unknown", label: "" })
+                    }
+                  >
+                    <Plus size={18} />
+                    {t("เพิ่มของเอง", "Add a custom item")}
+                  </button>
                   <a className="text-link" href="#/materials">
                     {t("ดูของที่รองรับ", "Explore materials")}
                     <ArrowUpRight size={16} />
                   </a>
                 </div>
+                {inventory.length > 0 && (
+                  <>
+                    <label className="search-field inventory-search">
+                      <Search size={20} />
+                      <input
+                        aria-label={t("ค้นหาของที่มี", "Search my materials")}
+                        placeholder={t(
+                          "ค้นชื่อของ เช่น ตะปู เทป หรือ nail",
+                          "Search your items: nail, tape, cardboard…",
+                        )}
+                        value={inventoryQuery}
+                        onChange={(e) => setInventoryQuery(e.target.value)}
+                      />
+                      {inventoryQuery && (
+                        <button
+                          className="icon-button"
+                          aria-label={t(
+                            "ล้างการค้นหาของ",
+                            "Clear material search",
+                          )}
+                          onClick={() => setInventoryQuery("")}
+                        >
+                          <X size={18} />
+                        </button>
+                      )}
+                    </label>
+                    <p className="inventory-count" role="status">
+                      {t(
+                        `พบ ${visibleInventory.length} จาก ${inventory.length} รายการ`,
+                        `${visibleInventory.length} of ${inventory.length} items`,
+                      )}
+                    </p>
+                  </>
+                )}
                 {!inventory.length ? (
                   <Empty
                     icon={<Package size={42} />}
@@ -766,10 +875,39 @@ export default function App() {
                   </Empty>
                 ) : (
                   <div className="inventory-list">
-                    {inventory.map((item) => (
+                    {!visibleInventory.length && (
+                      <div className="notice">
+                        <p>
+                          {t(
+                            "ไม่พบของที่ตรงกับคำค้น ลองชื่ออื่น หรือเพิ่มของนี้เอง",
+                            "No items match. Try another name or add your own item.",
+                          )}
+                        </p>
+                        <button
+                          className="text-link"
+                          onClick={() =>
+                            setEditor({
+                              materialId: "unknown",
+                              label: inventoryQuery.trim(),
+                            })
+                          }
+                        >
+                          {t("เพิ่มของชื่อนี้", "Add this item")}
+                        </button>
+                      </div>
+                    )}
+                    {visibleInventory.map((item) => (
                       <article className="inventory-row" key={item.id}>
                         <span className="item-icon">
-                          <Package size={22} />
+                          {item.photo ? (
+                            <img
+                              className="inventory-photo"
+                              src={item.photo}
+                              alt=""
+                            />
+                          ) : (
+                            <Package size={22} />
+                          )}
                         </span>
                         <div className="item-info">
                           <strong>{item.label}</strong>
@@ -795,6 +933,16 @@ export default function App() {
                                     "Details to review · guides stay open",
                                   )}
                           </small>
+                          <button
+                            className="text-link item-project-button"
+                            onClick={() => setDiscoveryItemId(item.id)}
+                          >
+                            {t(
+                              "หาโปรเจกต์ที่ใช้ของชิ้นนี้",
+                              "Find projects for this item",
+                            )}
+                            <ArrowUpRight size={14} />
+                          </button>
                         </div>
                         <button
                           className="icon-button"
@@ -831,6 +979,7 @@ export default function App() {
                 )}
               </section>
               <aside>
+                <PaperBondingSubstitutions inventory={inventory} />
                 <div className="panel green-panel">
                   <div className="eyebrow">
                     {t("หาไอเดียต่อได้เลย", "YOUR NEXT IDEA")}
@@ -1199,8 +1348,8 @@ export default function App() {
               <h2>{t("รูปและผู้ช่วย AI", "Photos and the AI helper")}</h2>
               <p>
                 {t(
-                  "AI เป็นทางเลือก เมื่อใช้ ข้อความ รูปที่คุณยินยอมส่ง คลัง และบริบทคู่มือจะส่งให้ OpenAI รูปไม่บันทึกบนเซิร์ฟเวอร์ของแอป เงื่อนไขการเก็บข้อมูลของผู้ให้บริการแยกจากแอป การลบข้อมูลในเบราว์เซอร์ไม่ได้ลบข้อมูลที่ส่งไปแล้ว",
-                  "AI is optional. When used, your text, consented photos, inventory and guide context go to OpenAI. The app does not store photos on its server. Provider retention terms are separate; clearing browser data does not delete information already sent to the provider.",
+                  "AI เป็นทางเลือก เมื่อใช้ ข้อความ รูปที่ยินยอมส่งวิเคราะห์ รายละเอียดคลัง และบริบทคู่มือจะส่งให้ OpenAI รูปประกอบรายการส่วนตัวเก็บในเบราว์เซอร์และไฟล์สำรอง ไม่ส่งให้ AI รูปวิเคราะห์ไม่บันทึกบนเซิร์ฟเวอร์ของแอป เงื่อนไขการเก็บข้อมูลของผู้ให้บริการแยกจากแอป การลบข้อมูลในเบราว์เซอร์ไม่ได้ลบข้อมูลที่ส่งไปแล้ว",
+                  "AI is optional. When used, your text, consented analysis photos, inventory details and guide context go to OpenAI. Optional item photos stay in this browser and exported backups; they are excluded from AI requests. The app does not store photos on its server. Provider retention terms are separate; clearing browser data does not delete information already sent to the provider.",
                 )}
               </p>
               <p>
@@ -1294,6 +1443,18 @@ export default function App() {
           close={() => setEditor(null)}
           save={saveItem}
         />
+      )}
+      {discoveryItem && (
+        <Modal
+          title={discoveryItem.label}
+          close={() => setDiscoveryItemId(null)}
+        >
+          <MaterialProjects
+            items={[discoveryItem]}
+            inventory={inventory}
+            openInNewTab
+          />
+        </Modal>
       )}
       {addMode && (
         <AddModal

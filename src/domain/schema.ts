@@ -2,7 +2,7 @@ import { z } from "zod";
 export const itemSchema = z.object({
   id: z.string().min(1).max(100),
   materialId: z.string().max(80),
-  label: z.string().min(1).max(160),
+  label: z.string().trim().min(1).max(160),
   quantity: z.number().int().positive().max(10000),
   unit: z.enum(["ชิ้น", "เส้น", "แผ่น", "เครื่อง", "ชุด"]),
   condition: z.enum(["usable", "unknown", "damaged"]),
@@ -11,6 +11,11 @@ export const itemSchema = z.object({
     .refine((s) => Object.keys(s).length <= 12),
   verified: z.boolean(),
   notes: z.string().max(1000).default(""),
+  photo: z
+    .string()
+    .max(60000)
+    .regex(/^data:image\/webp;base64,[A-Za-z0-9+/]+={0,2}$/)
+    .optional(),
 });
 export type InventoryItem = z.infer<typeof itemSchema>;
 export const progressSchema = z.object({
