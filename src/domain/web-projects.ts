@@ -115,6 +115,7 @@ export const webSearchResultSchema = webSearchDraftSchema.extend({
   searchedAt: z.string().datetime(),
   sources: z.array(webSourceSchema).max(60),
   searchCalls: z.number().int().min(1).max(3),
+  retrievalNotes: z.string().max(28000).optional(),
 });
 export type WebProject = z.infer<typeof webProjectSchema>;
 export type WebSearchResult = z.infer<typeof webSearchResultSchema>;

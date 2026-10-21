@@ -18,7 +18,7 @@ The app does not fetch arbitrary result URLs on its own server. It renders plain
 
 ## Configuration and cost
 
-No new account, dependency, database migration or paid hosting plan is needed. The existing server-side `REBUILD_AI_KEY` is reused. Optional `REBUILD_SEARCH_MODEL` defaults to `gpt-5-mini` with low reasoning effort for search and page inspection. Structured summaries use `gpt-4.1-mini`; the photo assistant is unchanged.
+No new account, dependency, database migration or paid hosting plan is needed. The existing server-side `REBUILD_AI_KEY` is reused. Optional `REBUILD_SEARCH_MODEL` defaults to `gpt-5-mini` with low reasoning effort for search and page inspection. Structured summaries use the same reasoning model; the photo assistant is unchanged.
 
 Each user search reserves one request from the **shared** AI quotas. It makes a primary web-enabled request (at most two tool calls and 5,000 output tokens), a supplemental resource search (at most one tool call and 1,800 output tokens), then a structured summary (at most 6,000 output tokens). A primary search without a written tutorial stops early. OpenAI search-tool and token usage are billable under the existing API account. The SDK's create type omits the documented `max_tool_calls` HTTP field, so its request type is explicitly extended; the field is still sent to the API. No background search or automatic retry is used. The server cancels at 120 seconds, the browser at 130 seconds; cancellation does not guarantee the provider has not already incurred usage. No hard currency cap or per-user identity guarantee is claimed by session/IP quotas.
 
@@ -45,3 +45,5 @@ REBUILD_E2E_PRODUCTION=1 REBUILD_E2E_PORT=3011 npx playwright test --reporter=li
 ```
 
 A second live request returned a written source but still matched A4 paper to a capillary-action activity and omitted requested resources. This was also treated as a quality failure (`second-live-smoke.json`). The search model was changed to `gpt-5-mini` with page inspection; primary tutorial IDs must now be actual citations in the primary report, not merely uncited search results. Material identities must be preserved. The app also constructs the result count from retained cards rather than trusting a generated count.
+
+The third live browser request completed in 52.4 seconds and retrieved NASA JPL’s paper Mars helicopter, with one tutorial source and a related embedded-video page. Manual inspection of the NASA page confirmed the tutorial and its listed materials, but revealed copied inventory quantities and confusion between adhesive tape and measuring tape in the generated summary. The summary pass now uses the same reasoning model, explicitly preserves required versus available quantities and separates unsourced adaptations. `retrievalNotes` in downloaded results records the search model’s report for auditing; it is generated text, not a verbatim page copy.
