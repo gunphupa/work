@@ -1,0 +1,207 @@
+{
+  "kind": "developer-live-browser-smoke-not-participant-data",
+  "release": "f48ae85033f2",
+  "startedAt": "2026-10-21T03:39:15.332Z",
+  "elapsedMs": 72868,
+  "httpStatus": 200,
+  "request": {
+    "language": "th",
+    "query": "อยากทำของเล่นวิทยาศาสตร์หรือของใช้เล็ก ๆ จากวัสดุที่เลือก ขอคู่มือพร้อมขั้นตอน วิดีโอที่เกี่ยวข้อง และลิงก์วัสดุเพิ่มเติมถ้าจำเป็น",
+    "materials": [
+      {
+        "id": "live-paper",
+        "materialId": "unknown",
+        "label": "กระดาษ A4",
+        "quantity": 5,
+        "unit": "แผ่น",
+        "condition": "usable",
+        "specs": {}
+      },
+      {
+        "id": "live-tape",
+        "materialId": "unknown",
+        "label": "เทปกาวใส",
+        "quantity": 1,
+        "unit": "ชิ้น",
+        "condition": "usable",
+        "specs": {}
+      },
+      {
+        "id": "live-pencil",
+        "materialId": "unknown",
+        "label": "ดินสอ",
+        "quantity": 2,
+        "unit": "ชิ้น",
+        "condition": "usable",
+        "specs": {}
+      }
+    ]
+  },
+  "result": {
+    "summary": "พบ 1 โปรเจกต์ที่มีคู่มืออ้างอิง ตรวจวัสดุและวิธีทำกับต้นฉบับก่อนเริ่ม",
+    "projects": [
+      {
+        "title": "จรวดกระดาษ (Paper / Straw Rocket)",
+        "summary": "สร้างจรวดขนาดเล็กจากแถบกระดาษ ม้วนเป็นท่อ ยึดครีบและปลายจมูก แล้วสวมบนหลอดเพื่อพุ่งด้วยการเป่า ข้อมูลนี้สรุปจากคู่มือ \"Adventures in Rocket Science – How to Build a Paper Rocket\" (Wilkes University, PDF).",
+        "fit": "ต้นฉบับระบุวัสดุหลักคือกระดาษแถบ, เทปใส, ดินสอ (ใช้เป็นแม่แบบม้วน) และหลอดสำหรับสวมท่อ — วัสดุที่คุณมี (กระดาษ A4, เทปใส, ดินสอ) ตรงกับรายการบางส่วน แต่คุณยังขาดกรรไกรและหลอดซึ่งคู่มือระบุว่าเป็นสิ่งจำเป็น การมีวัสดุอื่นๆ เช่นแว่นนิรภัย/ไม้บรรทัดเป็นข้อแนะนำเพิ่มเติม",
+        "sourceId": "s1",
+        "materials": [
+          {
+            "name": "กระดาษ (สำหรับตัดเป็นแถบท่อจรวด)",
+            "amount": "unknown",
+            "inventoryIds": [
+              "live-paper"
+            ],
+            "note": "ต้นฉบับแนะนำตัดแถบตัวอย่าง 4 × 28 ซม. (ขนาดตัวอย่างในเอกสาร); ถ้าต้องการจำนวนแถบที่แน่นอน ให้ระบุจำนวนจรวดที่ต้องการแล้วคำนวณจากขนาด A4",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "เทปกาวใส (cellophane tape)",
+            "amount": "unknown",
+            "inventoryIds": [
+              "live-tape"
+            ],
+            "note": "ใช้ยึดท่อและยึดครีบ; ต้นฉบับแนะนำเทปท่อในประมาณ 3 ตำแหน่ง",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "ดินสอ (sha rpened/fat pencil) — ใช้เป็นแม่แบบม้วน",
+            "amount": "unknown",
+            "inventoryIds": [
+              "live-pencil"
+            ],
+            "note": "ต้นฉบับใช้ดินสอเป็นแท่งม้วนกระดาษแล้วดึงออกเพื่อให้ได้ท่อกลวง",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "กรรไกร (scissors) — ตัดแถบและครีบ",
+            "amount": "unknown",
+            "inventoryIds": [],
+            "note": "จำเป็นตามคู่มือเพื่อการตัดครีบ/แถบกระดาษอย่างเรียบร้อย",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "หลอดดื่ม (straw หรือ milkshake straw) — สำหรับสวมท่อและเป่าให้จรวดพุ่ง",
+            "amount": "unknown",
+            "inventoryIds": [],
+            "note": "ต้นฉบับแนะนำหลอดขนาดเล็กกว่าดินสอเพื่อสวมท่อและเป่า; หลอดเป็นส่วนสำคัญของวิธีการยิง",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "แว่นตานิรภัย (แนะนำ)",
+            "amount": "unknown",
+            "inventoryIds": [],
+            "note": "แนะนำเมื่อทำกิจกรรมเป็นกลุ่มหรือทดลองยิงจรวด เพราะเป็นวัตถุพุ่ง",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "ไม้บรรทัด/เทปวัด (แนะนำ ถ้าต้องการวัดระยะ)",
+            "amount": "unknown",
+            "inventoryIds": [],
+            "note": "ใช้บันทึกผลหรือวัดระยะการบินตามการทดลองเปรียบเทียบ",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "text": "ตัดกระดาษเป็นแถบตามขนาดที่ต้นฉบับแนะนำ (ตัวอย่างในเอกสาร 4 × 28 ซม.) แล้วเตรียมแผ่นกระดาษสำหรับตัดครีบ",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "วางแถบกระดาษให้แนวยาว นำดินสอวางแนวตามยาวแล้วม้วนแถบรัดรอบดินสอเป็นท่อกระดาษแน่นพอสมควร",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "ใช้เทปใสยึดท่อกระดาษที่ม้วนแล้วในหลายตำแหน่ง (ต้นฉบับแนะนำประมาณ 3 จุด) เพื่อไม่ให้ท่อคลาย",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "ดึงดินสอออก จะได้ท่อกระดาษกลวง ปรับตัดปลายที่เกินออกให้เรียบร้อย",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "ตัดครีบจากกระดาษแผ่นอื่น พับแถบท้ายสำหรับยึด แล้วติดครีบเข้าที่ฐานของท่อด้วยเทปหรือการพับตามที่ต้นฉบับแสดง",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "ทำปลายหน้าจมูกจรวดโดยพับ/ม้วนปลายท่อและติดเทปปิดให้แน่น (สร้างรูปลักษณ์เป็นหัวจรวด)",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "สวมท่อกระดาษบนหลอด (หลอดต้องเล็กกว่าท่อหรือสวมได้แน่นพอ) แล้วเป่าผ่านหลอดเพื่อยิงจรวดไปข้างหน้า หรือใช้แรงเป่า/วิธีการตามที่เอกสารเสนอ",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "บันทึกผล ทดลองเปลี่ยนรูปแบบครีบ/ขนาดท่อและยิงซ้ำเพื่อศึกษาความเสถียรและระยะการบินตามคำแนะนำของต้นฉบับ",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "substitutions": [
+          {
+            "missing": "หลอดดื่ม (straw)",
+            "alternative": "ไม่มีการทดแทนที่มีหลักฐานในเอกสารต้นฉบับ; หากท่านไม่มีหลอด อาจซื้อหลอดดื่มหรือหลอดมิลค์เชคตามที่ต้นฉบับแนะนำ",
+            "conditions": "ข้อเสนอการใช้วัสดุอื่นที่ไม่ใช่หลอดสำหรับวิธีการยิง (เช่นการสวมท่อบนวัตถุทรงกระบอกอื่น) เป็นการดัดแปลงที่ไม่ได้อธิบายไว้ในแหล่งหลัก ฉะนั้นหากต้องการทางเลือกอื่น โปรดทราบว่านั่นเป็นความคิดเสนอโดยผู้ช่วยและไม่ได้รับการยืนยันจากเอกสารต้นฉบับ",
+            "inventoryIds": [],
+            "sourceIds": []
+          },
+          {
+            "missing": "กรรไกร",
+            "alternative": "หากไม่มีกรรไกร อาจฉีกกระดาษด้วยมือเป็นทางเลือกฉุกเฉิน แต่การฉีกอาจให้ขอบไม่เรียบร้อยและส่งผลต่อการทำครีบ/ท่อ",
+            "conditions": "การฉีกเป็นการดัดแปลงที่ไม่ได้อธิบายในเอกสารต้นฉบับ จึงเป็นคำแนะนำที่ไม่มีหลักฐานการทดสอบจากแหล่งสอน",
+            "inventoryIds": [],
+            "sourceIds": []
+          }
+        ],
+        "cautions": [
+          "ต้นฉบับแนะนำให้สวมแว่นนิรภัยเมื่อทำกิจกรรมเป็นกลุ่ม เพราะจรวดเป็นวัตถุพุ่ง — ห้ามยิงไปในทิศทางคน เฟอร์นิเจอร์ หรือแก้วแตก",
+          "อย่าหายใจเป่าหรือยิงจรวดเข้าไปในทางที่อาจทำให้ผู้อื่นได้รับบาดเจ็บ",
+          "ใช้กรรไกรและของมีคมอย่างระมัดระวัง ให้เด็กมีผู้ใหญ่ดูแลเมื่อใช้กรรไกรหรือทดลองยิง"
+        ],
+        "videoSourceIds": [],
+        "shoppingSourceIds": []
+      }
+    ],
+    "searchedAt": "2026-10-21T03:40:28.081Z",
+    "sources": [
+      {
+        "id": "s1",
+        "title": "www.wilkes.edu",
+        "url": "https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf"
+      }
+    ],
+    "searchCalls": 2,
+    "retrievalNotes": "ได้ — ผมค้นหาและยืนยันทดลองคู่มือที่เป็นเอกสารเขียนขั้นตอนชัดเจนหนึ่งฉบับที่ใช้วัสดุหลักของคุณ (กระดาษ A4, เทปใส, ดินสอ) เพื่อทำของเล่นวิทยาศาสตร์แบบปลอดภัย: \"Paper Rocket / Straw Rocket\" จากเอกสารกิจกรรมการเรียนรู้ของ Wilkes University (PDF) — มีรายการวัสดุ รายละเอียดขั้นตอน และแบบทดสอบ/ขยายกิจกรรมชัดเจน ผมเปิดหน้าในแหล่งนั้นเพื่อตรวจสอบรายการวัสดุและขั้นตอนจริงก่อนสรุปให้คุณ (อ้างอิงแนบท้าย).  \n\nสรุปโปรเจกต์ที่ผ่านการยืนยัน\n1) Straw / Paper Rocket (กระสวยกระดาษ — เป่าจากหลอดหรือฟู่ด้วยหลอด)\n- แหล่งต้นฉบับ (บทความ/คู่มือแบบเขียน): \"Adventures in Rocket Science – How to Build a Paper Rocket\" (PDF) — หน้า/ตำแหน่งที่แสดงขั้นตอนและวัสดุในเอกสาร. URL ตรงของหน้าเอกสารที่ผมตรวจสอบ:  \n  https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf. ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))\n\n- รายการวัสดุและเครื่องมือจากต้นฉบับ (ระบุโดยหน้า/ย่อหน้าใน PDF): ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))\n  - กระดาษ (scrap bond paper) — ต้นฉบับแนะนำแถบขนาดตัวอย่าง 4 × 28 ซม. สำหรับท่อจรวด (ต้องตัดจาก A4). (จำนวนขึ้นกับจำนวนจรวดที่ต้องการ; เอกสารระบุขนาดตัวอย่าง). ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))  \n  - เทปใส (cellophane tape) — ใช้ยึดท่อและตีนเฟิน (ต้นฉบับระบุให้เทปท่อใน 3 ตำแหน่ง). ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))  \n  - กรรไกร (scissors) — ตัดกระดาษและตัดครีบ. ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))  \n  - ดินสอหัวแหลม/ด้ามกลม (sharpened fat pencil) — ใช้ม้วนกระดาษเป็นท่อ แล้วดึงออก (ต้นฉบับใช้ดินสอเป็นแท่งม้วน). ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))  \n  - หลอด (milkshake straw / drinking straw) — หลอดขนาดเล็กกว่าดินสอเพื่อสวมท่อและเป่าเลื่อนจรวด (ต้นฉบับระบุ \"milkshake straw (slightly thinner than pencil)\"); เอกสารยังมีหัวข้อ \"Straw Rockets\" เป็นตัวเลือกการบิน. ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))  \n  - (แนะนำ) แว่นป้องกันตา (eye protection) เมื่อทำเป็นกิจกรรมกลุ่ม/ยิงจรวดเป็นวัตถุพุ่ง. ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))  \n  - ไม้บรรทัด/เทปมาร์ก/กระดาษเพิ่มเติมสำหรับเป้าทดสอบ (ถ้าต้องการวัดระยะ). ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))\n\n- ขั้นตอนหลักจากต้นฉบับ (ย่อสรุปตามเอกสาร — ผมตรวจสอบข้อความจริงใน PDF): ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))\n  1. ตัดกระดาษเป็นแถบขนาดตัวอย่าง (ต้นฉบับยกตัวอย่าง 4 × 28 ซม.).  \n  2. วางแถบกระดาษให้แนวยาว แล้วม้วนรัดรอบดินสอให้เป็นท่อกระดาษ (ใช้ดินสอเป็นแม่แบบ). เทปยึดท่อที่ม้วนแล้วในประมาณ 3 จุดเพื่อไม่ให้คลาย.  \n  3. ดึงดินสอออก จะได้ท่อกระดาษกลวง; ตัดปลายที่เกินออกให้เรียบร้อย.  \n  4. ตัดครีบ/ฟินจากกระดาษอีกแผ่นหนึ่งในรูปทรงตามต้องการ พับแท็บยึดและติดเทป/แปะครีบเข้าที่ฐานของท่อเพื่อเพิ่มความมั่นคง.  \n  5. พับ/ปิดปลายบนของท่อ (ทำจมูกจรวด) และติดเทปปิดให้แน่น (ไม่ใช้ของมีคมหรืออุปกรณ์อันตราย).  \n  6. สวมท่อกระดาษบนหลอด (หลอดต้องเล็กกว่าท่อหรือสวมได้) แล้วเป่าหรือพุ่งด้วยการเป่าผ่านหลอดเพื่อยิงจรวดไปข้างหน้า (หรือใช้แผนการทดลองอื่น ๆ ที่เอกสารเสนอ เช่นการจัดระยะเปรียบเทียบ).  \n  7. บันทึกผล ทดลองซ้ำ ปรับขนาด/รูปร่างครีบเพื่อศึกษาองค์ความรู้เรื่องการบินและเสถียรภาพ. ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))\n\n- ความเข้ากันกับวัสดุของคุณและสิ่งที่ต้องเตรียมเพิ่มเติม:\n  - ที่คุณแจ้งมี: กระดาษ A4 (5 แผ่น), เทปกาวใส (1 ชิ้น), ดินสอ (2 ชิ้น). นี่พอเริ่มทำจรวดได้สำหรับหลายชิ้น (กระดาษ A4 อย่างน้อยแต่ละแผ่นสามารถตัดเป็นหลายแถบ 4×28 ซม. ขึ้นอยู่กับการตัด/การออกแบบ) — ต้นฉบับใช้แถบกระดาษขนาดเล็ก ดังนั้น 5 แผ่นเพียงพอสำหรับทำหลายจรวด. ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))  \n  - อุปกรณ์เพิ่มเติมที่เอกสารระบุแต่คุณยังไม่มี (ต้องจัดหา): กรรไกร (จำเป็น), หลอดดื่มหรือหลอดมิลค์เชคขนาดเล็ก (ต้นฉบับแนะนำหลอดที่มีขนาดเล็กกว่าดินสอ — ถ้าไม่มี หลอดดื่มธรรมดามักใช้ได้เช่นกันตามแนวปฏิบัติในแหล่งกิจกรรมการสอนอื่น ๆ). (แหล่งอ้างอิงเพิ่มเติมเกี่ยวกับการใช้หลอด/ท่อสำหรับจรวดอยู่ในคู่มือกิจกรรมการสอนอื่น ๆ ด้วย). ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))  \n  - แว่นตานิรภัยและไม้บรรทัด/เทปวัดเป็นสิ่งแนะนำหากจะทดลองวัดระยะหรือทำกับเด็กหลายคน. ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))\n\n- หมายเหตุความปลอดภัยและการเรียนรู้: ต้นฉบับแนะนำให้ใช้แว่นป้องกันเมื่อทำในกลุ่มเพราะจรวดเป็นวัตถุพุ่ง และให้ทดลองในพื้นที่เปิด/ทางเดินกว้าง ไม่ยิงในทิศทางคน/แก้ว/ของมีคม. เอกสารยังแนะนำการบันทึกผล ทดลองเปลี่ยนขนาด/จำนวนครีบเพื่อการวิเคราะห์. ([wilkes.edu](https://www.wilkes.edu/about-wilkes/centers-and-institutes/science-in-motion/_assets/online-learning/physical-science/Adventures-in-Rocket-Science.pdf))\n\nลิงก์วิดีโอ/สื่อเพิ่มเติม (เป็นแหล่งเสริม — ไม่ใช่คู่มือหลัก):  \n- มีวิดีโอสาธิตการทำและการใช้งาน \"paper rocket / straw rocket\" มากมายบน YouTube — ถ้าคุณต้องการ ผมสามารถค้นหาและส่งวิดีโอสาธิตที่ตรงกับขั้นตอนเอกสารนี้ให้ (ผมจะเลือกวิดีโอที่สาธิตขั้นตอนเดียวกับ PDF และปลอดภัยสำหรับเด็ก). (บอกได้ว่าต้องการลิงก์วิดีโอหรือไม่).  \n\nถ้าคุณต้องการ ผมจะ:\n- ช่วยคำนวณจำนวนแถบกระดาษ (ขนาด 4×28 ซม.) ที่จะได้จากกระดาษ A4 จำนวน 5 แผ่น เพื่อวางแผนจำนวนจรวดที่คุณทำได้; และ/หรือ\n- ส่งคำแนะนำแบบทีละขั้นตอนเป็นภาษาไทยพร้อมภาพประกอบที่พิมพ์ได้ (จากเนื้อหาเอกสาร) เพื่อให้คุณพิมพ์/ติดตามทำที่บ้าน; และ/หรือ\n- ค้นหาและแนบวิดีโอสาธิตที่ตรงกับวิธีในเอกสาร (ถ้าต้องการวิดีโอ).\n\nอยากให้ผมช่วยขั้นตอนต่อไปแบบไหน — (1) คำนวณจำนวนแถบจาก A4 ที่คุณมี, (2) ส่งคู่มือทีละขั้นพร้อมรูป/เทมเพลตให้พิมพ์, หรือ (3) หาวิดีโอสาธิตประกอบ?"
+  },
+  "assessment": "Passed live browser integration: real same-origin session, selected custom material group, web search, structured result and source links rendered; no horizontal overflow at 390 px. Observed required amounts are unknown rather than copied inventory counts. Two unsourced substitutions are labelled as AI suggestions. No direct video/product result was returned; explicit search links remain available. This is one developer smoke test, not a general accuracy estimate or participant study.",
+  "sourceInspection": "Direct independent fetch of this Wilkes PDF was unavailable from the development environment. The provider returned/cited the URL. The earlier NASA tutorial was independently fetched with HTTP 200; that was a different result and is not claimed as verification of this PDF."
+}

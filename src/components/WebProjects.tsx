@@ -445,7 +445,14 @@ function ExternalProject({
           {p.materials.map((m, i) => (
             <li key={i}>
               <div>
-                <strong>{m.name}</strong> — {m.amount}
+                <strong>{m.name}</strong> —{" "}
+                {!m.amount.trim() ||
+                /^(unknown|unspecified|not specified)$/i.test(m.amount.trim())
+                  ? t(
+                      "ต้นฉบับไม่ระบุจำนวน",
+                      "Quantity not specified by the source",
+                    )
+                  : m.amount}
               </div>
               <span
                 className={m.inventoryIds.length ? "web-match" : "web-missing"}
