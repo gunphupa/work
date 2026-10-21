@@ -1,0 +1,166 @@
+{
+  "kind": "developer-live-smoke-test-not-participant-data",
+  "startedAt": "2026-10-21T03:17:08.250Z",
+  "elapsedMs": 32996,
+  "httpStatus": 200,
+  "request": {
+    "language": "th",
+    "query": "อยากทำของเล่นวิทยาศาสตร์หรือของใช้เล็ก ๆ จากวัสดุที่เลือก ขอคู่มือพร้อมขั้นตอน วิดีโอที่เกี่ยวข้อง และลิงก์วัสดุเพิ่มเติมถ้าจำเป็น",
+    "materials": [
+      {
+        "id": "live-paper",
+        "materialId": "unknown",
+        "label": "กระดาษ A4",
+        "quantity": 5,
+        "unit": "แผ่น",
+        "condition": "usable",
+        "specs": {}
+      },
+      {
+        "id": "live-tape",
+        "materialId": "unknown",
+        "label": "เทปกาวใส",
+        "quantity": 1,
+        "unit": "ชิ้น",
+        "condition": "usable",
+        "specs": {}
+      },
+      {
+        "id": "live-pencil",
+        "materialId": "unknown",
+        "label": "ดินสอ",
+        "quantity": 2,
+        "unit": "ชิ้น",
+        "condition": "usable",
+        "specs": {}
+      }
+    ]
+  },
+  "result": {
+    "summary": "คู่มือทำโรบอตฝาขวดน้ำของเล่นวิทยาศาสตร์ง่าย ๆ จากกระดาษ A4 เทปกาวใส และดินสอ พร้อมคำแนะนำสำหรับวัสดุเพิ่มเติมและลิงก์วิดีโอประกอบ",
+    "projects": [
+      {
+        "title": "โรบอตฝาขวดน้ำ",
+        "summary": "ประดิษฐ์โรบอตเคลื่อนที่ได้ง่าย ๆ ด้วยกระดาษวาดรูปตัวโรบอต ติดล้อจากฝาขวดน้ำและไม้เสียบลูกชิ้น ตกแต่งด้วยดินสอและเทปกาว",
+        "fit": "เหมาะกับวัสดุกระดาษ A4 เทปกาวใส และดินสอที่มีอยู่แต่ต้องใช้วัสดุเพิ่มเติมบางส่วน เช่น ฝาขวดน้ำพลาสติก ไม้เสียบลูกชิ้น กาวร้อนหรือกาวทั่วไป และปลอกปากกา",
+        "sourceId": "s1",
+        "materials": [
+          {
+            "name": "กระดาษ A4",
+            "amount": "1 แผ่น",
+            "inventoryIds": [
+              "live-paper"
+            ],
+            "note": "ใช้กระดาษที่มีอยู่ได้",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "เทปกาวใส",
+            "amount": "ไม่ระบุ",
+            "inventoryIds": [
+              "live-tape"
+            ],
+            "note": "ใช้เทปที่มีอยู่ได้",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "ดินสอ",
+            "amount": "ไม่ระบุ",
+            "inventoryIds": [
+              "live-pencil"
+            ],
+            "note": "ใช้ดินสอที่มีอยู่ได้สำหรับวาดลาย",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "ฝาขวดน้ำพลาสติก",
+            "amount": "4 ฝา",
+            "inventoryIds": [],
+            "note": "วัสดุเพิ่มเติมต้องหาซื้อหรือหาจากขวดน้ำที่มี",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "ไม้เสียบลูกชิ้น",
+            "amount": "2 เส้น",
+            "inventoryIds": [],
+            "note": "วัสดุเพิ่มเติมต้องหาซื้อ",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "กาวร้อนหรือกาวทั่วไป",
+            "amount": "ไม่ระบุ",
+            "inventoryIds": [],
+            "note": "วัสดุเพิ่มเติมต้องหาซื้อเพื่อยึดส่วนต่าง ๆ",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "name": "ปลอกปากกา",
+            "amount": "1 ชิ้น",
+            "inventoryIds": [],
+            "note": "วัสดุเพิ่มเติมเพื่อทำหัวโรบอต",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "text": "ตัดกระดาษ A4 เป็นรูปทรงสี่เหลี่ยมผืนผ้าสำหรับตัวโรบอต และใช้ดินสอวาดรายละเอียด เช่น หน้า แขน ขา",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "เจาะรูฝาขวดน้ำ 4 ฝา และเสียบไม้เสียบลูกชิ้นเป็นแกนล้อ",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "ติดแกนล้อไม้เสียบลูกชิ้นทั้ง 4 ด้านของตัวโรบอตด้วยกาว และติดฝาขวดน้ำที่ปลายแกนล้อ",
+            "sourceIds": [
+              "s1"
+            ]
+          },
+          {
+            "text": "ติดปลอกปากกาที่ด้านบนของตัวโรบอตเพื่อเป็นหัว และตกแต่งเพิ่มเติมตามต้องการ",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "substitutions": [],
+        "cautions": [
+          "ระมัดระวังในการใช้กาวร้อนเพื่อป้องกันการบาดเจ็บ",
+          "ตรวจสอบความแข็งแรงของล้อและแกนล้อเพื่อให้โรบอตเคลื่อนที่ได้ราบรื่น"
+        ],
+        "videoSourceIds": [
+          "s1"
+        ],
+        "shoppingSourceIds": []
+      }
+    ],
+    "searchedAt": "2026-10-21T03:17:41.125Z",
+    "sources": [
+      {
+        "id": "s1",
+        "title": "การทดลองวิทยาศาสตร์ง่าย ๆ 7 แบบที่คุณทำได้เองที่บ้าน",
+        "url": "https://www.youtube.com/watch?v=sJAzZnhEN0c&utm_source=openai"
+      }
+    ],
+    "searchCalls": 1
+  },
+  "assessment": "Needs improvement: single compilation video used as primary source; insufficient independently checked tutorial details. Triggered written-tutorial-first revision."
+}

@@ -3,6 +3,7 @@ import type { Response } from "openai/resources/responses/responses";
 import {
   collectSearchEvidence,
   groundWebProjects,
+  isWrittenTutorialUrl,
   openAIWebSearchProvider,
 } from "../server/web-projects";
 import {
@@ -186,7 +187,7 @@ describe("live web search boundaries (controlled provider responses)", () => {
     });
     expect(search).toMatchObject({
       tool_choice: "required",
-      max_tool_calls: 3,
+      max_tool_calls: 2,
       store: false,
     });
     expect(search.include).toContain("web_search_call.action.sources");
@@ -197,6 +198,38 @@ describe("live web search boundaries (controlled provider responses)", () => {
     expect(output.projects).toHaveLength(1);
     expect(output.projects[0].videoSourceIds).toEqual([]); // s2 was never retrieved
     expect(output.sources).toHaveLength(1);
+    expect(mock.create).toHaveBeenCalledTimes(2);
+    expect(mock.create.mock.calls[1][0].max_tool_calls).toBe(1);
+    expect(output.searchCalls).toBe(2);
+  });
+  it("does not build a written guide from a video listing or supplemental source", () => {
+    expect(isWrittenTutorialUrl("https://www.youtube.com/watch?v=abc")).toBe(
+      false,
+    );
+    expect(isWrittenTutorialUrl("https://www.google.com/search?q=paper")).toBe(
+      false,
+    );
+    const draft = structuredClone(webResult);
+    draft.projects[0].sourceId = "s2";
+    expect(
+      groundWebProjects(draft, draft.sources, webRequest, ["s1"]).projects,
+    ).toEqual([]);
+  });
+  it("retains written tutorials if a supplemental video/product search fails", async () => {
+    mock.create
+      .mockResolvedValueOnce(response([call, message]))
+      .mockRejectedValueOnce(Error("supplement failed"));
+    mock.parse.mockResolvedValue({
+      status: "completed",
+      output_parsed: webResult,
+    });
+    const output = await openAIWebSearchProvider("test-key", "gpt-4.1-mini")(
+      webRequest,
+      new AbortController().signal,
+    );
+    expect(output.projects).toHaveLength(1);
+    expect(output.searchCalls).toBe(1);
+    expect(output.projects[0].videoSourceIds).toEqual([]);
   });
   it("reports no results honestly without running extraction when sources are absent", async () => {
     mock.create.mockResolvedValue(

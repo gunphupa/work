@@ -57,6 +57,7 @@ export function createApp(options: {
       webSearchConfigured: !!options.webSearchProvider,
       catalogueVersion: 1,
       communityConfigured: !!options.community,
+      release: process.env.RENDER_GIT_COMMIT?.slice(0, 12),
     }),
   );
   app.use(
