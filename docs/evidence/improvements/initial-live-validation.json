@@ -1,0 +1,466 @@
+{
+  "kind": "developer-live-validation-not-participant-data",
+  "release": "7fdd1af98c12",
+  "transport": "Real deployed HTTP through inherited proxy/CA; no mocked search or help responses",
+  "records": [
+    {
+      "path": "/api/projects/search",
+      "at": "2026-10-21T08:22:24.401Z",
+      "elapsedMs": 57515,
+      "status": 200,
+      "cache": "miss",
+      "request": {
+        "language": "en",
+        "query": "Find a beginner paper helicopter tutorial with clear folding and cutting steps. Prefer a written educational source. Explain what is missing; adhesive tape is not measuring tape.",
+        "materials": [
+          {
+            "id": "live-paper",
+            "materialId": "unknown",
+            "label": "A4 paper",
+            "quantity": 3,
+            "unit": "แผ่น",
+            "condition": "usable",
+            "specs": {}
+          },
+          {
+            "id": "live-tape",
+            "materialId": "unknown",
+            "label": "Clear adhesive tape",
+            "quantity": 1,
+            "unit": "ชิ้น",
+            "condition": "usable",
+            "specs": {}
+          },
+          {
+            "id": "live-pencil",
+            "materialId": "unknown",
+            "label": "Pencil",
+            "quantity": 1,
+            "unit": "ชิ้น",
+            "condition": "usable",
+            "specs": {}
+          }
+        ],
+        "preferences": {
+          "difficulty": "beginner",
+          "additionalSupplies": "allow",
+          "maxMinutes": 30,
+          "maxBudgetThb": 100
+        }
+      },
+      "response": {
+        "summary": "Found 1 projects with referenced tutorials. Check materials and instructions against the original before starting.",
+        "projects": [
+          {
+            "title": "Make a Paper Mars Helicopter (NASA JPL Education)",
+            "summary": "Written, classroom-tested activity with a downloadable worksheet/template PDF, step-by-step cutting and folding directions, optional recording/measurement extensions, and suggestions for adding small weights or ribbons for testing.",
+            "fit": "Good fit for beginner level, written instructions, and completion within ~30 minutes if you already have scissors and a small weight. Your A4 paper and pencil match the tutorial’s paper and marking tool. The tutorial explicitly lists scissors and a measuring tape/ruler; those are missing from your supplied set. The downloadable worksheet gives exact dashed/solid guide lines if you print or copy them by hand. Video demonstration is available as a supplemental resource (see videoSourceIds).",
+            "sourceId": "s1",
+            "materials": [
+              {
+                "name": "Plain paper or printed worksheet/template (A4 compatible)",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-paper"
+                ],
+                "note": "NASA provides a downloadable worksheet template. Your A4 paper can be used to draw the template by hand or to print the worksheet. The tutorial calls for plain paper or a printed template.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Scissors (cutting tool)",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Required for cutting the dashed outline in the template. The tutorial lists scissors as required.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Pencil (or marker) for guide lines",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-pencil"
+                ],
+                "note": "Used to draw or mark the template and fold lines; matches your supplied pencil.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Measuring tape or ruler",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Recommended for recording drop heights and matching template dimensions. The tutorial lists a measuring tape/ruler.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Small weight (paperclip, coin, or washer) — optional but commonly used",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Recommended to attach to the bottom to stabilize rotation and adjust flight characteristics. The tutorial suggests adding small weights or ribbon for experiments.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Clear adhesive tape (for securing/repair only)",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-tape"
+                ],
+                "note": "Useful for securing folded flaps or attaching a small folded-paper weight. NOT a substitute for a measuring tape. The NASA page lists tape as optional for repairs or attachments.",
+                "sourceIds": [
+                  "s1"
+                ]
+              }
+            ],
+            "steps": [
+              {
+                "text": "Obtain the worksheet template from the NASA JPL page (or sketch the dashed/solid guide lines on an A4 sheet using your pencil).",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Cut out the helicopter shape along the dashed lines (this requires scissors).",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Fold along the solid lines: fold the two rotor blades in opposite directions; fold the side panels toward the center; fold the bottom panel up to stiffen the body and lower the center of gravity.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Optionally add a small weight (paperclip) to the bottom fold for stability or attach a short ribbon to help visualize rotation.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Test the helicopter by holding it at shoulder height, dropping it, and observing blade rotation and fall time. Record drop height and rotations using a ruler/measuring tape or, if available, a smartphone slow-motion recording.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Experiment by changing blade length/angle or body folds and compare performance across trials.",
+                "sourceIds": [
+                  "s1"
+                ]
+              }
+            ],
+            "substitutions": [
+              {
+                "missing": "Scissors",
+                "alternative": "If you have a utility knife and a safe cutting surface and appropriate supervision, that can be used for cutting; otherwise obtain scissors.",
+                "conditions": "Only use a knife with adult supervision and a cutting mat; do not attempt with fingernails or by tearing, because the tutorial requires clean cuts.",
+                "inventoryIds": [],
+                "sourceIds": []
+              },
+              {
+                "missing": "Small weight (paperclip)",
+                "alternative": "Tightly folded small scrap of paper taped to the bottom as a lightweight substitute.",
+                "conditions": "This is an untested classroom workaround. It may not provide the same stability as a metal paperclip; try small incremental folds to avoid adding excessive mass.",
+                "inventoryIds": [
+                  "live-paper",
+                  "live-tape"
+                ],
+                "sourceIds": []
+              },
+              {
+                "missing": "Measuring tape/ruler",
+                "alternative": "Use A4 sheet dimensions (210 mm × 297 mm) and repeated folding to estimate halves/thirds for approximate template placement.",
+                "conditions": "This method provides approximate measurements only; the tutorial lists a measuring tape for recording drop heights and template accuracy. Use careful folding/creasing to improve accuracy.",
+                "inventoryIds": [
+                  "live-paper"
+                ],
+                "sourceIds": []
+              }
+            ],
+            "cautions": [
+              "Scissors are required and can be sharp — supervise children and cut on a safe surface.",
+              "Clear adhesive tape is useful for securing or repairing paper parts but is not a measuring tool. Do not rely on tape for accurate distances or as a cutting substitute.",
+              "If substituting a small folded-paper weight for a metal paperclip, add weight gradually; excess weight will prevent rotation.",
+              "If using a utility knife instead of scissors, use adult supervision, a cutting mat, and cut away from your body."
+            ],
+            "videoSourceIds": [
+              "s24"
+            ],
+            "shoppingSourceIds": [
+              "s28"
+            ]
+          }
+        ],
+        "searchedAt": "2026-10-21T08:23:21.800Z",
+        "sources": [
+          {
+            "id": "s1",
+            "title": "Make a Paper Mars Helicopter – Engineering Project | NASA JPL Education",
+            "url": "https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/"
+          },
+          {
+            "id": "s24",
+            "title": "Learning Space with NASA - Make a Mars Helicopter - YouTube",
+            "url": "https://www.youtube.com/watch?v=ND01Q9mZH1M&utm_source=openai"
+          },
+          {
+            "id": "s28",
+            "title": "กรรไกรและคัทเตอร์ขายดี | Lazada Thailand",
+            "url": "https://www.lazada.co.th/trending/Scissors-Cutters-Top-Repurchased/1352883238?utm_source=openai"
+          }
+        ],
+        "searchCalls": 3,
+        "retrievalNotes": "I found a clear, written beginner tutorial from a trusted educational source that matches your preferences.\n\nSuggested tutorial (verified)\n- Make a Paper Mars Helicopter — NASA JPL Education (written activity page, step‑by‑step, materials list, and classroom testing ideas). Last updated Oct 15, 2024. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nWhat the NASA JPL tutorial provides (short)\n- A materials list: plain paper or a downloadable template PDF, scissors, measuring tape, pencil, and optional ribbon or smartphone camera for recording drops. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n- Clear numbered project steps: cut out the template (or sketch guides on plain paper), fold the blades in opposite directions, form the helicopter body (fold panels to stiffen and lower center of gravity), test flights, experiment with blade/body changes, and record rotations and drop heights. The page also gives classroom/extensions (compare with an unfolded sheet, count rotations, test different sizes). ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nHow to use your supplied materials (you listed: 3 A4 sheets, clear adhesive tape, pencil)\n- Useful items you already have:\n  - A4 paper (3 sheets) — this is the main material for the helicopter body and blades.\n  - Pencil — for drawing guide lines or marking fold/cut positions.\n- Missing or recommended additional supplies (not in your list):\n  - Scissors (required) — the tutorial requires cutting the template/guide lines. Scissors are essential; tape cannot substitute for cutting. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n  - A small weight (paperclip or similar) — many paper‑helicopter designs use a paperclip on the tail/body to stabilize rotation and increase spin; the NASA activity suggests adding small weights or ribbon to record motion. The JPL materials list and instructions expect a way to add/adjust weight. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n  - Measuring tape (recommended by NASA) — used to record drop heights and measure parts if you want to follow the template dimensions exactly. The NASA page explicitly lists a measuring tape. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nImportant practical notes and clarifications\n- Adhesive tape is not a measuring tape. Clear adhesive tape is useful for quick repairs, securing folded flaps, or attaching a paperclip or short ribbon, but it does not provide reliable length measurements. If you need to measure distances/markings you can:\n  - Use the A4 paper itself as a measuring tool: A4 size = 210 mm × 297 mm (21.0 cm × 29.7 cm). Known sheet dimensions let you estimate thirds or halves by folding the sheet precisely with your pencil marks, if you don’t have a ruler/measuring tape.\n  - Fold-and-mark method: fold the long edge exactly in half, crease, then fold again or divide by eye into thirds for approximate placement of template lines—this is fine for a beginner craft where exact mm precision isn’t required. (The NASA lesson expects creativity if you lack exact tools.) ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n- Scissors are required for the cutting steps. If you do not have scissors, the activity cannot be completed as written unless you obtain a cutting tool (safety note: supervise children). The NASA page lists scissors in materials. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n- Paperclip (or small coin/washer) is a low‑cost extra supply (within your maxBudget THB 100). If you prefer not to buy anything, you may experiment by folding extra paper into a small tight bundle and taping it to the tail as a substitute weight—but this substitution is a common classroom workaround (NASA’s page encourages creative substitutions). ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nConcise step summary (follow the NASA written steps)\n1. Print the template from the NASA page or sketch the dashed/solid guide lines on an A4 sheet using your pencil. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n2. Cut out the helicopter shape along dashed lines (requires scissors). ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n3. Fold along solid lines: fold the two rotor blades in opposite directions; fold the side panels toward center; fold the bottom panel up to stiffen the body and lower center of gravity. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n4. Optionally add a small weight (paperclip) to the bottom fold for stability. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n5. Test flight: hold by the body at shoulder height, drop and observe blade rotation and fall time. Record drop height and rotations. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n6. Experiment: change blade length/angle or body folds and compare performance. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nWhat’s missing from your supplied set to follow the tutorial exactly\n- Scissors (required).\n- A small weight (paperclip) or an alternative stabilizer (optional but commonly used).\n- Measuring tape/ruler (recommended for recording drop heights and following template dimensions). Remember: clear adhesive tape you own cannot measure distances reliably.\n\nLink to the exact tutorial (so you can open and follow the full written instructions and download the template)\n- NASA JPL — Make a Paper Mars Helicopter. (The page includes a downloadable PDF template and full written steps.) ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nIf you want, I can:\n- Provide a short printable template you can draw by hand using A4 dimensions and step‑by‑step folding/cutting lines (I’ll base it on the NASA method), OR\n- Find an additional alternative written tutorial (for example Exploratorium or a 4‑H extension PDF) if you want multiple sources to compare. Which would you prefer?"
+      }
+    },
+    {
+      "path": "/api/projects/search",
+      "at": "2026-10-21T08:23:22.510Z",
+      "elapsedMs": 257,
+      "status": 200,
+      "cache": "hit",
+      "request": {
+        "language": "en",
+        "query": "Find a beginner paper helicopter tutorial with clear folding and cutting steps. Prefer a written educational source. Explain what is missing; adhesive tape is not measuring tape.",
+        "materials": [
+          {
+            "id": "live-paper",
+            "materialId": "unknown",
+            "label": "A4 paper",
+            "quantity": 3,
+            "unit": "แผ่น",
+            "condition": "usable",
+            "specs": {}
+          },
+          {
+            "id": "live-tape",
+            "materialId": "unknown",
+            "label": "Clear adhesive tape",
+            "quantity": 1,
+            "unit": "ชิ้น",
+            "condition": "usable",
+            "specs": {}
+          },
+          {
+            "id": "live-pencil",
+            "materialId": "unknown",
+            "label": "Pencil",
+            "quantity": 1,
+            "unit": "ชิ้น",
+            "condition": "usable",
+            "specs": {}
+          }
+        ],
+        "preferences": {
+          "difficulty": "beginner",
+          "additionalSupplies": "allow",
+          "maxMinutes": 30,
+          "maxBudgetThb": 100
+        }
+      },
+      "response": {
+        "summary": "Found 1 projects with referenced tutorials. Check materials and instructions against the original before starting.",
+        "projects": [
+          {
+            "title": "Make a Paper Mars Helicopter (NASA JPL Education)",
+            "summary": "Written, classroom-tested activity with a downloadable worksheet/template PDF, step-by-step cutting and folding directions, optional recording/measurement extensions, and suggestions for adding small weights or ribbons for testing.",
+            "fit": "Good fit for beginner level, written instructions, and completion within ~30 minutes if you already have scissors and a small weight. Your A4 paper and pencil match the tutorial’s paper and marking tool. The tutorial explicitly lists scissors and a measuring tape/ruler; those are missing from your supplied set. The downloadable worksheet gives exact dashed/solid guide lines if you print or copy them by hand. Video demonstration is available as a supplemental resource (see videoSourceIds).",
+            "sourceId": "s1",
+            "materials": [
+              {
+                "name": "Plain paper or printed worksheet/template (A4 compatible)",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-paper"
+                ],
+                "note": "NASA provides a downloadable worksheet template. Your A4 paper can be used to draw the template by hand or to print the worksheet. The tutorial calls for plain paper or a printed template.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Scissors (cutting tool)",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Required for cutting the dashed outline in the template. The tutorial lists scissors as required.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Pencil (or marker) for guide lines",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-pencil"
+                ],
+                "note": "Used to draw or mark the template and fold lines; matches your supplied pencil.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Measuring tape or ruler",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Recommended for recording drop heights and matching template dimensions. The tutorial lists a measuring tape/ruler.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Small weight (paperclip, coin, or washer) — optional but commonly used",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Recommended to attach to the bottom to stabilize rotation and adjust flight characteristics. The tutorial suggests adding small weights or ribbon for experiments.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Clear adhesive tape (for securing/repair only)",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-tape"
+                ],
+                "note": "Useful for securing folded flaps or attaching a small folded-paper weight. NOT a substitute for a measuring tape. The NASA page lists tape as optional for repairs or attachments.",
+                "sourceIds": [
+                  "s1"
+                ]
+              }
+            ],
+            "steps": [
+              {
+                "text": "Obtain the worksheet template from the NASA JPL page (or sketch the dashed/solid guide lines on an A4 sheet using your pencil).",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Cut out the helicopter shape along the dashed lines (this requires scissors).",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Fold along the solid lines: fold the two rotor blades in opposite directions; fold the side panels toward the center; fold the bottom panel up to stiffen the body and lower the center of gravity.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Optionally add a small weight (paperclip) to the bottom fold for stability or attach a short ribbon to help visualize rotation.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Test the helicopter by holding it at shoulder height, dropping it, and observing blade rotation and fall time. Record drop height and rotations using a ruler/measuring tape or, if available, a smartphone slow-motion recording.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Experiment by changing blade length/angle or body folds and compare performance across trials.",
+                "sourceIds": [
+                  "s1"
+                ]
+              }
+            ],
+            "substitutions": [
+              {
+                "missing": "Scissors",
+                "alternative": "If you have a utility knife and a safe cutting surface and appropriate supervision, that can be used for cutting; otherwise obtain scissors.",
+                "conditions": "Only use a knife with adult supervision and a cutting mat; do not attempt with fingernails or by tearing, because the tutorial requires clean cuts.",
+                "inventoryIds": [],
+                "sourceIds": []
+              },
+              {
+                "missing": "Small weight (paperclip)",
+                "alternative": "Tightly folded small scrap of paper taped to the bottom as a lightweight substitute.",
+                "conditions": "This is an untested classroom workaround. It may not provide the same stability as a metal paperclip; try small incremental folds to avoid adding excessive mass.",
+                "inventoryIds": [
+                  "live-paper",
+                  "live-tape"
+                ],
+                "sourceIds": []
+              },
+              {
+                "missing": "Measuring tape/ruler",
+                "alternative": "Use A4 sheet dimensions (210 mm × 297 mm) and repeated folding to estimate halves/thirds for approximate template placement.",
+                "conditions": "This method provides approximate measurements only; the tutorial lists a measuring tape for recording drop heights and template accuracy. Use careful folding/creasing to improve accuracy.",
+                "inventoryIds": [
+                  "live-paper"
+                ],
+                "sourceIds": []
+              }
+            ],
+            "cautions": [
+              "Scissors are required and can be sharp — supervise children and cut on a safe surface.",
+              "Clear adhesive tape is useful for securing or repairing paper parts but is not a measuring tool. Do not rely on tape for accurate distances or as a cutting substitute.",
+              "If substituting a small folded-paper weight for a metal paperclip, add weight gradually; excess weight will prevent rotation.",
+              "If using a utility knife instead of scissors, use adult supervision, a cutting mat, and cut away from your body."
+            ],
+            "videoSourceIds": [
+              "s24"
+            ],
+            "shoppingSourceIds": [
+              "s28"
+            ]
+          }
+        ],
+        "searchedAt": "2026-10-21T08:23:21.800Z",
+        "sources": [
+          {
+            "id": "s1",
+            "title": "Make a Paper Mars Helicopter – Engineering Project | NASA JPL Education",
+            "url": "https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/"
+          },
+          {
+            "id": "s24",
+            "title": "Learning Space with NASA - Make a Mars Helicopter - YouTube",
+            "url": "https://www.youtube.com/watch?v=ND01Q9mZH1M&utm_source=openai"
+          },
+          {
+            "id": "s28",
+            "title": "กรรไกรและคัทเตอร์ขายดี | Lazada Thailand",
+            "url": "https://www.lazada.co.th/trending/Scissors-Cutters-Top-Repurchased/1352883238?utm_source=openai"
+          }
+        ],
+        "searchCalls": 3,
+        "retrievalNotes": "I found a clear, written beginner tutorial from a trusted educational source that matches your preferences.\n\nSuggested tutorial (verified)\n- Make a Paper Mars Helicopter — NASA JPL Education (written activity page, step‑by‑step, materials list, and classroom testing ideas). Last updated Oct 15, 2024. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nWhat the NASA JPL tutorial provides (short)\n- A materials list: plain paper or a downloadable template PDF, scissors, measuring tape, pencil, and optional ribbon or smartphone camera for recording drops. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n- Clear numbered project steps: cut out the template (or sketch guides on plain paper), fold the blades in opposite directions, form the helicopter body (fold panels to stiffen and lower center of gravity), test flights, experiment with blade/body changes, and record rotations and drop heights. The page also gives classroom/extensions (compare with an unfolded sheet, count rotations, test different sizes). ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nHow to use your supplied materials (you listed: 3 A4 sheets, clear adhesive tape, pencil)\n- Useful items you already have:\n  - A4 paper (3 sheets) — this is the main material for the helicopter body and blades.\n  - Pencil — for drawing guide lines or marking fold/cut positions.\n- Missing or recommended additional supplies (not in your list):\n  - Scissors (required) — the tutorial requires cutting the template/guide lines. Scissors are essential; tape cannot substitute for cutting. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n  - A small weight (paperclip or similar) — many paper‑helicopter designs use a paperclip on the tail/body to stabilize rotation and increase spin; the NASA activity suggests adding small weights or ribbon to record motion. The JPL materials list and instructions expect a way to add/adjust weight. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n  - Measuring tape (recommended by NASA) — used to record drop heights and measure parts if you want to follow the template dimensions exactly. The NASA page explicitly lists a measuring tape. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nImportant practical notes and clarifications\n- Adhesive tape is not a measuring tape. Clear adhesive tape is useful for quick repairs, securing folded flaps, or attaching a paperclip or short ribbon, but it does not provide reliable length measurements. If you need to measure distances/markings you can:\n  - Use the A4 paper itself as a measuring tool: A4 size = 210 mm × 297 mm (21.0 cm × 29.7 cm). Known sheet dimensions let you estimate thirds or halves by folding the sheet precisely with your pencil marks, if you don’t have a ruler/measuring tape.\n  - Fold-and-mark method: fold the long edge exactly in half, crease, then fold again or divide by eye into thirds for approximate placement of template lines—this is fine for a beginner craft where exact mm precision isn’t required. (The NASA lesson expects creativity if you lack exact tools.) ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n- Scissors are required for the cutting steps. If you do not have scissors, the activity cannot be completed as written unless you obtain a cutting tool (safety note: supervise children). The NASA page lists scissors in materials. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n- Paperclip (or small coin/washer) is a low‑cost extra supply (within your maxBudget THB 100). If you prefer not to buy anything, you may experiment by folding extra paper into a small tight bundle and taping it to the tail as a substitute weight—but this substitution is a common classroom workaround (NASA’s page encourages creative substitutions). ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nConcise step summary (follow the NASA written steps)\n1. Print the template from the NASA page or sketch the dashed/solid guide lines on an A4 sheet using your pencil. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n2. Cut out the helicopter shape along dashed lines (requires scissors). ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n3. Fold along solid lines: fold the two rotor blades in opposite directions; fold the side panels toward center; fold the bottom panel up to stiffen the body and lower center of gravity. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n4. Optionally add a small weight (paperclip) to the bottom fold for stability. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n5. Test flight: hold by the body at shoulder height, drop and observe blade rotation and fall time. Record drop height and rotations. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n6. Experiment: change blade length/angle or body folds and compare performance. ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nWhat’s missing from your supplied set to follow the tutorial exactly\n- Scissors (required).\n- A small weight (paperclip) or an alternative stabilizer (optional but commonly used).\n- Measuring tape/ruler (recommended for recording drop heights and following template dimensions). Remember: clear adhesive tape you own cannot measure distances reliably.\n\nLink to the exact tutorial (so you can open and follow the full written instructions and download the template)\n- NASA JPL — Make a Paper Mars Helicopter. (The page includes a downloadable PDF template and full written steps.) ([jpl.nasa.gov](https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/))\n\nIf you want, I can:\n- Provide a short printable template you can draw by hand using A4 dimensions and step‑by‑step folding/cutting lines (I’ll base it on the NASA method), OR\n- Find an additional alternative written tutorial (for example Exploratorium or a 4‑H extension PDF) if you want multiple sources to compare. Which would you prefer?"
+      }
+    }
+  ],
+  "assessment": {
+    "overall": "Source-fidelity check failed; this run is not evidence that the recommendations are accurate.",
+    "working": [
+      "Actual search returned a written NASA tutorial",
+      "Repeated identical search used the private session cache (257 ms versus 57515 ms fresh)",
+      "Cache reuse preserved remaining request allowance",
+      "Private inventory notes/location were absent from request"
+    ],
+    "sourceReview": {
+      "url": "https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/",
+      "method": "Separate HTTP 200 fetch and manual comparison of the Materials and Project Steps text",
+      "actualMaterialList": [
+        "Plain paper OR a copy of the template",
+        "Scissors",
+        "Measuring tape",
+        "Pencil",
+        "Optional: 3-meter (10-foot) lightweight ribbon or smartphone camera"
+      ],
+      "actualStatedTime": "30 - 60 mins",
+      "incorrectAttribution": "AI added paper clips/coins/washers and adhesive-tape repairs as if supported by the NASA tutorial; the source does not list or instruct these.",
+      "consequence": "Strengthened the pipeline to separate structured source extraction from inventory matching, with source materials and steps assembled by code. Extraction remains AI-assisted and requires checking."
+    },
+    "automation": "Stopped after a too-strict cached-message text assertion; the cache message had an additional expiry timestamp. Corrected the test locator. Saved-plan/help checks were not reached in this first live run.",
+    "participants": "No participant research was conducted."
+  }
+}

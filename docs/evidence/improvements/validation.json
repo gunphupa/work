@@ -5,14 +5,38 @@
   "lint": "passed",
   "typecheck": "passed (included in production build)",
   "productionBuild": "passed; existing >500 kB client chunk advisory remains",
-  "unitApiSql": { "files": 19, "passed": 205, "failed": 0 },
+  "unitApiSql": {
+    "files": 20,
+    "passed": 212,
+    "failed": 0
+  },
   "browser": {
-    "configurations": ["desktop", "tablet", "mobile"],
+    "configurations": [
+      "desktop",
+      "tablet",
+      "mobile"
+    ],
     "distinctChecksPassingAcrossFinalRuns": 138,
-    "initialFullRun": { "passed": 132, "failed": 6 },
+    "initialFullRun": {
+      "passed": 132,
+      "failed": 6
+    },
     "failureExplanation": "Two existing inventory-backup journeys, each on three viewports, still targeted the old Clear all data label. The button was intentionally renamed Clear inventory & catalogue builds to accurately distinguish new external-plan and research stores.",
-    "targetedRerunAfterLocatorUpdate": { "passed": 6, "failed": 0 },
-    "coverage": ["existing catalogue/photo/community flows", "search preferences and privacy", "same-session cache API", "saved external plans and conflict recovery", "contextual AI help request/privacy/cancel", "research consent, frozen timer and exports", "account backup preview/revision errors", "inventory filters/location/consumption", "automated WCAG AA and viewport overflow checks"],
+    "targetedRerunAfterLocatorUpdate": {
+      "passed": 6,
+      "failed": 0
+    },
+    "coverage": [
+      "existing catalogue/photo/community flows",
+      "search preferences and privacy",
+      "same-session cache API",
+      "saved external plans and conflict recovery",
+      "contextual AI help request/privacy/cancel",
+      "research consent, frozen timer and exports",
+      "account backup preview/revision errors",
+      "inventory filters/location/consumption",
+      "automated WCAG AA and viewport overflow checks"
+    ],
     "providerResults": "Synthetic controlled fixtures. These verify software behavior, not actual model accuracy or participant outcomes."
   },
   "database": {
@@ -20,5 +44,12 @@
     "sqliteBackup": "Online backup of temporary WAL database recovered committed value42 and passed integrity_check; no production database changed."
   },
   "researchAnalysis": "Synthetic CLI smoke merged duplicate exports into one session and generated four outputs. No participant observations created.",
-  "liveDeployment": "Follow-up live-check evidence is recorded separately after deployment."
+  "liveDeployment": "Follow-up live-check evidence is recorded separately after deployment.",
+  "sourceFidelityCorrection": {
+    "baselineCommit": "7fdd1af98c12",
+    "reason": "A real NASA tutorial result incorrectly attributed added weights and adhesive repairs to the source.",
+    "change": "Require an actually opened tutorial; structured source extraction feeds code-assembled source materials/steps, separately from inventory matching and generated adaptations.",
+    "verification": "Full lint, TypeScript, production build and 212 unit/API/SQL tests passed after the correction; 18 search/help browser checks passed on all three viewports.",
+    "limitation": "This enforces the separation between model stages. AI extraction and matching can still be inaccurate; it does not verify page content independently."
+  }
 }
