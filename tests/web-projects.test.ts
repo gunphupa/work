@@ -242,4 +242,18 @@ describe("live web search boundaries (controlled provider responses)", () => {
     expect(output.projects).toEqual([]);
     expect(mock.parse).not.toHaveBeenCalled();
   });
+  it("does not promote an uncited search listing into a primary tutorial", async () => {
+    mock.create.mockResolvedValue(
+      response([
+        call,
+        { ...message, content: [{ ...message.content[0], annotations: [] }] },
+      ]),
+    );
+    const output = await openAIWebSearchProvider("test-key", "gpt-5-mini")(
+      webRequest,
+      new AbortController().signal,
+    );
+    expect(output.projects).toEqual([]);
+    expect(mock.parse).not.toHaveBeenCalled();
+  });
 });

@@ -49,7 +49,7 @@ For local development only, copy `.env.example` to `.env`, then enter values loc
 | --- | --- |
 | `REBUILD_AI_KEY` | OpenAI service credential; empty means AI is unavailable |
 | `REBUILD_AI_MODEL` | Default `gpt-4.1-mini`, a multimodal model listed by the official SDK; actual account availability needs verification |
-| `REBUILD_SEARCH_MODEL` | Default `gpt-4.1-mini`; must support Responses API web search and structured output. Uses the same `REBUILD_AI_KEY`. |
+| `REBUILD_SEARCH_MODEL` | Default `gpt-5-mini` for reasoning web search; summaries use `gpt-4.1-mini`. Uses the same `REBUILD_AI_KEY`. |
 | `APP_ORIGIN` | Exact public origin, including scheme, with no trailing slash |
 | `QUOTA_DB` | SQLite path; `/tmp/rebuild-quota.sqlite` for community-only hosting, durable volume required for public AI |
 | `AI_GLOBAL_DAILY` | Global request reservations per UTC day, default 50 |

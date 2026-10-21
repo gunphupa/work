@@ -75,6 +75,12 @@ test("inventory group finds external tutorials with missing materials, sources a
   expect((await downloaded).suggestedFilename()).toBe(
     "rebuild-web-projects-2026-10-21.json",
   );
+  await expect(
+    page.getByRole("link", { name: "Search for more videos on YouTube" }),
+  ).toHaveAttribute("href", /youtube\.com\/results\?search_query=/);
+  await expect(
+    page.getByRole("link", { name: "Search for Pencil", exact: true }),
+  ).toHaveAttribute("href", "https://www.google.com/search?q=Pencil%20buy");
   expect(
     (
       await new AxeBuilder({ page })

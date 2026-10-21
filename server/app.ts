@@ -175,7 +175,7 @@ export function createApp(options: {
       const timer = setTimeout(
         () => abort.abort(),
         isSearch
-          ? (options.searchTimeoutMs ?? 90000)
+          ? (options.searchTimeoutMs ?? 120000)
           : (options.timeoutMs ?? 30000),
       );
       res.on("close", () => {

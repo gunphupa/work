@@ -51,7 +51,7 @@ export function WebProjects({ inventory }: { inventory: InventoryItem[] }) {
     setBusy(true);
     setError("");
     setResult(null);
-    const timer = setTimeout(() => abort.abort("timeout"), 100000);
+    const timer = setTimeout(() => abort.abort("timeout"), 130000);
     try {
       const session = await fetch("/api/session", { signal: abort.signal });
       if (!session.ok)
@@ -277,8 +277,8 @@ export function WebProjects({ inventory }: { inventory: InventoryItem[] }) {
           <p role="status">
             <LoaderCircle size={18} className="spinner" />{" "}
             {t(
-              "กำลังค้นหาแหล่งข้อมูลและเทียบวัสดุ อาจใช้เวลาประมาณหนึ่งนาที",
-              "Finding sources and comparing materials. This may take about a minute.",
+              "กำลังค้นหาแหล่งข้อมูลและเทียบวัสดุ อาจใช้เวลาประมาณหนึ่งถึงสองนาที",
+              "Finding sources and comparing materials. This may take one to two minutes.",
             )}
           </p>
         )}
@@ -522,6 +522,18 @@ function ExternalProject({
               "No supported video link found in this search.",
             ),
           )}
+          <a
+            className="text-link"
+            href={`https://www.youtube.com/results?search_query=${encodeURIComponent(`${p.title} DIY tutorial`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t(
+              "เปิดผลค้นหาวิดีโอเพิ่มเติมบน YouTube",
+              "Search for more videos on YouTube",
+            )}{" "}
+            <ArrowUpRight size={14} />
+          </a>
         </section>
         <section>
           <h4>
@@ -544,6 +556,32 @@ function ExternalProject({
                 "Check specifications, prices and availability with the seller.",
               )}
             </small>
+          )}
+          {p.materials.some((m) => !m.inventoryIds.length) && (
+            <>
+              <p>
+                {t(
+                  "เปิดผลค้นหาร้านค้าสำหรับของที่ขาด:",
+                  "Search the web for missing supplies:",
+                )}
+              </p>
+              <ul>
+                {p.materials
+                  .filter((m) => !m.inventoryIds.length)
+                  .map((m, i) => (
+                    <li key={i}>
+                      <a
+                        href={`https://www.google.com/search?q=${encodeURIComponent(`${m.name} ${language === "th" ? "ซื้อ" : "buy"}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t("ค้นหา ", "Search for ")}
+                        {m.name} <ArrowUpRight size={14} />
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </>
           )}
         </section>
       </div>

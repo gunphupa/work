@@ -1,0 +1,139 @@
+{
+  "kind": "developer-live-smoke-test-not-participant-data",
+  "release": "e316a28ae45d",
+  "startedAt": "2026-10-21T03:22:59.235Z",
+  "elapsedMs": 26013,
+  "httpStatus": 200,
+  "request": {
+    "language": "th",
+    "query": "อยากทำของเล่นวิทยาศาสตร์หรือของใช้เล็ก ๆ จากวัสดุที่เลือก ขอคู่มือพร้อมขั้นตอน วิดีโอที่เกี่ยวข้อง และลิงก์วัสดุเพิ่มเติมถ้าจำเป็น",
+    "materials": [
+      {
+        "id": "live-paper",
+        "materialId": "unknown",
+        "label": "กระดาษ A4",
+        "quantity": 5,
+        "unit": "แผ่น",
+        "condition": "usable",
+        "specs": {}
+      },
+      {
+        "id": "live-tape",
+        "materialId": "unknown",
+        "label": "เทปกาวใส",
+        "quantity": 1,
+        "unit": "ชิ้น",
+        "condition": "usable",
+        "specs": {}
+      },
+      {
+        "id": "live-pencil",
+        "materialId": "unknown",
+        "label": "ดินสอ",
+        "quantity": 2,
+        "unit": "ชิ้น",
+        "condition": "usable",
+        "specs": {}
+      }
+    ]
+  },
+  "result": {
+    "summary": "มีสองโครงการง่าย ๆ ใช้วัสดุที่คุณมี กระดาษ A4, เทปกาวใส, ดินสอ โดยแต่ละโครงการมีคู่มือวัสดุและขั้นตอนพร้อมแหล่งข้อมูลอ้างอิงช่วยเสริมความเข้าใจ",
+    "projects": [
+      {
+        "title": "การทดลองน้ำเดินได้ (Capillary Action)",
+        "summary": "ทดลองแสดงการดูดซึมน้ำผ่านกระดาษ โดยใช้น้ำผสมสีทำให้เห็นการเคลื่อนที่ของน้ำผ่านกระดาษกรวยจากแก้วน้ำที่มีสีไปยังแก้วที่ไม่มีสี เพื่อเข้าใจหลักการดูดซึมน้ำ (Capillary Action)",
+        "fit": "วัสดุหลักคือกระดาษ A4 ที่คุณมีพอดี แต่แก้วน้ำและสีผสมอาหารต้องเตรียมเพิ่มเอง",
+        "sourceId": "s4",
+        "materials": [
+          {
+            "name": "กระดาษ A4",
+            "amount": "1 แผ่น",
+            "inventoryIds": [
+              "live-paper"
+            ],
+            "note": "ใช้ตัดเป็นแถบกระดาษสำหรับทำกรวย",
+            "sourceIds": [
+              "s4"
+            ]
+          },
+          {
+            "name": "น้ำ",
+            "amount": "ประมาณ 2 แก้ว",
+            "inventoryIds": [],
+            "note": "ไม่รวมในวัสดุที่คุณมี ต้องจัดเตรียมเอง",
+            "sourceIds": [
+              "s4"
+            ]
+          },
+          {
+            "name": "สีผสมอาหาร",
+            "amount": "เล็กน้อย",
+            "inventoryIds": [],
+            "note": "ใช้เพื่อทำให้น้ำมีสีชัดเจน มองเห็นการเคลื่อนที่",
+            "sourceIds": [
+              "s4"
+            ]
+          },
+          {
+            "name": "แก้วน้ำ",
+            "amount": "2 ใบ",
+            "inventoryIds": [],
+            "note": "ใช้ใส่น้ำและน้ำผสมสี",
+            "sourceIds": [
+              "s4"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "text": "ตัดกระดาษ A4 เป็นแถบยาวประมาณ 2 นิ้ว x 12 นิ้ว",
+            "sourceIds": [
+              "s4"
+            ]
+          },
+          {
+            "text": "พับกระดาษทำเป็นรูปกรวยสำหรับใช้ดูดน้ำ",
+            "sourceIds": [
+              "s4"
+            ]
+          },
+          {
+            "text": "ใส่น้ำลงในแก้วน้ำสองใบ ใส่สีผสมอาหารในแก้วน้ำหนึ่งเพื่อให้มีสี",
+            "sourceIds": [
+              "s4"
+            ]
+          },
+          {
+            "text": "วางปลายกรวยกระดาษลงในแก้วน้ำที่มีสี และปลายอีกด้านลงในแก้วน้ำที่ไม่มีสี",
+            "sourceIds": [
+              "s4"
+            ]
+          },
+          {
+            "text": "สังเกตการเคลื่อนที่ของน้ำผ่านกระดาษจากแก้วที่มีสีไปยังแก้วที่ไม่มีสี",
+            "sourceIds": [
+              "s4"
+            ]
+          }
+        ],
+        "substitutions": [],
+        "cautions": [
+          "ต้องเตรียมแก้วน้ำและสีผสมอาหารเอง เพราะไม่มีในวัสดุที่ให้มา"
+        ],
+        "videoSourceIds": [],
+        "shoppingSourceIds": []
+      }
+    ],
+    "searchedAt": "2026-10-21T03:23:25.130Z",
+    "sources": [
+      {
+        "id": "s4",
+        "title": "club.b2s.co.th",
+        "url": "https://club.b2s.co.th/th/knowledge-detail/81/DIY-Scientific-Experiments-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C-by-TEDS-PLAY-%7C-B2S-Home-Sweet-Home?utm_source=openai"
+      }
+    ],
+    "searchCalls": 2
+  },
+  "assessment": "Needs improvement: A4 paper matched to a capillary-action activity requiring further source verification; unrelated/missing resources. Triggered reasoning search and citation-only primary-source revision."
+}

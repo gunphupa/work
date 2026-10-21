@@ -41,7 +41,7 @@ const app = createApp({
   webSearchProvider: process.env.REBUILD_AI_KEY
     ? openAIWebSearchProvider(
         process.env.REBUILD_AI_KEY,
-        process.env.REBUILD_SEARCH_MODEL ?? "gpt-4.1-mini",
+        process.env.REBUILD_SEARCH_MODEL ?? "gpt-5-mini",
       )
     : undefined,
   globalLimit: limit("AI_GLOBAL_DAILY", 50),
