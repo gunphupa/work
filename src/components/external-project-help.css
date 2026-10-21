@@ -1,0 +1,19 @@
+.external-project-help > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.external-project-help > .stack {
+  margin-top: 16px;
+}
+.external-help-answer {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+@media print {
+  .external-project-help {
+    display: none !important;
+  }
+}

@@ -1,0 +1,94 @@
+.research-page {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.research-page header p {
+  max-width: 78ch;
+}
+.research-page .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.research-page .panel {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+.research-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 1rem;
+}
+.research-fields label,
+.research-page form > label {
+  display: grid;
+  gap: 0.45rem;
+}
+.research-page .research-check {
+  display: flex;
+  align-items: start;
+  gap: 0.7rem;
+}
+.research-check input {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin-top: 0.2rem;
+}
+.research-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 1rem;
+}
+.research-summary > div {
+  border: 1px solid var(--line, #d1d9cb);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.research-timer {
+  font-size: 1.6rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.research-alert {
+  border: 1px solid #b96c34;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #fff4e9;
+  color: #683711;
+}
+.research-session {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line, #d1d9cb);
+  overflow-wrap: anywhere;
+}
+.research-session summary {
+  cursor: pointer;
+}
+.research-page button {
+  max-width: 100%;
+  white-space: normal;
+}
+.research-page textarea {
+  resize: vertical;
+}
+.research-indicator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  align-items: center;
+  border: 1px solid #c1d2bc;
+  background: #eef5e9;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  margin: 0 auto 1.2rem;
+  max-width: 1200px;
+  color: #25482f;
+  font-size: 0.9rem;
+}
+.research-indicator button {
+  padding: 0.4rem 0.65rem;
+  min-height: 36px;
+}
+.research-indicator p {
+  flex-basis: 100%;
+}

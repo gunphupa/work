@@ -1,0 +1,24 @@
+{
+  "kind": "developer-technical-validation-not-participant-data",
+  "date": "2026-10-21",
+  "baseCommit": "b9af77b76e97741474c71ed3dbec7c8e4a4c703c",
+  "lint": "passed",
+  "typecheck": "passed (included in production build)",
+  "productionBuild": "passed; existing >500 kB client chunk advisory remains",
+  "unitApiSql": { "files": 19, "passed": 205, "failed": 0 },
+  "browser": {
+    "configurations": ["desktop", "tablet", "mobile"],
+    "distinctChecksPassingAcrossFinalRuns": 138,
+    "initialFullRun": { "passed": 132, "failed": 6 },
+    "failureExplanation": "Two existing inventory-backup journeys, each on three viewports, still targeted the old Clear all data label. The button was intentionally renamed Clear inventory & catalogue builds to accurately distinguish new external-plan and research stores.",
+    "targetedRerunAfterLocatorUpdate": { "passed": 6, "failed": 0 },
+    "coverage": ["existing catalogue/photo/community flows", "search preferences and privacy", "same-session cache API", "saved external plans and conflict recovery", "contextual AI help request/privacy/cancel", "research consent, frozen timer and exports", "account backup preview/revision errors", "inventory filters/location/consumption", "automated WCAG AA and viewport overflow checks"],
+    "providerResults": "Synthetic controlled fixtures. These verify software behavior, not actual model accuracy or participant outcomes."
+  },
+  "database": {
+    "supabaseMigration": "Executed twice in isolated PGlite tests; owner isolation, forbidden writes, stale revisions and expected-account guard tested. Not applied to production Supabase.",
+    "sqliteBackup": "Online backup of temporary WAL database recovered committed value42 and passed integrity_check; no production database changed."
+  },
+  "researchAnalysis": "Synthetic CLI smoke merged duplicate exports into one session and generated four outputs. No participant observations created.",
+  "liveDeployment": "Follow-up live-check evidence is recorded separately after deployment."
+}

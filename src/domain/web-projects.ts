@@ -11,11 +11,19 @@ export const searchMaterialSchema = itemSchema.pick({
   condition: true,
   specs: true,
 });
+export const webSearchPreferencesSchema = z.object({
+  difficulty: z.enum(["any", "beginner", "intermediate"]).default("any"),
+  maxMinutes: z.number().int().min(1).max(1440).optional(),
+  maxBudgetThb: z.number().finite().min(0).max(100000).optional(),
+  additionalSupplies: z.enum(["allow", "avoid"]).default("allow"),
+});
+export type WebSearchPreferences = z.infer<typeof webSearchPreferencesSchema>;
 export const webSearchRequestSchema = z
   .object({
     language: z.enum(["th", "en"]).default("th"),
     query: z.string().trim().max(2000).default(""),
     materials: z.array(searchMaterialSchema).max(30).default([]),
+    preferences: webSearchPreferencesSchema.optional(),
   })
   .refine((x) => x.materials.length > 0 || x.query.length > 0, {
     message: "Materials or a query required",
@@ -37,14 +45,29 @@ export function searchMaterialsPayload(items: InventoryItem[]) {
 // Links must come from the search tool, never from generated prose.
 export function publicWebUrl(raw: string): string | null {
   try {
+    // URL() silently removes embedded tabs/newlines; reject them rather than
+    // displaying a differently interpreted destination. These are public links,
+    // not an allowlist for fetching arbitrary URLs on the server.
+    if (
+      raw.length > 2000 ||
+      [...raw].some(
+        (char) =>
+          char.charCodeAt(0) <= 32 ||
+          char.charCodeAt(0) === 127 ||
+          char === "\\",
+      )
+    )
+      return null;
     const u = new URL(raw);
     if (
       !/^https?:$/.test(u.protocol) ||
       u.username ||
       u.password ||
       (u.port && u.port !== "80" && u.port !== "443") ||
-      !/^[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}$/i.test(u.hostname) ||
-      /(?:^|\.)(?:localhost|local|internal|test|invalid|example|onion)$/i.test(
+      !/^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/i.test(
+        u.hostname,
+      ) ||
+      /(?:^|\.)(?:localhost|local|localdomain|internal|test|invalid|example|onion|lan|home|corp|home\.arpa)$/i.test(
         u.hostname,
       )
     )

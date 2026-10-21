@@ -220,6 +220,36 @@ describe("AI API boundaries (test providers; no live AI claims)", () => {
   });
 });
 describe("quota durability", () => {
+  it("persists aggregate operational measurements without storing user content", () => {
+    const dir = mkdtempSync(join(tmpdir(), "rebuild-usage-"));
+    const path = join(dir, "db.sqlite");
+    let q = new Quotas(path);
+    q.recordUsage("web_search", "ok", 1200);
+    q.recordUsage("web_search", "ok", 1800);
+    q.recordUsage("web_search", "error", 50);
+    q.close();
+    q = new Quotas(path);
+    expect(q.usageSummary()).toEqual([
+      {
+        day: expect.any(Number),
+        mode: "web_search",
+        outcome: "error",
+        requests: 1,
+        duration_ms: 50,
+        max_duration_ms: 50,
+      },
+      {
+        day: expect.any(Number),
+        mode: "web_search",
+        outcome: "ok",
+        requests: 2,
+        duration_ms: 3000,
+        max_duration_ms: 1800,
+      },
+    ]);
+    q.close();
+    rmSync(dir, { recursive: true });
+  });
   it("retains reservations through database reopen and rejects a batch atomically", () => {
     const dir = mkdtempSync(join(tmpdir(), "rebuild-quota-"));
     const path = join(dir, "db.sqlite");

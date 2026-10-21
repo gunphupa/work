@@ -11,6 +11,7 @@ export const itemSchema = z.object({
     .refine((s) => Object.keys(s).length <= 12),
   verified: z.boolean(),
   notes: z.string().max(1000).default(""),
+  location: z.string().trim().max(120).optional(),
   photo: z
     .string()
     .max(60000)

@@ -1,0 +1,78 @@
+.web-search-preferences {
+  margin-top: 1rem;
+}
+.web-search-preferences summary,
+.web-result-feedback summary,
+.web-feedback-tools summary {
+  cursor: pointer;
+  padding: 0.75rem 0;
+  font-weight: 600;
+}
+.web-preference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.web-preference-grid label,
+.web-result-feedback label {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.web-preference-grid input,
+.web-preference-grid select,
+.web-result-feedback select,
+.web-result-feedback textarea {
+  width: 100%;
+  min-width: 0;
+}
+.web-limits {
+  padding: 0.8rem 1rem;
+  background: #f0f3eb;
+  border-radius: 0.5rem;
+}
+.web-save-actions {
+  margin-top: 1rem;
+}
+.web-check-label {
+  display: block;
+  margin-top: 0.25rem;
+  color: #626846;
+}
+.web-compare {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid #d7ddce;
+  border-radius: 0.5rem;
+}
+.web-compare table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.web-compare caption {
+  text-align: left;
+  padding: 0.75rem;
+}
+.web-compare th,
+.web-compare td {
+  padding: 0.7rem;
+  border-top: 1px solid #d7ddce;
+  text-align: left;
+}
+.web-result-feedback {
+  border-top: 1px solid #d7ddce;
+  margin-top: 1rem;
+}
+.web-result-feedback summary svg {
+  vertical-align: middle;
+}
+.web-feedback-tools {
+  margin-top: 1.5rem;
+}
+@media (max-width: 600px) {
+  .web-preference-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -27,10 +27,21 @@ function limit(name: string, fallback: number) {
   if (!Number.isSafeInteger(v) || v < 0) throw new Error(`Invalid ${name}`);
   return v;
 }
+function enabled(name: string, fallback: boolean) {
+  const value = process.env[name]?.toLowerCase();
+  if (value === undefined) return fallback;
+  if (value !== "true" && value !== "false")
+    throw new Error(`Invalid ${name}; use true or false`);
+  return value === "true";
+}
+const cacheSeconds = limit("WEB_SEARCH_CACHE_SECONDS", 900);
+if (cacheSeconds > 86400)
+  throw new Error("WEB_SEARCH_CACHE_SECONDS cannot exceed 86400");
 const app = createApp({
   quota,
   origin,
   production,
+  aiEnabled: enabled("AI_ENABLED", true),
   community: community ? supabaseStore(community) : undefined,
   provider: process.env.REBUILD_AI_KEY
     ? openAIProvider(
@@ -47,6 +58,8 @@ const app = createApp({
   globalLimit: limit("AI_GLOBAL_DAILY", 50),
   guestLimit: limit("AI_GUEST_DAILY", 10),
   ipLimit: limit("AI_IP_DAILY", 15),
+  searchDailyLimit: limit("WEB_SEARCH_DAILY", 50),
+  searchCacheTtlMs: cacheSeconds * 1000,
 });
 if (production) {
   app.use(express.static(resolve("dist/client"), { index: false }));

@@ -9,6 +9,7 @@ async function setup(
   webSearchProvider?: WebSearchProvider,
   globalLimit = 10,
   searchTimeoutMs = 1000,
+  extra: Partial<Parameters<typeof createApp>[0]> = {},
 ) {
   quota = new Quotas(":memory:");
   const app = createApp({
@@ -18,6 +19,7 @@ async function setup(
     globalLimit,
     searchTimeoutMs,
     provider: async () => ({ reply: "fixture", candidates: [] }),
+    ...extra,
   });
   await new Promise<void>((resolve) => {
     server = app.listen(0, "127.0.0.1", () => resolve());
@@ -97,6 +99,85 @@ describe("external search API", () => {
       (await post({ mode: "inventory", text: "paper" }, h, "/api/ai")).status,
     ).toBe(429);
     expect((await post(webRequest, await headers())).status).toBe(429);
+  });
+  it("reuses only the same session's result without consuming another paid allowance", async () => {
+    let calls = 0;
+    await setup(async () => {
+      calls++;
+      return webResult;
+    }, 1);
+    const h = await headers();
+    const first = await post(webRequest, h);
+    expect(first.headers.get("x-rebuild-cache")).toBe("miss");
+    expect(first.headers.get("x-rebuild-cache-expires")).toBeTruthy();
+    const again = await post(webRequest, h);
+    expect(again.status).toBe(200);
+    expect(again.headers.get("x-rebuild-cache")).toBe("hit");
+    expect(calls).toBe(1);
+    expect((await post(webRequest, await headers())).status).toBe(429);
+    expect(
+      (await post({ ...webRequest, query: "another task" }, h)).status,
+    ).toBe(429);
+    expect(quota!.usageSummary().map((x) => [x.outcome, x.requests])).toEqual([
+      ["cache", 1],
+      ["ok", 1],
+    ]);
+  });
+  it("caps paid web searches separately while leaving inventory AI available", async () => {
+    await setup(async () => webResult, 10, 1000, { searchDailyLimit: 1 });
+    const h = await headers();
+    expect((await post(webRequest, h)).status).toBe(200);
+    expect((await post({ ...webRequest, query: "new" }, h)).status).toBe(429);
+    expect(
+      (await post({ mode: "inventory", text: "paper" }, h, "/api/ai")).status,
+    ).toBe(200);
+    expect(quota!.used(`global:${Math.floor(Date.now() / 86400000)}`)).toBe(2);
+  });
+  it("returns session-effective limits without private counts and respects the kill switch", async () => {
+    await setup(async () => webResult, 10, 1000, { aiEnabled: false });
+    expect((await fetch(base + "/api/ai/limits")).status).toBe(403);
+    const h = await headers();
+    const limits = await (
+      await fetch(base + "/api/ai/limits", { headers: h })
+    ).json();
+    expect(limits).toEqual({
+      aiEnabled: false,
+      webSearchEnabled: false,
+      requestsRemaining: 0,
+      webSearchRemaining: 0,
+      resetsAt: expect.any(String),
+      currencyBudget: false,
+    });
+    expect((await post(webRequest, h)).status).toBe(503);
+    expect(
+      (await post({ mode: "inventory", text: "paper" }, h, "/api/ai")).status,
+    ).toBe(503);
+    expect(quota!.usageSummary()).toEqual([]);
+  });
+  it("suppresses identical in-flight requests without another reservation", async () => {
+    let complete: ((result: typeof webResult) => void) | undefined;
+    let entered: (() => void) | undefined;
+    const ready = new Promise<void>((resolve) => {
+      entered = resolve;
+    });
+    await setup(
+      () =>
+        new Promise((resolve) => {
+          complete = resolve;
+          entered!();
+        }),
+    );
+    const h = await headers();
+    const first = post(webRequest, h);
+    await ready;
+    const duplicate = await post(webRequest, h);
+    expect(duplicate.status).toBe(409);
+    expect(duplicate.headers.get("retry-after")).toBe("5");
+    complete!(webResult);
+    expect((await first).status).toBe(200);
+    expect(quota!.used(`web-search:${Math.floor(Date.now() / 86400000)}`)).toBe(
+      1,
+    );
   });
   it("reports unconfigured search separately from configured inventory AI", async () => {
     await setup();

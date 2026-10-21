@@ -206,7 +206,7 @@ test("a custom material needs only its name and quantity and survives reload and
   });
   expect(saved.inventory[0].photo).toMatch(/^data:image\/webp;base64,/);
   page.once("dialog", (dialog) => dialog.accept());
-  await page.getByRole("button", { name: "Clear all data" }).click();
+  await page.getByRole("button", { name: "Clear inventory & catalogue builds" }).click();
   await expect(page.locator(".inventory-row")).toHaveCount(0);
   page.once("dialog", (dialog) => dialog.accept());
   await page.getByLabel("Inventory backup file").setInputFiles({

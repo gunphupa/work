@@ -1,0 +1,105 @@
+.external-plans {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.external-plan-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 20px;
+}
+.external-plan-heading > div:first-child {
+  flex: 1 1 350px;
+}
+.external-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+  gap: 20px;
+}
+.external-plan-detail h4 {
+  font-size: 18px;
+  margin: 0;
+}
+.external-plan-detail {
+  overflow-wrap: anywhere;
+}
+.external-plan-check {
+  flex-direction: row;
+  align-items: start;
+  gap: 12px;
+}
+.external-plan-check input {
+  margin-top: 4px;
+}
+.external-plan-check small {
+  display: block;
+}
+.external-plan-material,
+.external-plan-step {
+  border: 1px solid var(--line);
+  padding: 16px;
+  border-radius: 10px;
+  display: grid;
+  gap: 8px;
+}
+.external-plan-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 13px;
+}
+.external-plan-refs a {
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+.external-plan-refs svg {
+  margin-left: 5px;
+}
+.external-plan-notes blockquote {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.external-plan-print-notes {
+  display: none;
+  white-space: pre-wrap;
+}
+@media print {
+  body.external-plan-print .external-plan-print-notes {
+    display: block;
+  }
+  body.external-plan-print .external-plan-notes textarea {
+    display: none;
+  }
+  body.external-plan-print .external-plan-refs a::after {
+    content: " (" attr(href) ")";
+  }
+  body.external-plan-print {
+    background: white;
+  }
+  body.external-plan-print * {
+    visibility: hidden;
+  }
+  body.external-plan-print .external-plan-detail,
+  body.external-plan-print .external-plan-detail * {
+    visibility: visible;
+  }
+  body.external-plan-print .external-plan-detail {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    border: none;
+    padding: 10mm;
+  }
+  body.external-plan-print .external-plan-controls,
+  body.external-plan-print .external-plan-controls * {
+    display: none !important;
+  }
+  body.external-plan-print a {
+    text-decoration: underline;
+  }
+  body.external-plan-print .external-plan-material,
+  body.external-plan-print .external-plan-step {
+    break-inside: avoid;
+  }
+}

@@ -65,6 +65,7 @@ export function searchInventory(query: string, inventory: InventoryItem[]) {
       [
         item.label,
         item.notes,
+        item.location ?? "",
         ...Object.values(item.specs),
         ...(material ? [material.name, material.en, ...material.aliases] : []),
       ].join(" "),

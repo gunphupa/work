@@ -4,16 +4,18 @@ A Thai/English, project-first app for useful household making and everyday learn
 
 ## What you can use
 
+New on 21 October: external tutorial plans with checklists, notes, print/export and contextual AI questions; search constraints, private repeat-search caching and quota visibility; inventory filters/locations/consumption; voluntary research recording and exports; optional manual account backups. See [Thai release and owner checklist](docs/IMPROVEMENTS_2026_10_21.md). Account backup requires the supplied SQL migration; other additions use existing services.
+
 - **37 complete guides** across home organization, cleaning, repairs, packaging crafts, gardening, school science and electronics: 21 original household guides, 15 Arduino UNO R3 examples and one NASA paper rocket.
 - **97 material types**, Thai/English name and alias search in both the picker and owned inventory, plus custom items requiring only name and quantity. Optional small item photos stay in the browser and backups.
 - Photo identification and saved items connect to existing catalogue guides, including incomplete projects with missing supplies and named specification checks. Camera capture and file uploads remain optional; identification never confirms readiness.
 - Contextual, owned-first substitution suggestions explain limits, including paper bonding with double-sided tape instead of glue stick. Suggestions do not silently change readiness or invent electronic compatibility.
 - Large original project illustrations, three main navigation choices, a persistent language switch, category filters, search by project or material, and 12 cards at a time.
 - Fuller project introductions, grouped supplies, 81 original household/science step diagrams and 60 electronics preparation/connection/upload/measurement panels. The reader keeps Next/Previous, all-steps viewing, checks, and optional build notes. Diagrams are not build photographs or to-scale templates.
-- Optional Google and passwordless email accounts via Supabase, build photos/comments, separate project and website reviews, an author status page, and an admin approval queue. Every submission starts private and pending. **Live account activation is still required:** follow [Accounts setup](docs/ACCOUNTS_SETUP.md).
+- Optional Google and passwordless email accounts via Supabase, build photos/comments, separate project and website reviews, an author status page, and an admin approval queue. Every submission starts private and pending. For a new deployment follow [Accounts setup](docs/ACCOUNTS_SETUP.md).
 - Project-specific YouTube searches and the video linked from NASA’s written rocket guide. Search results are clearly labelled; they are not reviewed video recommendations.
 - Existing version 1 inventory/build backups remain compatible. Export before clearing browser storage or changing devices.
-- Optional server-side OpenAI text/photo/help integration, with user review, upload validation, same-origin/CSRF checks and persistent quotas. Live AI is not verified in this development environment because no service key is present.
+- Optional server-side OpenAI text/photo/help integration, with user review, upload validation, same-origin/CSRF checks and persistent quotas. Local checks use fixtures without a service key; deployed live checks are recorded separately with their release IDs under `docs/evidence`.
 
 The original household guides and illustrations are authored for ReBuild; they are not externally certified or physically build-tested. Arduino/NASA documentation review is also not physical testing. See [implementation status](docs/STATUS.md), [content provenance](docs/CONTENT.md) and [test results](docs/TEST_REPORT.md).
 
@@ -55,6 +57,9 @@ For local development only, copy `.env.example` to `.env`, then enter values loc
 | `AI_GLOBAL_DAILY` | Global request reservations per UTC day, default 50 |
 | `AI_GUEST_DAILY` | Guest session daily reservations, default 10 |
 | `AI_IP_DAILY` | Hashed client-IP daily reservations, default 15 |
+| `AI_ENABLED` | `true` by default; `false` pauses paid AI work |
+| `WEB_SEARCH_DAILY` | Separate web-search reservations/day, default 50; also subject to shared limits |
+| `WEB_SEARCH_CACHE_SECONDS` | Private per-session exact-repeat cache lifetime, default 900; 0 disables |
 | `TRUST_PROXY` | Leave blank unless your host's proxy addresses are known and cannot be bypassed |
 | `PORT` | Default 3000 |
 

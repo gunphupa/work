@@ -217,7 +217,7 @@ export function ItemEditor({
                     setDraft({ ...draft, quantity: Number(e.target.value) })
                   }
                 />
-                <span>{unitText(mat.unit, language)}</span>
+                <span>{unitText(draft.unit, language)}</span>
               </div>
             </label>
             <label>
@@ -241,6 +241,43 @@ export function ItemEditor({
               </select>
             </label>
           </div>
+          {mat.id === "unknown" && (
+            <label>
+              {t("หน่วยของรายการ", "Item unit")}
+              <select
+                value={draft.unit}
+                onChange={(e) =>
+                  setDraft({
+                    ...draft,
+                    unit: e.target.value as InventoryItem["unit"],
+                  })
+                }
+              >
+                {(["ชิ้น", "เส้น", "แผ่น", "เครื่อง", "ชุด"] as const).map(
+                  (unit) => (
+                    <option key={unit} value={unit}>
+                      {unitText(unit, language)}
+                    </option>
+                  ),
+                )}
+              </select>
+            </label>
+          )}
+          <label>
+            {t(
+              "ที่เก็บ (ไม่บังคับ เก็บเป็นข้อมูลส่วนตัว)",
+              "Storage location (optional, private)",
+            )}
+            <input
+              maxLength={120}
+              value={draft.location ?? ""}
+              onChange={(e) => setDraft({ ...draft, location: e.target.value })}
+              placeholder={t(
+                "เช่น กล่องเครื่องมือชั้นบน",
+                "For example: top toolbox drawer",
+              )}
+            />
+          </label>
           {(language === "th" ? mat.hint : mat.hintEn) && (
             <p className="form-hint">
               {language === "th" ? mat.hint : mat.hintEn}

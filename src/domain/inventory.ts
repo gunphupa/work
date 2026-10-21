@@ -65,6 +65,7 @@ export function mergeConfirmed(items: InventoryItem[]): InventoryItem[] {
           JSON.stringify(Object.entries(item.specs).sort()) &&
         x.label === item.label &&
         x.photo === item.photo &&
+        (x.location ?? "") === (item.location ?? "") &&
         x.notes === item.notes,
     );
     if (match && match.quantity + item.quantity <= 10000)

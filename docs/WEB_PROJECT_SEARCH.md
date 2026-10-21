@@ -1,5 +1,7 @@
 # External project search — 21 October 2026
 
+**Later improvements:** [release and owner checklist](IMPROVEMENTS_2026_10_21.md) covers search constraints, same-session caching, saved external plans, contextual questions, research data and account backup. A cache hit reuses the earlier result and timestamp without a live web call; fresh requests still follow the pipeline below. Historical test counts and live evidence below refer to the versions explicitly named, not the subsequent improvements release.
+
 ## What changed
 
 From **My materials → Find projects on the web**, select up to 30 items as a group, including custom names. Add a goal or additional materials and run a search. The same page is linked from Explore and material-to-catalogue suggestions. A text-only material description works with an empty inventory.

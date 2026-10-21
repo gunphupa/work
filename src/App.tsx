@@ -1,4 +1,11 @@
-import { useState, useEffect, useRef, type ReactNode } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  lazy,
+  Suspense,
+  type ReactNode,
+} from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -53,12 +60,39 @@ import { ProjectArt } from "./components/Art";
 import { ItemEditor, AddModal, type EditorSeed } from "./components/Inventory";
 import { ProjectGuide } from "./components/Guide";
 import { MaterialProjects } from "./components/MaterialProjects";
-import { WebProjects } from "./components/WebProjects";
+import {
+  InventoryFilterControls,
+  UseMaterial,
+} from "./components/InventoryTools";
+import {
+  filterInventory,
+  consumeInventory,
+  type InventoryFilters,
+} from "./domain/inventory-tools";
 import { Modal } from "./components/Modal";
 import { PaperBondingSubstitutions } from "./components/Substitutions";
 import { AccountPage, AccountLink } from "./components/Account";
 import { ProjectCommunity, SubmissionList } from "./components/Community";
 import { useLanguage, unitText } from "./i18n";
+const WebProjects = lazy(() =>
+  import("./components/WebProjects").then((m) => ({ default: m.WebProjects })),
+);
+const ExternalPlans = lazy(() =>
+  import("./components/ExternalPlans").then((m) => ({
+    default: m.ExternalPlans,
+  })),
+);
+const Research = lazy(() =>
+  import("./components/Research").then((m) => ({ default: m.Research })),
+);
+const ResearchIndicator = lazy(() =>
+  import("./components/Research").then((m) => ({
+    default: m.ResearchIndicator,
+  })),
+);
+const CloudBackup = lazy(() =>
+  import("./components/CloudBackup").then((m) => ({ default: m.CloudBackup })),
+);
 const STORE = "rebuild.guest.v1";
 function readLocal() {
   try {
@@ -102,6 +136,12 @@ export default function App() {
     [readyOnly, setReadyOnly] = useState(false);
   const [catalogueQuery, setCatalogueQuery] = useState("");
   const [inventoryQuery, setInventoryQuery] = useState("");
+  const [inventoryFilters, setInventoryFilters] = useState<InventoryFilters>({
+    condition: "all",
+    kind: "all",
+    sort: "saved",
+  });
+  const [consuming, setConsuming] = useState<InventoryItem | null>(null);
   const [discoveryItemId, setDiscoveryItemId] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(12);
   useEffect(() => {
@@ -114,7 +154,11 @@ export default function App() {
       ? projectById[route.split("/")[2]]
       : undefined;
   const inventory = state.inventory;
-  const visibleInventory = searchInventory(inventoryQuery, inventory);
+  const visibleInventory = filterInventory(
+    searchInventory(inventoryQuery, inventory),
+    inventoryFilters,
+    language,
+  );
   const discoveryItem = inventory.find((item) => item.id === discoveryItemId);
   useEffect(() => {
     if (paused) return;
@@ -379,9 +423,37 @@ export default function App() {
           {language === "th" ? "English" : "ไทย"}
         </button>
       </header>
+      <Suspense fallback={null}>
+        <ResearchIndicator />
+      </Suspense>
       <main id="main" tabIndex={-1}>
-        {route === "/account" && <AccountPage />}
-        {route === "/web-projects" && <WebProjects inventory={inventory} />}
+        <Suspense
+          fallback={<p role="status">{t("กำลังเปิดหน้า…", "Loading page…")}</p>}
+        >
+          {route === "/account" && (
+            <>
+              <AccountPage />
+              <CloudBackup
+                state={state}
+                disabled={paused || storageError}
+                onRestore={(next) => {
+                  localStorage.setItem(STORE, JSON.stringify(next));
+                  setState(next);
+                  setPaused(false);
+                  setStorageError(false);
+                  setNotice(
+                    t(
+                      "คืนค่าคลังและงานจากข้อมูลสำรองแล้ว",
+                      "Inventory and builds restored from backup.",
+                    ),
+                  );
+                }}
+              />
+            </>
+          )}
+          {route === "/research" && <Research />}
+          {route === "/web-projects" && <WebProjects inventory={inventory} />}
+        </Suspense>
         {route === "/reviews" && (
           <>
             <h1>{t("รีวิว ReBuild", "Review ReBuild")}</h1>
@@ -888,6 +960,10 @@ export default function App() {
                         </button>
                       )}
                     </label>
+                    <InventoryFilterControls
+                      value={inventoryFilters}
+                      change={setInventoryFilters}
+                    />
                     <p className="inventory-count" role="status">
                       {t(
                         `พบ ${visibleInventory.length} จาก ${inventory.length} รายการ`,
@@ -977,6 +1053,11 @@ export default function App() {
                                     "Details to review · guides stay open",
                                   )}
                           </small>
+                          {item.location && (
+                            <small>
+                              {t("ที่เก็บ", "Location")}: {item.location}
+                            </small>
+                          )}
                           <button
                             className="text-link item-project-button"
                             onClick={() => setDiscoveryItemId(item.id)}
@@ -986,6 +1067,13 @@ export default function App() {
                               "Find projects for this item",
                             )}
                             <ArrowUpRight size={14} />
+                          </button>
+                          <button
+                            className="text-link item-project-button"
+                            disabled={paused || storageError}
+                            onClick={() => setConsuming(item)}
+                          >
+                            {t("บันทึกการใช้วัสดุ", "Record material use")}
                           </button>
                         </div>
                         <button
@@ -1094,8 +1182,8 @@ export default function App() {
                       if (
                         confirm(
                           t(
-                            "ลบคลังและงานที่บันทึกทั้งหมด? ย้อนกลับไม่ได้หากไม่มีไฟล์สำรอง",
-                            "Delete all inventory and saved builds? You need a backup to restore them.",
+                            "ลบคลังและงานจากคู่มือ ReBuild ในเครื่องนี้? แผนภายนอกและข้อมูลวิจัยจัดการแยกในหน้าของแต่ละส่วน ต้องมีไฟล์สำรองจึงคืนค่าได้",
+                            "Delete inventory and catalogue builds in this browser? External plans and research records are managed on their own pages. You need a backup to restore this data.",
                           ),
                         )
                       ) {
@@ -1104,7 +1192,10 @@ export default function App() {
                       }
                     }}
                   >
-                    {t("ล้างข้อมูลทั้งหมด", "Clear all data")}
+                    {t(
+                      "ล้างคลังและงานจากคู่มือ",
+                      "Clear inventory & catalogue builds",
+                    )}
                   </button>
                 </details>
               </aside>
@@ -1138,6 +1229,14 @@ export default function App() {
                 "Keep ideas, track steps and record what you learn in this browser.",
               )}
             />
+            <Suspense
+              fallback={
+                <p role="status">{t("กำลังเปิดแผน…", "Loading plans…")}</p>
+              }
+            >
+              <ExternalPlans inventory={inventory} />
+            </Suspense>
+            <h2>{t("งานจากคู่มือ ReBuild", "ReBuild catalogue builds")}</h2>
             {state.builds.length ? (
               <div className="project-grid">
                 {state.builds.map((b) => {
@@ -1312,7 +1411,10 @@ export default function App() {
                 <button
                   className="primary"
                   onClick={() =>
-                    setEditor({ materialId: "unknown", label: catalogueQuery })
+                    setEditor({
+                      materialId: "unknown",
+                      label: catalogueQuery,
+                    })
                   }
                 >
                   {t("เพิ่มของอื่น", "Add a custom item")}
@@ -1372,8 +1474,15 @@ export default function App() {
               <h2>{t("ข้อมูลของคุณ", "Your data")}</h2>
               <p>
                 {t(
-                  "คลัง งาน และบันทึกอยู่ใน localStorage ของเบราว์เซอร์นี้และยังไม่ซิงก์ข้ามเครื่อง แม้เข้าสู่ระบบแล้ว ส่งออกหรือลบได้จากของที่มี → สำรองข้อมูลและจัดการคลัง",
-                  "Inventory, builds and notes live in this browser’s localStorage and do not sync across devices, even when signed in. Export or delete them under My materials → Backups & inventory settings.",
+                  "คลัง งาน และบันทึกเก็บในเบราว์เซอร์นี้เป็นหลัก ไม่มีการซิงก์อัตโนมัติ ส่งออกหรือลบคลังและงานจากคู่มือได้ที่ของที่มี → สำรองข้อมูลและจัดการคลัง แผนจากเว็บภายนอกจัดการในงานที่บันทึก หากผู้ดูแลเปิดระบบสำรองผ่านบัญชี คุณเลือกอัปโหลดคลังและงานจากคู่มือ รวมรูป บันทึก และที่เก็บของ ไป Supabase และคืนค่าด้วยตนเองได้ในหน้าบัญชี ไม่รวมข้อมูลวิจัยหรือแผนภายนอก",
+                  "Inventory, builds and notes are stored in this browser with no automatic sync. Export or delete inventory and catalogue builds under My materials → Backups & inventory settings. Manage external plans under Saved builds. If the owner enables account backups, Account lets you explicitly upload inventory and catalogue builds, including photos, notes and storage locations, to Supabase and restore them manually. Research records and external plans are excluded.",
+                )}
+              </p>
+              <h2>{t("การทดลองและข้อเสนอแนะ", "Research and feedback")}</h2>
+              <p>
+                {t(
+                  "หน้าบันทึกการทดลองเริ่มเก็บข้อมูลเมื่อคุณยินยอมเท่านั้น ใช้รหัสผู้เข้าร่วมและเก็บเวลา ผลภารกิจ และเหตุการณ์ที่กำหนดไว้ในเบราว์เซอร์ ไม่มีการส่งผลวิจัยให้ผู้ดูแลอัตโนมัติ คุณตรวจ ส่งออก ถอนความยินยอม หรือลบได้จากหน้านั้น ข้อเสนอแนะผลค้นหาเก็บในเครื่องและไม่โพสต์เป็นรีวิวสาธารณะ",
+                  "Research recording starts only after consent. Participant codes, task outcomes, timing and predefined events stay in this browser; results are not automatically sent to the researcher. Review, export, withdraw or delete them on that page. Search feedback is stored locally and is not published as a community review.",
                 )}
               </p>
               <h2>{t("บัญชีและชุมชน", "Accounts and community")}</h2>
@@ -1405,8 +1514,8 @@ export default function App() {
               <h2>{t("ดูวิดีโอเพิ่มเติม", "Tutorial links")}</h2>
               <p>
                 {t(
-                  "การค้นหาโปรเจกต์จากอินเทอร์เน็ตส่งเฉพาะวัสดุที่เลือกและคำค้นให้ OpenAI โดยไม่ส่งรูปหรือบันทึกส่วนตัว ผลเป็นสรุปโดย AI จากแหล่งข้อมูลที่เครื่องมือค้นหาส่งกลับ ไม่ใช่คู่มือที่ทีมทดลองทำ วิดีโอและลิงก์สินค้าอาจไม่พบในทุกครั้ง ตรวจต้นฉบับและความเหมาะสมก่อนใช้ ดาวน์โหลดผลค้นหาเก็บไว้ได้",
-                  "Web project search sends only selected material details and your query to OpenAI, excluding local photos and private notes. Results are AI summaries of sources returned by web search, not builds tested by ReBuild. Videos and product links may not be found every time. Review original sources and suitability before use. You can download results for your records.",
+                  "การค้นหาโปรเจกต์จากอินเทอร์เน็ตส่งเฉพาะวัสดุที่เลือก คำค้น และเงื่อนไขให้ OpenAI โดยไม่ส่งรูป บันทึกส่วนตัว หรือที่เก็บวัสดุ เซิร์ฟเวอร์อาจเก็บผลชั่วคราวสำหรับเซสชันเดิมเพื่อลดการค้นหาซ้ำ ผลเป็นสรุปโดย AI ไม่ใช่คู่มือที่ทีมทดลองทำ วิดีโอและสินค้าอาจไม่พบทุกครั้ง ตรวจต้นฉบับก่อนใช้ คุณบันทึกแผนและดาวน์โหลดผลได้",
+                  "Web project search sends selected material details, your query and constraints to OpenAI, excluding local photos, private notes and storage locations. The server may temporarily cache results for the same session to avoid repeat searches. Results are AI summaries, not builds physically tested by ReBuild. Videos and products may not be found every time. Review original sources before use. Save a plan or download results for your records.",
                 )}
               </p>
               <p>
@@ -1429,6 +1538,7 @@ export default function App() {
           "/account",
           "/reviews",
           "/moderation",
+          "/research",
         ].includes(route) &&
           !p && (
             <Empty
@@ -1460,6 +1570,7 @@ export default function App() {
         <nav aria-label={t("ข้อมูลเพิ่มเติม", "More information")}>
           <a href="#/reviews">{t("รีวิวเว็บไซต์", "Website reviews")}</a>
           <a href="#/materials">{t("วัสดุในบ้าน", "Household materials")}</a>
+          <a href="#/research">{t("บันทึกการทดลอง", "Research sessions")}</a>
           <a href="#/about">
             {t("วิธีใช้และความเป็นส่วนตัว", "How it works & privacy")}
           </a>
@@ -1493,6 +1604,44 @@ export default function App() {
           seed={editor}
           close={() => setEditor(null)}
           save={saveItem}
+        />
+      )}
+      {consuming && (
+        <UseMaterial
+          item={consuming}
+          close={() => setConsuming(null)}
+          consume={(quantity) => {
+            if (paused || storageError)
+              return t(
+                "แก้ปัญหาการบันทึกก่อนเปลี่ยนจำนวน",
+                "Resolve the storage issue before changing quantities.",
+              );
+            try {
+              const current = readLocal();
+              if (current.error) throw Error("Unreadable inventory");
+              const next = {
+                ...current.state,
+                inventory: consumeInventory(
+                  current.state.inventory,
+                  consuming.id,
+                  quantity,
+                  consuming.quantity,
+                ),
+              };
+              // Persist before showing success, including browsers with storage restrictions.
+              localStorage.setItem(STORE, JSON.stringify(next));
+              setState(next);
+              setConsuming(null);
+              setNotice(
+                t("ปรับจำนวนคงเหลือแล้ว", "Remaining quantity updated."),
+              );
+            } catch {
+              return t(
+                "จำนวนเปลี่ยนไปหรือบันทึกไม่ได้ ปิดแล้วลองใหม่",
+                "The quantity changed or storage failed. Close and try again.",
+              );
+            }
+          }}
         />
       )}
       {discoveryItem && (

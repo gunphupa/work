@@ -88,7 +88,7 @@ test("search household materials, edit quantities, export and restore a backup",
     verified: true,
   });
   page.once("dialog", (d) => d.accept());
-  await page.getByRole("button", { name: "ล้างข้อมูลทั้งหมด" }).click();
+  await page.getByRole("button", { name: "ล้างคลังและงานจากคู่มือ" }).click();
   await expect(page.locator(".inventory-row")).toHaveCount(0);
   page.once("dialog", (d) => d.accept());
   await page.getByLabel("ไฟล์นำเข้าคลัง").setInputFiles({
