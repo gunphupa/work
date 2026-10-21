@@ -53,6 +53,7 @@ import { ProjectArt } from "./components/Art";
 import { ItemEditor, AddModal, type EditorSeed } from "./components/Inventory";
 import { ProjectGuide } from "./components/Guide";
 import { MaterialProjects } from "./components/MaterialProjects";
+import { WebProjects } from "./components/WebProjects";
 import { Modal } from "./components/Modal";
 import { PaperBondingSubstitutions } from "./components/Substitutions";
 import { AccountPage, AccountLink } from "./components/Account";
@@ -380,6 +381,7 @@ export default function App() {
       </header>
       <main id="main" tabIndex={-1}>
         {route === "/account" && <AccountPage />}
+        {route === "/web-projects" && <WebProjects inventory={inventory} />}
         {route === "/reviews" && (
           <>
             <h1>{t("รีวิว ReBuild", "Review ReBuild")}</h1>
@@ -640,6 +642,27 @@ export default function App() {
                 "Browse every guide, even with an empty inventory. Pick an idea and see how it’s made.",
               )}
             />
+            <div className="web-search-entry">
+              <Globe2 size={24} />
+              <div>
+                <strong>
+                  {t(
+                    "หาไอเดียจากของที่มี นอกเหนือจากคู่มือในเว็บ",
+                    "Find more ideas for your materials",
+                  )}
+                </strong>
+                <p>
+                  {t(
+                    "ค้นหาโปรเจกต์จากอินเทอร์เน็ต พร้อมแหล่งอ้างอิงและรายการของที่ขาด",
+                    "Search external tutorials with sources and missing supplies.",
+                  )}
+                </p>
+              </div>
+              <a className="primary" href="#/web-projects">
+                {t("ค้นหาจากอินเทอร์เน็ต", "Search the web")}{" "}
+                <ArrowUpRight size={17} />
+              </a>
+            </div>
             <label className="search-field catalogue-search">
               <Search size={21} />
               <input
@@ -787,6 +810,27 @@ export default function App() {
                 </button>
               }
             />
+            <div className="web-search-entry">
+              <Globe2 size={24} />
+              <div>
+                <strong>
+                  {t(
+                    "ของกลุ่มนี้ทำอะไรได้บ้าง?",
+                    "What can this group of materials make?",
+                  )}
+                </strong>
+                <p>
+                  {t(
+                    "เลือกของจากคลังเพื่อค้นหาโปรเจกต์ภายนอก รองรับชื่อวัสดุที่คุณเพิ่มเอง",
+                    "Select inventory items to find projects on the web. Custom materials work too.",
+                  )}
+                </p>
+              </div>
+              <a className="primary" href="#/web-projects">
+                {t("ค้นหาโปรเจกต์จากอินเทอร์เน็ต", "Find projects on the web")}{" "}
+                <ArrowUpRight size={17} />
+              </a>
+            </div>
             <div className="inventory-layout">
               <section>
                 <div className="quick-actions">
@@ -1361,6 +1405,12 @@ export default function App() {
               <h2>{t("ดูวิดีโอเพิ่มเติม", "Tutorial links")}</h2>
               <p>
                 {t(
+                  "การค้นหาโปรเจกต์จากอินเทอร์เน็ตส่งเฉพาะวัสดุที่เลือกและคำค้นให้ OpenAI โดยไม่ส่งรูปหรือบันทึกส่วนตัว ผลเป็นสรุปโดย AI จากแหล่งข้อมูลที่เครื่องมือค้นหาส่งกลับ ไม่ใช่คู่มือที่ทีมทดลองทำ วิดีโอและลิงก์สินค้าอาจไม่พบในทุกครั้ง ตรวจต้นฉบับและความเหมาะสมก่อนใช้ ดาวน์โหลดผลค้นหาเก็บไว้ได้",
+                  "Web project search sends only selected material details and your query to OpenAI, excluding local photos and private notes. Results are AI summaries of sources returned by web search, not builds tested by ReBuild. Videos and product links may not be found every time. Review original sources and suitability before use. You can download results for your records.",
+                )}
+              </p>
+              <p>
+                {t(
                   "ลิงก์ NASA มาจากหน้าคู่มือทางการ ปุ่มค้นหา YouTube เปิดผลค้นหา ไม่ใช่คลิปที่เราคัดและดูครบแล้ว เปรียบเทียบวัสดุและวิธีทำกับคู่มือนี้ก่อนลอง",
                   "The NASA video link comes from its official guide. YouTube search buttons open search results, not individually reviewed videos. Compare materials and methods with this guide before trying them.",
                 )}
@@ -1371,6 +1421,7 @@ export default function App() {
         {![
           "/",
           "/explore",
+          "/web-projects",
           "/inventory",
           "/builds",
           "/materials",

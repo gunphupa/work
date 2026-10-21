@@ -3,6 +3,7 @@ import express from "express";
 import { resolve } from "node:path";
 import { Quotas } from "./quota";
 import { openAIProvider } from "./ai";
+import { openAIWebSearchProvider } from "./web-projects";
 import { createApp } from "./app";
 import { communityConfig, supabaseStore } from "./community-store";
 if (existsSync(".env")) process.loadEnvFile(".env");
@@ -35,6 +36,12 @@ const app = createApp({
     ? openAIProvider(
         process.env.REBUILD_AI_KEY,
         process.env.REBUILD_AI_MODEL ?? "gpt-4.1-mini",
+      )
+    : undefined,
+  webSearchProvider: process.env.REBUILD_AI_KEY
+    ? openAIWebSearchProvider(
+        process.env.REBUILD_AI_KEY,
+        process.env.REBUILD_SEARCH_MODEL ?? "gpt-4.1-mini",
       )
     : undefined,
   globalLimit: limit("AI_GLOBAL_DAILY", 50),

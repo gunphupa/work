@@ -49,6 +49,7 @@ For local development only, copy `.env.example` to `.env`, then enter values loc
 | --- | --- |
 | `REBUILD_AI_KEY` | OpenAI service credential; empty means AI is unavailable |
 | `REBUILD_AI_MODEL` | Default `gpt-4.1-mini`, a multimodal model listed by the official SDK; actual account availability needs verification |
+| `REBUILD_SEARCH_MODEL` | Default `gpt-4.1-mini`; must support Responses API web search and structured output. Uses the same `REBUILD_AI_KEY`. |
 | `APP_ORIGIN` | Exact public origin, including scheme, with no trailing slash |
 | `QUOTA_DB` | SQLite path; `/tmp/rebuild-quota.sqlite` for community-only hosting, durable volume required for public AI |
 | `AI_GLOBAL_DAILY` | Global request reservations per UTC day, default 50 |
@@ -90,6 +91,6 @@ See [test report](docs/TEST_REPORT.md) for actual outcomes and unrun checks. Tes
 
 Guest inventory and builds stay in this browser's localStorage; open tabs receive saved changes. Export JSON before clearing browser data or moving devices. A corrupt saved record is preserved rather than overwritten. Optional item photos stay in local inventory and backups and are excluded from AI requests. AI analysis photos are transient and not saved server-side. AI requests send chosen text, consented analysis photos, inventory details and project context to OpenAI; provider retention terms must be checked separately.
 
-The four material-discovery improvements, their checks and deployment notes are described in [Material discovery](docs/MATERIAL_DISCOVERY.md). This update searches existing catalogue projects; live internet project search is not included.
+The four original material-discovery improvements are described in [Material discovery](docs/MATERIAL_DISCOVERY.md). Live external project search is now implemented separately at `#/web-projects`; see [Web project search](docs/WEB_PROJECT_SEARCH.md) for behavior, cost bounds, validation and limits.
 
 The catalogue includes original practical household guides as well as source-reviewed Arduino/NASA examples. Motor-driving, mains repairs and arbitrary salvaged-electronics projects are not included. A saved material type does not imply a matching guide exists; the materials page shows actual coverage. No school PDFs, human study observations or physical build evidence were provided.

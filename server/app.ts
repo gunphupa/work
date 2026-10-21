@@ -3,6 +3,11 @@ import type { ErrorRequestHandler } from "express";
 import { Quotas } from "./quota";
 import { communityRouter } from "./community";
 import type { CommunityStore } from "./community-store";
+import type { WebSearchProvider } from "./web-projects";
+import {
+  webSearchRequestSchema,
+  webSearchResultSchema,
+} from "../src/domain/web-projects";
 import {
   requestSchema,
   sanitizeAIAnswer,
@@ -12,12 +17,14 @@ import {
 export function createApp(options: {
   quota: Quotas;
   provider?: Provider;
+  webSearchProvider?: WebSearchProvider;
   origin: string;
   production?: boolean;
   globalLimit?: number;
   guestLimit?: number;
   ipLimit?: number;
   timeoutMs?: number;
+  searchTimeoutMs?: number;
   community?: CommunityStore;
 }) {
   const app = express();
@@ -47,6 +54,7 @@ export function createApp(options: {
     res.json({
       ok: true,
       aiConfigured: !!options.provider,
+      webSearchConfigured: !!options.webSearchProvider,
       catalogueVersion: 1,
       communityConfigured: !!options.community,
     }),
@@ -91,7 +99,7 @@ export function createApp(options: {
   });
   let active = 0;
   app.post(
-    "/api/ai",
+    ["/api/ai", "/api/projects/search"],
     (req, res, next) => {
       const session = options.quota.session(cookie(req.headers.cookie));
       if (
@@ -106,16 +114,21 @@ export function createApp(options: {
     },
     express.json({ limit: "15mb" }),
     async (req, res) => {
-      const parsed = requestSchema.safeParse(req.body);
+      const isSearch = req.path === "/api/projects/search";
+      const parsed = isSearch
+        ? webSearchRequestSchema.safeParse(req.body)
+        : requestSchema.safeParse(req.body);
       if (!parsed.success)
         return res.status(400).json({
-          error:
-            "ข้อมูลไม่ถูกต้องหรือยาวเกินกำหนด (บริบทข้อความไม่เกิน 50,000 ตัวอักษร) ตรวจข้อความและรูปภาพแล้วลองใหม่",
+          error: isSearch
+            ? "เลือกวัสดุไม่เกิน 30 รายการ หรือระบุวัสดุและสิ่งที่อยากทำ ตรวจข้อความแล้วลองใหม่"
+            : "ข้อมูลไม่ถูกต้องหรือยาวเกินกำหนด (บริบทข้อความไม่เกิน 50,000 ตัวอักษร) ตรวจข้อความและรูปภาพแล้วลองใหม่",
         });
-      if (!options.provider)
+      if (isSearch ? !options.webSearchProvider : !options.provider)
         return res.status(503).json({
-          error:
-            "ยังไม่ได้เชื่อมต่อ AI คุณเพิ่มและยืนยันของด้วยตนเองได้ ข้อมูลเดิมยังอยู่",
+          error: isSearch
+            ? "ยังไม่ได้เชื่อมต่อบริการค้นเว็บ โปรเจกต์ใน ReBuild และคลังยังใช้งานได้"
+            : "ยังไม่ได้เชื่อมต่อ AI คุณเพิ่มและยืนยันของด้วยตนเองได้ ข้อมูลเดิมยังอยู่",
         });
       if (active >= 2)
         return res
@@ -158,24 +171,36 @@ export function createApp(options: {
       }
       active++;
       const abort = new AbortController();
-      const timer = setTimeout(() => abort.abort(), options.timeoutMs ?? 30000);
+      const timer = setTimeout(
+        () => abort.abort(),
+        isSearch
+          ? (options.searchTimeoutMs ?? 90000)
+          : (options.timeoutMs ?? 30000),
+      );
       res.on("close", () => {
         if (!res.writableEnded) abort.abort();
       });
       const start = Date.now();
-      let phase = "image";
+      let phase = isSearch ? "search" : "image";
       try {
-        const input = await normalizeImages(parsed.data);
-        phase = "provider";
-        const result = await options.provider(input, abort.signal);
-        const answer = sanitizeAIAnswer(result);
-        res.json(answer);
+        if (isSearch) {
+          const input = webSearchRequestSchema.parse(parsed.data);
+          const result = await options.webSearchProvider!(input, abort.signal);
+          res.json(webSearchResultSchema.parse(result));
+        } else {
+          const input = await normalizeImages(requestSchema.parse(parsed.data));
+          phase = "provider";
+          const result = await options.provider!(input, abort.signal);
+          res.json(sanitizeAIAnswer(result));
+        }
         console.info(
           JSON.stringify({
             event: "ai_request",
             outcome: "ok",
             ms: Date.now() - start,
-            mode: input.mode,
+            mode: isSearch
+              ? "web_search"
+              : requestSchema.parse(parsed.data).mode,
           }),
         );
       } catch {
@@ -187,7 +212,9 @@ export function createApp(options: {
                 ? "AI ใช้เวลานานเกินไป ลองใหม่ได้ ข้อมูลของคุณยังอยู่"
                 : code === 400
                   ? "รูปภาพไม่รองรับหรือขนาดเกินกำหนด ใช้ JPEG, PNG หรือ WebP"
-                  : "AI ไม่พร้อมใช้งานหรือส่งข้อมูลไม่สมบูรณ์ โปรดลองใหม่หรือเพิ่มของเอง",
+                  : isSearch
+                    ? "ค้นเว็บไม่สำเร็จหรือแหล่งอ้างอิงไม่สมบูรณ์ ลองใหม่ได้ ระบบยังไม่ได้ยืนยันผลค้นหา"
+                    : "AI ไม่พร้อมใช้งานหรือส่งข้อมูลไม่สมบูรณ์ โปรดลองใหม่หรือเพิ่มของเอง",
           });
         console.info(
           JSON.stringify({

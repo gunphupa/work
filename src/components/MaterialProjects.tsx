@@ -200,6 +200,33 @@ export function MaterialProjects({
           )}
         </button>
       )}
+      <div className="web-search-entry">
+        <div>
+          <strong>
+            {t("ค้นหาโปรเจกต์นอก ReBuild", "Find projects beyond ReBuild")}
+          </strong>
+          <p>
+            {openInNewTab
+              ? t(
+                  "บันทึกของที่ตรวจแล้วลงคลังก่อน จากนั้นเลือกวัสดุเพื่อค้นอินเทอร์เน็ต",
+                  "Save the reviewed items first, then select them for a web search.",
+                )
+              : t(
+                  "เลือกวัสดุจากคลังเพื่อค้นหาคู่มือและวิดีโอจากอินเทอร์เน็ต",
+                  "Choose inventory materials to search for tutorials and videos on the web.",
+                )}
+          </p>
+        </div>
+        <a
+          className="secondary"
+          href="#/web-projects"
+          target={openInNewTab ? "_blank" : undefined}
+          rel={openInNewTab ? "noopener" : undefined}
+        >
+          {t("ค้นหาจากอินเทอร์เน็ต", "Search the web")}{" "}
+          <ArrowUpRight size={16} />
+        </a>
+      </div>
     </section>
   );
 }

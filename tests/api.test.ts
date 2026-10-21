@@ -205,6 +205,7 @@ describe("AI API boundaries (test providers; no live AI claims)", () => {
     expect(await h.json()).toEqual({
       ok: true,
       aiConfigured: false,
+      webSearchConfigured: false,
       catalogueVersion: 1,
       communityConfigured: false,
     });
