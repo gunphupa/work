@@ -1,0 +1,638 @@
+{
+  "kind": "developer-live-validation-not-participant-data",
+  "release": "ed388cb50b57",
+  "transport": "Real deployed HTTP through inherited proxy/CA; no mocked search or help responses",
+  "records": [
+    {
+      "path": "/api/projects/search",
+      "at": "2026-10-21T08:37:37.926Z",
+      "elapsedMs": 56867,
+      "status": 200,
+      "cache": "miss",
+      "request": {
+        "language": "en",
+        "query": "Find a beginner paper helicopter tutorial with clear folding and cutting steps. Prefer a written educational source. Explain what is missing; adhesive tape is not measuring tape.",
+        "materials": [
+          {
+            "id": "live-paper",
+            "materialId": "unknown",
+            "label": "A4 paper",
+            "quantity": 3,
+            "unit": "แผ่น",
+            "condition": "usable",
+            "specs": {}
+          },
+          {
+            "id": "live-tape",
+            "materialId": "unknown",
+            "label": "Clear adhesive tape",
+            "quantity": 1,
+            "unit": "ชิ้น",
+            "condition": "usable",
+            "specs": {}
+          },
+          {
+            "id": "live-pencil",
+            "materialId": "unknown",
+            "label": "Pencil",
+            "quantity": 1,
+            "unit": "ชิ้น",
+            "condition": "usable",
+            "specs": {}
+          }
+        ],
+        "preferences": {
+          "difficulty": "beginner",
+          "additionalSupplies": "allow",
+          "maxMinutes": 30,
+          "maxBudgetThb": 100
+        }
+      },
+      "response": {
+        "summary": "Found 1 projects with referenced tutorials. Check materials and instructions against the original before starting.",
+        "projects": [
+          {
+            "title": "Make a Paper Mars Helicopter",
+            "summary": "A K–12 engineering activity from JPL/NASA that guides students to build a paper helicopter (using a template or plain paper), perform test drops, and iteratively improve the design to study lift and rotation.",
+            "fit": "partial — matches beginner skill and written lesson, but source time is listed as 30–60 mins which exceeds your maxMinutes=30; cost and exact difficulty are listed as unknown in the source.",
+            "sourceId": "s1",
+            "materials": [
+              {
+                "name": "Plain paper OR a copy of the template – Download PDF",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-paper"
+                ],
+                "note": "Material listed by the source. Material in source: \"Plain paper OR a copy of the template – Download PDF\" (amount: unknown). Inventory item 'live-paper' labelled A4 paper, quantity 3, condition usable. Check: identity = plain A4 paper (matches 'plain paper'); quantity = 3 sheets available; size/specs = A4 (source does not state required paper size); condition = usable. The source also offers a pri",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Scissors",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Material listed by the source. Material in source: Scissors (required). Inventory has no item identified as scissors. Check: missing — no scissors found in inventory.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Measuring tape",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Material listed by the source. Material in source: Measuring tape (required). Inventory contains 'live-tape' labelled Clear adhesive tape. Check: clear adhesive tape is NOT a measuring tape (different identity and function) and therefore does not satisfy the measuring-tape requirement. Measuring length/height tool is missing.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Pencil",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-pencil"
+                ],
+                "note": "Material listed by the source. Material in source: Pencil (required). Inventory item 'live-pencil' labelled Pencil, quantity 1, condition usable. Check: identity = pencil (matches); quantity = 1 (source amount unknown but typically one pencil is sufficient); condition = usable.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "3-meter (10-foot) length of lightweight ribbon or smartphone camera",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Optional in the source. Material in source: 3-meter lightweight ribbon or smartphone camera (optional). Inventory contains no lightweight ribbon. Inventory does include a pencil and clear tape but not ribbon or separate camera; optional ribbon is missing.",
+                "sourceIds": [
+                  "s1"
+                ]
+              }
+            ],
+            "steps": [
+              {
+                "text": "Step 1: Cut out the helicopter — Cut along the dashed lines of the template; if using plain paper, sketch the solid and dashed guide lines then cut.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 2: Fold along the solid lines — Fold propeller blades A and B in opposite directions; fold X and Y panels toward center and fold Z upward to form the body and lower center of gravity.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 3: Do a test flight — Hold the helicopter by its body, raise it as high as you can, and drop it; observe blade rotation and performance changes when dropped from higher spots.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 4: Compare — Drop an unfolded paper the same size and a wadded paper ball together with the helicopter to compare fall rates and discuss air resistance.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 5: Experiment — Make one change (e.g., fold the bottom up, shorten or change blade shape) and observe how performance changes.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 6: Make a new model — Build additional versions (different paper, sizes) to test which sizes or materials work best.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 7: Reverse it — Note which direction the blades turn and identify a single change that will make them spin the opposite direction.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 8: Count the rotations — Measure shoulder height, drop the best-performing helicopter from shoulder height, and count rotations; use video or attach a ribbon if counting is difficult.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 9: Repeat — Repeat measuring, dropping, and counting from a lower height to compare results.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 10: Predict — Measure a taller height, predict rotations for that height, and record your prediction.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 11: Test your prediction — Drop from the taller height and compare results to the prediction; try other heights to improve predictions.",
+                "sourceIds": [
+                  "s1"
+                ]
+              }
+            ],
+            "substitutions": [
+              {
+                "missing": "Measuring tape",
+                "alternative": "Use a ruler, meter stick, a known-height object (e.g., step height or door frame) or a smartphone with a measuring app to estimate shoulder height",
+                "conditions": "Only use these substitutions for informal height/rotation counts. A ruler or meter stick must be long enough for the chosen drop height; using a smartphone app or estimating from known object heights may reduce measurement precision compared to a measuring tape.",
+                "inventoryIds": [],
+                "sourceIds": []
+              },
+              {
+                "missing": "Scissors",
+                "alternative": "If scissors are unavailable, a craft knife may be used with adult supervision and a cutting mat, or tear along fold lines if the template allows (may reduce cut",
+                "conditions": "Knife use introduces safety risks and requires supervision; tearing may reduce accuracy of cut lines and affect flight. These are untested suggestions and are not from the source.",
+                "inventoryIds": [],
+                "sourceIds": []
+              },
+              {
+                "missing": "Lightweight ribbon (optional)",
+                "alternative": "Use a smartphone camera for recording/counting rotations (the source lists this as an optional alternative).",
+                "conditions": "Using the smartphone camera is appropriate for counting rotations; it does not replace ribbon if you planned to attach a ribbon for visibility.",
+                "inventoryIds": [],
+                "sourceIds": []
+              }
+            ],
+            "cautions": [
+              "Scissors (required by the tutorial) are missing from your inventory; you will need cutting tools to follow the template or sketch-and-cut method.",
+              "Measuring tape (required by the tutorial) is missing; clear adhesive tape in your inventory is not a measuring tape and does not satisfy that requirement.",
+              "The source references a printable template PDF. If you plan to use the template rather than sketching guides on plain paper, you'll need a printer or to draw the guide lines accurately on A4 paper.",
+              "Source time is listed as 30–60 mins (unknown difficulty). Your preference maxMinutes=30 may not be met because the source explicitly lists 30–60 mins.",
+              "Substitutions listed above are optional, untested suggestions and are not part of the sourced tutorial (sourceIds=[]). Do not attempt electrical or structural substitutions not described in the original lesson."
+            ],
+            "videoSourceIds": [
+              "s37",
+              "s38"
+            ],
+            "shoppingSourceIds": []
+          }
+        ],
+        "searchedAt": "2026-10-21T08:38:34.675Z",
+        "sources": [
+          {
+            "id": "s1",
+            "title": "www.jpl.nasa.gov",
+            "url": "https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/"
+          },
+          {
+            "id": "s37",
+            "title": "Learning Space with NASA - Make a Mars Helicopter - YouTube",
+            "url": "https://www.youtube.com/watch?v=ND01Q9mZH1M&utm_source=openai"
+          },
+          {
+            "id": "s38",
+            "title": "Build a paper Martian helicopter - YouTube",
+            "url": "https://www.youtube.com/watch?v=0EIeWGinYT0&utm_source=openai"
+          }
+        ],
+        "searchCalls": 3,
+        "retrievalNotes": "{\"tutorials\":[{\"sourceUrl\":\"https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/\",\"title\":\"Make a Paper Mars Helicopter\",\"description\":\"A K–12 engineering activity from JPL/NASA that guides students to build a paper helicopter (using a template or plain paper), perform test drops, and iteratively improve the design to study lift and rotation.\",\"materials\":[{\"name\":\"Plain paper OR a copy of the template – Download PDF\",\"amount\":\"unknown\",\"listedAs\":\"required\",\"sourceExcerpt\":\"Plain paper OR a copy of the template – Download PDF.\"},{\"name\":\"Scissors\",\"amount\":\"unknown\",\"listedAs\":\"required\",\"sourceExcerpt\":\"Scissors\"},{\"name\":\"Measuring tape\",\"amount\":\"unknown\",\"listedAs\":\"required\",\"sourceExcerpt\":\"Measuring tape\"},{\"name\":\"Pencil\",\"amount\":\"unknown\",\"listedAs\":\"required\",\"sourceExcerpt\":\"Pencil\"},{\"name\":\"3-meter (10-foot) length of lightweight ribbon or smartphone camera\",\"amount\":\"unknown\",\"listedAs\":\"optional\",\"sourceExcerpt\":\"(Optional) 3-meter (10-foot) length of lightweight ribbon or smartphone camera\"}],\"steps\":[{\"text\":\"Step 1: Cut out the helicopter — Cut along the dashed lines of the template; if using plain paper, sketch the solid and dashed guide lines then cut.\",\"sourceExcerpt\":\"Cut along the dashed lines of the template. If you\\u0002re using plain paper, make a sketch of the helicopter solid and dashed lines as a guide.\"},{\"text\":\"Step 2: Fold along the solid lines — Fold propeller blades A and B in opposite directions; fold X and Y panels toward center and fold Z upward to form the body and lower center of gravity.\",\"sourceExcerpt\":\"The propeller blades, A and B, should be folded in opposite directions along the solid lines. The X and Y panels fold toward the center, and Z is folded upward to give the body of the helicopter rigidity and lower its center of gravity for \"} ,{\"text\":\"Step 3: Do a test flight — Hold the helicopter by its body, raise it as high as you can, and drop it; observe blade rotation and performance changes when dropped from higher spots.\",\"sourceExcerpt\":\"Stand up and hold the helicopter by its body. Raise it as high in the air as you can. Now, drop it. What do you observe? Which way do the blades turn? Drop the helicopter from a higher spot. (Climb a few stairs or stand on a step stool.) H\"} ,{\"text\":\"Step 4: Compare — Drop an unfolded paper the same size and a wadded paper ball together with the helicopter to compare fall rates and discuss air resistance.\",\"sourceExcerpt\":\"Grab an unfolded piece of paper the same size as the one used to make the helicopter. Drop it at the same time as the helicopter. Which falls faster? Wad up the piece of paper into a ball. Drop this paper ball at the same time as the helico\"} ,{\"text\":\"Step 5: Experiment — Make one change (e.g., fold the bottom up, shorten or change blade shape) and observe how performance changes.\",\"sourceExcerpt\":\"Make one change to your helicopter. Try folding the bottom up one more fold, or shortening or changing the shape of the blades. How does the performance of your helicopter change? Why?\"},{\"text\":\"Step 6: Make a new model — Build additional versions (different paper, sizes) to test which sizes or materials work best.\",\"sourceExcerpt\":\"Think about how you want to improve the performance of your helicopter and make another one that is different from your first. Use a different kind of paper or make a much smaller or much larger one.\"},{\"text\":\"Step 7: Reverse it — Note which direction the blades turn and identify a single change that will make them spin the opposite direction.\",\"sourceExcerpt\":\"Notice which way your helicopter blades turn. Is it clockwise or counterclockwise? Is this consistent for all of your helicopters? What is a single change you can make to your helicopters to make them spin in the opposite direction?\"},{\"text\":\"Step 8: Count the rotations — Measure shoulder height, drop the best-performing helicopter from shoulder height, and count rotations; use video or attach a ribbon if counting is difficult.\",\"sourceExcerpt\":\"Measure the height of your shoulder and write this down. Choose your best-performing helicopter and drop it from shoulder height. Count the number of rotations it makes before landing. If counting the rotations is difficult because of the s\"} ,{\"text\":\"Step 9: Repeat — Repeat measuring, dropping, and counting from a lower height to compare results.\",\"sourceExcerpt\":\"What would happen if you dropped the helicopter from a lower height? Repeat the measuring, dropping and counting from a lower height.\"},{\"text\":\"Step 10: Predict — Measure a taller height, predict rotations for that height, and record your prediction.\",\"sourceExcerpt\":\"How many times would the helicopter rotate if you dropped it from a taller height? Measure a taller height, and then predict the number of rotations your helicopter will make.\"},{\"text\":\"Step 11: Test your prediction — Drop from the taller height and compare results to the prediction; try other heights to improve predictions.\",\"sourceExcerpt\":\"Drop your helicopter from the taller height and see how close your prediction was. Try again from other heights and see if you can make better predictions each time!\"}],\"sourceTime\":\"30 - 60 mins\",\"sourceDifficulty\":\"unknown\",\"sourceCost\":\"unknown\"}]}"
+      }
+    },
+    {
+      "path": "/api/projects/search",
+      "at": "2026-10-21T08:38:35.400Z",
+      "elapsedMs": 257,
+      "status": 200,
+      "cache": "hit",
+      "request": {
+        "language": "en",
+        "query": "Find a beginner paper helicopter tutorial with clear folding and cutting steps. Prefer a written educational source. Explain what is missing; adhesive tape is not measuring tape.",
+        "materials": [
+          {
+            "id": "live-paper",
+            "materialId": "unknown",
+            "label": "A4 paper",
+            "quantity": 3,
+            "unit": "แผ่น",
+            "condition": "usable",
+            "specs": {}
+          },
+          {
+            "id": "live-tape",
+            "materialId": "unknown",
+            "label": "Clear adhesive tape",
+            "quantity": 1,
+            "unit": "ชิ้น",
+            "condition": "usable",
+            "specs": {}
+          },
+          {
+            "id": "live-pencil",
+            "materialId": "unknown",
+            "label": "Pencil",
+            "quantity": 1,
+            "unit": "ชิ้น",
+            "condition": "usable",
+            "specs": {}
+          }
+        ],
+        "preferences": {
+          "difficulty": "beginner",
+          "additionalSupplies": "allow",
+          "maxMinutes": 30,
+          "maxBudgetThb": 100
+        }
+      },
+      "response": {
+        "summary": "Found 1 projects with referenced tutorials. Check materials and instructions against the original before starting.",
+        "projects": [
+          {
+            "title": "Make a Paper Mars Helicopter",
+            "summary": "A K–12 engineering activity from JPL/NASA that guides students to build a paper helicopter (using a template or plain paper), perform test drops, and iteratively improve the design to study lift and rotation.",
+            "fit": "partial — matches beginner skill and written lesson, but source time is listed as 30–60 mins which exceeds your maxMinutes=30; cost and exact difficulty are listed as unknown in the source.",
+            "sourceId": "s1",
+            "materials": [
+              {
+                "name": "Plain paper OR a copy of the template – Download PDF",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-paper"
+                ],
+                "note": "Material listed by the source. Material in source: \"Plain paper OR a copy of the template – Download PDF\" (amount: unknown). Inventory item 'live-paper' labelled A4 paper, quantity 3, condition usable. Check: identity = plain A4 paper (matches 'plain paper'); quantity = 3 sheets available; size/specs = A4 (source does not state required paper size); condition = usable. The source also offers a pri",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Scissors",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Material listed by the source. Material in source: Scissors (required). Inventory has no item identified as scissors. Check: missing — no scissors found in inventory.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Measuring tape",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Material listed by the source. Material in source: Measuring tape (required). Inventory contains 'live-tape' labelled Clear adhesive tape. Check: clear adhesive tape is NOT a measuring tape (different identity and function) and therefore does not satisfy the measuring-tape requirement. Measuring length/height tool is missing.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "Pencil",
+                "amount": "unknown",
+                "inventoryIds": [
+                  "live-pencil"
+                ],
+                "note": "Material listed by the source. Material in source: Pencil (required). Inventory item 'live-pencil' labelled Pencil, quantity 1, condition usable. Check: identity = pencil (matches); quantity = 1 (source amount unknown but typically one pencil is sufficient); condition = usable.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "name": "3-meter (10-foot) length of lightweight ribbon or smartphone camera",
+                "amount": "unknown",
+                "inventoryIds": [],
+                "note": "Optional in the source. Material in source: 3-meter lightweight ribbon or smartphone camera (optional). Inventory contains no lightweight ribbon. Inventory does include a pencil and clear tape but not ribbon or separate camera; optional ribbon is missing.",
+                "sourceIds": [
+                  "s1"
+                ]
+              }
+            ],
+            "steps": [
+              {
+                "text": "Step 1: Cut out the helicopter — Cut along the dashed lines of the template; if using plain paper, sketch the solid and dashed guide lines then cut.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 2: Fold along the solid lines — Fold propeller blades A and B in opposite directions; fold X and Y panels toward center and fold Z upward to form the body and lower center of gravity.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 3: Do a test flight — Hold the helicopter by its body, raise it as high as you can, and drop it; observe blade rotation and performance changes when dropped from higher spots.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 4: Compare — Drop an unfolded paper the same size and a wadded paper ball together with the helicopter to compare fall rates and discuss air resistance.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 5: Experiment — Make one change (e.g., fold the bottom up, shorten or change blade shape) and observe how performance changes.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 6: Make a new model — Build additional versions (different paper, sizes) to test which sizes or materials work best.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 7: Reverse it — Note which direction the blades turn and identify a single change that will make them spin the opposite direction.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 8: Count the rotations — Measure shoulder height, drop the best-performing helicopter from shoulder height, and count rotations; use video or attach a ribbon if counting is difficult.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 9: Repeat — Repeat measuring, dropping, and counting from a lower height to compare results.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 10: Predict — Measure a taller height, predict rotations for that height, and record your prediction.",
+                "sourceIds": [
+                  "s1"
+                ]
+              },
+              {
+                "text": "Step 11: Test your prediction — Drop from the taller height and compare results to the prediction; try other heights to improve predictions.",
+                "sourceIds": [
+                  "s1"
+                ]
+              }
+            ],
+            "substitutions": [
+              {
+                "missing": "Measuring tape",
+                "alternative": "Use a ruler, meter stick, a known-height object (e.g., step height or door frame) or a smartphone with a measuring app to estimate shoulder height",
+                "conditions": "Only use these substitutions for informal height/rotation counts. A ruler or meter stick must be long enough for the chosen drop height; using a smartphone app or estimating from known object heights may reduce measurement precision compared to a measuring tape.",
+                "inventoryIds": [],
+                "sourceIds": []
+              },
+              {
+                "missing": "Scissors",
+                "alternative": "If scissors are unavailable, a craft knife may be used with adult supervision and a cutting mat, or tear along fold lines if the template allows (may reduce cut",
+                "conditions": "Knife use introduces safety risks and requires supervision; tearing may reduce accuracy of cut lines and affect flight. These are untested suggestions and are not from the source.",
+                "inventoryIds": [],
+                "sourceIds": []
+              },
+              {
+                "missing": "Lightweight ribbon (optional)",
+                "alternative": "Use a smartphone camera for recording/counting rotations (the source lists this as an optional alternative).",
+                "conditions": "Using the smartphone camera is appropriate for counting rotations; it does not replace ribbon if you planned to attach a ribbon for visibility.",
+                "inventoryIds": [],
+                "sourceIds": []
+              }
+            ],
+            "cautions": [
+              "Scissors (required by the tutorial) are missing from your inventory; you will need cutting tools to follow the template or sketch-and-cut method.",
+              "Measuring tape (required by the tutorial) is missing; clear adhesive tape in your inventory is not a measuring tape and does not satisfy that requirement.",
+              "The source references a printable template PDF. If you plan to use the template rather than sketching guides on plain paper, you'll need a printer or to draw the guide lines accurately on A4 paper.",
+              "Source time is listed as 30–60 mins (unknown difficulty). Your preference maxMinutes=30 may not be met because the source explicitly lists 30–60 mins.",
+              "Substitutions listed above are optional, untested suggestions and are not part of the sourced tutorial (sourceIds=[]). Do not attempt electrical or structural substitutions not described in the original lesson."
+            ],
+            "videoSourceIds": [
+              "s37",
+              "s38"
+            ],
+            "shoppingSourceIds": []
+          }
+        ],
+        "searchedAt": "2026-10-21T08:38:34.675Z",
+        "sources": [
+          {
+            "id": "s1",
+            "title": "www.jpl.nasa.gov",
+            "url": "https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/"
+          },
+          {
+            "id": "s37",
+            "title": "Learning Space with NASA - Make a Mars Helicopter - YouTube",
+            "url": "https://www.youtube.com/watch?v=ND01Q9mZH1M&utm_source=openai"
+          },
+          {
+            "id": "s38",
+            "title": "Build a paper Martian helicopter - YouTube",
+            "url": "https://www.youtube.com/watch?v=0EIeWGinYT0&utm_source=openai"
+          }
+        ],
+        "searchCalls": 3,
+        "retrievalNotes": "{\"tutorials\":[{\"sourceUrl\":\"https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/\",\"title\":\"Make a Paper Mars Helicopter\",\"description\":\"A K–12 engineering activity from JPL/NASA that guides students to build a paper helicopter (using a template or plain paper), perform test drops, and iteratively improve the design to study lift and rotation.\",\"materials\":[{\"name\":\"Plain paper OR a copy of the template – Download PDF\",\"amount\":\"unknown\",\"listedAs\":\"required\",\"sourceExcerpt\":\"Plain paper OR a copy of the template – Download PDF.\"},{\"name\":\"Scissors\",\"amount\":\"unknown\",\"listedAs\":\"required\",\"sourceExcerpt\":\"Scissors\"},{\"name\":\"Measuring tape\",\"amount\":\"unknown\",\"listedAs\":\"required\",\"sourceExcerpt\":\"Measuring tape\"},{\"name\":\"Pencil\",\"amount\":\"unknown\",\"listedAs\":\"required\",\"sourceExcerpt\":\"Pencil\"},{\"name\":\"3-meter (10-foot) length of lightweight ribbon or smartphone camera\",\"amount\":\"unknown\",\"listedAs\":\"optional\",\"sourceExcerpt\":\"(Optional) 3-meter (10-foot) length of lightweight ribbon or smartphone camera\"}],\"steps\":[{\"text\":\"Step 1: Cut out the helicopter — Cut along the dashed lines of the template; if using plain paper, sketch the solid and dashed guide lines then cut.\",\"sourceExcerpt\":\"Cut along the dashed lines of the template. If you\\u0002re using plain paper, make a sketch of the helicopter solid and dashed lines as a guide.\"},{\"text\":\"Step 2: Fold along the solid lines — Fold propeller blades A and B in opposite directions; fold X and Y panels toward center and fold Z upward to form the body and lower center of gravity.\",\"sourceExcerpt\":\"The propeller blades, A and B, should be folded in opposite directions along the solid lines. The X and Y panels fold toward the center, and Z is folded upward to give the body of the helicopter rigidity and lower its center of gravity for \"} ,{\"text\":\"Step 3: Do a test flight — Hold the helicopter by its body, raise it as high as you can, and drop it; observe blade rotation and performance changes when dropped from higher spots.\",\"sourceExcerpt\":\"Stand up and hold the helicopter by its body. Raise it as high in the air as you can. Now, drop it. What do you observe? Which way do the blades turn? Drop the helicopter from a higher spot. (Climb a few stairs or stand on a step stool.) H\"} ,{\"text\":\"Step 4: Compare — Drop an unfolded paper the same size and a wadded paper ball together with the helicopter to compare fall rates and discuss air resistance.\",\"sourceExcerpt\":\"Grab an unfolded piece of paper the same size as the one used to make the helicopter. Drop it at the same time as the helicopter. Which falls faster? Wad up the piece of paper into a ball. Drop this paper ball at the same time as the helico\"} ,{\"text\":\"Step 5: Experiment — Make one change (e.g., fold the bottom up, shorten or change blade shape) and observe how performance changes.\",\"sourceExcerpt\":\"Make one change to your helicopter. Try folding the bottom up one more fold, or shortening or changing the shape of the blades. How does the performance of your helicopter change? Why?\"},{\"text\":\"Step 6: Make a new model — Build additional versions (different paper, sizes) to test which sizes or materials work best.\",\"sourceExcerpt\":\"Think about how you want to improve the performance of your helicopter and make another one that is different from your first. Use a different kind of paper or make a much smaller or much larger one.\"},{\"text\":\"Step 7: Reverse it — Note which direction the blades turn and identify a single change that will make them spin the opposite direction.\",\"sourceExcerpt\":\"Notice which way your helicopter blades turn. Is it clockwise or counterclockwise? Is this consistent for all of your helicopters? What is a single change you can make to your helicopters to make them spin in the opposite direction?\"},{\"text\":\"Step 8: Count the rotations — Measure shoulder height, drop the best-performing helicopter from shoulder height, and count rotations; use video or attach a ribbon if counting is difficult.\",\"sourceExcerpt\":\"Measure the height of your shoulder and write this down. Choose your best-performing helicopter and drop it from shoulder height. Count the number of rotations it makes before landing. If counting the rotations is difficult because of the s\"} ,{\"text\":\"Step 9: Repeat — Repeat measuring, dropping, and counting from a lower height to compare results.\",\"sourceExcerpt\":\"What would happen if you dropped the helicopter from a lower height? Repeat the measuring, dropping and counting from a lower height.\"},{\"text\":\"Step 10: Predict — Measure a taller height, predict rotations for that height, and record your prediction.\",\"sourceExcerpt\":\"How many times would the helicopter rotate if you dropped it from a taller height? Measure a taller height, and then predict the number of rotations your helicopter will make.\"},{\"text\":\"Step 11: Test your prediction — Drop from the taller height and compare results to the prediction; try other heights to improve predictions.\",\"sourceExcerpt\":\"Drop your helicopter from the taller height and see how close your prediction was. Try again from other heights and see if you can make better predictions each time!\"}],\"sourceTime\":\"30 - 60 mins\",\"sourceDifficulty\":\"unknown\",\"sourceCost\":\"unknown\"}]}"
+      }
+    },
+    {
+      "path": "/api/ai",
+      "at": "2026-10-21T08:38:39.935Z",
+      "elapsedMs": 4757,
+      "status": 200,
+      "cache": null,
+      "request": {
+        "mode": "help",
+        "language": "en",
+        "text": "Briefly explain step 1 from this saved guide and one thing I should check before starting. Do not invent dimensions.",
+        "externalProject": {
+          "title": "Make a Paper Mars Helicopter",
+          "sourceId": "s1",
+          "materials": [
+            {
+              "name": "Plain paper OR a copy of the template – Download PDF",
+              "amount": "unknown",
+              "note": "Material listed by the source. Material in source: \"Plain paper OR a copy of the template – Download PDF\" (amount: unknown). Inventory item 'live-paper' labelled A4 paper, quantity 3, condition usable. Check: identity = plain A4 paper (matches 'plain paper'); quantity = 3 sheets available; size/specs = A4 (source does not state required paper size); condition = usable. The source also offers a pri",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "name": "Scissors",
+              "amount": "unknown",
+              "note": "Material listed by the source. Material in source: Scissors (required). Inventory has no item identified as scissors. Check: missing — no scissors found in inventory.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "name": "Measuring tape",
+              "amount": "unknown",
+              "note": "Material listed by the source. Material in source: Measuring tape (required). Inventory contains 'live-tape' labelled Clear adhesive tape. Check: clear adhesive tape is NOT a measuring tape (different identity and function) and therefore does not satisfy the measuring-tape requirement. Measuring length/height tool is missing.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "name": "Pencil",
+              "amount": "unknown",
+              "note": "Material listed by the source. Material in source: Pencil (required). Inventory item 'live-pencil' labelled Pencil, quantity 1, condition usable. Check: identity = pencil (matches); quantity = 1 (source amount unknown but typically one pencil is sufficient); condition = usable.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "name": "3-meter (10-foot) length of lightweight ribbon or smartphone camera",
+              "amount": "unknown",
+              "note": "Optional in the source. Material in source: 3-meter lightweight ribbon or smartphone camera (optional). Inventory contains no lightweight ribbon. Inventory does include a pencil and clear tape but not ribbon or separate camera; optional ribbon is missing.",
+              "sourceIds": [
+                "s1"
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "text": "Step 1: Cut out the helicopter — Cut along the dashed lines of the template; if using plain paper, sketch the solid and dashed guide lines then cut.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 2: Fold along the solid lines — Fold propeller blades A and B in opposite directions; fold X and Y panels toward center and fold Z upward to form the body and lower center of gravity.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 3: Do a test flight — Hold the helicopter by its body, raise it as high as you can, and drop it; observe blade rotation and performance changes when dropped from higher spots.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 4: Compare — Drop an unfolded paper the same size and a wadded paper ball together with the helicopter to compare fall rates and discuss air resistance.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 5: Experiment — Make one change (e.g., fold the bottom up, shorten or change blade shape) and observe how performance changes.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 6: Make a new model — Build additional versions (different paper, sizes) to test which sizes or materials work best.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 7: Reverse it — Note which direction the blades turn and identify a single change that will make them spin the opposite direction.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 8: Count the rotations — Measure shoulder height, drop the best-performing helicopter from shoulder height, and count rotations; use video or attach a ribbon if counting is difficult.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 9: Repeat — Repeat measuring, dropping, and counting from a lower height to compare results.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 10: Predict — Measure a taller height, predict rotations for that height, and record your prediction.",
+              "sourceIds": [
+                "s1"
+              ]
+            },
+            {
+              "text": "Step 11: Test your prediction — Drop from the taller height and compare results to the prediction; try other heights to improve predictions.",
+              "sourceIds": [
+                "s1"
+              ]
+            }
+          ],
+          "cautions": [
+            "Scissors (required by the tutorial) are missing from your inventory; you will need cutting tools to follow the template or sketch-and-cut method.",
+            "Measuring tape (required by the tutorial) is missing; clear adhesive tape in your inventory is not a measuring tape and does not satisfy that requirement.",
+            "The source references a printable template PDF. If you plan to use the template rather than sketching guides on plain paper, you'll need a printer or to draw the guide lines accurately on A4 paper.",
+            "Source time is listed as 30–60 mins (unknown difficulty). Your preference maxMinutes=30 may not be met because the source explicitly lists 30–60 mins.",
+            "Substitutions listed above are optional, untested suggestions and are not part of the sourced tutorial (sourceIds=[]). Do not attempt electrical or structural substitutions not described in the original lesson."
+          ],
+          "sources": [
+            {
+              "id": "s1",
+              "title": "www.jpl.nasa.gov",
+              "url": "https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/"
+            }
+          ]
+        }
+      },
+      "response": {
+        "reply": "From the saved guide, Step 1 instructs you to cut out the helicopter shape by following the dashed lines on the template. If you are using plain paper instead of the provided template, you should first sketch the solid and dashed guide lines yourself before cutting along them.\n\nBefore starting, one important thing to check is whether you have scissors available, as they are required to cut out the helicopter. According to your inventory, scissors are missing, so you'll need to find a suitable cutting tool to proceed with this step.",
+        "candidates": []
+      }
+    }
+  ],
+  "checks": {
+    "release": "ed388cb50b57",
+    "searchMs": 56867,
+    "cacheMs": 257,
+    "helpMs": 4757,
+    "projects": 1,
+    "quotaUnchangedOnCache": true,
+    "saveReopen": true,
+    "privacy": true,
+    "researchNoImplicitConsent": true,
+    "mobileOverflow": false
+  },
+  "sourceReview": {
+    "method": "Manual comparison with a separately fetched HTTP 200 copy of the exact NASA tutorial; no video playback or physical build performed.",
+    "sourceUrl": "https://www.jpl.nasa.gov/edu/resources/project/make-a-paper-mars-helicopter-2/",
+    "originalHtmlSha256": "d57ad22c9a400efa2c112dd2d1e3455683c4d370d7b80e86cd3a1b29dbd742e5",
+    "finding": "The five material entries now match the NASA materials section, optional ribbon/camera is identified as optional, and all 11 numbered source stages are represented. The previously invented weights and adhesive repairs are absent from the sourced material list and steps. Adhesive tape remains unmatched to measuring tape, and the stated 30–60 minute duration is preserved rather than lowered to meet the 30-minute preference.",
+    "limitations": [
+      "Single English query and one tutorial, not an accuracy benchmark or Thai-language validation.",
+      "Step 4 condenses the source's two comparison drops into a combined sentence; the original should be consulted for exact sequencing.",
+      "Optional ribbon length remains in the source material name while amount is unknown for the ribbon-or-camera alternative.",
+      "AI display text still contained internal identifiers and a clipped long note; a subsequent prompt-only adjustment requests concise complete plain-language text. This copy adjustment was tested offline, not with another paid generation.",
+      "Supplemental video pages were discovered but not watched. No product stock/prices or physical construction were verified."
+    ]
+  }
+}

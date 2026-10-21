@@ -44,7 +44,25 @@
     "sqliteBackup": "Online backup of temporary WAL database recovered committed value42 and passed integrity_check; no production database changed."
   },
   "researchAnalysis": "Synthetic CLI smoke merged duplicate exports into one session and generated four outputs. No participant observations created.",
-  "liveDeployment": "Follow-up live-check evidence is recorded separately after deployment.",
+  "liveDeployment": {
+    "testedRelease": "ed388cb50b57",
+    "evidence": "live-validation.json",
+    "successful": [
+      "Real web search",
+      "Identical query cache hit with unchanged allowance",
+      "Save/reopen after reload retains checkboxes and notes",
+      "Real contextual help response",
+      "Private notes/location excluded from AI requests",
+      "No research record without consent",
+      "No mobile horizontal overflow"
+    ],
+    "timingsMilliseconds": {
+      "freshSearch": 56867,
+      "cachedSearch": 257,
+      "contextualHelp": 4757
+    },
+    "limits": "One developer query; source comparison is detailed in live-validation.json. Not participant research or proof of general AI accuracy."
+  },
   "sourceFidelityCorrection": {
     "baselineCommit": "7fdd1af98c12",
     "reason": "A real NASA tutorial result incorrectly attributed added weights and adhesive repairs to the source.",
